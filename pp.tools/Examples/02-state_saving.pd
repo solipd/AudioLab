@@ -1,0 +1,38 @@
+#N canvas 448 338 695 209 10;
+#X declare -path ..;
+#N canvas 278 238 920 412 save 0;
+#X obj 135 107 inlet;
+#X obj 135 128 spigot;
+#X obj 135 329 outlet;
+#X obj 209 78 loadbang;
+#X obj 209 99 t b b b;
+#X obj 135 296 spigot 1;
+#X msg 194 296 0;
+#X msg 185 129 1;
+#X msg 135 182 open \, play 0 \, playback-speed 100 \, position 0 \,
+position% 0 \, loop 0 \, normalize 0 \,;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 4 1 6 0;
+#X connect 4 2 8 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
+#X connect 7 0 1 1;
+#X connect 8 0 5 0;
+#X restore 599 58 pd save;
+#X obj 403 51 pp.sfplayer~;
+#X obj 403 106 pp.out~;
+#X obj 1 3 cnv 15 380 200 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 13 25 One way to save the last state of a pp.tools abstraction
+with the parrent patch is to use a subpatch like [pd save].;
+#X text 13 49 It encapsulates a message box that will be saved with
+the parrent. Just copy-paste it into your own patches.;
+#X text 10 185 Philipp Schmalfuß \, 2018;
+#X obj 278 5 declare -path ..;
+#X connect 0 0 1 3;
+#X connect 1 0 2 0;
+#X connect 1 1 2 1;
+#X connect 1 2 0 0;

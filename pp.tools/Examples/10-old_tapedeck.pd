@@ -1,0 +1,213 @@
+#N struct 1007-template float x float y float c float s float th float
+stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y
+;
+#N struct 1007-template-y float y;
+#N struct 1008-template float x float y float c float s float th float
+stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+;
+#N struct 1008-template-y float y;
+#N canvas 204 62 814 719 10;
+#X declare -path ./audio;
+#X declare -path ..;
+#X obj 399 293 pp.sfplayer~;
+#X obj 401 663 pp.out~;
+#X obj 657 256 openpanel;
+#X obj 657 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 434 155 sig~;
+#X obj 434 210 *~ 100;
+#X obj 390 129 f;
+#X obj 407 92 sel 0;
+#X obj 462 93 sel 0;
+#X obj 433 185 lop~ 1.2;
+#X obj 400 508 pp.fft-partconv-st~;
+#X obj 513 268 +~;
+#X obj 390 8 r \$0-play/pause;
+#X obj 462 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 407 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 390 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 407 47 r \$0-rw;
+#X obj 462 48 r \$0-ff;
+#X obj 499 350 noise~;
+#X obj 484 433 +~;
+#X obj 399 434 +~;
+#X floatatom 667 141 5 0 0 0 - - -, f 5;
+#X obj 528 239 *~ 1;
+#X obj 500 396 *~ 1;
+#X msg 655 492 dry/wet \$1;
+#X obj 655 473 * 100;
+#X obj 499 376 *~ 0.005;
+#X obj 544 336 r \$0-hiss;
+#X floatatom 544 357 5 0 0 0 - - -, f 5;
+#X obj 534 403 r \$0-bypass;
+#X obj 565 214 r \$0-bypass;
+#X obj 655 434 r \$0-bypass;
+#X obj 655 455 == 0;
+#X obj 534 424 == 0;
+#X obj 565 235 == 0;
+#X obj 515 624 r \$0-volume;
+#X msg 515 643 volume \$1;
+#X obj 573 432 r \$0-tape-IR;
+#X obj 573 452 symbol;
+#X msg 573 473 loadIR \$1;
+#X obj 4 4 cnv 15 380 700 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 28 213 tgl 15 0 \$0-play/pause \$0-play/pauser Play/Pause 17
+7 2 12 -262144 -1 -1 0 1;
+#X obj 202 215 tgl 15 0 \$0-ff \$0-ffr >> 17 7 2 12 -262144 -1 -1 0
+1;
+#X obj 147 215 tgl 15 0 \$0-rw \$0-rwr << 17 7 2 12 -262144 -1 -1 0
+1;
+#X obj 30 255 hsl 200 15 0 0.05 0 0 \$0-hiss \$0-hissr Tape-Hiss -2
+-8 2 12 -262144 -1 -1 1990 1;
+#X obj 30 290 hsl 200 15 0 10 0 0 \$0-wowflutter \$0-wowflutterr Wow&Flutter
+-2 -8 2 12 -262144 -1 -1 1990 1;
+#X obj 27 530 tgl 15 0 \$0-bypass \$0-bypassr Bypass 17 7 2 12 -262144
+-1 -1 0 1;
+#X obj 27 503 s \$0-tape-IR;
+#X obj 657 216 r \$0-open;
+#X obj 29 148 bng 15 250 50 0 \$0-open \$0-openr Load_Soundfile 17
+7 2 12 -262144 -1 -1;
+#X obj 528 82 pp.lfnoise~ 30;
+#X obj 30 187 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
+-8 2 12 -262144 -1 -1 0 1;
+#X msg 657 277 open \$1 \, play 1;
+#X msg 27 368 IR-Dual-CC3600-1.wav;
+#X msg 27 390 IR-Dual-CC3600-2.wav;
+#X msg 27 412 IR-Dual-CC3600-3.wav;
+#X msg 27 435 IR-Dual-CC3600-4.wav;
+#X msg 27 457 IR-Panasonic_TapeDeck-269-1.wav;
+#X msg 27 479 IR-Panasonic_TapeDeck-269-2.wav;
+#X obj 489 123 * 6;
+#X obj 434 123 * -5;
+#N canvas 269 95 450 300 init 0;
+#X obj 30 212 s \$0-tape-IR;
+#X msg 30 186 IR-Dual-CC3600-1.wav;
+#X obj 31 41 loadbang;
+#X obj 65 148 s \$0-hissr;
+#X msg 143 74 \; pd dsp 1;
+#X msg 65 127 0.005;
+#X obj 134 148 s \$0-wowflutterr;
+#X msg 134 127 1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 0 5 0;
+#X connect 2 0 7 0;
+#X connect 2 0 4 0;
+#X connect 5 0 3 0;
+#X connect 7 0 6 0;
+#X restore 11 12 pd init;
+#N canvas 3 50 450 300 init 0;
+#X obj 97 72 loadbang;
+#X msg 97 93 steps 1 \, smooth 100;
+#X obj 97 114 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 621 63 pd init;
+#N canvas 3 50 450 300 init 0;
+#X obj 97 72 loadbang;
+#X obj 97 114 outlet;
+#X msg 97 93 playback-speed 0 \, loop 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 572 270 pd init;
+#X obj 400 626 *~;
+#X obj 486 627 *~;
+#X obj 502 565 r \$0-play/pause;
+#X obj 502 584 sig~;
+#X obj 502 602 lop~ 0.5;
+#X obj 527 194 +~;
+#N canvas 3 50 450 300 init 0;
+#X obj 97 72 loadbang;
+#X obj 97 114 outlet;
+#X msg 97 93 steps 100 \, smooth 100;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 740 63 pd init;
+#X obj 647 83 pp.lfnoise~ 0.3;
+#X obj 667 122 r \$0-wowflutter;
+#X obj 527 165 *~ 1;
+#X obj 646 177 *~ 1;
+#X text 6 681 Philipp Schmalfuß \, 2018;
+#X obj 247 25 declare -path ./audio;
+#X obj 278 5 declare -path ..;
+#X text 10 39 Emulation of an old cassette deck.;
+#X text 24 342 load tape saturation IR;
+#X text 9 53 For this example I recorded dirac impulses with two old
+tapedecks. "Dual CC3600" and "Panasonic Tape Deck 269". Both of them
+were severely broken \, but I managed to retrieve some nice impulse
+responses that are used with [pp.fft-partconv~] to get tape-saturation.
+;
+#X connect 0 0 20 0;
+#X connect 0 1 19 0;
+#X connect 2 0 52 0;
+#X connect 3 0 2 0;
+#X connect 4 0 9 0;
+#X connect 5 0 11 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 0;
+#X connect 7 1 60 0;
+#X connect 8 0 6 0;
+#X connect 8 1 59 0;
+#X connect 9 0 5 0;
+#X connect 10 0 64 0;
+#X connect 10 1 65 0;
+#X connect 11 0 0 2;
+#X connect 12 0 15 0;
+#X connect 13 0 8 0;
+#X connect 14 0 7 0;
+#X connect 15 0 6 0;
+#X connect 16 0 14 0;
+#X connect 17 0 13 0;
+#X connect 18 0 26 0;
+#X connect 19 0 10 1;
+#X connect 20 0 10 0;
+#X connect 21 0 73 1;
+#X connect 21 0 74 1;
+#X connect 22 0 11 1;
+#X connect 23 0 19 1;
+#X connect 23 0 20 1;
+#X connect 24 0 10 3;
+#X connect 25 0 24 0;
+#X connect 26 0 23 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 1;
+#X connect 29 0 33 0;
+#X connect 30 0 34 0;
+#X connect 31 0 32 0;
+#X connect 32 0 25 0;
+#X connect 33 0 23 1;
+#X connect 34 0 22 1;
+#X connect 35 0 36 0;
+#X connect 36 0 1 2;
+#X connect 37 0 38 0;
+#X connect 38 0 39 0;
+#X connect 39 0 10 3;
+#X connect 48 0 3 0;
+#X connect 50 0 73 0;
+#X connect 52 0 0 3;
+#X connect 53 0 47 0;
+#X connect 54 0 47 0;
+#X connect 55 0 47 0;
+#X connect 56 0 47 0;
+#X connect 57 0 47 0;
+#X connect 58 0 47 0;
+#X connect 59 0 4 0;
+#X connect 60 0 4 0;
+#X connect 62 0 50 1;
+#X connect 63 0 0 3;
+#X connect 64 0 1 0;
+#X connect 65 0 1 1;
+#X connect 66 0 67 0;
+#X connect 67 0 68 0;
+#X connect 68 0 65 1;
+#X connect 68 0 64 1;
+#X connect 69 0 22 0;
+#X connect 70 0 71 1;
+#X connect 71 0 74 0;
+#X connect 72 0 21 0;
+#X connect 73 0 69 0;
+#X connect 74 0 69 1;

@@ -1,0 +1,76 @@
+#N canvas 376 163 761 406 10;
+#X declare -path ./audio;
+#X declare -path ..;
+#X obj 2 2 cnv 15 400 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 19 153 hsl 200 15 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet -2
+-8 2 12 -262144 -1 -1 19900 1;
+#X obj 19 117 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
+-8 2 12 -262144 -1 -1 0 1;
+#N canvas 491 400 450 300 init 0;
+#X obj 164 32 loadbang;
+#X obj 164 53 f \$0;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 70 61 \; pd dsp 1;
+#X msg 164 74 \; \$1-drywetr 100;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X restore 17 11 pd init;
+#X obj 426 362 pp.out~;
+#X floatatom 554 362 5 0 0 0 - - -, f 5;
+#X msg 554 382 volume \$1;
+#X obj 554 341 r \$0-volume;
+#X obj 427 34 pp.sfplayer~;
+#N canvas 3 50 450 300 init 0;
+#X obj 194 72 loadbang;
+#X msg 194 93 open MusicBox.wav \, play 1 \, playback-speed 100 \,
+position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
+#X obj 194 125 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X restore 600 13 pd init;
+#X obj 427 202 pp.fft-timbre-st~ 512 4;
+#X obj 15 347 s \$0-timb;
+#X obj 600 146 r \$0-timb;
+#X obj 664 145 r \$0-drywet;
+#X floatatom 664 166 5 0 0 0 - - -, f 5;
+#X msg 664 186 dry/wet \$1;
+#X msg 15 250 blocksize 512 \, overlap 4 \, shift -630 \, curve-1 526
+\, curve-2 622 \, breakpoint-1 422 \, breakpoint-2 10 \, gain 12 \,
+;
+#X msg 15 216 blocksize 512 \, overlap 8 \, shift 0 \, curve-1 -314
+\, curve-2 -207 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 12 \,
+;
+#X msg 15 283 blocksize 1024 \, overlap 4 \, shift 185 \, curve-1 -1616
+\, curve-2 1201 \, breakpoint-1 -40 \, breakpoint-2 -8 \, gain 12 \,
+;
+#X msg 15 315 blocksize 1024 \, overlap 4 \, shift -559 \, curve-1
+658 \, curve-2 986 \, breakpoint-1 429 \, breakpoint-2 110 \, gain
+18 \,;
+#X obj 262 24 declare -path ./audio;
+#X text 15 47 This example shows how different fft-blocks sizes und
+curve parameters of the [pp.fft-timbre~] module affects the acoustic
+pattern of a sound.;
+#X text 15 186 Click on the message boxes below to change parameter
+presets.;
+#X text 13 385 Philipp Schmalfuß \, 2018;
+#X obj 292 5 declare -path ..;
+#X connect 5 0 6 0;
+#X connect 6 0 4 2;
+#X connect 7 0 5 0;
+#X connect 8 0 10 0;
+#X connect 8 1 10 1;
+#X connect 9 0 8 3;
+#X connect 10 0 4 0;
+#X connect 10 1 4 1;
+#X connect 12 0 10 2;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 2;
+#X connect 16 0 11 0;
+#X connect 17 0 11 0;
+#X connect 18 0 11 0;
+#X connect 19 0 11 0;
