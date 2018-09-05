@@ -1,7 +1,7 @@
-#N struct 1146-template float x float y float c float s float th float
-stretch array 1146-plus 1146-template-y array 1146-minus 1146-template-y
+#N struct 1250-template float x float y float c float s float th float
+stretch array 1250-plus 1250-template-y array 1250-minus 1250-template-y
 ;
-#N struct 1146-template-y float y;
+#N struct 1250-template-y float y;
 #N canvas 498 166 753 514 10;
 #N canvas 287 214 808 391 stuff 0;
 #X obj 412 39 table \$0-wf 44100;
@@ -179,7 +179,7 @@ stretch array 1146-plus 1146-template-y array 1146-minus 1146-template-y
 #X msg 417 449 \$1 50;
 #X obj 417 471 line~;
 #X obj 400 514 *~;
-#X obj 541 581 outlet~ sidechain;
+#X obj 548 591 outlet~ sidechain;
 #X obj 285 457 sig~ 1;
 #X obj 284 478 -~;
 #X msg 337 452 \$1 10;
@@ -469,7 +469,6 @@ stretch array 1146-plus 1146-template-y array 1146-minus 1146-template-y
 #X connect 40 0 41 0;
 #X connect 41 0 39 0;
 #X connect 42 0 43 0;
-#X connect 43 0 10 0;
 #X connect 43 0 44 0;
 #X connect 44 0 45 0;
 #X connect 44 0 45 1;
@@ -477,6 +476,7 @@ stretch array 1146-plus 1146-template-y array 1146-minus 1146-template-y
 #X connect 45 0 46 1;
 #X connect 46 0 0 1;
 #X connect 46 0 29 0;
+#X connect 46 0 10 0;
 #X connect 47 0 34 1;
 #X connect 48 0 2 0;
 #X connect 49 0 2 0;
@@ -627,7 +627,7 @@ gain dry/wet lookahead env;
 #X connect 15 0 11 0;
 #X connect 15 1 12 0;
 #X restore 608 103 pd in;
-#N canvas 50 50 380 295 \$0-dynamics~ 0;
+#N canvas 50 50 380 295 \$0-dynamics~ 1;
 #N canvas 471 81 835 445 mask 0;
 #X obj 100 100 cnv 15 370 284 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -636,25 +636,25 @@ gain dry/wet lookahead env;
 #X obj 114 144 hsl 100 12 0 1 0 0 \$0-agui \$0-aguir Attack -2 -6 2
 10 -262144 -1 -1 0 1;
 #X obj 114 168 hsl 100 12 0 1 0 0 \$0-rgui \$0-rguir Release -2 -6
-2 10 -262144 -1 -1 6187 1;
+2 10 -262144 -1 -1 0 1;
 #X obj 409 155 nbx 4 12 -1e+37 100 0 0 \$0-compress \$0-compressr %
-41 8 2 10 -262144 -1 -1 100 256;
+41 8 2 10 -262144 -1 -1 0 256;
 #X obj 409 181 nbx 4 12 -100 1e+06 0 0 \$0-expand \$0-expandr % 41
 8 2 10 -262144 -1 -1 0 256;
 #X obj 409 129 nbx 4 12 -100 1000 0 0 \$0-threshold \$0-thresholdr
-db 41 8 2 10 -262144 -1 -1 -1 256;
+db 41 8 2 10 -262144 -1 -1 0 256;
 #X obj 409 206 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 8
 2 10 -262144 -1 -1 0 256;
 #X obj 220 144 nbx 4 12 0 1e+37 0 0 \$0-attack \$0-attackr ms 41 8
 2 10 -262144 -1 -1 0 256;
 #X obj 220 168 nbx 4 12 0 1e+37 0 0 \$0-decay \$0-decayr ms 41 8 2
-10 -262144 -1 -1 70 256;
+10 -262144 -1 -1 0 256;
 #X obj 220 206 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr empty 41 8
 2 10 -262144 -1 -1 100 256;
 #X obj 303 155 hsl 100 12 0 100 0 0 \$0-cgui \$0-cguir Compression
--2 -6 2 10 -262144 -1 -1 9900 1;
+-2 -6 2 10 -262144 -1 -1 0 1;
 #X obj 303 129 hsl 100 12 0 -100 0 0 \$0-thgui \$0-thguir Threshold
--2 -6 2 10 -262144 -1 -1 99 1;
+-2 -6 2 10 -262144 -1 -1 0 1;
 #X obj 303 181 hsl 100 12 0 100 0 0 \$0-egui \$0-eguir Expansion -2
 -6 2 10 -262144 -1 -1 0 1;
 #X obj 303 206 hsl 100 12 0 100 0 0 \$0-ggui \$0-gguir Gain -2 -6 2
@@ -767,11 +767,11 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X connect 18 0 16 0;
 #X restore 30 146 pd map;
 #X obj 300 235 nbx 5 12 0 1e+37 0 0 \$0-sens \$0-sensr Lookahead 0
--6 2 10 -262144 -1 -1 64 256;
+-6 2 10 -262144 -1 -1 0 256;
 #X obj 111 239 cnv 10 100 12 empty empty empty 20 12 0 14 -262144 -66577
 0;
-#X obj 112 237 hradio 10 1 0 9 \$0-preset \$0-presetr Preset:Limit
-0 -8 2 10 -262144 -1 -1 1;
+#X obj 112 237 hradio 10 1 0 9 \$0-preset \$0-presetr Preset:Default
+0 -8 2 10 -262144 -1 -1 0;
 #X obj 453 241 cnv 8 8 8 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 454 242 cnv 6 6 6 empty \$0-clip empty 20 12 0 14 -24198 -66577
 0;
@@ -896,11 +896,10 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 0.936 0.937 0.938 0.939 0.94 0.941 0.942 0.943 0.944 0.945 0.946 0.947
 0.948 0.949 0.95 0.951 0.952 0.953 0.954 0.955 0.956 0.957 0.958 0.959
 0.96 0.961 0.962 0.963 0.964 0.965 0.966 0.967 0.968 0.969 0.97 0.971
-0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523
-0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523
-0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523 0.971523
-0.971523 0.971523 0.971523 0.971523;
-#A 1000 0.971523 0.971523 0.971523;
+0.972 0.973 0.974 0.975 0.976 0.977 0.978 0.979 0.98 0.981 0.982 0.983
+0.984 0.985 0.986 0.987 0.988 0.989 0.99 0.991 0.992 0.993 0.994 0.995
+0.996 0.997 0.998 0.999;
+#A 1000 1 1.001 1.003;
 #X coords 0 1 1003 0 200 140 1 0 0;
 #X restore 542 304 graph;
 #X msg 232 178 0;

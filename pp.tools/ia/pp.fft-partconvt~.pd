@@ -341,28 +341,28 @@
 #X obj 205 235 pack 0 \$0 0;
 #X obj 136 209 + 2;
 #X obj 103 237 s \$0-maxparts;
-#X msg 244 279 clear \, obj 300 50 inlet~ \, obj 100 100 clone pp.fft-partconv-part
-\$1 \$2 \$3 \, obj 100 200 outlet~ \, connect 0 0 1 1 \, connect 1
-0 2 0;
 #X obj 41 125 r \$0-ir-length;
 #X obj 136 166 f;
 #X obj 151 42 r \$0-window-size;
 #X obj 151 63 t b f f;
+#X msg 244 279 clear \, obj 300 50 inlet~ \, obj 100 100 clone pp.fft-partconv-partt
+\$1 \$2 \$3 \, obj 100 200 outlet~ \, connect 0 0 1 1 \, connect 1
+0 2 0;
 #X connect 0 0 7 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
 #X connect 4 1 2 0;
-#X connect 4 2 9 0;
+#X connect 4 2 13 0;
 #X connect 6 0 4 0;
 #X connect 7 0 6 0;
 #X connect 7 0 8 0;
-#X connect 9 0 1 0;
-#X connect 10 0 11 0;
-#X connect 11 0 0 0;
-#X connect 12 0 13 0;
-#X connect 13 0 11 0;
-#X connect 13 1 0 1;
-#X connect 13 2 6 2;
+#X connect 9 0 10 0;
+#X connect 10 0 0 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 0;
+#X connect 12 1 0 1;
+#X connect 12 2 6 2;
+#X connect 13 0 1 0;
 #X restore 674 219 pd create;
 #N canvas 149 330 450 300 \$0-container 0;
 #X obj 161 51 inlet~;

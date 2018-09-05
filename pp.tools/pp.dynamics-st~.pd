@@ -1,7 +1,7 @@
-#N struct 1169-template float x float y float c float s float th float
-stretch array 1169-plus 1169-template-y array 1169-minus 1169-template-y
+#N struct 1166-template float x float y float c float s float th float
+stretch array 1166-plus 1166-template-y array 1166-minus 1166-template-y
 ;
-#N struct 1169-template-y float y;
+#N struct 1166-template-y float y;
 #N canvas 140 172 918 514 10;
 #N canvas 287 214 808 391 stuff 0;
 #X obj 412 39 table \$0-wf 44100;
@@ -838,7 +838,6 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X connect 40 0 41 0;
 #X connect 41 0 39 0;
 #X connect 42 0 43 0;
-#X connect 43 0 10 0;
 #X connect 43 0 44 0;
 #X connect 44 0 45 0;
 #X connect 44 0 45 1;
@@ -846,6 +845,7 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X connect 45 0 46 1;
 #X connect 46 0 0 1;
 #X connect 46 0 29 0;
+#X connect 46 0 10 0;
 #X connect 47 0 34 1;
 #X connect 48 0 2 0;
 #X connect 49 0 2 0;
@@ -1145,13 +1145,13 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
 #X connect 28 0 29 0;
-#X connect 29 0 10 0;
 #X connect 29 0 30 0;
 #X connect 30 0 31 0;
 #X connect 30 0 31 1;
 #X connect 31 0 32 0;
 #X connect 31 0 32 1;
 #X connect 32 0 0 1;
+#X connect 32 0 10 0;
 #X connect 33 0 21 1;
 #X connect 34 0 2 0;
 #X connect 35 0 2 0;

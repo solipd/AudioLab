@@ -1,0 +1,23 @@
+#N struct 1913-xt float x float y;
+#N struct 1913-yt float x float y;
+#N canvas 238 240 807 308 10;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 10 80 Inlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.spectrum~ 0 0 2 16 -233017
+-262144 0;
+#X floatatom 435 35 5 0 0 0 - - -, f 5;
+#X obj 436 185 pp.spectrum~;
+#X obj 435 55 osc~ 440;
+#X obj 436 114 *~ 1;
+#X floatatom 470 95 4 0 100 0 - - -, f 4;
+#X obj 470 115 dbtorms;
+#X text 11 34 spectrum analyser;
+#X text 596 198 <-- click to open spectrum plot;
+#X text 10 59 Creation arguments: none;
+#X text 68 81 1:(~)signal;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 1;

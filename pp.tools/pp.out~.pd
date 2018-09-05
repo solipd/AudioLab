@@ -1,4 +1,4 @@
-#N canvas 372 195 921 570 10;
+#N canvas 221 63 921 570 10;
 #X obj 440 310 inlet~;
 #X obj 509 310 inlet~;
 #X obj 510 384 *~;
@@ -6,10 +6,10 @@
 #X obj 577 344 line~;
 #X obj 439 384 *~;
 #X obj 439 416 dac~;
-#X obj 120 115 hsl 100 17 0 1 0 0 \$0-vol \$0-volr 59db 5 8 2 10 -228856
--1 -1 0 1;
+#X obj 120 115 hsl 100 17 0 1 0 0 \$0-vol \$0-volr 80db 5 8 2 10 -228856
+-1 -1 4055 1;
 #X obj 100 115 tgl 17 0 \$0-dsp \$0-dspr dsp 1 8 2 10 -228856 -258113
--1 0 1;
+-1 1 1;
 #X obj 338 356 s \$0-volr;
 #X msg 338 334 label \$1db;
 #X obj 348 32 r \$0-vol;
@@ -39,7 +39,6 @@
 #X obj 746 110 / 100;
 #X obj 746 131 pow 4;
 #X obj 746 152 s \$0-volr;
-#X obj 753 299 r \$0-vol;
 #X obj 753 341 t b a;
 #X msg 753 320 set volume \$1;
 #X obj 753 362 outlet;
@@ -71,6 +70,7 @@
 #X connect 25 0 2 0;
 #X connect 26 0 30 0;
 #X connect 26 0 29 0;
+#X connect 26 0 39 0;
 #X connect 27 0 28 0;
 #X connect 28 0 26 0;
 #X connect 29 0 3 0;
@@ -82,7 +82,6 @@
 #X connect 35 0 36 0;
 #X connect 36 0 37 0;
 #X connect 38 0 40 0;
-#X connect 39 0 41 0;
-#X connect 39 1 41 0;
-#X connect 40 0 39 0;
+#X connect 38 1 40 0;
+#X connect 39 0 38 0;
 #X coords 0 -1 1 1 122 35 1 100 100;

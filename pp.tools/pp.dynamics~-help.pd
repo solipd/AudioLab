@@ -1,0 +1,115 @@
+#N struct 1250-template float x float y float c float s float th float
+stretch array 1250-plus 1250-template-y array 1250-minus 1250-template-y
+;
+#N struct 1250-template-y float y;
+#N canvas 387 125 907 309 10;
+#X obj 390 260 pp.out~;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 537 122 threshold -1 \, attack 0 \, release 70 \, compression
+100 \, expansion 0 \, gain 0 \, dry/wet 100 \, lookahead 64 \, env
+peak \,;
+#X obj 537 57 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 422 outlet;
+#X msg 200 172 threshold \$1;
+#X msg 200 214 compression \$1;
+#X msg 201 253 expansion \$1;
+#X msg 201 292 gain \$1;
+#X msg 202 372 dry/wet \$1;
+#X msg 202 332 lookahead \$1;
+#X floatatom 200 154 5 -100 0 0 - - -, f 5;
+#X floatatom 200 195 5 0 0 0 - - -, f 5;
+#X floatatom 201 235 5 0 0 0 - - -, f 5;
+#X floatatom 201 274 5 0 0 0 - - -, f 5;
+#X floatatom 202 354 5 0 0 0 - - -, f 5;
+#X floatatom 202 314 5 0 0 0 - - -, f 5;
+#X text 284 170 threshold level(db);
+#X text 259 292 makeup gain(db);
+#X text 288 331 lookahead delay in samples;
+#X text 237 354 %;
+#X text 238 232 %;
+#X text 237 194 %;
+#X msg 148 85 attack \$1;
+#X msg 156 125 release \$1;
+#X floatatom 148 66 5 0 1e+10 0 - - -, f 5;
+#X floatatom 156 107 5 0 1e+11 0 - - -, f 5;
+#X msg 86 11 env rms;
+#X msg 105 32 env peak;
+#X text 145 12 envelope detection method;
+#X text 224 95 attack/release time(msec.);
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 0;
+#X connect 8 0 2 0;
+#X connect 9 0 3 0;
+#X connect 10 0 4 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 19 0;
+#X connect 22 0 20 0;
+#X connect 23 0 0 0;
+#X connect 24 0 0 0;
+#X restore 537 57 pd control-messages;
+#X text 103 116 1:(~)signal;
+#X text 45 117 Inlets:;
+#X text 45 157 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.dynamics~ 0 0 2 16 -233017
+-262144 0;
+#X obj 6 280 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 21 76 http://yehar.com/blog/?p=368;
+#X text 21 61 http://www.katjaas.nl/hilbert/hilbert.html;
+#X text 20 23 this abstraction uses Olli Niemitalo's quadrature transform
+coefficients that katja intruduced in her blog instead of [hilbert~]
+;
+#X restore 6 280 pd references;
+#X obj 389 85 pp.dynamics~;
+#N canvas 251 299 367 351 testsignal 0;
+#X obj 162 296 outlet~;
+#X obj 43 146 line~;
+#X obj 43 168 pow~ 4;
+#X obj 44 205 bp~ 100 100;
+#X msg 43 123 1 \, 0 2;
+#X obj 44 226 *~ 250;
+#X obj 161 175 noise~;
+#X obj 161 198 *~ 0.015;
+#X obj 43 99 metro 700;
+#X obj 43 53 loadbang;
+#X obj 43 74 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X restore 389 22 pd testsignal;
+#X text 103 157 1:(~)signal;
+#X text 103 169 2:(~)sidechain;
+#X text 103 181 3:message;
+#X text 30 70 Creation arguments:none;
+#X text 30 47 compressor/expander;
+#X text 547 100 <-- click to open GUI;
+#X text 103 129 2:control-messages;
+#X connect 4 0 11 1;
+#X connect 11 0 0 0;
+#X connect 11 0 0 1;
+#X connect 11 2 2 0;
+#X connect 12 0 11 0;

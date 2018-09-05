@@ -1,0 +1,92 @@
+#N canvas 282 177 959 306 10;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 567 221 speaker-1 -0.42623 0.909836 \, speaker-2 0.418033 0.909836
+\, speaker-3 -0.909836 0.426229 \, speaker-4 0.901639 0.426229 \, speaker-5
+-0.909836 -0.418033 \, speaker-6 0.901639 -0.418033 \, speaker-7 -0.42623
+-0.901639 \, speaker-8 0.418033 -0.901639 \,;
+#X text 72 83 1:(~)signal;
+#X text 14 84 Inlets:;
+#X text 14 169 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 -233017 -262144
+0;
+#X text 550 197 <-- click to open GUI;
+#X text 14 59 Creation arguments: none;
+#X obj 537 160 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 561 87 423 390 control-messages 0;
+#X obj 70 357 outlet;
+#X floatatom 70 12 5 -1 1 0 - - -, f 5;
+#X msg 70 56 speaker-1 \$1 \$2;
+#X obj 70 35 pack 0 0;
+#X floatatom 115 12 5 -1 1 0 - - -, f 5;
+#X text 140 33 speaker position x \, y (-1 \, 1);
+#X msg 93 135 speaker-2 \$1 \$2;
+#X msg 94 155 speaker-3 \$1 \$2;
+#X msg 94 175 speaker-4 \$1 \$2;
+#X msg 94 195 speaker-5 \$1 \$2;
+#X msg 94 215 speaker-6 \$1 \$2;
+#X msg 94 235 speaker-7 \$1 \$2;
+#X msg 94 255 speaker-8 \$1 \$2;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X restore 537 160 pd control-messages;
+#X obj 389 183 pp.spat8~;
+#X obj 390 17 noise~;
+#X obj 388 237 pp.mult~ 8;
+#X obj 389 287 dac~ 1 2 3 4 5 6 7 8;
+#X obj 419 58 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4400 1;
+#X floatatom 416 122 5 0 0 0 - - -, f 5;
+#X obj 416 142 sig~;
+#X obj 463 14 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4600 1;
+#X floatatom 462 122 5 0 0 0 - - -, f 5;
+#X obj 462 142 sig~;
+#X text 423 104 x;
+#X text 481 105 y;
+#X floatatom 504 123 5 -1 1 0 - - -, f 5;
+#X obj 504 143 sig~;
+#X text 540 122 spatial spread (-1 \, 1);
+#X text 72 95 2:(~)x-position;
+#X text 72 107 3:(~)y-position;
+#X text 72 119 4:(~)spatial spread;
+#X text 72 132 5:control-messages;
+#X text 72 168 1:(~)signal ch.1;
+#X text 72 181 2:(~)signal ch.2;
+#X text 72 194 3:(~)signal ch.3;
+#X text 72 207 4:(~)signal ch.4;
+#X text 72 219 5:(~)signal ch.5;
+#X text 72 232 6:(~)signal ch.6;
+#X text 72 245 7:(~)signal ch.7;
+#X text 72 258 8:(~)signal ch.8;
+#X text 72 272 9:message;
+#X text 7 36 8 channel distance based amplitude panning;
+#X connect 9 0 10 4;
+#X connect 10 0 12 0;
+#X connect 10 1 12 1;
+#X connect 10 2 12 2;
+#X connect 10 3 12 3;
+#X connect 10 4 12 4;
+#X connect 10 5 12 5;
+#X connect 10 6 12 6;
+#X connect 10 7 12 7;
+#X connect 10 8 1 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 12 1 13 1;
+#X connect 12 2 13 2;
+#X connect 12 3 13 3;
+#X connect 12 4 13 4;
+#X connect 12 5 13 5;
+#X connect 12 6 13 6;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 10 1;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 10 2;
+#X connect 22 0 23 0;
+#X connect 23 0 10 3;

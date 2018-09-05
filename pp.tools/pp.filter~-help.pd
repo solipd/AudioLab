@@ -1,0 +1,76 @@
+#N canvas 387 125 857 313 10;
+#X obj 390 259 pp.out~;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 537 192 lowpass \, frequency 400 \, q -3 \, bandwitdth 1 \,
+gain 0 \,;
+#X obj 537 120 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 397 outlet;
+#X floatatom 86 35 5 0 0 0 - - -, f 5;
+#X msg 86 55 frequency \$1;
+#X text 127 36 filter frequency in hz;
+#X floatatom 126 76 5 0 0 0 - - -, f 5;
+#X msg 126 96 q \$1;
+#X floatatom 137 120 5 0 0 0 - - -, f 5;
+#X msg 137 140 bandwith \$1;
+#X floatatom 145 161 5 0 0 0 - - -, f 5;
+#X msg 145 181 gain \$1;
+#X text 162 96 filter Q for Lowpass \, Highpass \, Reson;
+#X text 219 138 for Bandpass \, Notch \, Peaking \, Allpass;
+#X text 198 182 for Peaking;
+#X msg 152 229 lowpass;
+#X msg 152 249 highpass;
+#X msg 152 269 reson;
+#X msg 152 289 bandpass;
+#X msg 152 309 notch;
+#X msg 152 329 peaking;
+#X msg 152 349 allpass;
+#X text 159 211 filtertype;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
+#X connect 13 0 0 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 0 0;
+#X connect 19 0 0 0;
+#X restore 537 120 pd control-messages;
+#X text 68 104 1:(~)signal;
+#X text 10 105 Inlets:;
+#X text 10 140 Outlets:;
+#X text 68 152 2:message;
+#X obj 12 20 cnv 15 10 10 empty empty pp.filter~ 0 0 2 16 -233017 -262144
+0;
+#X obj 5 282 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 15 71 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
+#X text 14 32 Filter coefficients are calculated following Robert Bristow-Johnsons
+Audio-EQ-cookbook rezipes:;
+#X restore 5 282 pd references;
+#X obj 389 35 noise~;
+#X text 10 36 Creation arguments:;
+#X text 68 140 1:(~)filtered signal;
+#X text 19 51 \$1: filtertype (lowpass \, highpass \, reson \, bandpass
+\, notch \, peaking \, allpass) \, default: lowpass;
+#X obj 389 148 pp.filter~ lowpass;
+#X text 68 119 2:control-messages;
+#X text 550 162 <-- click to open GUI;
+#X connect 4 0 16 1;
+#X connect 12 0 16 0;
+#X connect 16 0 0 0;
+#X connect 16 0 0 1;
+#X connect 16 1 2 0;
