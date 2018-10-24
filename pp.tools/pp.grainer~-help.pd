@@ -1,14 +1,14 @@
-#N struct 1275-template float x float y float c float s float th float
-stretch array 1275-plus 1275-template-y array 1275-minus 1275-template-y
+#N struct 1923-template float x float y float c float s float th float
+stretch array 1923-plus 1923-template-y array 1923-minus 1923-template-y
 ;
-#N struct 1275-template-y float y;
+#N struct 1923-template-y float y;
 #N canvas 142 133 954 307 10;
 #X obj 397 263 pp.out~;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 12 15 cnv 15 10 10 empty empty pp.grainer~ 0 0 2 16 -233017
 -262144 0;
-#X obj 570 117 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 570 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 383 167 484 543 control-messages 0;
 #X obj 69 512 outlet;
@@ -34,7 +34,7 @@ stretch array 1275-plus 1275-template-y array 1275-minus 1275-template-y
 #X obj 102 122 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 127 122 bang to trigger the next grain;
-#X obj 164 438 cnv 15 45 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 164 437 cnv 15 45 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 517 70 580 657 more 0;
 #X obj 69 636 outlet;

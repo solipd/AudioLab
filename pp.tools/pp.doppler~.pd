@@ -54,7 +54,7 @@
 #X obj 255 241 s pd-\$0-doppler;
 #X msg 255 219 relocate 230x149+1+1 1x1+50+60 \, vis 1;
 #X msg 89 111 \; \$1-pitchmodr 100 \; \$1-panmodr 100 \; \$1-ampmodr
-100 \; \$1-damping 0 \;;
+100 \; \$1-dampingr 100 \;;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 3 0 6 0;

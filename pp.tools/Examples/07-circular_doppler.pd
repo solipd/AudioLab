@@ -1,4 +1,12 @@
-#N canvas 188 49 791 555 10;
+#N struct 1028-template float x float y float c float s float th float
+stretch array 1028-plus 1028-template-y array 1028-minus 1028-template-y
+;
+#N struct 1028-template-y float y;
+#N struct 1029-template float x float y float c float s float th float
+stretch array 1029-plus 1029-template-y array 1029-minus 1029-template-y
+;
+#N struct 1029-template-y float y;
+#N canvas 188 52 791 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 550 empty empty empty 20 12 0 14 -233017 -66577
@@ -29,7 +37,7 @@
 #X obj 672 148 phasor~ 0.25;
 #X obj 473 201 cos~;
 #X obj 672 200 cos~;
-#X floatatom 672 127 5 0 0 0 - - -, f 5;
+#X floatatom 672 127 5 0 0 0 - - -;
 #X obj 672 179 +~ 0.25;
 #X obj 517 29 pp.sfplayer~;
 #X obj 399 386 pp.doppler~;
@@ -38,24 +46,10 @@
 #X obj 672 105 r \$0-speed;
 #X obj 474 287 +~ 1;
 #X obj 474 266 *~ 1;
-#X floatatom 692 237 5 0 0 0 - - -, f 5;
+#X floatatom 692 237 5 0 0 0 - - -;
 #X obj 691 219 r \$0-distance;
 #X obj 527 496 r \$0-volume;
 #X msg 527 517 volume \$1;
-#N canvas 3 50 450 300 init 0;
-#X obj 251 89 loadbang;
-#X msg 251 110 damping 100;
-#X obj 251 131 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X restore 548 299 pd init;
-#N canvas 3 50 450 300 init 0;
-#X obj 251 89 loadbang;
-#X msg 251 110 damping 100;
-#X obj 251 131 outlet;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X restore 547 367 pd init;
 #X obj 421 59 r \$0-switch;
 #X obj 421 118 == 0;
 #X obj 400 137 *~ 1;
@@ -82,10 +76,10 @@ to emulate circular movement of a sound source in front of the observer
 #X connect 11 0 8 0;
 #X connect 12 0 9 0;
 #X connect 13 0 11 0;
-#X connect 14 0 30 1;
+#X connect 14 0 28 1;
 #X connect 15 0 17 0;
 #X connect 15 1 17 1;
-#X connect 16 0 29 0;
+#X connect 16 0 27 0;
 #X connect 17 0 6 0;
 #X connect 17 1 6 1;
 #X connect 18 0 12 0;
@@ -97,11 +91,9 @@ to emulate circular movement of a sound source in front of the observer
 #X connect 22 0 21 0;
 #X connect 23 0 24 0;
 #X connect 24 0 6 2;
-#X connect 25 0 7 2;
-#X connect 26 0 15 2;
-#X connect 27 0 28 0;
-#X connect 27 0 30 0;
-#X connect 28 0 29 1;
-#X connect 29 0 7 0;
-#X connect 30 0 7 0;
-#X connect 31 0 14 3;
+#X connect 25 0 26 0;
+#X connect 25 0 28 0;
+#X connect 26 0 27 1;
+#X connect 27 0 7 0;
+#X connect 28 0 7 0;
+#X connect 29 0 14 3;
