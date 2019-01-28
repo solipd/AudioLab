@@ -1,4 +1,4 @@
-#N canvas 118 350 988 585 10;
+#N canvas 118 180 988 585 10;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
 8 2 10 -233017 -233017 -1 0 1;
 #X obj 537 349 line~;
@@ -708,19 +708,19 @@ rise curve slope width;
 #X connect 14 8 6 0;
 #X connect 14 9 15 0;
 #X restore 743 167 pd in;
-#N canvas 50 52 475 175 \$0-rev~ 1;
+#N canvas 50 52 475 175 \$0-rev~ 0;
 #N canvas 423 168 866 485 mask 0;
 #X obj 100 100 cnv 15 459 159 empty empty empty 2 2 0 14 -262144 -66577
 0;
 #X obj 218 179 nbx 4 12 0 100 0 0 \$0-damping \$0-dampingr % 41 7 2
-10 -262144 -1 -1 100 256;
+10 -262144 -1 -1 50 256;
 #X obj 112 179 hsl 100 12 0 100 0 0 \$0-dmpgui \$0-dmpuir Damping -2
--6 2 10 -262144 -1 -1 9900 1;
+-6 2 10 -262144 -1 -1 4950 1;
 #X msg 218 48 set \$1;
 #X obj 218 154 nbx 5 12 0 20000 0 0 \$0-lop \$0-lopr hz. 50 7 2 10
--262144 -1 -1 1770 256;
+-262144 -1 -1 3000 256;
 #X obj 112 154 hsl 100 12 0 1 0 0 \$0-dmpfgui \$0-dmpfuir Damping-Frequency
--2 -6 2 10 -262144 -1 -1 3401 1;
+-2 -6 2 10 -262144 -1 -1 4427 1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
 #X msg 105 180 set \$1;
@@ -740,9 +740,9 @@ rise curve slope width;
 #X connect 8 0 3 0;
 #X restore 217 22 pd map;
 #X obj 218 128 nbx 4 12 0 100 0 0 \$0-feedback \$0-feedbackr % 41 7
-2 10 -262144 -1 -1 86.8687 256;
+2 10 -262144 -1 -1 50 256;
 #X obj 112 128 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2
--6 2 10 -262144 -1 -1 8600 1;
+-6 2 10 -262144 -1 -1 4950 1;
 #X msg 218 0 set \$1;
 #X obj 378 129 cnv 15 152 102 empty empty empty 20 12 0 14 -128992
 -66577 0;
@@ -751,8 +751,8 @@ rise curve slope width;
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-tail 16 float 3;
-#A 0 46 30.1265 26.2873 23.6245 21.5197 19.7517 18.2128 16.8414 15.5989
-14.4591 13.4033 12.4179 11.4922 10.6182 9.78919 20;
+#A 0 10 11.6356 13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838
+55.4567 65.1755 76.8243 88.5623 101.278 115.397 130.502;
 #X coords 0 200 16 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
@@ -762,11 +762,11 @@ rise curve slope width;
 #X obj 379 113 cnv 10 100 15 empty empty Tail 0 5 2 10 -262144 -1 0
 ;
 #X obj 341 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-rise \$0-riser Rise 41
-7 2 10 -262144 -1 -1 46 256;
+7 2 10 -262144 -1 -1 10 256;
 #X obj 481 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-slope \$0-sloper Slope
-41 7 2 10 -262144 -1 -1 -37 256;
+41 7 2 10 -262144 -1 -1 130 256;
 #X obj 407 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-curve \$0-curver Curve
-41 7 2 10 -262144 -1 -1 -22 256;
+41 7 2 10 -262144 -1 -1 10 256;
 #X obj 285 129 cnv 15 72 102 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #N canvas 3 52 450 300 mask 0;
@@ -774,7 +774,7 @@ rise curve slope width;
 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-early 5 float 3;
-#A 0 4 -3.8147e-06 -7.62939e-06 0.400002 0;
+#A 0 0 1.42763 3.23873 5.2345 7.82312;
 #X coords 0 40 5 0 70 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 70 100 1 100 100;
@@ -793,7 +793,7 @@ rise curve slope width;
 2 10 -262144 -1 -1 6600 1;
 #X msg 56 198 set \$1;
 #X obj 110 236 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 100 256;
+-262144 -1 -1 60 256;
 #X obj 110 224 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
 0;
 #X connect 1 0 3 0;
@@ -1066,7 +1066,7 @@ rise curve slope width;
 #X connect 20 0 0 0;
 #X restore 739 282 pd init&presets;
 #X obj 514 149 r \$0-feed;
-#N canvas 119 275 450 300 width 0;
+#N canvas 119 275 868 300 width 0;
 #X obj 142 247 outlet~;
 #X obj 177 227 outlet~;
 #X obj 141 112 +~;
@@ -1088,6 +1088,8 @@ rise curve slope width;
 #X obj 348 39 / 100;
 #X obj 282 60 *~ 0.01;
 #X obj 348 64 - 1;
+#X text 304 220 based on rjdjlib \, e_stereowidener.pd (https://github.com/rjdj/rjlib)
+;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
 #X connect 3 0 7 0;

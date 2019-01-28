@@ -1,11 +1,11 @@
-#N struct 1815-template float x float y float c float s float th float
-stretch array 1815-plus 1815-template-y array 1815-minus 1815-template-y
+#N struct 1992-template float x float y float c float s float th float
+stretch array 1992-plus 1992-template-y array 1992-minus 1992-template-y
 ;
-#N struct 1815-template-y float y;
-#N struct 1816-template float x float y float c float s float th float
-stretch array 1816-plus 1816-template-y array 1816-minus 1816-template-y
+#N struct 1992-template-y float y;
+#N struct 1993-template float x float y float c float s float th float
+stretch array 1993-plus 1993-template-y array 1993-minus 1993-template-y
 ;
-#N struct 1816-template-y float y;
+#N struct 1993-template-y float y;
 #N canvas 140 117 954 461 10;
 #X declare -path ./Examples/audio;
 #X obj 398 417 pp.out~;
@@ -66,7 +66,7 @@ stretch array 1816-plus 1816-template-y array 1816-minus 1816-template-y
 #X text 66 218 2:(~)right out;
 #X text 66 231 3:message;
 #X text 11 92 Creation arguments: none;
-#X obj 3 432 declare -path ./Examples/audio;
+#X obj 191 9 declare -path ./Examples/audio;
 #X text 526 71 soundfile;
 #X text 67 127 1:(~)signal left;
 #X text 67 154 3:(~)feedback;
@@ -74,7 +74,6 @@ stretch array 1816-plus 1816-template-y array 1816-minus 1816-template-y
 #X text 67 167 4:(~)width;
 #X text 67 180 5:control-messages;
 #X text 10 34 rev3~ extended;
-#X obj 398 283 pp.rev~;
 #X obj 397 30 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 417 29 <-- click;
@@ -144,19 +143,27 @@ stretch array 1816-plus 1816-template-y array 1816-minus 1816-template-y
 #N canvas 686 449 454 180 message-out 0;
 #X obj 20 20 inlet;
 #X msg 20 45 dry/wet 60 \, feedback 50 \, damping-frequency 3000 \,
-damping 50 \, rise 10 \, curve 10 \, slope 130 \, width 0 \, early
+damping 50 \, rise 10 \, curve 10 \, slope 130 \, width 100 \, early
 0 1.42763 3.23873 5.2345 7.82312 \, tail 10 10.5778 12.3111 15.2 19.2444
 24.4444 30.8 38.3111 46.9778 56.8 67.7778 79.9111 93.2 107.644 123.244
 140 \,;
 #X connect 0 0 1 0;
 #X restore 546 332 pd message-out;
-#X connect 4 0 20 4;
-#X connect 20 0 0 0;
-#X connect 20 1 0 1;
-#X connect 20 2 26 0;
-#X connect 21 0 23 0;
-#X connect 23 0 20 0;
-#X connect 23 1 20 1;
-#X connect 24 0 20 0;
-#X connect 24 1 20 1;
-#X connect 25 0 24 0;
+#X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 133 281 450 99 references 0;
+#X text 16 18 this abstraction is based on [rev3~];
+#X text 18 41 stereo width is based on rjdjlib \, e_stereowidener.pd
+(https://github.com/rjdj/rjlib);
+#X restore 9 427 pd references;
+#X obj 398 283 pp.rev~;
+#X connect 4 0 28 4;
+#X connect 20 0 22 0;
+#X connect 22 0 28 0;
+#X connect 22 1 28 1;
+#X connect 23 0 28 0;
+#X connect 23 1 28 1;
+#X connect 24 0 23 0;
+#X connect 28 0 0 0;
+#X connect 28 1 0 1;
+#X connect 28 2 25 0;
