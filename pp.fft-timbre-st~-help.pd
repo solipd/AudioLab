@@ -2,9 +2,6 @@
 #X obj 390 263 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 562 191 blocksize 1024 \, overlap 4 \, shift 0 \, curve-1 0
-\, curve-2 0 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 0 \, dry/wet
-100 \,;
 #X obj 562 123 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 568 548 control-messages 0;
@@ -146,7 +143,6 @@
 #X obj 504 6 osc~ 880;
 #X obj 504 26 *~ 0.25;
 #X obj 389 70 *~ 0.33;
-#X obj 389 148 pp.fft-timbre-st~ 1024 4;
 #X text 12 35 stereo version of [pp.fft-timbre~];
 #X text 68 95 1:(~)signal left;
 #X text 68 143 1:(~)signal left;
@@ -154,17 +150,25 @@
 #X text 68 168 3:message;
 #X text 68 106 2:(~)signal right;
 #X text 68 117 3:control-messages;
-#X connect 4 0 20 2;
-#X connect 8 0 12 0;
-#X connect 12 0 13 1;
-#X connect 13 0 20 0;
-#X connect 13 0 20 1;
-#X connect 14 0 16 0;
-#X connect 15 0 19 0;
-#X connect 16 0 19 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 blocksize 1024 \, overlap 4 \, shift 0 \, curve-1 0 \,
+curve-2 0 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 0 \, dry/wet
+100 \,;
+#X connect 0 0 1 0;
+#X restore 562 188 pd message-out;
+#X obj 389 148 pp.fft-timbre-st~ 1024 4;
+#X connect 3 0 27 2;
+#X connect 7 0 11 0;
+#X connect 11 0 12 1;
+#X connect 12 0 27 0;
+#X connect 12 0 27 1;
+#X connect 13 0 15 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
 #X connect 17 0 18 0;
-#X connect 18 0 19 0;
-#X connect 19 0 13 0;
-#X connect 20 0 0 0;
-#X connect 20 1 0 1;
-#X connect 20 2 2 0;
+#X connect 18 0 12 0;
+#X connect 27 0 0 0;
+#X connect 27 1 0 1;
+#X connect 27 2 26 0;

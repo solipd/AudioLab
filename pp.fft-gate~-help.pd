@@ -1,10 +1,8 @@
 #N canvas 260 164 943 308 10;
-#X obj 390 254 pp.out~;
+#X obj 390 260 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 562 191 blocksize 1024 \, overlap 4 \, threshold -12.1212 \,
-gate 27.3504 \, gain 0 \, dry/wet 100 \,;
-#X obj 562 123 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 562 97 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 374 373 control-messages 0;
 #X obj 74 331 outlet;
@@ -45,19 +43,19 @@ gate 27.3504 \, gain 0 \, dry/wet 100 \,;
 #X connect 17 0 0 0;
 #X connect 19 0 20 0;
 #X connect 20 0 0 0;
-#X restore 562 123 pd control-messages;
+#X restore 562 97 pd control-messages;
 #X text 68 95 1:(~)signal;
 #X text 10 96 Inlets:;
 #X text 10 143 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.fft-gate~ 0 0 2 16 -233017
 -262144 0;
 #X obj 407 45 noise~;
-#X text 573 162 <-- click to open GUI;
+#X text 573 136 <-- click to open GUI;
 #X text 68 169 3:message;
 #X text 11 55 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
 #X text 131 67 \$2: overlap \, default: 4;
-#X obj 389 148 pp.fft-gate~ 1024 4;
+#X obj 389 122 pp.fft-gate~ 1024 4;
 #X text 68 156 2:(~)signal (noisy part);
 #X text 68 143 1:(~)signal (denoised part);
 #X text 68 107 2:control-messages;
@@ -65,11 +63,18 @@ gate 27.3504 \, gain 0 \, dry/wet 100 \,;
 #X obj 389 21 osc~ 440;
 #X obj 388 88 +~;
 #X text 12 34 spectral denoiser;
-#X connect 4 0 14 1;
-#X connect 9 0 18 0;
-#X connect 14 0 0 0;
-#X connect 14 1 0 1;
-#X connect 14 2 2 0;
-#X connect 18 0 20 1;
-#X connect 19 0 20 0;
-#X connect 20 0 14 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 blocksize 1024 \, overlap 4 \, threshold 0 \, gate 0 \,
+gain 0 \, dry/wet 100 \,;
+#X connect 0 0 1 0;
+#X restore 562 163 pd message-out;
+#X obj 521 260 pp.out~;
+#X connect 3 0 13 1;
+#X connect 8 0 17 0;
+#X connect 13 0 0 0;
+#X connect 13 1 22 0;
+#X connect 13 2 21 0;
+#X connect 17 0 19 1;
+#X connect 18 0 19 0;
+#X connect 19 0 13 0;

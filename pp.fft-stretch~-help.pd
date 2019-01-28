@@ -1,11 +1,11 @@
-#N struct 1017-template float x float y float c float s float th float
-stretch array 1017-plus 1017-template-y array 1017-minus 1017-template-y
+#N struct 1382-template float x float y float c float s float th float
+stretch array 1382-plus 1382-template-y array 1382-minus 1382-template-y
 ;
-#N struct 1017-template-y float y;
-#N struct 1018-template float x float y float c float s float th float
-stretch array 1018-plus 1018-template-y array 1018-minus 1018-template-y
+#N struct 1382-template-y float y;
+#N struct 1383-template float x float y float c float s float th float
+stretch array 1383-plus 1383-template-y array 1383-minus 1383-template-y
 ;
-#N struct 1018-template-y float y;
+#N struct 1383-template-y float y;
 #N canvas 154 122 971 306 10;
 #X obj 397 264 pp.out~;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -113,10 +113,6 @@ of your soundfile);
 #X obj 482 58 sig~;
 #X floatatom 482 39 5 0 0 0 - - -;
 #X text 518 40 playback-speed in %;
-#X msg 570 220 open /home/philipp/Documents/Pd/Backup/pp.tools/Examples/audio/Trumpet.wav
-\, play 0 \, freeze 0 \, speed 100 \, transposition 0 \, position 0
-\, position% 0 \, loop 1 \, phaselock 0 \, blocksize 1024 \, overlap
-4 \,;
 #X text 579 153 <-- click to open GUI;
 #X text 10 97 Inlets:;
 #X text 67 96 1:(~)record-in left;
@@ -127,7 +123,7 @@ of your soundfile);
 #X text 67 171 1:(~)left out;
 #X text 67 184 2:(~)right out;
 #X text 67 196 3:message;
-#X obj 7 280 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 596 106 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -139,7 +135,6 @@ of your soundfile);
 #X text 21 12 this abstraction uses the pd-implementation of the phase
 vocoder;
 #X restore 7 279 pd references;
-#X obj 397 139 pp.fft-stretch~ 1024 4;
 #X obj 525 87 sig~;
 #X floatatom 525 68 5 0 0 0 - - -;
 #X text 561 69 transposition(cents);
@@ -148,13 +143,21 @@ vocoder;
 #X text 11 61 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
 #X text 131 73 \$2: overlap \, default: 4;
-#X connect 4 0 22 4;
-#X connect 5 0 22 0;
-#X connect 5 1 22 1;
-#X connect 6 0 22 2;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 open symbol \, play 0 \, freeze 0 \, speed 100 \, transposition
+0 \, position 0 \, position% 0 \, loop 0 \, phaselock 0 \, blocksize
+1024 \, overlap 4 \,;
+#X connect 0 0 1 0;
+#X restore 570 178 pd message-out;
+#X obj 397 139 pp.fft-stretch~ 1024 4;
+#X connect 4 0 29 4;
+#X connect 5 0 29 0;
+#X connect 5 1 29 1;
+#X connect 6 0 29 2;
 #X connect 7 0 6 0;
-#X connect 22 0 0 0;
-#X connect 22 1 0 1;
-#X connect 22 2 9 0;
-#X connect 23 0 22 3;
-#X connect 24 0 23 0;
+#X connect 21 0 29 3;
+#X connect 22 0 21 0;
+#X connect 29 0 0 0;
+#X connect 29 1 0 1;
+#X connect 29 2 28 0;

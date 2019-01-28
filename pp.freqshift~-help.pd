@@ -1,21 +1,10 @@
-#N canvas 387 125 692 309 10;
+#N canvas 387 125 760 307 10;
 #X obj 390 264 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 537 231 frequency-shift 0;
 #X obj 462 144 sig~;
-#X floatatom 462 122 5 0 0 0 - - -, f 5;
-#X obj 537 159 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#N canvas 561 87 338 209 control-messages 0;
-#X obj 57 127 outlet;
-#X floatatom 57 34 5 0 0 0 - - -, f 5;
-#X text 98 35 frequency shift in hz;
-#X msg 57 54 frequency-shift \$1;
-#X connect 1 0 3 0;
-#X connect 3 0 0 0;
-#X restore 537 159 pd control-messages;
-#X text 494 123 frequency shift in hz;
+#X floatatom 462 122 5 0 0 0 - - -;
+#X text 512 123 frequency shift in hz;
 #X text 11 34 single sideband modulation frequency shifter;
 #X text 68 79 1:(~)signal;
 #X text 10 80 Inlets:;
@@ -32,8 +21,7 @@
 #X obj 504 10 osc~ 880;
 #X obj 504 30 *~ 0.25;
 #X obj 389 74 *~ 0.33;
-#X obj 389 187 pp.freqshift~ 100;
-#X obj 5 282 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 599 176 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -50,15 +38,24 @@ coefficients that katja intruduced in her blog instead of [hilbert~]
 ;
 #X restore 5 282 pd references;
 #X text 68 103 3:control-messages;
-#X connect 3 0 23 1;
-#X connect 4 0 3 0;
-#X connect 6 0 23 2;
-#X connect 17 0 19 0;
-#X connect 18 0 22 0;
-#X connect 19 0 22 0;
-#X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 23 0 0 0;
-#X connect 23 0 0 1;
-#X connect 23 1 2 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 frequency-shift 0;
+#X connect 0 0 1 0;
+#X restore 537 226 pd message-out;
+#X obj 389 187 pp.freqshift~ 100;
+#X floatatom 537 144 5 0 0 0 - - -;
+#X msg 537 164 frequency-shift \$1;
+#X connect 2 0 24 1;
+#X connect 3 0 2 0;
+#X connect 14 0 16 0;
+#X connect 15 0 19 0;
+#X connect 16 0 19 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 24 0;
+#X connect 24 0 0 0;
+#X connect 24 0 0 1;
+#X connect 24 1 23 0;
+#X connect 25 0 26 0;
+#X connect 26 0 24 2;

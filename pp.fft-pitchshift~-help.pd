@@ -33,7 +33,7 @@
 #X restore 570 117 pd control-messages;
 #X text 10 93 Inlets:;
 #X text 11 161 Outlets:;
-#X obj 7 280 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 596 106 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -52,7 +52,6 @@ vocoder;
 ;
 #X text 131 58 \$2: overlap \, default: 4;
 #X obj 397 139 pp.fft-pitchshift~ 1024 4;
-#X msg 570 180 transposition 0 \, blocksize 1024 \, overlap 4 \,;
 #X obj 453 21 osc~ 440;
 #X obj 396 21 osc~ 220;
 #X obj 453 42 *~ 0.5;
@@ -64,15 +63,21 @@ vocoder;
 #X text 67 117 3:control-messages;
 #X text 67 161 1:(~)transposed signal;
 #X text 67 175 2:message;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 blocksize 1024 \, overlap 4 \, threshold 0 \, gate 0 \,
+gain 0 \, dry/wet 100 \,;
+#X connect 0 0 1 0;
+#X restore 570 177 pd message-out;
 #X connect 4 0 14 2;
 #X connect 9 0 14 1;
 #X connect 10 0 9 0;
 #X connect 14 0 0 0;
 #X connect 14 0 0 1;
-#X connect 14 1 15 0;
-#X connect 16 0 18 0;
-#X connect 17 0 21 0;
-#X connect 18 0 21 0;
+#X connect 14 1 26 0;
+#X connect 15 0 17 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
+#X connect 18 0 19 0;
 #X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 14 0;
+#X connect 20 0 14 0;

@@ -2,8 +2,6 @@
 #X obj 390 259 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 563 171 frequency 1645.33 \, blocksize 1024 \, overlap 4 \,
-;
 #X obj 563 103 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 374 373 control-messages 0;
@@ -42,7 +40,6 @@
 #X text 11 53 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
 #X text 131 65 \$2: overlap \, default: 4;
-#X obj 390 128 pp.fft-split-st~ 1024 4;
 #X text 68 95 1:(~)signal left;
 #X text 68 107 2:(~)signal right;
 #X text 68 120 3:(~)frequency(hz);
@@ -54,13 +51,19 @@
 #X obj 520 258 pp.out~;
 #X text 12 33 stereo version of [pp.fft-split~];
 #X text 68 132 4:control-messages;
-#X connect 4 0 14 3;
-#X connect 8 0 14 0;
-#X connect 8 0 14 1;
-#X connect 9 0 10 0;
-#X connect 10 0 14 2;
-#X connect 14 0 0 0;
-#X connect 14 1 0 1;
-#X connect 14 2 23 0;
-#X connect 14 3 23 1;
-#X connect 14 4 2 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 frequency 0 \, blocksize 1024 \, overlap 4 \,;
+#X connect 0 0 1 0;
+#X restore 563 167 pd message-out;
+#X obj 390 128 pp.fft-split-st~ 1024 4;
+#X connect 3 0 25 3;
+#X connect 7 0 25 0;
+#X connect 7 0 25 1;
+#X connect 8 0 9 0;
+#X connect 9 0 25 2;
+#X connect 25 0 0 0;
+#X connect 25 1 0 1;
+#X connect 25 2 21 0;
+#X connect 25 3 21 1;
+#X connect 25 4 24 0;

@@ -2,8 +2,6 @@
 #X obj 390 255 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 562 191 blocksize 1024 \, overlap 4 \, threshold 0 \, gate 0
-\, gain 0 \, dry/wet 100 \,;
 #X obj 562 123 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 374 373 control-messages 0;
@@ -51,7 +49,7 @@
 #X obj 10 16 cnv 15 10 10 empty empty pp.fft-gate-st~ 0 0 2 16 -233017
 -262144 0;
 #X obj 407 45 noise~;
-#X text 573 162 <-- click to open GUI;
+#X text 576 162 <-- click to open GUI;
 #X text 67 229 3:message;
 #X text 11 69 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
@@ -73,17 +71,23 @@
 #X text 67 216 2:(~)signal (noisy part) right;
 #X obj 517 255 pp.out~;
 #X text 11 39 stereo version of [pp.fft-gate~];
-#X connect 4 0 17 2;
-#X connect 8 0 14 0;
-#X connect 14 0 16 1;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 blocksize 1024 \, overlap 4 \, threshold 0 \, gate 0 \,
+gain 0 \, dry/wet 100 \,;
+#X connect 0 0 1 0;
+#X restore 562 189 pd message-out;
+#X connect 3 0 16 2;
+#X connect 7 0 13 0;
+#X connect 13 0 15 1;
+#X connect 14 0 15 0;
 #X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 17 0 0 0;
-#X connect 17 1 0 1;
-#X connect 17 2 28 0;
-#X connect 17 3 28 1;
-#X connect 17 4 2 0;
-#X connect 18 0 19 0;
-#X connect 19 0 20 1;
-#X connect 20 0 17 1;
-#X connect 21 0 20 0;
+#X connect 16 0 0 0;
+#X connect 16 1 0 1;
+#X connect 16 2 27 0;
+#X connect 16 3 27 1;
+#X connect 16 4 29 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 1;
+#X connect 19 0 16 1;
+#X connect 20 0 19 0;

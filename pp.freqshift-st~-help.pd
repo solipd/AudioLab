@@ -1,7 +1,26 @@
-#N canvas 88 219 692 309 10;
+#N canvas 387 125 760 307 10;
+#X obj 390 264 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 5 282 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 486 139 sig~;
+#X floatatom 486 117 5 0 0 0 - - -;
+#X text 536 118 frequency shift in hz;
+#X text 68 79 1:(~)signal;
+#X text 10 80 Inlets:;
+#X text 68 91 2:(~)frequency-shift in hz;
+#X text 10 120 Outlets:;
+#X text 68 120 1:(~)shifted signal;
+#X text 68 132 2:message;
+#X text 10 60 Creation arguments: none;
+#X obj 12 20 cnv 15 10 10 empty empty pp.freqshift-st~ 0 0 2 16 -233017
+-262144 0;
+#X obj 446 10 osc~ 440;
+#X obj 389 10 osc~ 220;
+#X obj 446 31 *~ 0.5;
+#X obj 504 10 osc~ 880;
+#X obj 504 30 *~ 0.25;
+#X obj 389 74 *~ 0.33;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 599 176 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -17,51 +36,27 @@
 coefficients that katja intruduced in her blog instead of [hilbert~]
 ;
 #X restore 5 282 pd references;
-#X obj 394 267 pp.out~;
-#X msg 541 209 frequency-shift 0;
-#X obj 490 118 sig~;
-#X floatatom 490 96 5 0 0 0 - - -, f 5;
-#X obj 541 137 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#N canvas 561 87 338 209 control-messages 0;
-#X obj 57 127 outlet;
-#X floatatom 57 34 5 0 0 0 - - -, f 5;
-#X text 98 35 frequency shift in hz;
-#X msg 57 54 frequency-shift \$1;
-#X connect 1 0 3 0;
-#X connect 3 0 0 0;
-#X restore 541 137 pd control-messages;
-#X text 522 97 frequency shift in hz;
-#X obj 450 17 osc~ 440;
-#X obj 393 17 osc~ 220;
-#X obj 450 38 *~ 0.5;
-#X obj 508 17 osc~ 880;
-#X obj 508 37 *~ 0.25;
-#X obj 393 81 *~ 0.33;
-#X obj 393 165 pp.freqshift-st~ 100;
-#X text 10 79 Inlets:;
-#X text 10 132 Outlets:;
-#X text 68 155 2:message;
-#X text 10 58 Creation arguments: none;
-#X obj 14 18 cnv 15 10 10 empty empty pp.freqshift-st~ 0 0 2 16 -233017
--262144 0;
-#X text 11 33 stereo version of [pp.freqshift~];
-#X text 68 78 1:(~)signal left;
-#X text 68 90 2:(~)signal right;
-#X text 68 102 3:(~)frequency-shift in hz;
-#X text 68 132 1:(~)shifted signal left;
-#X text 68 144 1:(~)shifted signal right;
-#X text 68 114 4:control-messages;
-#X connect 5 0 16 2;
-#X connect 6 0 5 0;
-#X connect 8 0 16 3;
-#X connect 10 0 12 0;
-#X connect 11 0 15 0;
-#X connect 12 0 15 0;
-#X connect 13 0 14 0;
-#X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 15 0 16 1;
-#X connect 16 0 3 0;
-#X connect 16 1 3 1;
-#X connect 16 2 4 0;
+#X text 68 103 3:control-messages;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 frequency-shift 0;
+#X connect 0 0 1 0;
+#X restore 537 226 pd message-out;
+#X floatatom 537 144 5 0 0 0 - - -;
+#X msg 537 164 frequency-shift \$1;
+#X obj 389 187 pp.freqshift-st~ 100;
+#X text 11 34 stereo version of [pp.freqshift~];
+#X connect 2 0 25 2;
+#X connect 3 0 2 0;
+#X connect 13 0 15 0;
+#X connect 14 0 18 0;
+#X connect 15 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 25 0;
+#X connect 18 0 25 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 3;
+#X connect 25 0 0 0;
+#X connect 25 1 0 1;
+#X connect 25 2 22 0;

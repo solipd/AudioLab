@@ -6,8 +6,7 @@
 #X obj 12 20 cnv 15 10 10 empty empty pp.out~ 0 0 2 16 -233017 -262144
 0;
 #X text 10 59 Creation arguments: input channel;
-#X msg 452 193 volume 80;
-#X floatatom 567 93 5 0 1e+06 0 - - -, f 5;
+#X floatatom 567 93 5 0 1e+06 0 - - -;
 #X msg 567 117 volume \$1;
 #X text 606 96 db;
 #X obj 452 150 pp.out~;
@@ -17,8 +16,13 @@
 #X text 68 107 3:control-messages;
 #X text 68 127 1:message;
 #X obj 453 52 osc~ 440;
-#X connect 6 0 7 0;
-#X connect 7 0 9 2;
-#X connect 9 0 5 0;
-#X connect 15 0 9 0;
-#X connect 15 0 9 1;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 volume 0;
+#X connect 0 0 1 0;
+#X restore 452 192 pd message-out;
+#X connect 5 0 6 0;
+#X connect 6 0 8 2;
+#X connect 8 0 15 0;
+#X connect 14 0 8 0;
+#X connect 14 0 8 1;

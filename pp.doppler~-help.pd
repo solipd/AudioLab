@@ -2,8 +2,6 @@
 #X obj 390 259 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 537 192 pitch-mod 0 \, amp-mod 100 \, pan-mod 100 \, damping
-100 \,;
 #X text 68 104 1:(~)signal;
 #X text 10 105 Inlets:;
 #X text 10 151 Outlets:;
@@ -12,7 +10,7 @@
 #X text 550 162 <-- click to open GUI;
 #X obj 389 148 pp.doppler~;
 #X text 10 55 Creation arguments: none;
-#X obj 537 125 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 537 125 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 423 269 control-messages 0;
 #X obj 70 219 outlet;
@@ -69,12 +67,18 @@
 #X text 68 177 3:message;
 #X text 68 164 2:(~)pan modulation;
 #X obj 390 215 pp.pan~ sqrt;
-#X connect 8 0 20 0;
-#X connect 8 1 20 1;
-#X connect 8 2 2 0;
-#X connect 11 0 8 2;
-#X connect 12 0 8 0;
-#X connect 13 0 14 0;
-#X connect 14 0 8 1;
-#X connect 20 0 0 0;
-#X connect 20 1 0 1;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 open symbol \, play 0 \, playback-speed 100 \, position
+0 \, position% 0 \, loop 0 \, normalize 0 \,;
+#X connect 0 0 1 0;
+#X restore 537 187 pd message-out;
+#X connect 7 0 19 0;
+#X connect 7 1 19 1;
+#X connect 7 2 20 0;
+#X connect 10 0 7 2;
+#X connect 11 0 7 0;
+#X connect 12 0 13 0;
+#X connect 13 0 7 1;
+#X connect 19 0 0 0;
+#X connect 19 1 0 1;

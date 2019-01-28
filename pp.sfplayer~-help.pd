@@ -1,11 +1,11 @@
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 1219-template float x float y float c float s float th float
+stretch array 1219-plus 1219-template-y array 1219-minus 1219-template-y
 ;
-#N struct 1008-template-y float y;
-#N struct 1009-template float x float y float c float s float th float
-stretch array 1009-plus 1009-template-y array 1009-minus 1009-template-y
+#N struct 1219-template-y float y;
+#N struct 1220-template float x float y float c float s float th float
+stretch array 1220-plus 1220-template-y array 1220-minus 1220-template-y
 ;
-#N struct 1009-template-y float y;
+#N struct 1220-template-y float y;
 #N canvas 170 239 1023 309 10;
 #X obj 397 256 pp.out~;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -83,9 +83,6 @@ of your soundfile);
 #X text 547 51 playback-speed in %;
 #X text 10 29 sfplayer~ allows clean variable-speed playback of extra
 long soundfiles (up to 16 min. at 44100 hz. sampling rate);
-#X msg 570 178 open /home/philipp/Documents/Pd/Backup/pp.tools/Examples/audio/IR-Dual-CC3600-4.wav
-\, play 0 \, playback-speed 100 \, position 0 \, position% 0 \, loop
-0 \, normalize 0 \,;
 #X text 579 153 <-- click to open GUI;
 #X text 10 85 Inlets:;
 #X text 67 84 1:(~)record-in left;
@@ -109,10 +106,16 @@ long soundfiles (up to 16 min. at 44100 hz. sampling rate);
 #X text 21 12 the technique of playing back a long table via onset
 is exposed in pd-examples B16.long-varispeed.pd;
 #X restore 7 279 pd references;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 open symbol \, play 0 \, playback-speed 100 \, position
+0 \, position% 0 \, loop 0 \, normalize 0 \,;
+#X connect 0 0 1 0;
+#X restore 570 178 pd message-out;
 #X connect 4 0 5 3;
 #X connect 5 0 0 0;
 #X connect 5 1 0 1;
-#X connect 5 2 11 0;
+#X connect 5 2 24 0;
 #X connect 6 0 5 0;
 #X connect 6 1 5 1;
 #X connect 7 0 5 2;

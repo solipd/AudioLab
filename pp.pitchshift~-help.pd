@@ -1,4 +1,4 @@
-#N canvas 119 249 736 306 10;
+#N canvas 110 310 736 306 10;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 71 78 1:(~)signal;
@@ -12,7 +12,7 @@
 50;
 #X text 71 90 2:(~)transposition in cents;
 #X text 71 119 1:(~)transposed signal;
-#X obj 4 281 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 4 281 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 596 106 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -25,17 +25,16 @@
 pitch shifter from the pd-examples.;
 #X restore 4 281 pd references;
 #X obj 397 257 pp.out~;
-#X msg 544 242 transposition 0 \, window 100 \,;
 #X obj 469 155 sig~;
-#X floatatom 469 133 5 0 0 0 - - -, f 5;
-#X obj 544 170 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+#X floatatom 469 133 5 0 0 0 - - -;
+#X obj 544 170 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 338 209 control-messages 0;
 #X obj 57 127 outlet;
-#X floatatom 57 34 5 0 0 0 - - -, f 5;
+#X floatatom 57 34 5 0 0 0 - - -;
 #X text 98 35 frequency shift in hz;
 #X msg 101 97 window \$1;
-#X floatatom 101 77 5 0 0 0 - - -, f 5;
+#X floatatom 101 77 5 0 0 0 - - -;
 #X text 168 99 window size in ms;
 #X msg 57 54 transposition \$1;
 #X connect 1 0 6 0;
@@ -52,15 +51,20 @@ pitch shifter from the pd-examples.;
 #X obj 396 198 pp.pitchshift~ 100;
 #X text 501 134 transposition in cents;
 #X text 71 102 3:control-messages;
-#X connect 14 0 24 1;
-#X connect 15 0 14 0;
-#X connect 17 0 24 2;
-#X connect 18 0 20 0;
-#X connect 19 0 23 0;
-#X connect 20 0 23 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 transposition 0 \, window 100 \,;
+#X connect 0 0 1 0;
+#X restore 544 236 pd message-out;
+#X connect 13 0 23 1;
+#X connect 14 0 13 0;
+#X connect 16 0 23 2;
+#X connect 17 0 19 0;
+#X connect 18 0 22 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 24 0 12 0;
-#X connect 24 0 12 1;
-#X connect 24 1 13 0;
+#X connect 23 0 12 0;
+#X connect 23 0 12 1;
+#X connect 23 1 26 0;

@@ -1,17 +1,13 @@
-#N canvas 172 211 959 306 10;
+#N canvas 172 211 794 306 10;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 567 221 speaker-1 -0.42623 0.909836 \, speaker-2 0.418033 0.909836
-\, speaker-3 -0.909836 0.426229 \, speaker-4 0.901639 0.426229 \, speaker-5
--0.909836 -0.418033 \, speaker-6 0.901639 -0.418033 \, speaker-7 -0.42623
--0.901639 \, speaker-8 0.418033 -0.901639 \, cos \,;
 #X text 72 107 1:(~)signal;
 #X text 14 108 Inlets:;
 #X text 14 179 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 -233017 -262144
 0;
-#X text 550 197 <-- click to open GUI;
-#X obj 537 160 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X text 550 189 <-- click to open GUI;
+#X obj 537 152 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 423 472 control-messages 0;
 #X obj 70 439 outlet;
@@ -44,24 +40,23 @@
 #X connect 14 0 0 0;
 #X connect 18 0 0 0;
 #X connect 19 0 0 0;
-#X restore 537 160 pd control-messages;
-#X obj 389 183 pp.spat8~;
-#X obj 390 17 noise~;
-#X obj 388 237 pp.mult~ 8;
+#X restore 537 152 pd control-messages;
+#X obj 390 6 noise~;
+#X obj 388 242 pp.mult~ 8;
 #X obj 389 287 dac~ 1 2 3 4 5 6 7 8;
-#X obj 419 58 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 419 50 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 416 122 5 0 0 0 - - -;
-#X obj 416 142 sig~;
-#X obj 463 14 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7700 1;
-#X floatatom 462 122 5 0 0 0 - - -;
-#X obj 462 142 sig~;
-#X text 423 104 x;
-#X text 481 105 y;
-#X floatatom 504 123 5 -1 1 0 - - -;
-#X obj 504 143 sig~;
-#X text 540 122 spatial spread (-1 \, 1);
+#X floatatom 416 114 5 0 0 0 - - -;
+#X obj 416 134 sig~;
+#X obj 463 6 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 462 114 5 0 0 0 - - -;
+#X obj 462 134 sig~;
+#X text 423 96 x;
+#X text 481 97 y;
+#X floatatom 504 115 5 -1 1 0 - - -;
+#X obj 504 135 sig~;
+#X text 540 114 spatial spread (-1 \, 1);
 #X text 72 119 2:(~)x-position;
 #X text 72 131 3:(~)y-position;
 #X text 72 143 4:(~)spatial spread;
@@ -78,29 +73,38 @@
 #X text 7 36 8 channel distance based amplitude panning;
 #X text 12 64 Creation arguments: panning law: "cos" or "sqrt";
 #X text 133 77 default: cos;
-#X connect 8 0 9 4;
-#X connect 9 0 11 0;
-#X connect 9 1 11 1;
-#X connect 9 2 11 2;
-#X connect 9 3 11 3;
-#X connect 9 4 11 4;
-#X connect 9 5 11 5;
-#X connect 9 6 11 6;
-#X connect 9 7 11 7;
-#X connect 9 8 1 0;
-#X connect 10 0 9 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 speaker-1 -0.42623 0.909836 \, speaker-2 0.418033 0.909836
+\, speaker-3 -0.909836 0.426229 \, speaker-4 0.901639 0.426229 \, speaker-5
+-0.909836 -0.418033 \, speaker-6 0.901639 -0.418033 \, speaker-7 -0.42623
+-0.901639 \, speaker-8 0.418033 -0.901639 \,  \,;
+#X connect 0 0 1 0;
+#X restore 539 212 pd message-out;
+#X obj 389 175 pp.spat8~;
+#X connect 7 0 39 4;
+#X connect 8 0 39 0;
+#X connect 9 0 10 0;
+#X connect 9 1 10 1;
+#X connect 9 2 10 2;
+#X connect 9 3 10 3;
+#X connect 9 4 10 4;
+#X connect 9 5 10 5;
+#X connect 9 6 10 6;
 #X connect 11 0 12 0;
-#X connect 11 1 12 1;
-#X connect 11 2 12 2;
-#X connect 11 3 12 3;
-#X connect 11 4 12 4;
-#X connect 11 5 12 5;
-#X connect 11 6 12 6;
-#X connect 13 0 14 0;
+#X connect 12 0 13 0;
+#X connect 13 0 39 1;
 #X connect 14 0 15 0;
-#X connect 15 0 9 1;
-#X connect 16 0 17 0;
-#X connect 17 0 18 0;
-#X connect 18 0 9 2;
-#X connect 21 0 22 0;
-#X connect 22 0 9 3;
+#X connect 15 0 16 0;
+#X connect 16 0 39 2;
+#X connect 19 0 20 0;
+#X connect 20 0 39 3;
+#X connect 39 0 9 0;
+#X connect 39 1 9 1;
+#X connect 39 2 9 2;
+#X connect 39 3 9 3;
+#X connect 39 4 9 4;
+#X connect 39 5 9 5;
+#X connect 39 6 9 6;
+#X connect 39 7 9 7;
+#X connect 39 8 38 0;

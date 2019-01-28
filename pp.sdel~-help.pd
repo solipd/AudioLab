@@ -7,7 +7,7 @@
 #X obj 12 20 cnv 15 10 10 empty empty pp.sdel~ 0 0 2 16 -233017 -262144
 0;
 #X msg 538 200 delay 5;
-#X floatatom 538 100 5 0 1e+23 0 - - -, f 5;
+#X floatatom 538 100 5 0 1e+23 0 - - -;
 #X msg 538 120 delay \$1;
 #X text 11 34 samplewise delay;
 #X text 10 59 Creation arguments: delay in samples;
@@ -18,7 +18,7 @@
 #X array imp 1 float 3;
 #A 0 0.8;
 #X coords 0 1 1 0 10 10 1 0 0;
-#X restore 527 62 graph;
+#X restore 541 62 graph;
 #X obj 392 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 438 58 tabplay~ imp;

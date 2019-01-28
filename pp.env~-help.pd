@@ -2,13 +2,12 @@
 #X obj 390 260 pp.out~;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 537 122 responsiveness 20;
 #X text 103 116 1:(~)signal;
 #X text 45 117 Inlets:;
 #X text 45 157 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.env~ 0 0 2 16 -233017 -262144
 0;
-#X obj 6 280 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 6 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 599 176 506 104 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -21,7 +20,7 @@
 #X text 30 70 Creation arguments:none;
 #X obj 389 85 pp.env~;
 #X msg 537 63 responsiveness \$1;
-#X floatatom 537 44 5 0 0 0 - - -, f 5;
+#X floatatom 537 44 5 0 0 0 - - -;
 #X obj 404 142 noise~;
 #X obj 390 169 *~;
 #X obj 390 14 phasor~ -2;
@@ -29,11 +28,16 @@
 #X text 103 157 1:(~)env;
 #X text 103 169 2:message;
 #X text 103 129 2:control-messages;
-#X connect 10 0 14 0;
-#X connect 10 1 2 0;
-#X connect 11 0 10 1;
-#X connect 12 0 11 0;
-#X connect 13 0 14 1;
-#X connect 14 0 0 0;
-#X connect 14 0 0 1;
-#X connect 15 0 10 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 responsiveness 20;
+#X connect 0 0 1 0;
+#X restore 537 126 pd message-out;
+#X connect 9 0 13 0;
+#X connect 9 1 19 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 13 1;
+#X connect 13 0 0 0;
+#X connect 13 0 0 1;
+#X connect 14 0 9 0;

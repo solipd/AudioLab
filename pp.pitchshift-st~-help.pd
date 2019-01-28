@@ -1,7 +1,7 @@
 #N canvas 119 249 736 306 10;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 4 281 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 4 281 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 596 106 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
@@ -14,17 +14,16 @@
 pitch shifter from the pd-examples.;
 #X restore 4 281 pd references;
 #X obj 393 261 pp.out~;
-#X msg 540 217 transposition 0 \, window 100 \,;
 #X obj 490 131 sig~;
-#X floatatom 490 109 5 0 0 0 - - -, f 5;
-#X obj 540 145 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+#X floatatom 490 109 5 0 0 0 - - -;
+#X obj 540 145 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 338 209 control-messages 0;
 #X obj 57 127 outlet;
-#X floatatom 57 34 5 0 0 0 - - -, f 5;
+#X floatatom 57 34 5 0 0 0 - - -;
 #X text 98 35 frequency shift in hz;
 #X msg 101 97 window \$1;
-#X floatatom 101 77 5 0 0 0 - - -, f 5;
+#X floatatom 101 77 5 0 0 0 - - -;
 #X text 168 99 window size in ms;
 #X msg 57 54 transposition \$1;
 #X connect 1 0 6 0;
@@ -54,16 +53,21 @@ pitch shifter from the pd-examples.;
 #X text 70 140 2:(~)transposed signal right;
 #X text 70 152 3:message;
 #X text 70 105 4:control-messages;
-#X connect 5 0 16 2;
-#X connect 6 0 5 0;
-#X connect 8 0 16 3;
-#X connect 9 0 11 0;
-#X connect 10 0 14 0;
-#X connect 11 0 14 0;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 transposition 0 \, window 100 \,;
+#X connect 0 0 1 0;
+#X restore 540 214 pd message-out;
+#X connect 4 0 15 2;
+#X connect 5 0 4 0;
+#X connect 7 0 15 3;
+#X connect 8 0 10 0;
+#X connect 9 0 13 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 16 0;
-#X connect 14 0 16 1;
-#X connect 16 0 3 0;
-#X connect 16 1 3 1;
-#X connect 16 2 4 0;
+#X connect 13 0 15 0;
+#X connect 13 0 15 1;
+#X connect 15 0 3 0;
+#X connect 15 1 3 1;
+#X connect 15 2 28 0;
