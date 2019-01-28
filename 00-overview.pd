@@ -1,0 +1,112 @@
+#N struct 1224-template float x float y float c float s float th float
+stretch array 1224-plus 1224-template-y array 1224-minus 1224-template-y
+;
+#N struct 1224-template-y float y;
+#N struct 1225-template float x float y float c float s float th float
+stretch array 1225-plus 1225-template-y array 1225-minus 1225-template-y
+;
+#N struct 1225-template-y float y;
+#N struct 1227-template float x float y float c float s float th float
+stretch array 1227-plus 1227-template-y array 1227-minus 1227-template-y
+;
+#N struct 1227-template-y float y;
+#N struct 1359-xt float x float y;
+#N struct 1359-yt float x float y;
+#N struct 1367-template float x float y float c float s float th float
+stretch array 1367-plus 1367-template-y array 1367-minus 1367-template-y
+;
+#N struct 1367-template-y float y;
+#N struct 1368-template float x float y float c float s float th float
+stretch array 1368-plus 1368-template-y array 1368-minus 1368-template-y
+;
+#N struct 1368-template-y float y;
+#N canvas 420 52 812 716 10;
+#X obj 231 168 pp.fft-stretch~;
+#X obj 231 124 pp.grainer~;
+#X obj 69 608 pp.dynamics~;
+#X obj 33 935 pp.fft-gate~;
+#X obj 229 1208 pp.record~;
+#X obj 253 1381 pp.spectrum~;
+#X obj 287 1161 pp.out~;
+#X obj 34 975 pp.fft-pitchshift~;
+#X obj 229 936 pp.fft-gate-st~;
+#X obj 256 255 pp.pan~;
+#X obj 70 441 pp.freqshift~;
+#X obj 253 441 pp.freqshift-st~;
+#X obj 231 82 pp.sfplayer~;
+#X obj 253 480 pp.pitchshift-st~ 50;
+#X obj 69 481 pp.pitchshift~ 50;
+#X obj 34 891 pp.fft-split~;
+#X obj 229 891 pp.fft-split-st~;
+#X obj 254 564 pp.vcfilter-st~;
+#X obj 69 566 pp.vcfilter~;
+#X obj 230 976 pp.fft-pitchshift-st~;
+#X obj 253 607 pp.dynamics-st~;
+#X obj 34 838 pp.fft-block~;
+#X obj 229 838 pp.fft-block-st~;
+#X obj 34 1017 pp.fft-timbre~;
+#X obj 229 1018 pp.fft-timbre-st~;
+#X obj 69 649 pp.env~;
+#X obj 255 301 pp.spat8~;
+#X obj 255 346 pp.doppler~;
+#X obj 229 1058 pp.fft-partconv-st~;
+#X obj 309 1337 pp.lfnoise~;
+#X obj 33 1058 pp.fft-partconv~;
+#X obj 301 1294 pp.sdel~;
+#X obj 253 649 pp.env-st~;
+#X obj 146 1161 pp.in~;
+#X obj 239 1252 pp.mult~;
+#X text 16 62 Soundfile processing;
+#X text 21 395 Effects;
+#X text 260 419 stereo;
+#X text 74 418 mono;
+#X text 15 796 Spectral processing;
+#X text 37 818 mono;
+#X text 237 819 stereo;
+#X text 18 234 Spatialisation;
+#X text 36 1126 Misc.;
+#X obj 69 692 pp.graindelay~;
+#X obj 251 744 pp.rev~;
+#X obj 423 1 cnv 15 450 1500 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj -1 56 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj -1 229 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj -2 390 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj -1 788 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 429 5 switch~ 0;
+#X text 429 85 variable-speed soundfile player;
+#X text 428 124 granular sampler;
+#X text 429 167 pvoc time stretching & pitch shifting;
+#X text 428 261 constant power panning;
+#X text 430 347 doppler effect;
+#X text 428 443 frequency shifting;
+#X text 429 481 pitch shifting;
+#X text 430 609 compressor/expander;
+#X text 430 650 simple envelope follower;
+#X text 431 694 granular delay;
+#X text 429 745 reverberator based on [rev3~];
+#X text 428 842 audio block delay;
+#X text 429 893 spectral splitter;
+#X text 429 941 spectral gate;
+#X text 431 978 pvoc based pitchshifter;
+#X text 429 1020 spectral bin-reordering;
+#X text 430 1060 partitioned convolution;
+#X obj -1 1115 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 429 305 8-channel distance based amplitude panning;
+#X text 429 1158 input & output;
+#X text 429 1209 record to soundfile;
+#X text 429 1249 signal multiplier;
+#X text 431 1298 samplewise delay;
+#X text 430 1340 low frequency noise generator;
+#X text 431 1386 spectrum analyser;
+#X text 429 565 signal controlled filter (lowpass \, highpass \, resonant)
+;
+#X obj 69 523 pp.eqfilter~;
+#X obj 253 522 pp.eqfilter-st~;
+#X text 429 522 eq-filter (lowpass \, highpass \, resonant \, bandpass
+\, notch \, peaking \, lowshelf \, highshelf or allpass);

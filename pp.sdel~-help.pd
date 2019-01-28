@@ -1,0 +1,42 @@
+#N canvas 320 226 944 308 10;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 10 80 Inlets:;
+#X text 10 120 Outlets:;
+#X text 68 132 2:message;
+#X obj 12 20 cnv 15 10 10 empty empty pp.sdel~ 0 0 2 16 -233017 -262144
+0;
+#X msg 538 200 delay 5;
+#X floatatom 538 100 5 0 1e+23 0 - - -, f 5;
+#X msg 538 120 delay \$1;
+#X text 11 34 samplewise delay;
+#X text 10 59 Creation arguments: delay in samples;
+#X text 68 81 1:(~) signal;
+#X text 68 120 1:(~)delayed signal;
+#X text 68 93 2:control-message;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array imp 1 float 3;
+#A 0 0.8;
+#X coords 0 1 1 0 10 10 1 0 0;
+#X restore 527 62 graph;
+#X obj 392 24 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 438 58 tabplay~ imp;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array delayed 70 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0;
+#X coords 0 1 70 -1 200 140 1 0 0;
+#X restore 640 107 graph;
+#X obj 436 232 tabwrite~ delayed;
+#X text 637 245 0;
+#X text 829 246 70 samps.;
+#X obj 437 156 pp.sdel~ 5;
+#X connect 6 0 7 0;
+#X connect 7 0 20 1;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
+#X connect 15 0 20 0;
+#X connect 20 0 17 0;
+#X connect 20 1 5 0;

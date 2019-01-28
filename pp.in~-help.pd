@@ -1,0 +1,24 @@
+#N canvas 387 125 692 308 10;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 10 80 Inlets:;
+#X text 10 120 Outlets:;
+#X text 68 132 2:message;
+#X obj 12 20 cnv 15 10 10 empty empty pp.in~ 0 0 2 16 -233017 -262144
+0;
+#X text 11 34 microphone input;
+#X text 10 59 Creation arguments: input channel;
+#X obj 390 152 pp.in~;
+#X msg 514 193 volume 68.6589 \, channel 0 \,;
+#X floatatom 390 61 5 0 1e+06 0 - - -, f 5;
+#X msg 390 85 volume \$1;
+#X text 429 64 db;
+#X msg 460 85 channel \$1;
+#X floatatom 460 64 5 0 0 0 - - -, f 5;
+#X text 68 81 1:control-messages;
+#X text 68 120 1:(~)mic. signal;
+#X connect 7 1 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 12 0 7 0;
+#X connect 13 0 12 0;

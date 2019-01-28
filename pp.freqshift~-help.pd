@@ -1,0 +1,64 @@
+#N canvas 387 125 692 309 10;
+#X obj 390 264 pp.out~;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 537 231 frequency-shift 0;
+#X obj 462 144 sig~;
+#X floatatom 462 122 5 0 0 0 - - -, f 5;
+#X obj 537 159 cnv 15 118 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 561 87 338 209 control-messages 0;
+#X obj 57 127 outlet;
+#X floatatom 57 34 5 0 0 0 - - -, f 5;
+#X text 98 35 frequency shift in hz;
+#X msg 57 54 frequency-shift \$1;
+#X connect 1 0 3 0;
+#X connect 3 0 0 0;
+#X restore 537 159 pd control-messages;
+#X text 494 123 frequency shift in hz;
+#X text 11 34 single sideband modulation frequency shifter;
+#X text 68 79 1:(~)signal;
+#X text 10 80 Inlets:;
+#X text 68 91 2:(~)frequency-shift in hz;
+#X text 10 120 Outlets:;
+#X text 68 120 1:(~)shifted signal;
+#X text 68 132 2:message;
+#X text 10 60 Creation arguments: none;
+#X obj 12 20 cnv 15 10 10 empty empty pp.freqshift~ 0 0 2 16 -233017
+-262144 0;
+#X obj 446 10 osc~ 440;
+#X obj 389 10 osc~ 220;
+#X obj 446 31 *~ 0.5;
+#X obj 504 10 osc~ 880;
+#X obj 504 30 *~ 0.25;
+#X obj 389 74 *~ 0.33;
+#X obj 389 187 pp.freqshift~ 100;
+#X obj 5 282 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 504 105 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 21 2 single sideband modulation in the pd-examples:;
+#X text 132 15 PureData/audio-examples/H09.ssb.modulation.pd;
+#X text 21 15 help -> browser ->;
+#X text 21 84 http://yehar.com/blog/?p=368;
+#X text 21 69 http://www.katjaas.nl/hilbert/hilbert.html;
+#X text 20 31 this abstraction uses Olli Niemitalo's quadrature transform
+coefficients that katja intruduced in her blog instead of [hilbert~]
+;
+#X restore 5 282 pd references;
+#X text 68 103 3:control-messages;
+#X connect 3 0 23 1;
+#X connect 4 0 3 0;
+#X connect 6 0 23 2;
+#X connect 17 0 19 0;
+#X connect 18 0 22 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 23 1 2 0;

@@ -1,0 +1,48 @@
+#N canvas 260 164 872 308 10;
+#X obj 389 259 pp.out~;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X msg 518 201 blocksize 1024 \, overlap 4 \,;
+#X obj 518 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 374 373 control-messages 0;
+#X obj 74 262 outlet;
+#X msg 74 149 blocksize \$1;
+#X msg 74 125 512;
+#X msg 103 125 1024;
+#X msg 139 126 2048;
+#X msg 92 213 overlap \$1;
+#X msg 92 188 2;
+#X msg 121 189 4;
+#X msg 152 189 8;
+#X text 160 149 fft-blocksize;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X restore 518 117 pd control-messages;
+#X text 68 112 1:(~)signal;
+#X text 10 113 Inlets:;
+#X text 10 160 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.fft-block~ 0 0 2 16 -233017
+-262144 0;
+#X text 11 64 Creation arguments: \$1: fft-blocksize \, default: 1024
+;
+#X text 131 76 \$2: overlap \, default: 4;
+#X obj 389 148 pp.fft-block~ 1024 4;
+#X msg 390 29 1 \, 0 10;
+#X obj 390 50 vline~;
+#X text 12 41 block delay;
+#X text 68 176 2:message;
+#X text 68 160 1:(~)delayed signal;
+#X text 68 127 2:control-messages;
+#X connect 4 0 11 1;
+#X connect 11 0 0 0;
+#X connect 11 0 0 1;
+#X connect 11 1 2 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;

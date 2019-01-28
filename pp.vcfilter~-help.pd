@@ -1,0 +1,84 @@
+#N struct 1552-xt float x float y;
+#N struct 1552-yt float x float y;
+#N canvas 431 172 857 308 10;
+#X obj 390 265 pp.out~;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 537 82 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 397 outlet;
+#X floatatom 86 94 5 0 0 0 - - -;
+#X msg 86 114 frequency \$1;
+#X text 127 95 filter frequency in hz;
+#X floatatom 126 135 5 0 0 0 - - -;
+#X msg 126 155 q \$1;
+#X floatatom 137 179 5 0 0 0 - - -;
+#X msg 137 199 bandwith \$1;
+#X text 162 155 filter Q for Lowpass \, Highpass \, Reson;
+#X msg 152 288 lowpass;
+#X msg 152 308 highpass;
+#X msg 152 328 reson;
+#X text 159 270 filtertype;
+#X text 219 197 for Bandpass \, Notch \, Allpass;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 7 0;
+#X connect 7 0 0 0;
+#X connect 9 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X restore 537 82 pd control-messages;
+#X text 68 108 1:(~)signal;
+#X text 10 109 Inlets:;
+#X text 10 174 Outlets:;
+#X text 68 186 2:message;
+#X obj 12 20 cnv 15 10 10 empty empty pp.vcfilter~ 0 0 2 16 -233017
+-262144 0;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 15 71 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
+#X text 14 32 Filter coefficients are calculated following Robert Bristow-Johnsons
+Audio-EQ-cookbook rezipes:;
+#X restore 5 282 pd references;
+#X obj 389 9 noise~;
+#X text 10 56 Creation arguments:;
+#X text 68 174 1:(~)filtered signal;
+#X obj 389 110 pp.vcfilter~ lowpass;
+#X text 11 35 signal controlled filter;
+#X text 68 121 2:(~)frequency;
+#X floatatom 437 35 5 0 0 0 - - -;
+#X obj 437 55 sig~;
+#X floatatom 486 54 5 0 0 0 - - -;
+#X obj 486 74 sig~;
+#X text 473 36 filter frequency(hz);
+#X text 549 126 <-- click to open GUI;
+#X text 68 147 4:control-messages;
+#X obj 461 191 pp.spectrum~;
+#X text 622 204 <-- click to analyze;
+#X text 68 134 3:(~)filter-q;
+#X text 15 76 \$1: filtertype (lowpass \, highpass \, reson) \, default:
+lowpass;
+#N canvas 925 317 420 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 48 lowpass \, frequency 0 \, q 0 \,;
+#X connect 0 0 1 0;
+#X restore 537 147 pd message-out;
+#X text 522 57 Q;
+#X connect 3 0 14 3;
+#X connect 11 0 14 0;
+#X connect 14 0 0 0;
+#X connect 14 0 0 1;
+#X connect 14 0 24 0;
+#X connect 14 1 28 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 1;
+#X connect 19 0 20 0;
+#X connect 20 0 14 2;

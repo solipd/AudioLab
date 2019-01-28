@@ -1,0 +1,212 @@
+#N struct 1564-template float x float y float c float s float th float
+stretch array 1564-plus 1564-template-y array 1564-minus 1564-template-y
+;
+#N struct 1564-template-y float y;
+#N struct 1565-template float x float y float c float s float th float
+stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
+;
+#N struct 1565-template-y float y;
+#N canvas 163 197 954 363 10;
+#X declare -path ./Examples/audio;
+#X obj 397 312 pp.out~;
+#X obj 2 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.graindelay~ 0 0 2 16 -233017
+-262144 0;
+#X obj 545 152 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 49 52 837 682 control-messages 0;
+#X obj 62 475 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 62 496 metro 100;
+#X obj 62 517 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 87 517 bang to trigger the next grain;
+#X obj 487 35 cnv 15 250 150 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 510 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 510 77 int.grain-trigger \$1;
+#X floatatom 511 99 5 0 1e+13 0 - - -;
+#X msg 511 119 grain-distance \$1;
+#X floatatom 511 143 5 0 1e+16 0 - - -;
+#X msg 511 162 random-grain-distance \$1;
+#X text 538 59 internal trigger metro on/off;
+#X text 549 100 internal trigger speed;
+#X text 495 37 internal metro;
+#X obj 202 680 outlet;
+#X floatatom 209 99 5 0 1e+37 0 - - -;
+#X floatatom 208 139 5 0 1e+33 0 - - -;
+#X msg 202 118 grainsize \$1;
+#X text 286 119 grainsize in msec.;
+#X msg 202 159 random-grainsize \$1;
+#X floatatom 209 188 5 -1e+07 1e+10 0 - - -;
+#X floatatom 208 227 5 0 1e+20 0 - - -;
+#X msg 202 246 random-pitch \$1;
+#X msg 202 207 pitch \$1;
+#X floatatom 209 280 5 -100 100 0 - - -;
+#X floatatom 208 319 5 0 100 0 - - -;
+#X msg 202 299 panorama \$1;
+#X msg 202 338 random-panorama \$1;
+#X text 263 206 grain-pitch in cents;
+#X floatatom 208 371 5 -100 0 0 - - -;
+#X msg 202 390 amplitude \$1;
+#X floatatom 208 411 5 0 100 0 - - -;
+#X msg 202 431 random-amplitude \$1;
+#X obj 529 455 cnv 15 200 200 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X floatatom 541 501 5 0 20000 0 - - -;
+#X obj 533 462 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 533 481 filter-bypass \$1;
+#X msg 541 520 frequency \$1;
+#X floatatom 543 578 5 0 100000 0 - - -;
+#X msg 543 596 q \$1;
+#X floatatom 542 539 5 0 100 0 - - -;
+#X msg 542 558 random-frequency \$1;
+#X floatatom 544 616 5 0 100000 0 - - -;
+#X msg 544 634 random-q \$1;
+#X obj 513 196 cnv 15 280 250 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X obj 520 204 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 520 225 5 0 4 0 - - -;
+#X msg 520 245 env-type \$1;
+#X floatatom 519 287 5 0 1 0 - - -;
+#X msg 519 305 env-bias \$1;
+#X obj 522 268 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 518 346 5 0 1 0 - - -;
+#X obj 521 327 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 518 364 env-shape \$1;
+#X text 617 202 grain-envelope;
+#X text 649 461 grain-filter;
+#X floatatom 208 460 5 0 100 0 - - -;
+#X msg 202 480 dry/wet \$1;
+#X text 245 461 %;
+#X floatatom 209 7 5 0 1e+37 0 - - -;
+#X floatatom 208 47 5 0 1e+33 0 - - -;
+#X msg 202 26 delay \$1;
+#X msg 202 67 random-delay \$1;
+#X msg 517 397 set-env myenvelope;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array myenvelope 100 float 5;
+#A 0 0.00999975 0.00999975 0.00999337 0.0299938 0.0399941 0.0699947
+0.0699947 0.0899952 0.109996 0.139996 0.179997 0.199998 0.219998 0.249999
+0.360008 0.46001 0.500011 0.570013 0.590013 0.630014 0.680015 0.9 0.900001
+0.900001 0.900001 0.900001 0.890001 0.87 0.87 0.84 0.84 0.854999 0.829998
+0.819998 0.809998 0.769997 0.739996 0.719996 0.709995 0.689995 0.659994
+0.629994 0.589993 0.579992 0.569992 0.549992 0.519991 0.509991 0.48999
+0.46999 0.46999 0.46999 0.46999 0.46999 0.46999 0.46999 0.46999 0.46999
+0.47999 0.47999 0.48999 0.499991 0.499991 0.499991 0.504991 0.509991
+0.514991 0.519991 0.526658 0.533325 0.539992 0.539991 0.539991 0.544992
+0.549992 0.559992 0.550004 0.580004 0.600005 0.620005 0.635006 0.650006
+0.720008 0.760008 0.82001 0.83001 0.860011 0.84001 0.800009 0.760008
+0.720008 0.550004 0.259997 0.239997 0.179995 0.129994 0.109994 0.0299917
+0.0199915 0.00999129;
+#X coords 0 1 100 0 140 100 1 0 0;
+#X restore 646 344 graph;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 14 0;
+#X connect 5 0 6 0;
+#X connect 6 0 14 0;
+#X connect 7 0 8 0;
+#X connect 8 0 14 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 15 0 17 0;
+#X connect 16 0 19 0;
+#X connect 17 0 14 0;
+#X connect 19 0 14 0;
+#X connect 20 0 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 14 0;
+#X connect 23 0 14 0;
+#X connect 24 0 26 0;
+#X connect 25 0 27 0;
+#X connect 26 0 14 0;
+#X connect 27 0 14 0;
+#X connect 29 0 30 0;
+#X connect 30 0 14 0;
+#X connect 31 0 32 0;
+#X connect 32 0 14 0;
+#X connect 34 0 37 0;
+#X connect 35 0 36 0;
+#X connect 36 0 14 0;
+#X connect 37 0 14 0;
+#X connect 38 0 39 0;
+#X connect 39 0 14 0;
+#X connect 40 0 41 0;
+#X connect 41 0 14 0;
+#X connect 42 0 43 0;
+#X connect 43 0 14 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 47 0 14 0;
+#X connect 48 0 49 0;
+#X connect 49 0 14 0;
+#X connect 50 0 48 0;
+#X connect 51 0 53 0;
+#X connect 52 0 51 0;
+#X connect 53 0 14 0;
+#X connect 56 0 57 0;
+#X connect 57 0 14 0;
+#X connect 59 0 61 0;
+#X connect 60 0 62 0;
+#X connect 61 0 14 0;
+#X connect 62 0 14 0;
+#X connect 63 0 14 0;
+#X restore 545 152 pd control-messages;
+#X obj 397 24 adc~;
+#X text 555 192 <-- click to open GUI;
+#X text 23 111 Inlets:;
+#X text 24 151 Outlets:;
+#X text 80 151 1:(~)left out;
+#X text 80 164 2:(~)right out;
+#X text 80 176 3:message;
+#X text 24 75 Creation arguments: none;
+#X text 80 123 2:control-messages;
+#X text 80 110 1:(~)in;
+#X text 23 34 granular-delay;
+#X obj 537 28 pp.sfplayer~;
+#X obj 413 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 398 112 *~;
+#X obj 551 97 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 536 117 *~;
+#N canvas 3 52 450 300 init 0;
+#X obj 146 118 outlet;
+#X obj 146 72 loadbang;
+#X msg 146 95 open MusicBox.wav \, play 1 \, loop 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 710 7 pd init;
+#X obj 5 330 declare -path ./Examples/audio;
+#X text 413 73 mic.input;
+#X text 551 78 soundfile;
+#X obj 397 178 pp.graindelay~;
+#N canvas 708 424 476 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 30 60 int.grain-trigger 0 \, grain-distance 50 \, random-grain-distance
+0 \, delay 0 \, random-delay 0 \, grainsize 100 \, random-grainsize
+0 \, pitch 0 \, random-pitch 0 \, panorama 0 \, random-panorama 0 \,
+amplitude 0 \, random-amplitude 0 \, feedback 0 \, feedback-damping
+5000 \, filter-bypass 1 \, frequency 100 \, random-frequency 5000 \,
+q 1 \, random-q 0 \, dry/wet 100 \, env-type 0 \, env-bias 0.5 \, env-shape
+0.5 \,;
+#X connect 0 0 1 0;
+#X restore 545 227 pd message-out;
+#X connect 4 0 25 1;
+#X connect 5 0 18 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 1;
+#X connect 18 0 25 0;
+#X connect 19 0 20 1;
+#X connect 20 0 25 0;
+#X connect 21 0 16 3;
+#X connect 25 0 0 0;
+#X connect 25 1 0 1;
+#X connect 25 2 26 0;

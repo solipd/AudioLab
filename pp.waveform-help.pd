@@ -1,0 +1,98 @@
+#N struct 1004-template float x float y float c float s float th float
+stretch array 1004-plus 1004-template-y array 1004-minus 1004-template-y
+;
+#N struct 1004-template-y float y;
+#N canvas 307 192 971 504 10;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array wf-source 65559 float 2;
+#X coords 0 1 65559 -1 120 80 1 0 0;
+#X restore 319 35 graph;
+#X obj 319 142 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#N canvas 935 188 924 555 sendmessages 0;
+#X msg 112 50 width \$1;
+#X floatatom 112 28 5 0 0 0 - - -;
+#X floatatom 138 75 5 0 0 0 - - -;
+#X msg 138 96 height \$1;
+#X floatatom 220 210 5 0 0 0 - - -;
+#X msg 220 231 color \$1;
+#X floatatom 249 256 5 0 0 0 - - -;
+#X msg 248 277 thickness \$1;
+#X obj 159 165 pack;
+#X floatatom 159 121 5 0 0 0 - - -;
+#X floatatom 196 122 5 0 0 0 - - -;
+#X msg 159 188 y-range \$1 \$2;
+#X obj 192 143 t b f;
+#X text 262 187 Y-range from... to...;
+#X text 286 222 data structures RGB color: 0=black \, 999=white \,
+990=yellow \, 900=red \, 90=green \, 9=blue \, 555=grey \, etc.;
+#X obj 111 443 outlet;
+#X msg 278 343 resolution \$1;
+#X floatatom 278 317 5 0 0 0 - - -;
+#N canvas 0 50 450 300 (subpatch) 0;
+#X array wf-source2 155944 float 2;
+#X coords 0 1 155944 -1 120 80 1 0 0;
+#X restore 507 426 graph;
+#X obj 642 446 openpanel;
+#X obj 642 486 soundfiler;
+#X obj 642 428 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 642 466 read -resize \$1 wf-source2;
+#X text 495 381 bang to redraw after setting a differnt source;
+#X msg 336 380 set wf-source2 \, bang;
+#X msg 337 403 set wf-source \, bang;
+#X connect 0 0 15 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 15 0;
+#X connect 4 0 5 0;
+#X connect 5 0 15 0;
+#X connect 6 0 7 0;
+#X connect 7 0 15 0;
+#X connect 8 0 11 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 15 0;
+#X connect 12 0 8 0;
+#X connect 12 1 8 1;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 19 0 22 0;
+#X connect 21 0 19 0;
+#X connect 22 0 20 0;
+#X connect 24 0 15 0;
+#X connect 25 0 15 0;
+#X restore 355 196 pd sendmessages;
+#X obj 14 17 cnv 15 295 270 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X text 22 67 creation arguments:;
+#X text 19 149 4: Y range from.. (default 1);
+#X text 19 163 5: Y range to.. (default -1);
+#X text 19 177 6: RGB-color (default 0 \, black);
+#X text 19 192 7: thickness (default 1);
+#X text 19 206 8: hide objectname and arguments;
+#X text 34 219 (1=true \, 0=false \, default: 0);
+#X text 492 231 send to "waveform/name of the source array".;
+#X obj 454 55 openpanel;
+#X obj 454 95 soundfiler;
+#X msg 454 75 read -resize \$1 wf-source;
+#X obj 454 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 319 236 send waveform/wf-source;
+#X text 21 27 [pp.waveform];
+#X text 20 120 2: width (default 400);
+#X text 19 134 3: heigth (default 150);
+#X text 341 140 bang to draw;
+#X text 19 233 9: resolution (default 100%);
+#X text 491 244 this is rather unorthodox \, but i wanted the GOP of
+[pp.waveform] to be transparent and without inlets for cosmetic reasons.
+, f 53;
+#X text 20 97 1 (obligatory): name of the source-array;
+#X obj 15 318 pp.waveform wf-source 400 150 1 -1 900 1 0 100;
+#X text 486 31 load soundfile first;
+#X text 749 465 Philipp Schmalfuß \, 2016-2018;
+#X connect 1 0 16 0;
+#X connect 2 0 16 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 12 0;
