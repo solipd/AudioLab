@@ -1,11 +1,11 @@
-#N struct 1017-template float x float y float c float s float th float
-stretch array 1017-plus 1017-template-y array 1017-minus 1017-template-y
-;
-#N struct 1017-template-y float y;
 #N struct 1018-template float x float y float c float s float th float
 stretch array 1018-plus 1018-template-y array 1018-minus 1018-template-y
 ;
 #N struct 1018-template-y float y;
+#N struct 1019-template float x float y float c float s float th float
+stretch array 1019-plus 1019-template-y array 1019-minus 1019-template-y
+;
+#N struct 1019-template-y float y;
 #N canvas 213 226 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -1048,8 +1048,8 @@ stretch array 1018-plus 1018-template-y array 1018-minus 1018-template-y
 #X restore 368 221 pd fft;
 #X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 2
 8 2 10 -233017 -233017 -1 0 1;
-#X obj 103 117 cnv 10 10 10 empty \$0-namecnv Trumpet.wav 0 5 2 10
--233017 -1 0;
+#X obj 103 117 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 -233017
+-1 0;
 #N canvas 252 166 796 403 stuff 0;
 #X obj 70 330 s \$0-playguicnv;
 #X obj 35 74 sel 0 1;
@@ -1205,13 +1205,12 @@ stretch array 1018-plus 1018-template-y array 1018-minus 1018-template-y
 #X restore 499 178 pd stuff;
 #X obj 499 279 outlet;
 #N canvas 486 177 836 588 outlet-message 0;
-#X obj 168 440 list trim;
-#X msg 88 438 addcomma;
-#X msg 61 361 set;
-#X obj 168 417 list prepend add2;
-#X obj 122 290 t a b;
-#X obj 168 525 outlet;
-#X obj 122 385 t b a;
+#X obj 168 465 list trim;
+#X msg 88 463 addcomma;
+#X msg 61 386 set;
+#X obj 168 442 list prepend add2;
+#X obj 168 550 outlet;
+#X obj 122 410 t b a;
 #N canvas 121 312 731 292 bang_once...................................................
 0;
 #X obj 174 87 t b f;
@@ -1297,39 +1296,41 @@ stretch array 1018-plus 1018-template-y array 1018-minus 1018-template-y
 #X obj 514 175 r \$0-overlap;
 #X obj 337 135 r \$0-position;
 #X obj 337 156 * 100;
-#X msg 122 338 open \$11 \, play \$1 \, freeze \$2 \, speed \$3 \,
+#X msg 122 363 open \$11 \, play \$1 \, freeze \$2 \, speed \$3 \,
 transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 \$8 \, blocksize \$9 \, overlap \$10 \,;
-#X connect 0 0 5 0;
-#X connect 1 0 5 0;
-#X connect 2 0 5 0;
+#X obj 122 290 t b a b;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
 #X connect 3 0 0 0;
-#X connect 4 0 27 0;
-#X connect 4 1 2 0;
-#X connect 6 0 1 0;
-#X connect 6 1 3 0;
-#X connect 7 0 4 0;
-#X connect 8 0 9 0;
-#X connect 9 0 7 10;
-#X connect 10 0 7 6;
-#X connect 11 0 7 0;
-#X connect 12 0 17 0;
-#X connect 13 0 7 4;
-#X connect 14 0 17 1;
-#X connect 15 0 16 0;
-#X connect 16 0 18 1;
-#X connect 17 0 18 0;
-#X connect 18 0 13 0;
-#X connect 19 0 7 2;
-#X connect 20 0 7 1;
-#X connect 21 0 7 3;
-#X connect 22 0 7 7;
-#X connect 23 0 7 8;
-#X connect 24 0 7 9;
-#X connect 25 0 26 0;
-#X connect 26 0 7 5;
-#X connect 27 0 6 0;
-#X restore 499 228 pd outlet-message;
+#X connect 5 0 1 0;
+#X connect 5 1 3 0;
+#X connect 6 0 27 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 10;
+#X connect 9 0 6 6;
+#X connect 10 0 6 0;
+#X connect 11 0 16 0;
+#X connect 12 0 6 4;
+#X connect 13 0 16 1;
+#X connect 14 0 15 0;
+#X connect 15 0 17 1;
+#X connect 16 0 17 0;
+#X connect 17 0 12 0;
+#X connect 18 0 6 2;
+#X connect 19 0 6 1;
+#X connect 20 0 6 3;
+#X connect 21 0 6 7;
+#X connect 22 0 6 8;
+#X connect 23 0 6 9;
+#X connect 24 0 25 0;
+#X connect 25 0 6 5;
+#X connect 26 0 5 0;
+#X connect 27 0 4 0;
+#X connect 27 1 26 0;
+#X connect 27 2 2 0;
+#X restore 499 257 pd outlet-message;
 #N canvas 3 52 888 439 record 0;
 #X msg 243 237 start;
 #X obj 480 129 sel 0 1;
@@ -1479,10 +1480,10 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 -262144 0;
 #X obj 234 21 nbx 4 12 -1e+37 1e+37 0 0 \$0-speed \$0-speedr Speed(%)
 0 -8 2 10 -262144 -1 -1 100 256;
-#X obj 9 38 cnv 10 10 10 empty \$0-wfbg Trumpet.wav___02:51___44100Hz___Mono
-1 5 2 10 -262144 -1 0;
+#X obj 9 38 cnv 10 10 10 empty \$0-wfbg empty.. 1 5 2 10 -262144 -1
+0;
 #X obj 182 23 tgl 10 0 \$0-looptgl \$0-looptglr loop 14 6 2 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 9 49 cnv 15 502 122 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #N canvas 641 183 532 272 waveform 0;
@@ -1555,7 +1556,6 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 #X obj 498 79 inlet message;
 #X obj 369 282 outlet~;
 #X obj 401 259 outlet~;
-#X obj 499 249 t b a;
 #N canvas 232 294 609 471 in 0;
 #X obj 68 31 inlet;
 #X obj 72 223 != 0;
@@ -1720,15 +1720,12 @@ loop phaselock blocksize overlap position% set open;
 #X connect 24 13 23 0;
 #X restore 497 99 pd in;
 #X text 588 466 philipp schmalfuß \, 2018;
-#X text 591 466 philipp schmalfuß \, 2018;
 #X connect 2 0 15 0;
 #X connect 2 1 16 0;
-#X connect 7 0 17 0;
+#X connect 7 0 6 0;
 #X connect 10 0 8 0;
 #X connect 11 0 8 1;
 #X connect 12 0 2 0;
 #X connect 13 0 2 1;
-#X connect 14 0 18 0;
-#X connect 17 0 6 0;
-#X connect 17 1 6 0;
+#X connect 14 0 17 0;
 #X coords 0 -1 1 1 180 33 1 100 100;

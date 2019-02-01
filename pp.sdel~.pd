@@ -1,4 +1,4 @@
-#N canvas 3 50 576 395 10;
+#N canvas 3 52 576 395 10;
 #X obj 146 162 inlet~;
 #N canvas 310 207 450 300 delread 0;
 #X obj 105 79 inlet~;
@@ -34,7 +34,6 @@
 #X obj 428 228 t b a;
 #X obj 428 249 outlet;
 #X text 404 351 philipp schmalfuß \, 2018;
-#X text 407 351 philipp schmalfuß \, 2018;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;

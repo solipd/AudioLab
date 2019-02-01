@@ -59,11 +59,10 @@
 #X obj 80 194 s \$0-shift;
 #X obj 481 278 t b a;
 #X obj 474 128 s \$0-shiftr;
-#X msg 481 249 set frequency-shift \$1;
+#X msg 481 253 set frequency-shift \$1;
 #X obj 474 107 route frequency-shift;
 #X obj 390 100 sig~;
 #X text 549 465 philipp schmalfuß \, 2018;
-#X text 552 465 philipp schmalfuß \, 2018;
 #X connect 0 0 10 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;

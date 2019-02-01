@@ -101,7 +101,6 @@
 #X obj 756 95 route frequency-shift;
 #X msg 763 237 set frequency-shift \$1;
 #X text 588 466 philipp schmalfuß \, 2018;
-#X text 591 466 philipp schmalfuß \, 2018;
 #X connect 0 0 10 0;
 #X connect 1 0 3 0;
 #X connect 2 0 3 1;

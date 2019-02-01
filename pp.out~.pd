@@ -9,7 +9,7 @@
 #X obj 120 115 hsl 100 17 0 1 0 0 \$0-vol \$0-volr 0db 5 8 2 10 -228856
 -1 -1 0 1;
 #X obj 100 115 tgl 17 0 \$0-dsp \$0-dspr dsp 1 8 2 10 -228856 -258113
--1 1 1;
+-1 0 1;
 #X obj 338 356 s \$0-volr;
 #X msg 338 334 label \$1db;
 #X obj 348 32 r \$0-vol;
@@ -43,7 +43,6 @@
 #X msg 753 320 set volume \$1;
 #X obj 753 362 outlet;
 #X text 588 466 philipp schmalfuß \, 2018;
-#X text 591 466 philipp schmalfuß \, 2018;
 #X connect 0 0 24 0;
 #X connect 1 0 25 0;
 #X connect 2 0 6 1;

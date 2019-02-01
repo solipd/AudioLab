@@ -1,7 +1,7 @@
-#N struct 1137-template float x float y float c float s float th float
-stretch array 1137-plus 1137-template-y array 1137-minus 1137-template-y
+#N struct 1021-template float x float y float c float s float th float
+stretch array 1021-plus 1021-template-y array 1021-minus 1021-template-y
 ;
-#N struct 1137-template-y float y;
+#N struct 1021-template-y float y;
 #N canvas 527 102 629 549 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -1030,7 +1030,7 @@ is redundant;
 #X obj 100 100 cnv 15 520 320 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #X obj 112 233 hsl 496 10 0 5517.51 0 0 \$0-postiongui \$0-postionguir
-empty -2 -8 0 10 -262144 -1 -1 18100 0;
+empty -2 -8 0 10 -262144 -1 -1 0 0;
 #X obj 109 147 cnv 15 502 82 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #N canvas 104 142 569 133 mask 0;
@@ -1042,14 +1042,14 @@ empty -2 -8 0 10 -262144 -1 -1 18100 0;
 #X coords 0 -1 1 1 500 80 2 0 0;
 #X restore 110 148 pd mask;
 #X obj 115 280 nbx 8 12 0 5517.51 0 0 \$0-position \$0-positionr Position(ms)
-70 7 2 10 -262144 -1 -1 2017 256;
+70 7 2 10 -262144 -1 -1 0 256;
 #X msg 12 313 set \$1;
 #X obj 12 292 i;
 #X obj 109 251 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr
 empty 17 7 2 10 -228856 -1 -1 0 1;
 #X obj 3 336 s \$0-position;
 #X obj 284 281 nbx 8 12 -5517.51 5517.51 0 0 \$0-random-position \$0-random-positionr
-Random-Position(ms) 70 7 2 10 -262144 -1 -1 120 256;
+Random-Position(ms) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 115 295 nbx 5 12 -6400 6400 0 0 \$0-size \$0-sizer Grainsize(ms)
 69 7 2 10 -262144 -1 -1 100 256;
 #X obj 142 265 nbx 4 12 1 1e+37 0 0 \$0-trigger-speed \$0-trigger-speedr
@@ -1070,7 +1070,7 @@ Random-Pitch(cents) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 115 325 nbx 4 12 -100 100 0 0 \$0-pan \$0-panr Panorama 70 7
 2 10 -262144 -1 -1 0 256;
 #X obj 284 326 nbx 4 12 0 100 0 0 \$0-random-pan \$0-random-panr Random-Panorama(%)
-70 7 2 10 -262144 -1 -1 49 256;
+70 7 2 10 -262144 -1 -1 0 256;
 #X obj 273 331 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
 #X obj 273 336 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
 #X obj 115 340 nbx 4 12 -100 0 0 0 \$0-amp \$0-ampr Amplitude(db) 70
@@ -1290,18 +1290,17 @@ Random-Q 70 6 2 9 -262144 -1 -1 0 256;
 #X restore 10 8 pd mask;
 #X restore 435 383 pd \$0-grainer~;
 #X obj 99 430 clone pp.grainer~-onegrain 128 \$0;
-#N canvas 43 177 1256 588 outlet-message 0;
+#N canvas 55 101 1256 588 outlet-message 0;
 #X obj 20 7 r \$0-trigger-speed;
 #X obj 52 27 r \$0-position;
 #X obj 84 47 r \$0-size;
 #X obj 116 69 r \$0-pitch;
-#X obj 170 558 list trim;
-#X msg 90 556 addcomma;
+#X obj 170 605 list trim;
+#X msg 90 603 addcomma;
 #X msg 30 407 set;
-#X obj 170 535 list prepend add2;
-#X obj 124 350 t a b;
+#X obj 170 582 list prepend add2;
 #X obj 170 643 outlet;
-#X obj 124 503 t b a;
+#X obj 169 533 t b a;
 #X obj 197 2 r \$0-filter-freq;
 #X obj 229 27 r \$0-filter-q;
 #X obj 214 133 r \$0-filter-bypass;
@@ -1479,7 +1478,7 @@ Random-Q 70 6 2 9 -262144 -1 -1 0 256;
 #X obj 807 89 *;
 #X obj 807 124 /;
 #X obj 931 148 r \$0-int_triggeronoff;
-#X msg 124 403 open \$26 \, grain-distance \$1 \, position \$2 \, grainsize
+#X msg 161 407 open \$26 \, grain-distance \$1 \, position \$2 \, grainsize
 \$3 \, pitch \$4 \, panorama \$5 \, amplitude \$6 \, filter-bypass
 \$7 \, frequency \$8 \, q \$9 \, playback-speed \$10 \, play \$11 \,
 env-type \$12 \, env-bias \$13 \, env-shape \$14 \, random-grain-distance
@@ -1487,56 +1486,58 @@ env-type \$12 \, env-bias \$13 \, env-shape \$14 \, random-grain-distance
 \$18 \, random-panorama \$19 \, random-amplitude \$20 \, random-frequency
 \$21 \, random-q \$22 \, position% \$23 \, random-position% \$24 \,
 int.grain-trigger \$25 \,;
-#X connect 0 0 23 0;
-#X connect 1 0 23 1;
-#X connect 2 0 23 2;
-#X connect 3 0 23 3;
-#X connect 4 0 9 0;
-#X connect 5 0 9 0;
-#X connect 6 0 9 0;
+#X obj 124 368 t b a b;
+#X connect 0 0 22 0;
+#X connect 1 0 22 1;
+#X connect 2 0 22 2;
+#X connect 3 0 22 3;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
 #X connect 7 0 4 0;
-#X connect 8 0 47 0;
-#X connect 8 1 6 0;
-#X connect 10 0 5 0;
-#X connect 10 1 7 0;
-#X connect 11 0 23 7;
-#X connect 12 0 23 8;
-#X connect 13 0 23 6;
-#X connect 14 0 23 5;
-#X connect 15 0 23 4;
-#X connect 16 0 23 9;
-#X connect 17 0 23 10;
-#X connect 18 0 23 11;
-#X connect 19 0 23 12;
-#X connect 20 0 23 13;
-#X connect 21 0 22 0;
-#X connect 22 0 23 25;
-#X connect 23 0 8 0;
-#X connect 24 0 23 14;
-#X connect 25 0 23 15;
-#X connect 26 0 23 16;
-#X connect 27 0 23 17;
-#X connect 28 0 23 18;
-#X connect 29 0 23 19;
-#X connect 30 0 23 20;
-#X connect 31 0 23 21;
-#X connect 32 0 37 0;
-#X connect 33 0 34 0;
+#X connect 9 0 5 0;
+#X connect 9 1 7 0;
+#X connect 10 0 22 7;
+#X connect 11 0 22 8;
+#X connect 12 0 22 6;
+#X connect 13 0 22 5;
+#X connect 14 0 22 4;
+#X connect 15 0 22 9;
+#X connect 16 0 22 10;
+#X connect 17 0 22 11;
+#X connect 18 0 22 12;
+#X connect 19 0 22 13;
+#X connect 20 0 21 0;
+#X connect 21 0 22 25;
+#X connect 22 0 47 0;
+#X connect 23 0 22 14;
+#X connect 24 0 22 15;
+#X connect 25 0 22 16;
+#X connect 26 0 22 17;
+#X connect 27 0 22 18;
+#X connect 28 0 22 19;
+#X connect 29 0 22 20;
+#X connect 30 0 22 21;
+#X connect 31 0 36 0;
+#X connect 32 0 33 0;
+#X connect 33 0 36 1;
 #X connect 34 0 37 1;
-#X connect 35 0 38 1;
-#X connect 36 0 23 22;
-#X connect 37 0 38 0;
-#X connect 38 0 36 0;
-#X connect 39 0 44 0;
-#X connect 40 0 41 0;
+#X connect 35 0 22 22;
+#X connect 36 0 37 0;
+#X connect 37 0 35 0;
+#X connect 38 0 43 0;
+#X connect 39 0 40 0;
+#X connect 40 0 43 1;
 #X connect 41 0 44 1;
-#X connect 42 0 45 1;
-#X connect 43 0 23 23;
-#X connect 44 0 45 0;
-#X connect 45 0 43 0;
-#X connect 46 0 23 24;
-#X connect 47 0 10 0;
-#X restore 436 430 pd outlet-message;
+#X connect 42 0 22 23;
+#X connect 43 0 44 0;
+#X connect 44 0 42 0;
+#X connect 45 0 22 24;
+#X connect 46 0 9 0;
+#X connect 47 0 8 0;
+#X connect 47 1 46 0;
+#X connect 47 2 6 0;
+#X restore 436 444 pd outlet-message;
 #N canvas 338 151 696 551 playback+position 0;
 #X obj 277 416 snapshot~;
 #X obj 175 314 r \$0-trigger;
@@ -1853,7 +1854,6 @@ open set-env;
 #X connect 58 6 56 0;
 #X connect 58 7 9 0;
 #X restore 457 127 pd in;
-#X obj 436 451 t b a;
 #X text 470 523 philipp schmalfuß \, 2018;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
@@ -1871,7 +1871,5 @@ open set-env;
 #X connect 20 0 3 0;
 #X connect 25 0 4 0;
 #X connect 25 1 5 0;
-#X connect 26 0 31 0;
-#X connect 31 0 21 0;
-#X connect 31 1 21 0;
+#X connect 26 0 21 0;
 #X coords 0 -1 1 1 180 33 1 100 100;

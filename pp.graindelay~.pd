@@ -1,5 +1,5 @@
-#N canvas 283 178 986 587 10;
-#X obj 287 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 224 101 986 587 10;
+#X obj 287 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 287 179 metro 100;
 #X msg 289 266 next bang;
@@ -12,13 +12,13 @@
 #X obj 115 157 nbx 8 12 0 171000 0 0 \$0-delay \$0-delayr Delay(ms)
 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 109 128 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr
-empty 17 7 2 10 -228856 -1 -1 1 1;
+empty 17 7 2 10 -228856 -1 -1 0 1;
 #X obj 284 158 nbx 8 12 0 171000 0 0 \$0-random-delay \$0-random-delayr
 Random-Delay(ms) 70 7 2 10 -262144 -1 -1 0 256;
-#X obj 115 172 nbx 5 12 0 448 0 0 \$0-size \$0-sizer Grainsize(ms)
-69 7 2 10 -262144 -1 -1 34 256;
+#X obj 115 172 nbx 5 12 0 1600 0 0 \$0-size \$0-sizer Grainsize(ms)
+69 7 2 10 -262144 -1 -1 100 256;
 #X obj 142 142 nbx 4 12 1 1e+37 0 0 \$0-trigger-speed \$0-trigger-speedr
-Grain-Distance(ms) 42 7 2 10 -262144 -1 -1 14 256;
+Grain-Distance(ms) 42 7 2 10 -262144 -1 -1 50 256;
 #X obj 284 173 nbx 5 12 0 1e+11 0 0 \$0-random-size \$0-random-sizer
 Random-Grainsize(ms) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 284 143 nbx 4 12 0 1e+37 0 0 \$0-random-trigger-speed \$0-random-trigger-speedr
@@ -35,11 +35,11 @@ Random-Pitch(cents) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 115 202 nbx 4 12 -100 100 0 0 \$0-pan \$0-panr Panorama 70 7
 2 10 -262144 -1 -1 0 256;
 #X obj 284 203 nbx 4 12 0 100 0 0 \$0-random-pan \$0-random-panr Random-Panorama(%)
-70 7 2 10 -262144 -1 -1 100 256;
+70 7 2 10 -262144 -1 -1 0 256;
 #X obj 273 208 cnv 5 5 5 empty empty + 0 0 0 10 -262144 -66577 0;
 #X obj 273 213 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
 #X obj 115 217 nbx 4 12 -100 0 0 0 \$0-amp \$0-ampr Amplitude(db) 70
-7 2 10 -262144 -1 -1 -8 256;
+7 2 10 -262144 -1 -1 0 256;
 #X obj 284 218 nbx 4 12 0 100 0 0 \$0-random-amp \$0-random-ampr Random-Amplitude(db)
 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 273 224 cnv 5 1 1 empty empty _ 0 -5 0 10 -262144 -66577 0;
@@ -215,7 +215,7 @@ Random-Q 70 6 2 9 -262144 -1 -1 0 256;
 -2 -7 2 10 -262144 -1 -1 4550 1;
 #X obj 330 118 cnv 15 10 10 empty empty graindelay~ 0 0 2 14 -262144
 -162280 0;
-#X obj 540 105 cnv 10 10 10 empty \$0-active-grains 2 0 5 2 11 -262144
+#X obj 540 105 cnv 10 10 10 empty \$0-active-grains 0 0 5 2 11 -262144
 -1 0;
 #X obj 517 105 cnv 10 10 10 empty empty max. 0 5 2 10 -262144 -1 0
 ;
@@ -928,7 +928,7 @@ filter-bypass frequency random-frequency q random-q dry/wet;
 #X connect 35 0 36 0;
 #X restore 773 113 pd in;
 #N canvas 309 85 836 657 outlet-message 0;
-#X obj 72 632 outlet;
+#X obj 73 664 outlet;
 #X obj 67 10 r \$0-int_triggeronoff;
 #X obj 81 32 r \$0-trigger-speed;
 #X obj 96 55 r \$0-random-trigger-speed;
@@ -1085,24 +1085,24 @@ filter-bypass frequency random-frequency q random-q dry/wet;
 #X obj 393 251 r \$0-env-type;
 #X obj 408 273 r \$0-env-bias;
 #X obj 423 294 r \$0-env-shape;
-#X obj 81 354 t a b;
-#X msg 80 377 int.grain-trigger \$1 \, grain-distance \$2 \, random-grain-distance
+#X msg 81 409 int.grain-trigger \$1 \, grain-distance \$2 \, random-grain-distance
 \$3 \, delay \$4 \, random-delay \$5 \, grainsize \$6 \, random-grainsize
 \$7 \, pitch \$8 \, random-pitch \$9 \, panorama \$10 \, random-panorama
 \$11 \, amplitude \$12 \, random-amplitude \$13 \, feedback \$14 \,
 feedback-damping \$15 \, filter-bypass \$16 \, frequency \$17 \, random-frequency
 \$18 \, q \$19 \, random-q \$20 \, dry/wet \$21 \, env-type \$22 \,
 env-bias \$23 \, env-shape \$24;
-#X obj 152 553 list trim;
-#X msg 72 551 addcomma;
-#X obj 152 530 list prepend add2;
-#X obj 106 498 t b a;
-#X msg 11 418 set;
+#X obj 153 585 list trim;
+#X msg 86 583 addcomma;
+#X obj 153 562 list prepend add2;
+#X obj 107 530 t b a;
+#X msg 12 450 set;
+#X obj 65 358 t b a b;
 #X connect 1 0 5 0;
 #X connect 2 0 5 1;
 #X connect 3 0 5 2;
 #X connect 4 0 5 3;
-#X connect 5 0 26 0;
+#X connect 5 0 32 0;
 #X connect 6 0 5 4;
 #X connect 7 0 5 5;
 #X connect 8 0 5 6;
@@ -1123,23 +1123,23 @@ env-bias \$23 \, env-shape \$24;
 #X connect 23 0 5 21;
 #X connect 24 0 5 22;
 #X connect 25 0 5 23;
-#X connect 26 0 27 0;
-#X connect 26 1 32 0;
-#X connect 27 0 31 0;
+#X connect 26 0 30 0;
+#X connect 27 0 0 0;
 #X connect 28 0 0 0;
-#X connect 29 0 0 0;
+#X connect 29 0 27 0;
 #X connect 30 0 28 0;
-#X connect 31 0 29 0;
-#X connect 31 1 30 0;
+#X connect 30 1 29 0;
+#X connect 31 0 0 0;
 #X connect 32 0 0 0;
-#X restore 753 438 pd outlet-message;
-#X obj 753 461 t b a;
+#X connect 32 1 26 0;
+#X connect 32 2 31 0;
+#X restore 753 456 pd outlet-message;
 #X obj 753 484 outlet;
 #X text 730 538 philipp schmalfuß \, 2018;
 #X obj 289 287 clone pp.graindelay-onegrain 32 \$0;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
-#X connect 2 0 37 0;
+#X connect 2 0 36 0;
 #X connect 3 0 4 0;
 #X connect 4 0 1 1;
 #X connect 7 0 4 1;
@@ -1156,7 +1156,7 @@ env-bias \$23 \, env-shape \$24;
 #X connect 21 0 16 1;
 #X connect 21 0 29 1;
 #X connect 22 0 30 1;
-#X connect 22 0 37 1;
+#X connect 22 0 36 1;
 #X connect 26 0 24 0;
 #X connect 27 0 25 0;
 #X connect 28 0 29 0;
@@ -1165,8 +1165,6 @@ env-bias \$23 \, env-shape \$24;
 #X connect 30 0 26 1;
 #X connect 31 0 32 0;
 #X connect 33 0 34 0;
-#X connect 34 0 35 0;
-#X connect 34 1 35 0;
-#X connect 37 0 16 0;
-#X connect 37 1 17 0;
+#X connect 36 0 16 0;
+#X connect 36 1 17 0;
 #X coords 0 -1 1 1 155 33 1 100 100;
