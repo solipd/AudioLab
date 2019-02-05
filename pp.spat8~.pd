@@ -68,7 +68,7 @@
 #X obj 618 428 outlet~;
 #X obj 675 428 outlet~;
 #X obj 778 56 inlet~;
-#N canvas 22 463 272 272 \$0-spat8 0;
+#N canvas 50 82 272 272 \$0-spat8 0;
 #X obj 2 2 cnv 1 264 264 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X obj 3 3 cnv 1 262 262 empty empty empty 20 12 0 14 -66577 -66577
@@ -86,19 +86,19 @@
 #X obj 138 257 cnv 1 1 1 empty empty -1 0 0 2 11 -233017 -262144 0
 ;
 #X obj 6 125 cnv 1 1 1 empty empty -1 0 0 2 11 -233017 -262144 0;
-#X obj 74 15 cnv 16 16 16 \$0-spcnv1 \$0-spcnv1r 1 5 7 2 14 -225281
+#X obj 74 15 cnv 16 16 16 \$0-spcnv1 \$0-spcnv1r 1 5 7 2 14 -172033
 -262144 0;
 #X obj 177 15 cnv 16 16 16 \$0-spcnv2 \$0-spcnv2r 2 5 7 2 14 -229377
 -262144 0;
-#X obj 236 74 cnv 16 16 16 \$0-spcnv4 \$0-spcnv4r 4 5 7 2 14 -176129
+#X obj 236 74 cnv 16 16 16 \$0-spcnv4 \$0-spcnv4r 4 5 7 2 14 -172033
 -262144 0;
-#X obj 236 177 cnv 16 16 16 \$0-spcnv6 \$0-spcnv6r 6 5 7 2 14 -98305
+#X obj 236 177 cnv 16 16 16 \$0-spcnv6 \$0-spcnv6r 6 5 7 2 14 -176129
 -262144 0;
-#X obj 177 236 cnv 16 16 16 \$0-spcnv8 \$0-spcnv8r 8 5 7 2 14 -24577
+#X obj 177 236 cnv 16 16 16 \$0-spcnv8 \$0-spcnv8r 8 5 7 2 14 -176129
 -262144 0;
-#X obj 74 236 cnv 16 16 16 \$0-spcnv7 \$0-spcnv7r 7 5 7 2 14 -20481
+#X obj 74 236 cnv 16 16 16 \$0-spcnv7 \$0-spcnv7r 7 5 7 2 14 -172033
 -262144 0;
-#X obj 15 177 cnv 16 16 16 \$0-spcnv5 \$0-spcnv5r 5 5 7 2 14 -94209
+#X obj 15 177 cnv 16 16 16 \$0-spcnv5 \$0-spcnv5r 5 5 7 2 14 -172033
 -262144 0;
 #X obj 15 74 cnv 16 16 16 \$0-spcnv3 \$0-spcnv3r 3 5 7 2 14 -172033
 -262144 0;
@@ -1595,13 +1595,10 @@ speaker-6 speaker-7 speaker-8;
 #X connect 81 0 40 0;
 #X connect 82 0 49 0;
 #X restore 84 178 pd presets;
-#X obj 213 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 213 86 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 212 132 f \$0;
-#X msg 212 153 \; \$1-spcnv1r get_pos \; \$1-spcnv2r get_pos \; \$1-spcnv3r
-get_pos \; \$1-spcnv4r get_pos \; \$1-spcnv5r get_pos \; \$1-spcnv6r
-get_pos \; \$1-spcnv7r get_pos \; \$1-spcnv8r get_pos \;;
-#X obj 213 71 loadbang;
+#X obj 213 65 loadbang;
 #X msg 123 106 1;
 #X obj 460 169 s \$0-visbngr;
 #X obj 442 64 r \$0-visbng;
@@ -1609,24 +1606,28 @@ get_pos \; \$1-spcnv7r get_pos \; \$1-spcnv8r get_pos \;;
 #X msg 524 141 color 10 10;
 #X obj 442 86 t b;
 #X obj 522 116 del 250;
-#X obj 406 218 s pd-\$0-spat8;
-#X msg 406 196 relocate 272x272+1+1 1x1+50+50 \, vis 1;
-#X obj 212 113 metro 500;
+#X obj 420 215 s pd-\$0-spat8;
+#X msg 420 193 relocate 272x272+1+1 1x1+50+50 \, vis 1;
+#X obj 212 107 metro 500;
+#X msg 212 153 \; \$1-spcnv1r get_pos \; \$1-spcnv2r get_pos \; \$1-spcnv3r
+get_pos \; \$1-spcnv4r get_pos \; \$1-spcnv5r get_pos \; \$1-spcnv6r
+get_pos \; \$1-spcnv7r get_pos \; \$1-spcnv8r get_pos \; \$1-mcnv dirty
+0 \;;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 6 0 19 0;
-#X connect 7 0 8 0;
-#X connect 9 0 6 0;
-#X connect 10 0 2 0;
-#X connect 12 0 15 0;
-#X connect 13 0 11 0;
-#X connect 14 0 11 0;
+#X connect 6 0 18 0;
+#X connect 7 0 19 0;
+#X connect 8 0 6 0;
+#X connect 9 0 2 0;
+#X connect 11 0 14 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 0;
+#X connect 14 0 12 0;
+#X connect 14 0 15 0;
+#X connect 14 0 17 0;
 #X connect 15 0 13 0;
-#X connect 15 0 16 0;
-#X connect 15 0 18 0;
-#X connect 16 0 14 0;
-#X connect 18 0 17 0;
-#X connect 19 0 7 0;
+#X connect 17 0 16 0;
+#X connect 18 0 7 0;
 #X restore 922 140 pd stuff;
 #X obj 922 434 outlet;
 #N canvas 129 81 781 614 outlet-message 0;
@@ -2436,6 +2437,7 @@ get_pos \; \$1-spcnv7r get_pos \; \$1-spcnv8r get_pos \;;
 #X connect 4 0 1 1;
 #X connect 5 0 1 1;
 #X restore 674 267 pd amp;
+#X obj 995 42 namecanvas \$0-mcnv;
 #X connect 1 0 20 0;
 #X connect 2 0 1 0;
 #X connect 3 0 20 1;

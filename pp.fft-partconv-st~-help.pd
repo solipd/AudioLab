@@ -1,6 +1,27 @@
 #N canvas 190 316 784 313 10;
 #X declare -path ./Examples/audio;
 #X obj 396 266 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 12 15 cnv 15 10 10 empty empty pp.fft-partconv-st~ 0 0 2 16
@@ -31,6 +52,27 @@ IR's;
 #X text 37 99 \$1: fft-blocksize of the first partition \, default:
 1024;
 #X obj 397 139 pp.fft-partconv-st~ 1024;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 570 116 cnv 16 118 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 195 89 834 524 control-messages 0;
@@ -2055,7 +2097,7 @@ IR's;
 -0.000897602 -0.000781067 -0.000281586 0.00092811 0.00169126 0.00194607
 0.00189817 0.000925849 -0.000357481 -0.000783787 -0.00100283 -0.00161081
 -0.000707352 0.000310045 0.000388923 0.000437703 0.000275203 0.000244301
-0.000232827 0.000158858 0.000295444 0.000525087;
+0.000232827 0.000158858 0.000295444 0.000525087 ;
 #A 13000 0.000114593 -3.24115e-05 0.00070304 0.000727652 0.000298971
 0.00012847 -0.000675011 -0.00153882 -0.00101479 -9.31132e-05 -1.96589e-05
 0.000164513 0.000866487 0.00129398 0.00120358 0.00121345 0.000894893
@@ -7455,6 +7497,35 @@ IR's;
 #X text 280 340 max. fft-blocksize \, default: 65536;
 #X text 390 372 min. and max. fft-blocksize must be powers of two!
 ;
+#X obj 131 421 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 131 420 pd save&recall;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -7471,6 +7542,7 @@ IR's;
 #X connect 18 0 12 0;
 #X connect 19 0 12 0;
 #X connect 20 0 15 0;
+#X connect 25 0 0 0;
 #X restore 570 115 pd control-messages;
 #X text 37 113 \$2: max. fft-blocksize \, default 65536 (2^16);
 #X obj 397 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -7493,6 +7565,27 @@ IR's;
 #X obj 108 31 random 1000;
 #X obj 108 54 + 300;
 #X obj 32 262 pp.pan~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 4 0;

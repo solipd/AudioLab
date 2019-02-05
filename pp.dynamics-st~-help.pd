@@ -1,14 +1,35 @@
-#N struct 1849-template float x float y float c float s float th float
-stretch array 1849-plus 1849-template-y array 1849-minus 1849-template-y
+#N struct 1436-template float x float y float c float s float th float
+stretch array 1436-plus 1436-template-y array 1436-minus 1436-template-y
 ;
-#N struct 1849-template-y float y;
-#N struct 1850-template float x float y float c float s float th float
-stretch array 1850-plus 1850-template-y array 1850-minus 1850-template-y
+#N struct 1436-template-y float y;
+#N struct 1437-template float x float y float c float s float th float
+stretch array 1437-plus 1437-template-y array 1437-minus 1437-template-y
 ;
-#N struct 1850-template-y float y;
+#N struct 1437-template-y float y;
 #N canvas 294 152 738 505 10;
 #X declare -path ./Examples/audio;
 #X obj 390 450 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 1 2 cnv 15 380 500 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 12 20 cnv 15 10 10 empty empty pp.dynamics~ 0 0 2 16 -233017
@@ -40,6 +61,27 @@ coefficients that katja intruduced in her blog instead of [hilbert~]
 ;
 #X obj 161 198 *~ 0.01;
 #X obj 266 271 pp.sfplayer~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 345 18 inlet;
 #X obj 195 276 == 0;
 #X msg 456 232 open MusicBox.wav \, loop 1;
@@ -13000,21 +13042,41 @@ coefficients that katja intruduced in her blog instead of [hilbert~]
 #X text 99 188 5:message;
 #X text 99 117 3:control-messages;
 #X obj 390 185 pp.dynamics-st~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 473 78 *~ 0.5;
 #X obj 501 307 *~ 0.5;
 #X obj 135 8 declare -path ./Examples/audio;
 #N canvas 893 371 414 180 message-out 0;
 #X obj 20 20 inlet;
-#X msg 20 47 threshold-compress -30 \, threshold-expand -11.1111 \,
-attack 0 \, release 65 \, compression 65.6566 \, expansion 61.6162
-\, smooth 100 \, gain 10.101 \, dry/wet 100 \, lookahead 64 \, 100
-\,;
+#X msg 20 47 threshold-compress -1 \, threshold-expand -100 \, attack
+0 \, release 70 \, compression 100 \, expansion 0 \, smooth 0 \, gain
+0 \, dry/wet 100 \, lookahead 64 \, 0 \,;
 #X connect 0 0 1 0;
 #X restore 538 229 pd message-out;
 #X obj 538 162 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 114 158 552 519 control-messages 0;
-#X obj 87 480 outlet;
+#N canvas 114 158 552 583 control-messages 0;
+#X obj 87 529 outlet;
 #X msg 202 206 compression \$1;
 #X msg 202 291 expansion \$1;
 #X msg 202 381 gain \$1;
@@ -13047,6 +13109,35 @@ attack 0 \, release 65 \, compression 65.6566 \, expansion 61.6162
 #X floatatom 202 313 5 0 100 0 - - -;
 #X text 239 310 %;
 #X msg 202 333 smooth \$1;
+#X obj 202 493 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 202 492 pd save&recall;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -13069,6 +13160,7 @@ attack 0 \, release 65 \, compression 65.6566 \, expansion 61.6162
 #X connect 29 0 0 0;
 #X connect 30 0 32 0;
 #X connect 32 0 0 0;
+#X connect 34 0 0 0;
 #X restore 538 162 pd control-messages;
 #X connect 5 0 28 0;
 #X connect 5 0 29 0;

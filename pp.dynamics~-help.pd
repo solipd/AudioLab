@@ -1,20 +1,41 @@
-#N struct 1844-template float x float y float c float s float th float
-stretch array 1844-plus 1844-template-y array 1844-minus 1844-template-y
+#N struct 1431-template float x float y float c float s float th float
+stretch array 1431-plus 1431-template-y array 1431-minus 1431-template-y
 ;
-#N struct 1844-template-y float y;
-#N struct 1845-template float x float y float c float s float th float
-stretch array 1845-plus 1845-template-y array 1845-minus 1845-template-y
+#N struct 1431-template-y float y;
+#N struct 1432-template float x float y float c float s float th float
+stretch array 1432-plus 1432-template-y array 1432-minus 1432-template-y
 ;
-#N struct 1845-template-y float y;
+#N struct 1432-template-y float y;
 #N canvas 161 215 746 505 10;
 #X declare -path ./Examples/audio;
 #X obj 390 450 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 1 2 cnv 15 380 500 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 537 164 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 114 158 552 519 control-messages 0;
-#X obj 87 480 outlet;
+#N canvas 114 158 552 576 control-messages 0;
+#X obj 88 539 outlet;
 #X msg 202 206 compression \$1;
 #X msg 202 291 expansion \$1;
 #X msg 202 381 gain \$1;
@@ -47,6 +68,35 @@ stretch array 1845-plus 1845-template-y array 1845-minus 1845-template-y
 #X floatatom 202 313 5 0 100 0 - - -;
 #X text 239 310 %;
 #X msg 202 333 smooth \$1;
+#X obj 201 497 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 201 496 pd save&recall;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -69,6 +119,7 @@ stretch array 1845-plus 1845-template-y array 1845-minus 1845-template-y
 #X connect 29 0 0 0;
 #X connect 30 0 32 0;
 #X connect 32 0 0 0;
+#X connect 34 0 0 0;
 #X restore 537 164 pd control-messages;
 #X text 90 104 1:(~)signal;
 #X text 32 105 Inlets:;
@@ -89,6 +140,27 @@ coefficients that katja intruduced in her blog instead of [hilbert~]
 ;
 #X restore 5 477 pd references;
 #X obj 389 192 pp.dynamics~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #N canvas 251 299 699 351 testsignal 0;
 #X obj 162 320 outlet~;
 #X obj 43 146 line~;
@@ -103,6 +175,27 @@ coefficients that katja intruduced in her blog instead of [hilbert~]
 ;
 #X obj 161 198 *~ 0.01;
 #X obj 266 271 pp.sfplayer~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 345 18 inlet;
 #X obj 195 276 == 0;
 #X msg 456 232 open MusicBox.wav \, loop 1;

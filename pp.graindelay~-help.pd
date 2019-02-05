@@ -1,21 +1,42 @@
-#N struct 1564-template float x float y float c float s float th float
-stretch array 1564-plus 1564-template-y array 1564-minus 1564-template-y
+#N struct 1457-template float x float y float c float s float th float
+stretch array 1457-plus 1457-template-y array 1457-minus 1457-template-y
 ;
-#N struct 1564-template-y float y;
-#N struct 1565-template float x float y float c float s float th float
-stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
+#N struct 1457-template-y float y;
+#N struct 1458-template float x float y float c float s float th float
+stretch array 1458-plus 1458-template-y array 1458-minus 1458-template-y
 ;
-#N struct 1565-template-y float y;
-#N canvas 163 197 954 363 10;
+#N struct 1458-template-y float y;
+#N canvas 163 197 840 363 10;
 #X declare -path ./Examples/audio;
 #X obj 397 312 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 2 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 12 15 cnv 15 10 10 empty empty pp.graindelay~ 0 0 2 16 -233017
 -262144 0;
 #X obj 545 152 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 49 52 837 682 control-messages 0;
+#N canvas 49 52 837 742 control-messages 0;
 #X obj 62 475 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 62 496 metro 100;
@@ -34,7 +55,7 @@ stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
 #X text 538 59 internal trigger metro on/off;
 #X text 549 100 internal trigger speed;
 #X text 495 37 internal metro;
-#X obj 202 680 outlet;
+#X obj 202 713 outlet;
 #X floatatom 209 99 5 0 1e+37 0 - - -;
 #X floatatom 208 139 5 0 1e+33 0 - - -;
 #X msg 202 118 grainsize \$1;
@@ -107,6 +128,35 @@ stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
 0.0199915 0.00999129;
 #X coords 0 1 100 0 140 100 1 0 0;
 #X restore 646 344 graph;
+#X obj 320 698 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 321 697 pd save&recall;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 14 0;
@@ -158,6 +208,7 @@ stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
 #X connect 61 0 14 0;
 #X connect 62 0 14 0;
 #X connect 63 0 14 0;
+#X connect 66 0 14 0;
 #X restore 545 152 pd control-messages;
 #X obj 397 24 adc~;
 #X text 555 192 <-- click to open GUI;
@@ -171,6 +222,27 @@ stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
 #X text 80 110 1:(~)in;
 #X text 23 34 granular-delay;
 #X obj 537 28 pp.sfplayer~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 413 92 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 398 112 *~;
@@ -188,6 +260,27 @@ stretch array 1565-plus 1565-template-y array 1565-minus 1565-template-y
 #X text 413 73 mic.input;
 #X text 551 78 soundfile;
 #X obj 397 178 pp.graindelay~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #N canvas 708 424 476 180 message-out 0;
 #X obj 20 20 inlet;
 #X msg 30 60 int.grain-trigger 0 \, grain-distance 50 \, random-grain-distance
