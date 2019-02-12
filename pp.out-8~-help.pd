@@ -2,7 +2,7 @@
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 20 120 Inlets:;
-#X text 20 166 Outlets:;
+#X text 20 250 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.out~ 0 0 2 16 -233017 -262144
 0;
 #X obj 410 152 pp.out~;
@@ -27,11 +27,7 @@
 #A saved;
 #A saved;
 #A saved;
-#X text 78 121 1:(~)signal left;
-#X text 78 134 2:(~)signal right;
-#X text 78 147 3:control-messages;
-#X text 78 167 1:message;
-#X obj 411 54 osc~ 440;
+#X text 78 251 1:message;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
 #X msg 30 60 volume 0;
@@ -103,8 +99,15 @@ audio is being computed., f 51;
 #X connect 18 0 0 0;
 #X restore 558 129 pd control-messages;
 #X text 20 86 Creation arguments: none;
-#X text 11 34 stereo speaker output & soundfile recorder;
-#X connect 4 0 10 0;
-#X connect 9 0 4 0;
-#X connect 9 0 4 1;
-#X connect 12 0 4 2;
+#X text 11 34 8 channel speaker output & soundfile recorder;
+#X text 78 121 1:(~)signal channel 1;
+#X text 78 134 2:(~)signal channel 2;
+#X text 78 148 3:(~)signal channel 3;
+#X text 78 161 4:(~)signal channel 4;
+#X text 78 174 5:(~)signal channel 5;
+#X text 78 187 6:(~)signal channel 6;
+#X text 78 200 7:(~)signal channel 7;
+#X text 78 213 8:(~)signal channel 8;
+#X text 78 227 9:control-messages;
+#X connect 4 0 6 0;
+#X connect 8 0 4 8;

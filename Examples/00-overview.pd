@@ -20,7 +20,7 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 ;
 #N struct 1149-template-y float y;
-#N canvas 577 126 812 716 10;
+#N canvas 351 76 812 716 10;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
 #A saved;
@@ -65,7 +65,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 69 608 pp.dynamics~;
+#X obj 69 654 pp.dynamics~;
 #A saved;
 #A saved;
 #A saved;
@@ -87,7 +87,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 33 935 pp.fft-gate~;
+#X obj 33 981 pp.fft-gate~;
 #A saved;
 #A saved;
 #A saved;
@@ -109,9 +109,8 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 1208 pp.record~;
-#X obj 253 1381 pp.spectrum~;
-#X obj 287 1161 pp.out~;
+#X obj 253 1444 pp.spectrum~;
+#X obj 253 1222 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -133,7 +132,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 34 975 pp.fft-pitchshift~;
+#X obj 34 1021 pp.fft-pitchshift~;
 #A saved;
 #A saved;
 #A saved;
@@ -155,7 +154,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 936 pp.fft-gate-st~;
+#X obj 229 982 pp.fft-gate-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -177,7 +176,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 256 255 pp.pan~;
+#X obj 256 252 pp.pan~;
 #A saved;
 #A saved;
 #A saved;
@@ -199,7 +198,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 70 441 pp.freqshift~;
+#X obj 70 487 pp.freqshift~;
 #A saved;
 #A saved;
 #A saved;
@@ -221,7 +220,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 253 441 pp.freqshift-st~;
+#X obj 253 487 pp.freqshift-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -265,7 +264,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 253 480 pp.pitchshift-st~ 50;
+#X obj 253 526 pp.pitchshift-st~ 50;
 #A saved;
 #A saved;
 #A saved;
@@ -287,7 +286,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 69 481 pp.pitchshift~ 50;
+#X obj 69 527 pp.pitchshift~ 50;
 #A saved;
 #A saved;
 #A saved;
@@ -309,7 +308,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 34 891 pp.fft-split~;
+#X obj 34 937 pp.fft-split~;
 #A saved;
 #A saved;
 #A saved;
@@ -331,7 +330,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 891 pp.fft-split-st~;
+#X obj 229 937 pp.fft-split-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -353,7 +352,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 254 564 pp.vcfilter-st~;
+#X obj 254 610 pp.vcfilter-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -375,7 +374,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 69 566 pp.vcfilter~;
+#X obj 69 612 pp.vcfilter~;
 #A saved;
 #A saved;
 #A saved;
@@ -397,7 +396,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 230 976 pp.fft-pitchshift-st~;
+#X obj 230 1022 pp.fft-pitchshift-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -419,7 +418,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 253 607 pp.dynamics-st~;
+#X obj 34 884 pp.fft-block~;
 #A saved;
 #A saved;
 #A saved;
@@ -441,7 +440,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 34 838 pp.fft-block~;
+#X obj 229 884 pp.fft-block-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -463,7 +462,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 838 pp.fft-block-st~;
+#X obj 34 1063 pp.fft-timbre~;
 #A saved;
 #A saved;
 #A saved;
@@ -485,7 +484,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 34 1017 pp.fft-timbre~;
+#X obj 229 1064 pp.fft-timbre-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -507,7 +506,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 1018 pp.fft-timbre-st~;
+#X obj 69 695 pp.env~;
 #A saved;
 #A saved;
 #A saved;
@@ -529,7 +528,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 69 649 pp.env~;
+#X obj 255 347 pp.spat8~;
 #A saved;
 #A saved;
 #A saved;
@@ -551,7 +550,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 255 301 pp.spat8~;
+#X obj 255 391 pp.doppler~;
 #A saved;
 #A saved;
 #A saved;
@@ -573,7 +572,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 255 346 pp.doppler~;
+#X obj 229 1104 pp.fft-partconv-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -595,7 +594,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 229 1058 pp.fft-partconv-st~;
+#X obj 309 1400 pp.lfnoise~;
 #A saved;
 #A saved;
 #A saved;
@@ -617,7 +616,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 309 1337 pp.lfnoise~;
+#X obj 33 1104 pp.fft-partconv~;
 #A saved;
 #A saved;
 #A saved;
@@ -639,7 +638,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 33 1058 pp.fft-partconv~;
+#X obj 301 1357 pp.sdel~;
 #A saved;
 #A saved;
 #A saved;
@@ -661,7 +660,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 301 1294 pp.sdel~;
+#X obj 253 695 pp.env-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -683,7 +682,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 253 649 pp.env-st~;
+#X obj 277 1178 pp.in~;
 #A saved;
 #A saved;
 #A saved;
@@ -705,39 +704,16 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 146 1161 pp.in~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#X obj 239 1252 pp.mult~;
 #X text 16 62 Soundfile processing;
-#X text 21 395 Effects;
-#X text 260 419 stereo;
-#X text 74 418 mono;
-#X text 15 796 Spectral processing;
-#X text 37 818 mono;
-#X text 237 819 stereo;
+#X text 21 441 Effects;
+#X text 260 465 stereo;
+#X text 74 464 mono;
+#X text 15 842 Spectral processing;
+#X text 37 864 mono;
+#X text 237 865 stereo;
 #X text 18 234 Spatialisation;
-#X text 36 1126 Misc.;
-#X obj 69 692 pp.graindelay~;
+#X text 36 1172 Misc.;
+#X obj 69 738 pp.graindelay~;
 #A saved;
 #A saved;
 #A saved;
@@ -759,7 +735,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 251 744 pp.rev~;
+#X obj 251 790 pp.rev~;
 #A saved;
 #A saved;
 #A saved;
@@ -787,39 +763,36 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 0;
 #X obj -1 229 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj -2 390 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -2 436 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj -1 788 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -1 834 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 85 variable-speed soundfile player;
 #X text 428 124 granular sampler;
 #X text 429 167 pvoc time stretching & pitch shifting;
-#X text 428 261 constant power panning;
-#X text 430 347 doppler effect;
-#X text 428 443 frequency shifting;
-#X text 429 481 pitch shifting;
-#X text 430 609 compressor/expander;
-#X text 430 650 simple envelope follower;
-#X text 431 694 granular delay;
-#X text 429 745 reverberator based on [rev3~];
-#X text 428 842 audio block delay;
-#X text 429 893 spectral splitter;
-#X text 429 941 spectral gate;
-#X text 431 978 pvoc based pitchshifter;
-#X text 429 1020 spectral bin-reordering;
-#X text 430 1060 partitioned convolution;
-#X obj -1 1115 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X text 428 258 constant power panning;
+#X text 430 393 doppler effect;
+#X text 428 489 frequency shifting;
+#X text 429 527 pitch shifting;
+#X text 430 655 compressor/expander;
+#X text 430 696 simple envelope follower;
+#X text 431 740 granular delay;
+#X text 429 791 reverberator based on [rev3~];
+#X text 428 888 audio block delay;
+#X text 429 939 spectral splitter;
+#X text 429 987 spectral gate;
+#X text 431 1024 pvoc based pitchshifter;
+#X text 429 1066 spectral bin-reordering;
+#X text 430 1106 partitioned convolution;
+#X obj -1 1161 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 429 305 8-channel distance based amplitude panning;
-#X text 429 1158 input & output;
-#X text 429 1209 record to soundfile;
-#X text 429 1249 signal multiplier;
-#X text 431 1298 samplewise delay;
-#X text 430 1340 low frequency noise generator;
-#X text 431 1386 spectrum analyser;
-#X text 429 565 signal controlled filter (lowpass \, highpass \, resonant)
+#X text 429 351 8-channel distance based amplitude panning;
+#X text 429 1367 samplewise delay;
+#X text 428 1409 low frequency noise generator;
+#X text 429 1455 spectrum analyser;
+#X text 429 611 signal controlled filter (lowpass \, highpass \, resonant)
 ;
-#X obj 69 523 pp.eqfilter~;
+#X obj 69 569 pp.eqfilter~;
 #A saved;
 #A saved;
 #A saved;
@@ -841,7 +814,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X obj 253 522 pp.eqfilter-st~;
+#X obj 253 568 pp.eqfilter-st~;
 #A saved;
 #A saved;
 #A saved;
@@ -863,7 +836,7 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #A saved;
 #A saved;
 #A saved;
-#X text 429 522 eq-filter (lowpass \, highpass \, resonant \, bandpass
+#X text 429 568 eq-filter (lowpass \, highpass \, resonant \, bandpass
 \, notch \, peaking \, lowshelf \, highshelf or allpass);
 #X obj 0 -5 cnv 15 450 60 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -872,3 +845,73 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 0;
 #X obj 25 8 cnv 15 10 10 empty empty AudioLab 20 12 2 40 -228856 -191407
 0;
+#X obj 255 299 pp.midside~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X text 427 306 mid-side panning;
+#X obj 253 653 pp.dynamics-st~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 252 1287 pp.out-8~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X text 429 1196 mic. input;
+#X text 431 1241 stereo output & soundfile recorder;
+#X text 429 1301 8 channel output & soundfile recorder;

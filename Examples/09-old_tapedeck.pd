@@ -1,16 +1,58 @@
-#N struct 1007-template float x float y float c float s float th float
-stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y
+#N struct 2326-template float x float y float c float s float th float
+stretch array 2326-plus 2326-template-y array 2326-minus 2326-template-y
 ;
-#N struct 1007-template-y float y;
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 2326-template-y float y;
+#N struct 2327-template float x float y float c float s float th float
+stretch array 2327-plus 2327-template-y array 2327-minus 2327-template-y
 ;
-#N struct 1008-template-y float y;
-#N canvas 204 62 814 719 10;
+#N struct 2327-template-y float y;
+#N canvas 204 52 814 713 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 399 293 pp.sfplayer~;
-#X obj 401 663 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 401 652 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 657 256 openpanel;
 #X obj 657 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -21,6 +63,27 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 462 93 sel 0;
 #X obj 433 185 lop~ 1.2;
 #X obj 400 508 pp.fft-partconv-st~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 513 268 +~;
 #X obj 390 8 r \$0-play/pause;
 #X obj 462 73 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -34,22 +97,22 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 499 350 noise~;
 #X obj 484 433 +~;
 #X obj 399 434 +~;
-#X floatatom 667 141 5 0 0 0 - - -, f 5;
+#X floatatom 667 141 5 0 0 0 - - -;
 #X obj 528 239 *~ 1;
 #X obj 500 396 *~ 1;
 #X msg 655 492 dry/wet \$1;
 #X obj 655 473 * 100;
 #X obj 499 376 *~ 0.005;
 #X obj 544 336 r \$0-hiss;
-#X floatatom 544 357 5 0 0 0 - - -, f 5;
+#X floatatom 544 357 5 0 0 0 - - -;
 #X obj 534 403 r \$0-bypass;
 #X obj 565 214 r \$0-bypass;
 #X obj 655 434 r \$0-bypass;
 #X obj 655 455 == 0;
 #X obj 534 424 == 0;
 #X obj 565 235 == 0;
-#X obj 515 624 r \$0-volume;
-#X msg 515 643 volume \$1;
+#X obj 566 624 r \$0-volume;
+#X msg 566 667 volume \$1;
 #X obj 573 432 r \$0-tape-IR;
 #X obj 573 452 symbol;
 #X msg 573 473 loadIR \$1;
@@ -72,6 +135,27 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 29 148 bng 15 250 50 0 \$0-open \$0-openr Load_Soundfile 17
 7 2 12 -262144 -1 -1;
 #X obj 528 82 pp.lfnoise~ 30;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 30 187 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
 -8 2 12 -262144 -1 -1 0 1;
 #X msg 657 277 open \$1 \, play 1;
@@ -128,6 +212,27 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X connect 2 0 1 0;
 #X restore 740 63 pd init;
 #X obj 647 83 pp.lfnoise~ 0.3;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 667 122 r \$0-wowflutter;
 #X obj 527 165 *~ 1;
 #X obj 646 177 *~ 1;
@@ -141,6 +246,7 @@ tapedecks. "Dual CC3600" and "Panasonic Tape Deck 269". Both of them
 were severely broken \, but I managed to retrieve some nice impulse
 responses that are used with [pp.fft-partconv~] to get tape-saturation.
 ;
+#X floatatom 566 647 5 0 0 0 - - -;
 #X connect 0 0 20 0;
 #X connect 0 1 19 0;
 #X connect 2 0 52 0;
@@ -181,7 +287,7 @@ responses that are used with [pp.fft-partconv~] to get tape-saturation.
 #X connect 32 0 25 0;
 #X connect 33 0 23 1;
 #X connect 34 0 22 1;
-#X connect 35 0 36 0;
+#X connect 35 0 81 0;
 #X connect 36 0 1 2;
 #X connect 37 0 38 0;
 #X connect 38 0 39 0;
@@ -211,3 +317,4 @@ responses that are used with [pp.fft-partconv~] to get tape-saturation.
 #X connect 72 0 21 0;
 #X connect 73 0 69 0;
 #X connect 74 0 69 1;
+#X connect 81 0 36 0;

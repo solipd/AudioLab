@@ -1,22 +1,22 @@
-#N struct 2235-template float x float y float c float s float th float
-stretch array 2235-plus 2235-template-y array 2235-minus 2235-template-y
+#N struct 2127-template float x float y float c float s float th float
+stretch array 2127-plus 2127-template-y array 2127-minus 2127-template-y
 ;
-#N struct 2235-template-y float y;
-#N struct 2236-template float x float y float c float s float th float
-stretch array 2236-plus 2236-template-y array 2236-minus 2236-template-y
+#N struct 2127-template-y float y;
+#N struct 2128-template float x float y float c float s float th float
+stretch array 2128-plus 2128-template-y array 2128-minus 2128-template-y
 ;
-#N struct 2236-template-y float y;
+#N struct 2128-template-y float y;
 #N canvas 489 192 835 410 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 17 163 hsl 200 15 30 1000 0 0 \$0-looplenght \$0-looplenghtr
-Loop-length -2 -8 2 12 -262144 -1 -1 13500 1;
+Loop-length -2 -8 2 12 -262144 -1 -1 0 1;
 #X obj 17 125 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 15300 1;
+-8 2 12 -262144 -1 -1 0 1;
 #X obj 17 199 hsl 200 15 0 100 0 0 \$0-onset \$0-onsetr Position-onset
--2 -8 2 12 -262144 -1 -1 5000 1;
+-2 -8 2 12 -262144 -1 -1 0 1;
 #N canvas 213 465 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
@@ -30,19 +30,61 @@ Loop-length -2 -8 2 12 -262144 -1 -1 13500 1;
 #X connect 2 0 1 0;
 #X restore 17 11 pd init;
 #X obj 400 209 pp.sfplayer~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 649 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 600 143 5 0 0 0 - - -;
-#X obj 399 353 pp.out~;
+#X obj 399 349 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #X obj 573 142 f;
 #X obj 649 51 metro 1000;
 #X floatatom 719 52 5 0 0 0 - - -;
 #X obj 399 276 pp.mult~ 2;
 #X obj 648 281 vline~;
 #X msg 573 175 position% \$1 \, stop \, play 1;
-#X floatatom 532 353 5 0 0 0 - - -;
-#X msg 532 373 volume \$1;
-#X obj 532 332 r \$0-volume;
+#X floatatom 562 346 5 0 0 0 - - -;
+#X msg 562 366 volume \$1;
+#X obj 562 325 r \$0-volume;
 #N canvas 3 50 450 300 init 0;
 #X obj 176 58 loadbang;
 #X msg 176 79 open MusicBox.wav;
@@ -50,7 +92,7 @@ Loop-length -2 -8 2 12 -262144 -1 -1 13500 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 584 208 pd init;
-#X obj 248 23 declare -path ./audio;
+#X obj 248 25 declare -path ./audio;
 #X obj 649 8 loadbang;
 #X msg 648 258 1 5 \, 0 5 \$1;
 #X obj 663 216 - 5;

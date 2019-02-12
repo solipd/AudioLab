@@ -1,3 +1,11 @@
+#N struct 2134-template float x float y float c float s float th float
+stretch array 2134-plus 2134-template-y array 2134-minus 2134-template-y
+;
+#N struct 2134-template-y float y;
+#N struct 2135-template float x float y float c float s float th float
+stretch array 2135-plus 2135-template-y array 2135-minus 2135-template-y
+;
+#N struct 2135-template-y float y;
 #N canvas 376 163 761 406 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -19,11 +27,53 @@
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X restore 17 11 pd init;
-#X obj 426 362 pp.out~;
-#X floatatom 554 362 5 0 0 0 - - -, f 5;
-#X msg 554 382 volume \$1;
-#X obj 554 341 r \$0-volume;
+#X obj 426 346 pp.out~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X floatatom 589 339 5 0 0 0 - - -;
+#X msg 589 359 volume \$1;
+#X obj 589 318 r \$0-volume;
 #X obj 427 34 pp.sfplayer~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
 #N canvas 3 50 450 300 init 0;
 #X obj 194 72 loadbang;
 #X msg 194 93 open MusicBox.wav \, play 1 \, playback-speed 100 \,
@@ -33,10 +83,31 @@ position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
 #X connect 1 0 2 0;
 #X restore 600 13 pd init;
 #X obj 427 202 pp.fft-timbre-st~ 512 4;
-#X obj 15 347 s \$0-timb;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 15 352 s \$0-timb;
 #X obj 600 146 r \$0-timb;
 #X obj 664 145 r \$0-drywet;
-#X floatatom 664 166 5 0 0 0 - - -, f 5;
+#X floatatom 664 166 5 0 0 0 - - -;
 #X msg 664 186 dry/wet \$1;
 #X msg 15 250 blocksize 512 \, overlap 4 \, shift -630 \, curve-1 526
 \, curve-2 622 \, breakpoint-1 422 \, breakpoint-2 10 \, gain 12 \,
@@ -44,13 +115,13 @@ position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
 #X msg 15 216 blocksize 512 \, overlap 8 \, shift 0 \, curve-1 -314
 \, curve-2 -207 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 12 \,
 ;
-#X msg 15 283 blocksize 1024 \, overlap 4 \, shift 185 \, curve-1 -1616
+#X msg 15 285 blocksize 1024 \, overlap 4 \, shift 185 \, curve-1 -1616
 \, curve-2 1201 \, breakpoint-1 -40 \, breakpoint-2 -8 \, gain 12 \,
 ;
-#X msg 15 315 blocksize 1024 \, overlap 4 \, shift -559 \, curve-1
+#X msg 15 320 blocksize 1024 \, overlap 4 \, shift -559 \, curve-1
 658 \, curve-2 986 \, breakpoint-1 429 \, breakpoint-2 110 \, gain
 18 \,;
-#X obj 262 24 declare -path ./audio;
+#X obj 262 26 declare -path ./audio;
 #X text 15 47 This example shows how different fft-blocks sizes und
 curve parameters of the [pp.fft-timbre~] module affects the acoustic
 pattern of a sound.;

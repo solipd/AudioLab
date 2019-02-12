@@ -1,0 +1,152 @@
+#N canvas 281 66 566 685 10;
+#X declare -path ..;
+#X obj 2 2 cnv 15 550 1000 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 14 11 declare -path ..;
+#X obj 11 37 cnv 15 520 400 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 26 280 pp.vcfilter~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 27 181 noise~;
+#X msg 174 327 lowpass \, frequency 0 \, q 0 \,;
+#X text 183 296 <-- click to open GUI;
+#X text 18 368 The rightmost outlet will set a message box with all
+the parameters that have been changed.;
+#X text 19 75 The rightmost inlet is reserved for control-messages
+\, the leftmost inlets/outlets are usually reserved for audio-signals.
+;
+#X text 20 48 Parameters can be changed in the GUI or via message commands.
+;
+#X text 19 115 There are extra contol signal-inlets in most modules
+(check helpfile). Control signals are added to the value that was set
+via message or in the GUI.;
+#X text 133 204 signal frequency...;
+#X msg 174 242 frequency 300;
+#X obj 76 203 sig~ 600;
+#X text 182 261 so the actual cutoff frequency of the filter is 900hz
+;
+#X text 166 225 ...is added to:;
+#X obj 10 657 cnv 15 520 300 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 28 666 Pass on parameter changes from one instance of an abstraction
+to another.;
+#X msg 182 835 lowpass \, frequency 0 \, q 0 \,;
+#X text 28 911 There must be a message box in between the objects \,
+directly connecting two objects won't work;
+#X msg 196 748 highpass;
+#X msg 201 769 lowpass;
+#X floatatom 182 706 5 0 0 0 - - -;
+#X msg 182 728 frequency \$1;
+#X obj 34 792 pp.vcfilter~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 34 867 pp.vcfilter~;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X obj 11 447 cnv 15 520 200 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 219 568 pp.vcfilter~;
+#A saved q 16 | frequency 188 | lowpass |;
+#A saved q 9 | frequency 3581 | highpass |;
+#A saved q 11 | frequency 533 | reson |;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#A saved;
+#X msg 367 474 save 0;
+#X msg 367 496 save 1;
+#X msg 423 511 recall 0;
+#X msg 423 534 recall 1;
+#X msg 367 518 save 2;
+#X msg 423 557 recall 2;
+#X text 18 473 There are up to 21 preset slots for each abstraction.
+Presets will be saved with the parrent patch.;
+#X text 19 451 State saving:;
+#X connect 3 1 5 0;
+#X connect 4 0 3 0;
+#X connect 12 0 3 3;
+#X connect 13 0 3 1;
+#X connect 18 0 25 3;
+#X connect 20 0 24 3;
+#X connect 21 0 24 3;
+#X connect 22 0 23 0;
+#X connect 23 0 24 3;
+#X connect 24 1 18 0;
+#X connect 28 0 27 3;
+#X connect 29 0 27 3;
+#X connect 30 0 27 3;
+#X connect 31 0 27 3;
+#X connect 32 0 27 3;
+#X connect 33 0 27 3;
