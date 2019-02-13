@@ -1,14 +1,14 @@
-#N struct 1654-template float x float y float c float s float th float
-stretch array 1654-plus 1654-template-y array 1654-minus 1654-template-y
+#N struct 1509-template float x float y float c float s float th float
+stretch array 1509-plus 1509-template-y array 1509-minus 1509-template-y
 ;
-#N struct 1654-template-y float y;
-#N struct 1655-template float x float y float c float s float th float
-stretch array 1655-plus 1655-template-y array 1655-minus 1655-template-y
+#N struct 1509-template-y float y;
+#N struct 1510-template float x float y float c float s float th float
+stretch array 1510-plus 1510-template-y array 1510-minus 1510-template-y
 ;
-#N struct 1655-template-y float y;
+#N struct 1510-template-y float y;
 #N canvas 140 117 785 461 10;
 #X declare -path ./Examples/audio;
-#X obj 398 417 pp.out~;
+#X obj 398 398 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -257,10 +257,10 @@ with the parrent patch;
 #N canvas 686 449 454 180 message-out 0;
 #X obj 20 20 inlet;
 #X msg 20 45 dry/wet 60 \, feedback 50 \, damping-frequency 3000 \,
-damping 50 \, rise 10 \, curve 10 \, slope 130 \, width 0 \, early
-0 1.42763 3.23873 5.2345 7.82312 \, tail 10 11.6356 13.4567 16.7345
-20.1862 25.7417 31.4693 38.2944 46.6838 55.4567 65.1755 76.8243 88.5623
-101.278 115.397 130.502 \,;
+damping 50 \, rise 10 \, curve 10 \, slope 130 \, width 100 \, early
+0 1.42763 3.23873 5.2345 7.82312 \, tail 10 10.5778 12.3111 15.2 19.2444
+24.4444 30.8 38.3111 46.9778 56.8 67.7778 79.9111 93.2 107.644 123.244
+140 \,;
 #X connect 0 0 1 0;
 #X restore 546 332 pd message-out;
 #X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577

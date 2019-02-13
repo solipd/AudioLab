@@ -1,5 +1,5 @@
 #N canvas 260 164 872 308 10;
-#X obj 389 259 pp.out~;
+#X obj 389 250 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -23,8 +23,8 @@
 #A saved;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X msg 518 201 blocksize 1024 \, overlap 4 \,;
-#X obj 518 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X msg 518 177 blocksize 1024 \, overlap 4 \,;
+#X obj 518 93 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 374 373 control-messages 0;
 #X obj 74 292 outlet;
@@ -75,7 +75,7 @@ with the parrent patch;
 #X connect 7 0 5 0;
 #X connect 8 0 5 0;
 #X connect 11 0 0 0;
-#X restore 518 117 pd control-messages;
+#X restore 518 93 pd control-messages;
 #X text 68 112 1:(~)signal;
 #X text 10 113 Inlets:;
 #X text 10 160 Outlets:;
@@ -84,7 +84,7 @@ with the parrent patch;
 #X text 11 64 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
 #X text 131 76 \$2: overlap \, default: 4;
-#X obj 389 148 pp.fft-block~ 1024 4;
+#X obj 389 124 pp.fft-block~ 1024 4;
 #A saved;
 #A saved;
 #A saved;

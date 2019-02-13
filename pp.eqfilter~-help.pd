@@ -1,7 +1,7 @@
-#N struct 1414-xt float x float y;
-#N struct 1414-yt float x float y;
+#N struct 1436-xt float x float y;
+#N struct 1436-yt float x float y;
 #N canvas 414 147 857 313 10;
-#X obj 390 266 pp.out~;
+#X obj 390 247 pp.out~;
 #A saved;
 #A saved;
 #A saved;

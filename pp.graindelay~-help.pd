@@ -1,14 +1,14 @@
-#N struct 1457-template float x float y float c float s float th float
-stretch array 1457-plus 1457-template-y array 1457-minus 1457-template-y
+#N struct 1470-template float x float y float c float s float th float
+stretch array 1470-plus 1470-template-y array 1470-minus 1470-template-y
 ;
-#N struct 1457-template-y float y;
-#N struct 1458-template float x float y float c float s float th float
-stretch array 1458-plus 1458-template-y array 1458-minus 1458-template-y
+#N struct 1470-template-y float y;
+#N struct 1471-template float x float y float c float s float th float
+stretch array 1471-plus 1471-template-y array 1471-minus 1471-template-y
 ;
-#N struct 1458-template-y float y;
+#N struct 1471-template-y float y;
 #N canvas 163 197 840 363 10;
 #X declare -path ./Examples/audio;
-#X obj 397 312 pp.out~;
+#X obj 397 297 pp.out~;
 #A saved;
 #A saved;
 #A saved;

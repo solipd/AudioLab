@@ -1,5 +1,5 @@
-#N canvas 577 77 748 309 10;
-#X obj 390 260 pp.out~;
+#N canvas 554 88 748 309 10;
+#X obj 391 247 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -27,7 +27,7 @@
 #X text 45 190 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.midside~ 0 0 2 16 -233017
 -262144 0;
-#X obj 390 31 noise~;
+#X obj 391 12 noise~;
 #X text 103 190 1:(~)signal left;
 #X text 103 214 3:message;
 #X text 103 202 2:(~)signal right;
@@ -35,8 +35,8 @@
 #X obj 30 33 inlet;
 #X msg 30 60 width 0 \,;
 #X connect 0 0 1 0;
-#X restore 539 241 pd message-out;
-#X obj 539 176 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X restore 540 204 pd message-out;
+#X obj 540 139 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 1023 138 330 209 control-messages 0;
 #X obj 54 180 outlet;
@@ -75,8 +75,8 @@ with the parrent patch;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
 #X connect 5 0 0 0;
-#X restore 539 176 pd control-messages;
-#X obj 391 201 pp.midside~;
+#X restore 540 139 pd control-messages;
+#X obj 392 164 pp.midside~;
 #A saved;
 #A saved;
 #A saved;
@@ -98,7 +98,7 @@ with the parrent patch;
 #A saved;
 #A saved;
 #A saved;
-#X obj 391 90 pp.pan~;
+#X obj 392 71 pp.pan~;
 #A saved;
 #A saved;
 #A saved;
@@ -120,13 +120,24 @@ with the parrent patch;
 #A saved;
 #A saved;
 #A saved;
-#X obj 466 59 osc~ 0.75;
+#X obj 467 40 osc~ 0.75;
 #X text 103 125 1:(~)signal left;
 #X text 103 138 2:(~)signal right;
 #X text 103 163 4:control-messages;
 #X text 30 82 Creation arguments: none;
 #X text 31 37 mid-side mixer;
 #X text 103 150 3:(~)mid-side (-1 \, 1);
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 259 167 506 106 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 20 10 based on Robin Schmidt's stereo processing tutorial:
+http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
+63;
+#X restore 5 282 pd references;
 #X connect 5 0 13 0;
 #X connect 11 0 12 3;
 #X connect 12 0 0 0;

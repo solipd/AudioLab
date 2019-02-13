@@ -1,7 +1,7 @@
-#N struct 1422-xt float x float y;
-#N struct 1422-yt float x float y;
+#N struct 1444-xt float x float y;
+#N struct 1444-yt float x float y;
 #N canvas 431 172 857 308 10;
-#X obj 390 265 pp.out~;
+#X obj 390 248 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -133,8 +133,8 @@ Audio-EQ-cookbook rezipes:;
 #X text 473 36 filter frequency(hz);
 #X text 549 126 <-- click to open GUI;
 #X text 68 147 4:control-messages;
-#X obj 461 191 pp.spectrum~;
-#X text 622 204 <-- click to analyze;
+#X obj 461 182 pp.spectrum~;
+#X text 622 195 <-- click to analyze;
 #X text 68 134 3:(~)filter-q;
 #X text 15 76 \$1: filtertype (lowpass \, highpass \, reson) \, default:
 lowpass;

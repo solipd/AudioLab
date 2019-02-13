@@ -1,5 +1,5 @@
-#N canvas 260 164 943 308 10;
-#X obj 390 260 pp.out~;
+#N canvas 260 164 943 306 10;
+#X obj 390 244 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -25,18 +25,18 @@
 0;
 #X obj 562 97 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 152 124 374 373 control-messages 0;
-#X obj 74 341 outlet;
+#N canvas 152 124 601 544 control-messages 0;
+#X obj 74 459 outlet;
 #X floatatom 74 7 5 0 0 0 - - -;
-#X msg 127 226 blocksize \$1;
-#X msg 127 202 512;
-#X msg 156 202 1024;
-#X msg 192 203 2048;
-#X msg 128 287 overlap \$1;
-#X msg 128 262 2;
-#X msg 157 263 4;
-#X msg 188 263 8;
-#X text 213 226 fft-blocksize;
+#X msg 127 354 blocksize \$1;
+#X msg 127 330 512;
+#X msg 156 330 1024;
+#X msg 192 331 2048;
+#X msg 127 405 overlap \$1;
+#X msg 127 380 2;
+#X msg 156 381 4;
+#X msg 187 381 8;
+#X text 213 354 fft-blocksize;
 #X msg 74 27 threshold \$1;
 #X text 115 8 noise-threshold level(db);
 #X floatatom 91 49 5 0 0 0 - - -;
@@ -48,7 +48,7 @@
 #X floatatom 122 133 5 0 100 0 - - -;
 #X msg 122 153 dry/wet \$1;
 #X text 160 134 %;
-#X obj 127 314 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 127 432 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
@@ -76,7 +76,13 @@ with the parrent patch;
 #X connect 9 0 12 0;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
-#X restore 127 313 pd save&recall;
+#X restore 127 431 pd save&recall;
+#X msg 128 198 responsiveness 0.374999 0.449999 0.537499 0.6625 0.8
+0.875001 0.875001 0.862501 0.862501 0.825001 0.8 0.7875 0.75 0.725
+0.6625 0.6 0.537499 0.537499 0.537499 0.537499 0.3875 0.3625 0.3625
+0.3625 0.349999 0.324999 0.299999 0.287499 0.249999 0.224999 0.212499
+0.199999 \,;
+#X text 138 180 set response filter (32 values);
 #X connect 1 0 11 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
@@ -94,6 +100,7 @@ with the parrent patch;
 #X connect 19 0 20 0;
 #X connect 20 0 0 0;
 #X connect 23 0 0 0;
+#X connect 24 0 0 0;
 #X restore 562 97 pd control-messages;
 #X text 68 95 1:(~)signal;
 #X text 10 96 Inlets:;
@@ -106,6 +113,23 @@ with the parrent patch;
 #X text 11 55 Creation arguments: \$1: fft-blocksize \, default: 1024
 ;
 #X text 131 67 \$2: overlap \, default: 4;
+#X text 68 156 2:(~)signal (noisy part);
+#X text 68 143 1:(~)signal (denoised part);
+#X text 68 107 2:control-messages;
+#X obj 407 66 *~ 0.25;
+#X obj 389 21 osc~ 440;
+#X obj 388 88 +~;
+#X text 12 34 spectral denoiser;
+#N canvas 672 352 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 blocksize 0 \, overlap 4 \, threshold 0 \, gate 100 \,
+gain 0 \, dry/wet 100 \, responsiveness 0.900003 0.900003 0.887503
+0.875003 0.862502 0.850002 0.850002 0.837502 0.837502 0.775002 0.725002
+0.625002 0.525001 0.437501 0.412501 0.375001 0.350001 0.3375 0.3125
+0.3 0.2875 0.275 0.25 0.2375 0.225 0.225 0.225 0.162499 0.162499 0.149999
+0.149999 0.149999 \,;
+#X connect 0 0 1 0;
+#X restore 562 163 pd message-out;
 #X obj 389 122 pp.fft-gate~ 1024 4;
 #A saved;
 #A saved;
@@ -128,46 +152,23 @@ with the parrent patch;
 #A saved;
 #A saved;
 #A saved;
-#X text 68 156 2:(~)signal (noisy part);
-#X text 68 143 1:(~)signal (denoised part);
-#X text 68 107 2:control-messages;
-#X obj 407 66 *~ 0.25;
-#X obj 389 21 osc~ 440;
-#X obj 388 88 +~;
-#X text 12 34 spectral denoiser;
-#N canvas 740 417 503 292 message-out 0;
-#X obj 30 33 inlet;
-#X msg 30 60 blocksize 1024 \, overlap 4 \, threshold 0 \, gate 0 \,
-gain 0 \, dry/wet 100 \,;
-#X connect 0 0 1 0;
-#X restore 562 163 pd message-out;
-#X obj 521 260 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#X connect 3 0 13 1;
-#X connect 8 0 17 0;
-#X connect 13 0 0 0;
-#X connect 13 1 22 0;
-#X connect 13 2 21 0;
-#X connect 17 0 19 1;
-#X connect 18 0 19 0;
-#X connect 19 0 13 0;
+#X obj 405 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 390 207 *~;
+#X obj 490 187 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 475 207 *~;
+#X connect 3 0 21 1;
+#X connect 8 0 16 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 0;
+#X connect 18 0 21 0;
+#X connect 21 0 23 0;
+#X connect 21 1 25 0;
+#X connect 21 2 20 0;
+#X connect 22 0 23 1;
+#X connect 23 0 0 0;
+#X connect 23 0 0 1;
+#X connect 24 0 25 1;
+#X connect 25 0 0 1;
+#X connect 25 0 0 0;

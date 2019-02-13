@@ -1,6 +1,6 @@
 #N canvas 198 136 771 326 10;
 #X declare -path ./Examples/audio;
-#X obj 396 279 pp.out~;
+#X obj 397 270 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -26,7 +26,7 @@
 0;
 #X obj 12 15 cnv 15 10 10 empty empty pp.fft-partconv~ 0 0 2 16 -233017
 -262144 0;
-#X obj 570 147 cnv 16 118 16 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 570 128 cnv 16 118 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 195 89 834 524 control-messages 0;
 #X obj 48 457 outlet;
@@ -7496,15 +7496,15 @@ with the parrent patch;
 #X connect 19 0 12 0;
 #X connect 20 0 15 0;
 #X connect 25 0 0 0;
-#X restore 570 146 pd control-messages;
+#X restore 570 127 pd control-messages;
 #X text 10 109 Inlets:;
 #X text 11 177 Outlets:;
-#X obj 484 131 sig~;
-#X floatatom 484 112 5 0 100 0 - - -;
+#X obj 484 112 sig~;
+#X floatatom 484 93 5 0 100 0 - - -;
 #X text 67 108 1:(~)signal;
 #X text 67 133 3:control-messages;
 #X text 67 191 2:message;
-#X text 519 112 dry/wet(%);
+#X text 519 93 dry/wet(%);
 #X text 10 31 partitioned IR-convolution;
 #X text 67 121 2:(~)dry/wet(%);
 #X text 67 177 1:(~)convolved signal;
@@ -7514,12 +7514,12 @@ with the parrent patch;
 #X msg 87 74 loadIR IR-Staircase.wav;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
-#X restore 583 169 pd init;
+#X restore 583 150 pd init;
 #X obj 192 6 declare -path ./Examples/audio;
 #X text 37 71 \$1: fft-blocksize of the first partition \, default:
 1024;
 #X text 10 51 Creation arguments:;
-#X obj 397 170 pp.fft-partconv~ 1024;
+#X obj 397 151 pp.fft-partconv~ 1024;
 #A saved;
 #A saved;
 #A saved;
@@ -7578,7 +7578,7 @@ with the parrent patch;
 #X msg 20 45 blocksize 1024 \, dry/wet 100 \, loadIR IR-Staircase.wav
 \, max-blocksize 65536 \,;
 #X connect 0 0 1 0;
-#X restore 570 226 pd message-out;
+#X restore 570 207 pd message-out;
 #X connect 4 0 20 2;
 #X connect 7 0 20 1;
 #X connect 8 0 7 0;

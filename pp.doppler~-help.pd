@@ -1,5 +1,5 @@
 #N canvas 387 125 874 313 10;
-#X obj 390 259 pp.out~;
+#X obj 390 249 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -28,8 +28,8 @@
 #X text 10 151 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.doppler~ 0 0 2 16 -233017
 -262144 0;
-#X text 550 162 <-- click to open GUI;
-#X obj 389 148 pp.doppler~;
+#X text 550 134 <-- click to open GUI;
+#X obj 389 120 pp.doppler~;
 #A saved;
 #A saved;
 #A saved;
@@ -52,7 +52,7 @@
 #A saved;
 #A saved;
 #X text 10 55 Creation arguments: none;
-#X obj 537 125 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 537 97 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 423 269 control-messages 0;
 #X obj 70 241 outlet;
@@ -102,7 +102,7 @@ with the parrent patch;
 #X connect 7 0 8 0;
 #X connect 8 0 0 0;
 #X connect 10 0 0 0;
-#X restore 537 125 pd control-messages;
+#X restore 537 97 pd control-messages;
 #N canvas 3 50 450 300 synth 0;
 #X obj 97 6 osc~ 660;
 #X obj 245 116 vline~;
@@ -130,15 +130,15 @@ with the parrent patch;
 #X connect 10 0 11 0;
 #X connect 11 0 1 0;
 #X connect 12 0 4 0;
-#X restore 390 37 pd synth;
-#X obj 464 79 osc~ 0.2;
-#X obj 464 100 *~ 20;
+#X restore 390 9 pd synth;
+#X obj 464 51 osc~ 0.2;
+#X obj 464 72 *~ 20;
 #X text 68 128 3:control-messages;
 #X text 68 116 2:(~)trajectory;
 #X text 68 151 1:(~)transposed signal;
 #X text 68 177 3:message;
 #X text 68 164 2:(~)pan modulation;
-#X obj 390 215 pp.pan~ sqrt;
+#X obj 390 187 pp.pan~ sqrt;
 #A saved;
 #A saved;
 #A saved;
@@ -165,7 +165,7 @@ with the parrent patch;
 #X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping
 100 \,;
 #X connect 0 0 1 0;
-#X restore 537 187 pd message-out;
+#X restore 537 159 pd message-out;
 #X connect 7 0 19 0;
 #X connect 7 1 19 1;
 #X connect 7 2 20 0;

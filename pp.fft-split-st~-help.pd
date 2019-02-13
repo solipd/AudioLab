@@ -1,5 +1,5 @@
 #N canvas 373 286 872 308 10;
-#X obj 390 259 pp.out~;
+#X obj 390 248 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -23,7 +23,7 @@
 #A saved;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 563 103 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 563 86 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 152 124 374 373 control-messages 0;
 #X obj 74 262 outlet;
@@ -79,7 +79,7 @@ with the parrent patch;
 #X connect 10 0 8 0;
 #X connect 11 0 8 0;
 #X connect 14 0 0 0;
-#X restore 563 103 pd control-messages;
+#X restore 563 86 pd control-messages;
 #X text 10 96 Inlets:;
 #X text 10 155 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.fft-split-st~ 0 0 2 16 -233017
@@ -99,7 +99,7 @@ with the parrent patch;
 #X text 68 181 3:(~)filtered signal left hip;
 #X text 68 194 4:(~)filtered signal right hip;
 #X text 68 207 5:message;
-#X obj 520 258 pp.out~;
+#X obj 559 247 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -127,8 +127,8 @@ with the parrent patch;
 #X obj 30 33 inlet;
 #X msg 30 60 frequency 0 \, blocksize 1024 \, overlap 4 \,;
 #X connect 0 0 1 0;
-#X restore 563 167 pd message-out;
-#X obj 390 128 pp.fft-split-st~ 1024 4;
+#X restore 563 150 pd message-out;
+#X obj 390 111 pp.fft-split-st~ 1024 4;
 #A saved;
 #A saved;
 #A saved;

@@ -1,7 +1,7 @@
-#N struct 1426-xt float x float y;
-#N struct 1426-yt float x float y;
+#N struct 1448-xt float x float y;
+#N struct 1448-yt float x float y;
 #N canvas 387 125 857 309 10;
-#X obj 391 265 pp.out~;
+#X obj 391 248 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -27,7 +27,7 @@
 0;
 #X obj 538 75 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 152 124 552 519 control-messages 1;
+#N canvas 152 124 552 519 control-messages 0;
 #X obj 86 397 outlet;
 #X floatatom 86 102 5 0 0 0 - - -;
 #X msg 86 122 frequency \$1;

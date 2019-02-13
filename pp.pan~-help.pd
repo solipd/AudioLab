@@ -1,5 +1,5 @@
-#N canvas 577 77 748 309 10;
-#X obj 390 260 pp.out~;
+#N canvas 268 148 748 309 10;
+#X obj 390 248 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -37,17 +37,17 @@
 #X text 103 202 2:(~)signal right;
 #X text 103 164 3:(~)control-message;
 #X obj 464 44 osc~ 1;
-#X obj 464 154 *~;
-#X floatatom 479 107 5 0 100 0 - - -;
-#X obj 479 129 / 100;
+#X obj 464 125 *~;
+#X floatatom 479 78 5 0 100 0 - - -;
+#X obj 479 100 / 100;
 #X text 30 70 Creation arguments: panning law: "cos" or "sqrt";
 #X text 151 83 default: cos;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
 #X msg 30 60 panorama 0 \, cos \,;
 #X connect 0 0 1 0;
-#X restore 539 241 pd message-out;
-#X obj 391 201 pp.pan~ cos;
+#X restore 539 220 pd message-out;
+#X obj 391 151 pp.pan~ cos;
 #A saved;
 #A saved;
 #A saved;
@@ -69,7 +69,7 @@
 #A saved;
 #A saved;
 #A saved;
-#X obj 539 176 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 539 126 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 1023 138 330 209 control-messages 0;
 #X obj 54 180 outlet;
@@ -115,7 +115,7 @@ with the parrent patch;
 #X connect 4 0 0 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X restore 539 176 pd control-messages;
+#X restore 539 126 pd control-messages;
 #X connect 6 0 14 0;
 #X connect 7 0 21 0;
 #X connect 14 0 15 0;

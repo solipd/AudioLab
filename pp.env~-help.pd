@@ -1,5 +1,5 @@
-#N canvas 387 125 667 309 10;
-#X obj 390 260 pp.out~;
+#N canvas 387 125 690 309 10;
+#X obj 390 248 pp.out~;
 #A saved;
 #A saved;
 #A saved;
@@ -70,7 +70,7 @@
 #X text 103 129 2:control-messages;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 responsiveness 20;
+#X msg 30 60 responsiveness 20 \,;
 #X connect 0 0 1 0;
 #X restore 537 126 pd message-out;
 #X obj 537 60 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
