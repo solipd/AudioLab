@@ -88,7 +88,7 @@
 #X obj 6 125 cnv 1 1 1 empty empty -1 0 0 2 11 -233017 -262144 0;
 #X obj 74 15 cnv 16 16 16 \$0-spcnv1 \$0-spcnv1r 1 5 7 2 14 -172033
 -262144 0;
-#X obj 177 15 cnv 16 16 16 \$0-spcnv2 \$0-spcnv2r 2 5 7 2 14 -229377
+#X obj 177 15 cnv 16 16 16 \$0-spcnv2 \$0-spcnv2r 2 5 7 2 14 -172033
 -262144 0;
 #X obj 236 74 cnv 16 16 16 \$0-spcnv4 \$0-spcnv4r 4 5 7 2 14 -172033
 -262144 0;
@@ -114,20 +114,20 @@
 #X obj 158 342 s \$0-cnvposition-6;
 #X obj 176 362 s \$0-cnvposition-7;
 #X obj 200 382 s \$0-cnvposition-8;
-#X obj 395 233 != 0;
-#X obj 395 254 s \$0-preset;
+#X obj 395 261 != 0;
+#X obj 395 282 s \$0-preset;
 #X obj 68 146 route speaker-1 speaker-2 speaker-3 speaker-4 speaker-5
 speaker-6 speaker-7 speaker-8;
 #X obj 395 208 route preset cos sqrt;
-#X obj 447 108 loadbang;
-#X obj 447 175 list trim;
-#X obj 447 152 list;
-#X obj 447 130 symbol \$1;
-#X obj 470 285 s \$0-panlaw;
-#X obj 470 240 t b;
-#X msg 470 261 0;
-#X obj 501 241 t b;
-#X msg 501 262 1;
+#X obj 447 77 loadbang;
+#X obj 412 176 list trim;
+#X obj 412 153 list;
+#X obj 412 131 symbol \$1;
+#X obj 474 292 s \$0-panlaw;
+#X obj 436 232 t b;
+#X msg 474 268 0;
+#X obj 505 248 t b;
+#X msg 505 269 1;
 #N canvas 937 111 450 300 recall 0;
 #N canvas 156 162 1004 423 recall 0;
 #X obj 106 5 savestate;
@@ -310,6 +310,7 @@ speaker-6 speaker-7 speaker-8;
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;
 #X restore 97 93 pd route save-recall;
+#X obj 447 100 t b b;
 #X connect 0 0 11 0;
 #X connect 0 0 23 0;
 #X connect 9 0 10 0;
@@ -325,7 +326,7 @@ speaker-6 speaker-7 speaker-8;
 #X connect 12 0 9 0;
 #X connect 12 1 18 0;
 #X connect 12 2 20 0;
-#X connect 13 0 16 0;
+#X connect 13 0 24 0;
 #X connect 14 0 12 0;
 #X connect 15 0 14 0;
 #X connect 16 0 15 0;
@@ -334,6 +335,8 @@ speaker-6 speaker-7 speaker-8;
 #X connect 20 0 21 0;
 #X connect 21 0 17 0;
 #X connect 22 0 11 0;
+#X connect 24 0 16 0;
+#X connect 24 1 19 0;
 #X restore 925 88 pd in;
 #N canvas 3 195 1269 462 gui-color~~~~~~~~~~~~~~~~~~ 0;
 #X obj 49 3 inlet~;
