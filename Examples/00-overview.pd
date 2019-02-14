@@ -10,17 +10,18 @@ stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 ;
 #N struct 1008-template-y float y;
-#N struct 1140-xt float x float y;
-#N struct 1140-yt float x float y;
+#N struct 1139-xt float x float y;
+#N struct 1139-yt float x float y;
+#N struct 1147-template float x float y float c float s float th float
+stretch array 1147-plus 1147-template-y array 1147-minus 1147-template-y
+;
+#N struct 1147-template-y float y;
 #N struct 1148-template float x float y float c float s float th float
 stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 ;
 #N struct 1148-template-y float y;
-#N struct 1149-template float x float y float c float s float th float
-stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
-;
-#N struct 1149-template-y float y;
-#N canvas 351 76 812 716 10;
+#N canvas 351 52 812 713 10;
+#X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
 #A saved;
@@ -915,3 +916,4 @@ stretch array 1149-plus 1149-template-y array 1149-minus 1149-template-y
 #X text 429 1196 mic. input;
 #X text 431 1241 stereo output & soundfile recorder;
 #X text 429 1301 8 channel output & soundfile recorder;
+#X obj 624 5 declare -path ..;
