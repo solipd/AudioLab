@@ -643,7 +643,7 @@
 #X obj 77 180 s \$0-modusr;
 #X msg 77 159 label rms;
 #X msg 96 133 label peak;
-#X msg 371 251 relocate 515x205+1+1 1x1+50+50 \, vis 1;
+#X msg 371 251 relocate 515x205+1+1 1x1+50+60 \, vis 1;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
