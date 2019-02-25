@@ -1,4 +1,4 @@
-#N canvas 387 125 692 308 10;
+#N canvas 387 125 814 308 10;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 20 120 Inlets:;
@@ -104,6 +104,7 @@ audio is being computed., f 51;
 #X restore 558 129 pd control-messages;
 #X text 20 86 Creation arguments: none;
 #X text 11 34 stereo speaker output & soundfile recorder;
+#X text 566 185 <-- click to open savepanel;
 #X connect 4 0 10 0;
 #X connect 9 0 4 0;
 #X connect 9 0 4 1;
