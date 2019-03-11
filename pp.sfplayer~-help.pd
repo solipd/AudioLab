@@ -1,12 +1,12 @@
-#N struct 1257-template float x float y float c float s float th float
-stretch array 1257-plus 1257-template-y array 1257-minus 1257-template-y
+#N struct 2449-template float x float y float c float s float th float
+stretch array 2449-plus 2449-template-y array 2449-minus 2449-template-y
 ;
-#N struct 1257-template-y float y;
-#N struct 1258-template float x float y float c float s float th float
-stretch array 1258-plus 1258-template-y array 1258-minus 1258-template-y
+#N struct 2449-template-y float y;
+#N struct 2450-template float x float y float c float s float th float
+stretch array 2450-plus 2450-template-y array 2450-minus 2450-template-y
 ;
-#N struct 1258-template-y float y;
-#N canvas 170 239 1023 309 10;
+#N struct 2450-template-y float y;
+#N canvas 170 239 784 309 10;
 #X obj 397 246 pp.out~;
 #A saved;
 #A saved;
@@ -166,7 +166,7 @@ long soundfiles (up to 16 min. at 44100 hz. sampling rate);
 #X text 67 150 2:(~)right out;
 #X text 67 162 3:message;
 #X text 11 61 Creation arguments: none;
-#X obj 7 280 cnv 15 81 15 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 596 106 504 105 references 0;
 #X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
