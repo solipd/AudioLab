@@ -68,7 +68,7 @@
 #X obj 618 428 outlet~;
 #X obj 675 428 outlet~;
 #X obj 778 56 inlet~;
-#N canvas 50 82 272 272 \$0-spat8 0;
+#N canvas 50 82 272 272 \$0-spat8 1;
 #X obj 2 2 cnv 1 264 264 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #X obj 3 3 cnv 1 262 262 empty empty empty 20 12 0 14 -66577 -66577
@@ -669,7 +669,7 @@ speaker-6 speaker-7 speaker-8;
 #X connect 156 0 142 0;
 #X connect 157 0 151 1;
 #X restore 741 269 pd gui-color~~~~~~~~~~~~~~~~~~;
-#N canvas 0 49 1363 719 pythagoras~~~~~~~~~~~~~~~~~ 0;
+#N canvas 0 54 1363 714 pythagoras~~~~~~~~~~~~~~~~~ 0;
 #X obj 58 10 inlet~ x;
 #X obj 145 9 inlet~ y;
 #X obj 64 366 -~;
@@ -2440,7 +2440,7 @@ get_pos \; \$1-spcnv7r get_pos \; \$1-spcnv8r get_pos \; \$1-mcnv dirty
 #X connect 4 0 1 1;
 #X connect 5 0 1 1;
 #X restore 674 267 pd amp;
-#X obj 995 42 namecanvas \$0-mcnv;
+#X obj 970 36 namecanvas \$0-mcnv;
 #X connect 1 0 20 0;
 #X connect 2 0 1 0;
 #X connect 3 0 20 1;

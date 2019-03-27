@@ -1,11 +1,11 @@
-#N struct 1171-template float x float y float c float s float th float
-stretch array 1171-plus 1171-template-y array 1171-minus 1171-template-y
+#N struct 1089-template float x float y float c float s float th float
+stretch array 1089-plus 1089-template-y array 1089-minus 1089-template-y
 ;
-#N struct 1171-template-y float y;
-#N struct 1172-template float x float y float c float s float th float
-stretch array 1172-plus 1172-template-y array 1172-minus 1172-template-y
+#N struct 1089-template-y float y;
+#N struct 1090-template float x float y float c float s float th float
+stretch array 1090-plus 1090-template-y array 1090-minus 1090-template-y
 ;
-#N struct 1172-template-y float y;
+#N struct 1090-template-y float y;
 #N canvas 357 248 545 417 10;
 #N canvas 388 225 751 540 open 0;
 #X obj 272 256 soundfiler;
@@ -16,8 +16,6 @@ stretch array 1172-plus 1172-template-y array 1172-minus 1172-template-y
 #X obj 212 408 s waveform/\$0-links;
 #X obj 239 431 s waveform/\$0-rechts;
 #X obj 90 400 s \$0-stoptglr;
-#X msg 272 208 read -resize -maxsize 4.3e+07 \$1 \$2-links \$2-rechts
-;
 #X obj 500 42 openpanel;
 #X obj 500 21 r \$0-op;
 #X obj 346 50 r \$0-open-sf;
@@ -191,25 +189,26 @@ stretch array 1172-plus 1172-template-y array 1172-minus 1172-template-y
 #X obj 346 85 t a a b;
 #X msg 385 130 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts
 ;
+#X msg 272 208 read -resize \$1 \$2-links \$2-rechts;
+#X connect 0 0 14 0;
 #X connect 0 0 15 0;
-#X connect 0 0 16 0;
 #X connect 0 1 4 0;
-#X connect 0 1 12 1;
+#X connect 0 1 11 1;
 #X connect 4 0 1 0;
-#X connect 8 0 0 0;
-#X connect 9 0 17 0;
-#X connect 10 0 9 0;
-#X connect 11 0 19 0;
-#X connect 13 0 8 0;
-#X connect 15 0 5 0;
-#X connect 15 0 7 0;
-#X connect 15 1 6 0;
-#X connect 16 0 14 0;
-#X connect 16 0 12 0;
-#X connect 18 0 20 0;
-#X connect 19 0 13 0;
-#X connect 19 1 12 2;
-#X connect 19 2 18 0;
+#X connect 8 0 16 0;
+#X connect 9 0 8 0;
+#X connect 10 0 18 0;
+#X connect 12 0 20 0;
+#X connect 14 0 5 0;
+#X connect 14 0 7 0;
+#X connect 14 1 6 0;
+#X connect 15 0 13 0;
+#X connect 15 0 11 0;
+#X connect 17 0 19 0;
+#X connect 18 0 12 0;
+#X connect 18 1 11 2;
+#X connect 18 2 17 0;
+#X connect 20 0 0 0;
 #X restore 349 117 pd open;
 #N canvas 451 316 450 300 init 0;
 #X obj 90 108 s \$0-lbang;

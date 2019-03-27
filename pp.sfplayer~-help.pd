@@ -1,11 +1,11 @@
-#N struct 2449-template float x float y float c float s float th float
-stretch array 2449-plus 2449-template-y array 2449-minus 2449-template-y
+#N struct 1100-template float x float y float c float s float th float
+stretch array 1100-plus 1100-template-y array 1100-minus 1100-template-y
 ;
-#N struct 2449-template-y float y;
-#N struct 2450-template float x float y float c float s float th float
-stretch array 2450-plus 2450-template-y array 2450-minus 2450-template-y
+#N struct 1100-template-y float y;
+#N struct 1101-template float x float y float c float s float th float
+stretch array 1101-plus 1101-template-y array 1101-minus 1101-template-y
 ;
-#N struct 2450-template-y float y;
+#N struct 1101-template-y float y;
 #N canvas 170 239 784 309 10;
 #X obj 397 246 pp.out~;
 #A saved;
@@ -153,8 +153,6 @@ with the parrent patch;
 #X obj 511 69 sig~;
 #X floatatom 511 50 5 0 0 0 - - -;
 #X text 547 51 playback-speed in %;
-#X text 10 29 sfplayer~ allows clean variable-speed playback of extra
-long soundfiles (up to 16 min. at 44100 hz. sampling rate);
 #X text 579 153 <-- click to open GUI;
 #X text 10 85 Inlets:;
 #X text 67 84 1:(~)record-in left;
@@ -184,10 +182,12 @@ is exposed in pd-examples B16.long-varispeed.pd;
 0 \, position% 0 \, loop 0 \, normalize 0 \,;
 #X connect 0 0 1 0;
 #X restore 570 178 pd message-out;
+#X text 10 29 sfplayer~ allows clean variable-speed playback of extra
+long soundfiles;
 #X connect 4 0 5 3;
 #X connect 5 0 0 0;
 #X connect 5 1 0 1;
-#X connect 5 2 24 0;
+#X connect 5 2 23 0;
 #X connect 6 0 5 0;
 #X connect 6 1 5 1;
 #X connect 7 0 5 2;
