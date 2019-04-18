@@ -28,7 +28,7 @@
 #A saved;
 #A saved;
 #X obj 27 181 noise~;
-#X msg 174 327 lowpass \, frequency 0 \, q 0 \,;
+#X msg 174 327 lowpass \, frequency 300 \, q 0 \,;
 #X text 183 296 <-- click to open GUI;
 #X text 18 368 The rightmost outlet will set a message box with all
 the parameters that have been changed.;
@@ -37,9 +37,6 @@ the parameters that have been changed.;
 ;
 #X text 20 48 Parameters can be changed in the GUI or via message commands.
 ;
-#X text 19 115 There are extra contol signal-inlets in most modules
-(check helpfile). Control signals are added to the value that was set
-via message or in the GUI.;
 #X text 133 204 signal frequency...;
 #X msg 174 242 frequency 300;
 #X obj 76 203 sig~ 600;
@@ -50,14 +47,14 @@ via message or in the GUI.;
 0;
 #X text 28 666 Pass on parameter changes from one instance of an abstraction
 to another.;
-#X msg 182 835 lowpass \, frequency 0 \, q 0 \,;
+#X msg 182 819 lowpass \, frequency 54 \, q 0 \,;
 #X text 28 911 There must be a message box in between the objects \,
 directly connecting two objects won't work;
-#X msg 196 748 highpass;
-#X msg 201 769 lowpass;
-#X floatatom 182 706 5 0 0 0 - - -;
-#X msg 182 728 frequency \$1;
-#X obj 34 792 pp.vcfilter~;
+#X msg 196 732 highpass;
+#X msg 201 753 lowpass;
+#X floatatom 182 690 5 0 0 0 - - -;
+#X msg 182 712 frequency \$1;
+#X obj 34 776 pp.vcfilter~;
 #A saved;
 #A saved;
 #A saved;
@@ -79,7 +76,7 @@ directly connecting two objects won't work;
 #A saved;
 #A saved;
 #A saved;
-#X obj 34 867 pp.vcfilter~;
+#X obj 34 851 pp.vcfilter~;
 #A saved;
 #A saved;
 #A saved;
@@ -125,28 +122,33 @@ directly connecting two objects won't work;
 #A saved;
 #A saved;
 #A saved;
-#X msg 367 474 save 0;
-#X msg 367 496 save 1;
-#X msg 423 511 recall 0;
-#X msg 423 534 recall 1;
-#X msg 367 518 save 2;
-#X msg 423 557 recall 2;
+#X msg 367 468 save 0;
+#X msg 367 490 save 1;
+#X msg 431 506 recall 0;
+#X msg 431 529 recall 1;
+#X msg 367 512 save 2;
+#X msg 431 552 recall 2;
 #X text 18 473 There are up to 21 preset slots for each abstraction.
 Presets will be saved with the parrent patch.;
 #X text 19 451 State saving:;
+#X text 19 115 There are extra control signal-inlets in most modules
+(check helpfile). Control signals are added to the value that was set
+via message or in the GUI.;
+#X msg 182 889 lowpass \, frequency 54 \, q 0 \,;
 #X connect 3 1 5 0;
 #X connect 4 0 3 0;
-#X connect 12 0 3 3;
-#X connect 13 0 3 1;
-#X connect 18 0 25 3;
-#X connect 20 0 24 3;
-#X connect 21 0 24 3;
-#X connect 22 0 23 0;
-#X connect 23 0 24 3;
-#X connect 24 1 18 0;
-#X connect 28 0 27 3;
-#X connect 29 0 27 3;
-#X connect 30 0 27 3;
-#X connect 31 0 27 3;
-#X connect 32 0 27 3;
-#X connect 33 0 27 3;
+#X connect 11 0 3 3;
+#X connect 12 0 3 1;
+#X connect 17 0 24 3;
+#X connect 19 0 23 3;
+#X connect 20 0 23 3;
+#X connect 21 0 22 0;
+#X connect 22 0 23 3;
+#X connect 23 1 17 0;
+#X connect 24 1 36 0;
+#X connect 27 0 26 3;
+#X connect 28 0 26 3;
+#X connect 29 0 26 3;
+#X connect 30 0 26 3;
+#X connect 31 0 26 3;
+#X connect 32 0 26 3;
