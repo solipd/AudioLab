@@ -258,14 +258,18 @@
 #X obj 176 162 outlet~;
 #X obj 254 162 outlet~;
 #X restore 450 385 pd \$0-container;
-#N canvas 3 50 450 300 delay 0;
+#N canvas 3 54 450 300 delay 0;
 #X obj 98 107 inlet~;
 #X obj 98 128 outlet~;
-#X obj 213 111 block~ \$1;
 #X obj 146 107 inlet~;
 #X obj 146 128 outlet~;
+#X obj 309 79 r \$0-min-blocksize;
+#X obj 309 125 block~ \$1;
+#X msg 309 102 set \$1 1;
 #X connect 0 0 1 0;
-#X connect 3 0 4 0;
+#X connect 2 0 3 0;
+#X connect 4 0 6 0;
+#X connect 6 0 5 0;
 #X restore 299 389 pd delay clean;
 #X obj 645 109 *~ 0.01;
 #X obj 553 451 r \$0-nparts;
@@ -375,7 +379,7 @@
 #X obj 118 115 hsl 160 15 0 100 0 0 \$0-irnames \$0-irname empty..
 3 8 2 10 -233017 -228856 -1 0 1;
 #X obj 755 92 inlet;
-#N canvas 3 52 692 496 in 0;
+#N canvas 3 54 692 496 in 0;
 #X obj 125 323 s \$0-open;
 #X obj 125 300 symbol;
 #X obj 125 62 inlet;

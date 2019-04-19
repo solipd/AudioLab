@@ -191,7 +191,7 @@
 #X obj 297 121 inlet~;
 #X obj 675 112 inlet;
 #X obj 404 488 outlet~;
-#N canvas 3 52 692 496 in 0;
+#N canvas 3 54 692 496 in 0;
 #X obj 125 323 s \$0-open;
 #X obj 125 300 symbol;
 #X obj 125 62 inlet;
@@ -610,11 +610,15 @@
 #X restore 403 381 pd \$0-container;
 #X obj 435 453 /;
 #X msg 435 432 1 \$1;
-#N canvas 3 52 450 300 delay 0;
+#N canvas 3 54 450 300 delay 0;
 #X obj 234 102 inlet~;
 #X obj 234 123 outlet~;
-#X obj 326 98 block~ \$1;
+#X obj 309 125 block~ \$1;
+#X obj 309 79 r \$0-min-blocksize;
+#X msg 309 102 set \$1 1;
 #X connect 0 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
 #X restore 296 381 pd delay clean;
 #X obj 533 122 inlet~ dry/wet;
 #X obj 103 130 hsl 130 15 0 100 0 0 \$0-gui \$0-guir Dry/Wet(%) 3 8
