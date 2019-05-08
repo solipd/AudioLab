@@ -1,4 +1,4 @@
-#N canvas 320 202 813 514 10;
+#N canvas 419 131 813 514 10;
 #N canvas 200 185 808 391 stuff 0;
 #X obj 425 228 s \$0-visbngr;
 #X obj 407 123 r \$0-visbng;
@@ -534,9 +534,6 @@ label Preset:Default \; \$1-smoothr 0;
 #X obj 251 33 r \$0-threshold-comp;
 #X obj 284 54 r \$0-threshold-exp;
 #X obj 573 128 r \$0-smooth;
-#X msg 251 266 threshold-compress \$1 \, threshold-expand \$2 \, attack
-\$3 \, release \$4 \, compression \$5 \, expansion \$6 \, smooth \$10
-\, gain \$7 \, dry/wet \$8 \, lookahead \$9 \, \$10;
 #X obj 241 207 t b a b;
 #N canvas 1009 187 450 300 save 0;
 #X obj 108 107 inlet;
@@ -726,7 +723,10 @@ label Preset:Default \; \$1-smoothr 0;
 #X connect 8 1 5 1;
 #X restore 307 337 pd save;
 #X obj 251 316 t b a a;
-#X connect 0 0 21 0;
+#X msg 251 266 threshold-compress \$1 \, threshold-expand \$2 \, attack
+\$3 \, release \$4 \, compression \$5 \, expansion \$6 \, smooth \$10
+\, gain \$7 \, dry/wet \$8 \, lookahead \$9 \, \$11;
+#X connect 0 0 20 0;
 #X connect 1 0 5 0;
 #X connect 2 0 5 0;
 #X connect 3 0 5 0;
@@ -746,13 +746,13 @@ label Preset:Default \; \$1-smoothr 0;
 #X connect 17 0 0 0;
 #X connect 18 0 0 1;
 #X connect 19 0 0 9;
-#X connect 20 0 23 0;
-#X connect 21 0 5 0;
-#X connect 21 1 20 0;
-#X connect 21 2 3 0;
-#X connect 23 0 2 0;
-#X connect 23 1 4 0;
-#X connect 23 2 22 0;
+#X connect 20 0 5 0;
+#X connect 20 1 23 0;
+#X connect 20 2 3 0;
+#X connect 22 0 2 0;
+#X connect 22 1 4 0;
+#X connect 22 2 21 0;
+#X connect 23 0 22 0;
 #X restore 607 403 pd outlet-message;
 #N canvas 104 368 745 397 in 0;
 #X obj 213 32 inlet;
@@ -977,7 +977,7 @@ compression expansion gain dry/wet lookahead smooth;
 #X connect 16 10 12 0;
 #X connect 18 0 16 0;
 #X restore 608 103 pd in;
-#N canvas 50 52 515 205 \$0-dynamics~ 1;
+#N canvas 50 60 515 205 \$0-dynamics~ 1;
 #N canvas 98 116 835 445 mask 0;
 #X obj 100 100 cnv 15 509 199 empty empty empty 20 12 0 14 -262144
 -66577 0;
