@@ -1,11 +1,11 @@
-#N struct 1005-template float x float y float c float s float th float
-stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y
+#N struct 1525-template float x float y float c float s float th float
+stretch array 1525-plus 1525-template-y array 1525-minus 1525-template-y
 ;
-#N struct 1005-template-y float y;
-#N struct 1006-template float x float y float c float s float th float
-stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
+#N struct 1525-template-y float y;
+#N struct 1526-template float x float y float c float s float th float
+stretch array 1526-plus 1526-template-y array 1526-minus 1526-template-y
 ;
-#N struct 1006-template-y float y;
+#N struct 1526-template-y float y;
 #N canvas 203 120 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -364,6 +364,7 @@ stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 #X obj 536 133 f \$0;
 #X msg 536 156 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts
 ;
+#X msg 216 180 read -resize \$1 \$2-links \$2-rechts;
 #N canvas 522 220 450 300 openpanel 0;
 #N canvas 76 95 883 671 splitfilename 0;
 #X obj 425 37 list fromsymbol;
@@ -433,37 +434,44 @@ stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 #X connect 29 0 23 1;
 #X connect 29 1 17 0;
 #X connect 29 2 19 0;
-#X restore 261 162 pd splitfilename;
-#X obj 145 202 openpanel;
-#X obj 196 146 symbol;
-#X obj 145 55 f;
-#X obj 175 56 + 1;
-#X obj 145 78 sel 0;
-#X obj 196 99 t b;
-#X obj 145 28 inlet;
-#X obj 145 225 outlet;
-#X text 221 121 remember last directory;
+#X restore 257 192 pd splitfilename;
+#X obj 145 248 openpanel;
+#X obj 173 188 symbol;
+#X obj 145 25 f;
+#X obj 175 26 + 1;
+#X obj 145 48 sel 0;
+#X obj 173 146 t b;
+#X obj 145 -2 inlet;
+#X obj 145 271 outlet;
+#X text 257 132 remember last directory;
+#X obj 218 63 savestate;
+#X obj 145 102 symbol ./;
+#X obj 269 87 symbol;
 #X connect 0 0 2 1;
+#X connect 0 0 12 1;
 #X connect 1 0 0 0;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 1;
-#X connect 5 0 1 0;
+#X connect 5 0 11 0;
 #X connect 5 1 6 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
+#X connect 10 0 11 1;
+#X connect 10 1 12 0;
+#X connect 11 0 1 0;
+#X connect 12 0 10 0;
 #X restore 500 42 pd openpanel;
-#X msg 216 180 read -resize \$1 \$2-links \$2-rechts;
 #X connect 0 0 13 0;
 #X connect 0 0 16 0;
 #X connect 0 1 4 0;
 #X connect 0 1 10 1;
 #X connect 4 0 1 0;
-#X connect 8 0 21 0;
+#X connect 8 0 22 0;
 #X connect 9 0 18 0;
-#X connect 11 0 22 0;
+#X connect 11 0 21 0;
 #X connect 13 0 5 0;
 #X connect 13 0 7 0;
 #X connect 13 1 6 0;
@@ -475,8 +483,8 @@ stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 #X connect 18 1 10 2;
 #X connect 18 2 19 0;
 #X connect 19 0 20 0;
-#X connect 21 0 17 0;
-#X connect 22 0 0 0;
+#X connect 21 0 0 0;
+#X connect 22 0 17 0;
 #X restore 499 131 pd open;
 #N canvas 3 52 1112 713 fft 0;
 #N canvas 0 50 511 389 normalize 0;

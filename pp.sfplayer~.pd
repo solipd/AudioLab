@@ -1,11 +1,11 @@
-#N struct 2151-template float x float y float c float s float th float
-stretch array 2151-plus 2151-template-y array 2151-minus 2151-template-y
+#N struct 1207-template float x float y float c float s float th float
+stretch array 1207-plus 1207-template-y array 1207-minus 1207-template-y
 ;
-#N struct 2151-template-y float y;
-#N struct 2152-template float x float y float c float s float th float
-stretch array 2152-plus 2152-template-y array 2152-minus 2152-template-y
+#N struct 1207-template-y float y;
+#N struct 1208-template float x float y float c float s float th float
+stretch array 1208-plus 1208-template-y array 1208-minus 1208-template-y
 ;
-#N struct 2152-template-y float y;
+#N struct 1208-template-y float y;
 #N canvas 486 237 545 417 10;
 #N canvas 388 225 751 540 open 0;
 #X obj 272 256 soundfiler;
@@ -250,27 +250,35 @@ stretch array 2152-plus 2152-template-y array 2152-minus 2152-template-y
 #X connect 29 0 23 1;
 #X connect 29 1 17 0;
 #X connect 29 2 19 0;
-#X restore 261 162 pd splitfilename;
-#X obj 145 202 openpanel;
-#X obj 196 146 symbol;
-#X obj 145 55 f;
-#X obj 175 56 + 1;
-#X obj 145 78 sel 0;
-#X obj 196 99 t b;
-#X obj 145 28 inlet;
-#X obj 145 225 outlet;
-#X text 221 121 remember last directory;
+#X restore 257 192 pd splitfilename;
+#X obj 145 248 openpanel;
+#X obj 173 188 symbol;
+#X obj 145 25 f;
+#X obj 175 26 + 1;
+#X obj 145 48 sel 0;
+#X obj 173 146 t b;
+#X obj 145 -2 inlet;
+#X obj 145 271 outlet;
+#X text 257 132 remember last directory;
+#X obj 218 63 savestate;
+#X obj 145 102 symbol ./;
+#X obj 269 87 symbol;
 #X connect 0 0 2 1;
+#X connect 0 0 12 1;
 #X connect 1 0 0 0;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
 #X connect 3 0 5 0;
 #X connect 4 0 3 1;
-#X connect 5 0 1 0;
+#X connect 5 0 11 0;
 #X connect 5 1 6 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
+#X connect 10 0 11 1;
+#X connect 10 1 12 0;
+#X connect 11 0 1 0;
+#X connect 12 0 10 0;
 #X restore 500 42 pd openpanel;
 #X connect 0 0 13 0;
 #X connect 0 0 14 0;
@@ -852,7 +860,7 @@ error!;
 #X restore 55 196 pd record;
 #X obj 54 167 inlet~;
 #X obj 114 165 inlet~;
-#N canvas 50 60 620 180 \$0-sfplayer~ 0;
+#N canvas 50 60 620 180 \$0-sfplayer~ 1;
 #N canvas 411 112 715 391 maske 0;
 #X obj 0 0 cnv 15 600 168 empty empty empty 20 12 0 14 -262144 -66577
 0;
