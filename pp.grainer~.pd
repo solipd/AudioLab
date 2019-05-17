@@ -1,7 +1,7 @@
-#N struct 1394-template float x float y float c float s float th float
-stretch array 1394-plus 1394-template-y array 1394-minus 1394-template-y
+#N struct 1139-template float x float y float c float s float th float
+stretch array 1139-plus 1139-template-y array 1139-minus 1139-template-y
 ;
-#N struct 1394-template-y float y;
+#N struct 1139-template-y float y;
 #N canvas 527 102 629 549 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -1074,9 +1074,11 @@ is redundant;
 #X obj 145 -2 inlet;
 #X obj 145 271 outlet;
 #X text 257 132 remember last directory;
-#X obj 218 63 savestate;
+#X obj 225 22 savestate;
 #X obj 145 102 symbol ./;
-#X obj 269 87 symbol;
+#X obj 276 46 symbol;
+#X obj 196 57 list trim;
+#X obj 196 80 symbol;
 #X connect 0 0 2 1;
 #X connect 0 0 12 1;
 #X connect 1 0 0 0;
@@ -1089,10 +1091,12 @@ is redundant;
 #X connect 5 1 6 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
-#X connect 10 0 11 1;
+#X connect 10 0 13 0;
 #X connect 10 1 12 0;
 #X connect 11 0 1 0;
 #X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 1;
 #X restore 219 44 pd openpanel;
 #X connect 0 0 17 0;
 #X connect 1 0 16 0;
@@ -1920,7 +1924,7 @@ int.grain-trigger \$25 \,;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
 #X restore 435 213 pd init;
-#N canvas 640 52 831 897 in 0;
+#N canvas 533 54 831 712 in 0;
 #X obj 40 15 inlet;
 #X obj 40 120 s \$0-trigger-speedr;
 #X obj 105 197 s \$0-positionr;

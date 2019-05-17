@@ -1,11 +1,11 @@
-#N struct 1525-template float x float y float c float s float th float
-stretch array 1525-plus 1525-template-y array 1525-minus 1525-template-y
+#N struct 1270-template float x float y float c float s float th float
+stretch array 1270-plus 1270-template-y array 1270-minus 1270-template-y
 ;
-#N struct 1525-template-y float y;
-#N struct 1526-template float x float y float c float s float th float
-stretch array 1526-plus 1526-template-y array 1526-minus 1526-template-y
+#N struct 1270-template-y float y;
+#N struct 1271-template float x float y float c float s float th float
+stretch array 1271-plus 1271-template-y array 1271-minus 1271-template-y
 ;
-#N struct 1526-template-y float y;
+#N struct 1271-template-y float y;
 #N canvas 203 120 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -444,9 +444,11 @@ stretch array 1526-plus 1526-template-y array 1526-minus 1526-template-y
 #X obj 145 -2 inlet;
 #X obj 145 271 outlet;
 #X text 257 132 remember last directory;
-#X obj 218 63 savestate;
+#X obj 225 22 savestate;
 #X obj 145 102 symbol ./;
-#X obj 269 87 symbol;
+#X obj 276 46 symbol;
+#X obj 196 57 list trim;
+#X obj 196 80 symbol;
 #X connect 0 0 2 1;
 #X connect 0 0 12 1;
 #X connect 1 0 0 0;
@@ -459,10 +461,12 @@ stretch array 1526-plus 1526-template-y array 1526-minus 1526-template-y
 #X connect 5 1 6 0;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
-#X connect 10 0 11 1;
+#X connect 10 0 13 0;
 #X connect 10 1 12 0;
 #X connect 11 0 1 0;
 #X connect 12 0 10 0;
+#X connect 13 0 14 0;
+#X connect 14 0 11 1;
 #X restore 500 42 pd openpanel;
 #X connect 0 0 13 0;
 #X connect 0 0 16 0;
