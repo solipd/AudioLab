@@ -1,11 +1,11 @@
-#N struct 1390-template float x float y float c float s float th float
-stretch array 1390-plus 1390-template-y array 1390-minus 1390-template-y
+#N struct 1005-template float x float y float c float s float th float
+stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y
 ;
-#N struct 1390-template-y float y;
-#N struct 1391-template float x float y float c float s float th float
-stretch array 1391-plus 1391-template-y array 1391-minus 1391-template-y
+#N struct 1005-template-y float y;
+#N struct 1006-template float x float y float c float s float th float
+stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 ;
-#N struct 1391-template-y float y;
+#N struct 1006-template-y float y;
 #N canvas 177 201 545 417 10;
 #N canvas 603 169 751 540 open 0;
 #X obj 272 256 soundfiler;
@@ -250,7 +250,7 @@ stretch array 1391-plus 1391-template-y array 1391-minus 1391-template-y
 #X connect 29 0 23 1;
 #X connect 29 1 17 0;
 #X connect 29 2 19 0;
-#X restore 276 203 pd splitfilename;
+#X restore 219 98 pd splitfilename;
 #X obj 145 270 openpanel;
 #X obj 173 210 symbol;
 #X obj 145 47 f;
@@ -261,10 +261,10 @@ stretch array 1391-plus 1391-template-y array 1391-minus 1391-template-y
 #X obj 145 293 outlet;
 #X text 237 158 remember last directory;
 #X obj 145 124 symbol ./;
-#X obj 206 97 symbol;
-#X obj 206 74 r \$0-open-sf;
+#X obj 219 73 symbol;
+#X obj 219 50 r \$0-open-sf;
 #X connect 0 0 2 1;
-#X connect 1 0 0 0;
+#X connect 0 0 10 1;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -275,8 +275,7 @@ stretch array 1391-plus 1391-template-y array 1391-minus 1391-template-y
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
 #X connect 10 0 1 0;
-#X connect 11 0 10 1;
-#X connect 11 0 2 1;
+#X connect 11 0 0 0;
 #X connect 12 0 11 0;
 #X restore 500 42 pd openpanel;
 #X connect 0 0 13 0;
@@ -859,7 +858,7 @@ error!;
 #X restore 55 196 pd record;
 #X obj 54 167 inlet~;
 #X obj 114 165 inlet~;
-#N canvas 50 60 620 180 \$0-sfplayer~ 0;
+#N canvas 191 222 620 180 \$0-sfplayer~ 0;
 #N canvas 411 112 715 391 maske 0;
 #X obj 0 0 cnv 15 600 168 empty empty empty 20 12 0 14 -262144 -66577
 0;

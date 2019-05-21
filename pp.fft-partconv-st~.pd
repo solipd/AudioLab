@@ -264,7 +264,7 @@
 #X connect 29 0 23 1;
 #X connect 29 1 17 0;
 #X connect 29 2 19 0;
-#X restore 276 203 pd splitfilename;
+#X restore 233 102 pd splitfilename;
 #X obj 145 270 openpanel;
 #X obj 173 210 symbol;
 #X obj 145 47 f;
@@ -275,10 +275,10 @@
 #X obj 145 293 outlet;
 #X text 237 158 remember last directory;
 #X obj 145 124 symbol ./;
-#X obj 206 97 symbol;
-#X obj 206 74 r \$0-open;
+#X obj 233 78 symbol;
+#X obj 233 55 r \$0-open;
 #X connect 0 0 2 1;
-#X connect 1 0 0 0;
+#X connect 0 0 10 1;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -289,8 +289,7 @@
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
 #X connect 10 0 1 0;
-#X connect 11 0 10 1;
-#X connect 11 0 2 1;
+#X connect 11 0 0 0;
 #X connect 12 0 11 0;
 #X restore 368 71 pd openpanel;
 #X connect 1 0 25 0;

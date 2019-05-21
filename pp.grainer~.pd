@@ -1,7 +1,7 @@
-#N struct 1085-template float x float y float c float s float th float
-stretch array 1085-plus 1085-template-y array 1085-minus 1085-template-y
+#N struct 1008-template float x float y float c float s float th float
+stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 ;
-#N struct 1085-template-y float y;
+#N struct 1008-template-y float y;
 #N canvas 92 112 629 549 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -1064,7 +1064,7 @@ is redundant;
 #X connect 29 0 23 1;
 #X connect 29 1 17 0;
 #X connect 29 2 19 0;
-#X restore 276 203 pd splitfilename;
+#X restore 219 92 pd splitfilename;
 #X obj 145 270 openpanel;
 #X obj 173 210 symbol;
 #X obj 145 47 f;
@@ -1075,10 +1075,10 @@ is redundant;
 #X obj 145 293 outlet;
 #X text 237 158 remember last directory;
 #X obj 145 124 symbol ./;
-#X obj 206 97 symbol;
-#X obj 206 74 r \$0-sf-path;
+#X obj 219 70 symbol;
+#X obj 219 47 r \$0-sf-path;
 #X connect 0 0 2 1;
-#X connect 1 0 0 0;
+#X connect 0 0 10 1;
 #X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 3 0 4 0;
@@ -1089,8 +1089,7 @@ is redundant;
 #X connect 6 0 2 0;
 #X connect 7 0 3 0;
 #X connect 10 0 1 0;
-#X connect 11 0 10 1;
-#X connect 11 0 2 1;
+#X connect 11 0 0 0;
 #X connect 12 0 11 0;
 #X restore 219 43 pd openpanel;
 #X connect 0 0 17 0;
