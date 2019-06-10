@@ -1,22 +1,22 @@
-#N struct 1878-template float x float y float c float s float th float
-stretch array 1878-plus 1878-template-y array 1878-minus 1878-template-y
+#N struct 1012-template float x float y float c float s float th float
+stretch array 1012-plus 1012-template-y array 1012-minus 1012-template-y
 ;
-#N struct 1878-template-y float y;
-#N struct 1879-template float x float y float c float s float th float
-stretch array 1879-plus 1879-template-y array 1879-minus 1879-template-y
+#N struct 1012-template-y float y;
+#N struct 1013-template float x float y float c float s float th float
+stretch array 1013-plus 1013-template-y array 1013-minus 1013-template-y
 ;
-#N struct 1879-template-y float y;
-#N canvas 188 52 791 555 10;
+#N struct 1013-template-y float y;
+#N canvas 188 54 791 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 550 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 18 175 hsl 200 15 0.1 10 1 0 \$0-speed \$0-speedr Speed -2 -8
-2 12 -262144 -1 -1 5200 1;
+2 12 -262144 -1 -1 6400 1;
 #X obj 18 137 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 16400 1;
+-8 2 12 -262144 -1 -1 0 1;
 #X obj 18 212 hsl 200 15 0 5 0 0 \$0-distance \$0-distancer Distance
--2 -8 2 12 -262144 -1 -1 15300 1;
+-2 -8 2 12 -262144 -1 -1 9600 1;
 #N canvas 67 368 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
@@ -33,47 +33,7 @@ stretch array 1879-plus 1879-template-y array 1879-minus 1879-template-y
 8 2 12 -262144 -1 -1 1;
 #X obj 401 499 pp.out~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X obj 400 329 pp.doppler~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 672 130 phasor~ 0.25;
 #X obj 473 201 cos~;
@@ -82,47 +42,7 @@ stretch array 1879-plus 1879-template-y array 1879-minus 1879-template-y
 #X obj 672 152 +~ 0.25;
 #X obj 517 29 pp.sfplayer~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X obj 399 400 pp.doppler~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 400 32 noise~;
 #X obj 672 87 r \$0-speed;
@@ -149,26 +69,6 @@ to emulate circular movement of a sound source in front of the observer
 #X text 8 533 Philipp Schmalfuß \, 2018;
 #X obj 278 5 declare -path ..;
 #X obj 400 447 pp.pan~ sqrt;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 474 307 +~;
 #X obj 474 286 *~;
