@@ -1,4 +1,4 @@
-#N canvas 169 224 1083 593 10;
+#N canvas 169 173 1083 593 10;
 #X obj 841 33 inlet;
 #X text 518 231 speed of sound 343 m/s;
 #X obj 381 251 *~;
@@ -179,14 +179,14 @@
 #X obj 366 62 / 100;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
 8 2 10 -233017 -233017 -1 0 1;
-#N canvas 50 87 230 149 \$0-doppler 0;
+#N canvas 50 88 230 149 \$0-doppler 0;
 #N canvas 515 97 714 345 mask 0;
 #X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #X obj 214 109 cnv 10 10 10 empty empty doppler~ 0 5 2 17 -262144 -162280
 0;
-#X obj 113 136 hsl 128 12 0 500 0 0 \$0-pgui \$0-pguir Pitch-mod -2
--6 2 10 -262144 -1 -1 2540 1;
+#X obj 113 136 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pitch-mod -2
+-6 2 10 -262144 -1 -1 12700 1;
 #X obj 247 136 nbx 5 12 0 1e+17 0 0 \$0-pitchmod \$0-pitchmodr % 47
 7 2 10 -262144 -1 -1 100 256;
 #X obj 113 163 hsl 128 12 0 100 0 0 \$0-agui \$0-aguir Amp-mod -2 -6
@@ -435,13 +435,13 @@
 #X text 680 313 1/2pi;
 #X obj 543 355 / 200;
 #X obj 274 60 inlet~ src;
-#N canvas 3 50 450 300 delay 0;
+#N canvas 3 54 450 300 delay 0;
 #X obj 48 101 outlet~;
 #X obj 49 3 inlet~;
 #N canvas 251 202 450 300 delwrite 0;
 #X obj 48 15 inlet~;
 #X obj 49 81 outlet~;
-#X obj 48 41 delwrite~ \$0-ddel 1000;
+#X obj 48 41 delwrite~ \$0-ddel 2000;
 #X connect 0 0 2 0;
 #X restore 49 28 pd delwrite;
 #N canvas 276 120 450 300 delread 0;
