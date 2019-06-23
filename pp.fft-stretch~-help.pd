@@ -1,33 +1,13 @@
-#N struct 1394-template float x float y float c float s float th float
-stretch array 1394-plus 1394-template-y array 1394-minus 1394-template-y
+#N struct 1043-template float x float y float c float s float th float
+stretch array 1043-plus 1043-template-y array 1043-minus 1043-template-y
 ;
-#N struct 1394-template-y float y;
-#N struct 1395-template float x float y float c float s float th float
-stretch array 1395-plus 1395-template-y array 1395-minus 1395-template-y
+#N struct 1043-template-y float y;
+#N struct 1044-template float x float y float c float s float th float
+stretch array 1044-plus 1044-template-y array 1044-minus 1044-template-y
 ;
-#N struct 1395-template-y float y;
+#N struct 1044-template-y float y;
 #N canvas 154 122 971 306 10;
 #X obj 397 248 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -35,60 +15,57 @@ stretch array 1395-plus 1395-template-y array 1395-minus 1395-template-y
 -262144 0;
 #X obj 570 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#N canvas 311 62 872 703 control-messages 0;
-#X obj 67 683 outlet;
-#X msg 126 136 play \$1;
-#X msg 158 207 stop;
-#X obj 126 116 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#N canvas 311 54 872 703 control-messages 0;
+#X obj 67 694 outlet;
+#X msg 126 123 play \$1;
+#X msg 158 188 stop;
+#X obj 126 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 186 423 position \$1;
-#X floatatom 186 405 5 0 1e+21 0 - - -;
-#X msg 168 248 loop \$1;
-#X obj 168 230 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 194 443 position \$1;
+#X floatatom 194 425 5 0 1e+21 0 - - -;
+#X msg 168 227 loop \$1;
+#X obj 168 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 70 2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 70 22 openpanel;
 #X msg 70 42 open \$1;
-#X msg 99 95 record \$1;
-#X obj 99 76 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X msg 99 83 record \$1;
+#X obj 99 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X floatatom 186 448 5 0 100 0 - - -;
-#X msg 185 466 position% \$1;
+#X floatatom 194 468 5 0 100 0 - - -;
+#X msg 193 486 position% \$1;
 #X text 121 44 load a soundfile into the buffer;
-#X text 167 96 record into the buffer;
-#X text 179 136 play / pause;
-#X text 194 207 stop playback & jump to position;
-#X text 240 333 playback-speed in %;
-#X text 267 422 position in ms;
-#X text 269 467 position in %;
-#X text 266 482 (this is helpful if you don't know the exact lenght
+#X text 167 84 record into the buffer;
+#X text 179 123 play / pause;
+#X text 194 188 stop playback & jump to position;
+#X text 248 353 playback-speed in %;
+#X text 275 442 position in ms;
+#X text 277 487 position in %;
+#X text 361 487 (this is helpful if you don't know the exact lenght
 of your soundfile);
-#X msg 180 333 speed \$1;
-#X floatatom 180 314 5 0 0 0 - - -;
-#X obj 144 159 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 188 353 speed \$1;
+#X floatatom 188 334 5 0 0 0 - - -;
+#X obj 144 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 144 179 freeze \$1;
-#X text 209 180 freeze at current position;
-#X obj 174 270 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X msg 144 163 freeze \$1;
+#X text 209 164 freeze at current position;
+#X obj 174 249 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 174 288 phaselock \$1;
-#X msg 178 536 blocksize \$1;
-#X msg 178 512 512;
-#X msg 207 512 1024;
-#X msg 243 513 2048;
-#X msg 179 585 overlap \$1;
-#X msg 179 560 2;
-#X msg 208 561 4;
-#X msg 239 561 8;
-#X text 264 536 fft-blocksize;
-#X floatatom 186 359 5 0 0 0 - - -;
-#X msg 186 379 transposition \$1;
-#X text 294 380 transposition in cents;
+#X msg 174 267 phaselock \$1;
+#X msg 183 552 blocksize \$1;
+#X msg 184 602 overlap \$1;
+#X msg 184 577 2;
+#X msg 213 578 4;
+#X msg 244 578 8;
+#X text 269 552 fft-blocksize;
+#X floatatom 194 379 5 0 0 0 - - -;
+#X msg 194 399 transposition \$1;
+#X text 302 400 transposition in cents;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array source-stretch 998865 float 2;
 #X coords 0 1 998865 -1 200 140 1 0 0;
-#X restore 428 532 graph;
+#X restore 433 548 graph;
 #N canvas 3 52 450 300 source 0;
 #X obj 71 99 soundfiler;
 #X obj 71 53 loadbang;
@@ -96,9 +73,9 @@ of your soundfile);
 ;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 428 677 pd source;
-#X msg 176 622 set source-stretch;
-#X obj 173 662 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+#X restore 433 693 pd source;
+#X msg 181 638 set source-stretch;
+#X obj 178 678 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
@@ -126,7 +103,15 @@ with the parrent patch;
 #X connect 9 0 12 0;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
-#X restore 173 661 pd save&recall;
+#X restore 178 677 pd save&recall;
+#X obj 181 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 181 308 random-phase \$1;
+#X text 282 306 randomize phases \, like paulstretch;
+#X msg 183 526 1024;
+#X msg 217 526 4096;
+#X msg 253 527 8192;
+#X msg 291 529 16384;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
@@ -148,17 +133,20 @@ with the parrent patch;
 #X connect 28 0 29 0;
 #X connect 29 0 0 0;
 #X connect 30 0 0 0;
-#X connect 31 0 30 0;
-#X connect 32 0 30 0;
-#X connect 33 0 30 0;
-#X connect 34 0 0 0;
-#X connect 35 0 34 0;
-#X connect 36 0 34 0;
-#X connect 37 0 34 0;
-#X connect 39 0 40 0;
-#X connect 40 0 0 0;
-#X connect 44 0 0 0;
-#X connect 46 0 0 0;
+#X connect 31 0 0 0;
+#X connect 32 0 31 0;
+#X connect 33 0 31 0;
+#X connect 34 0 31 0;
+#X connect 36 0 37 0;
+#X connect 37 0 0 0;
+#X connect 41 0 0 0;
+#X connect 43 0 0 0;
+#X connect 44 0 45 0;
+#X connect 45 0 0 0;
+#X connect 47 0 30 0;
+#X connect 48 0 30 0;
+#X connect 49 0 30 0;
+#X connect 50 0 30 0;
 #X restore 570 117 pd control-messages;
 #X obj 397 24 adc~;
 #X obj 482 58 sig~;
@@ -196,32 +184,13 @@ vocoder;
 #X text 131 73 \$2: overlap \, default: 4;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 open symbol \, play 0 \, freeze 0 \, speed 100 \, transposition
-0 \, position 0 \, position% 0 \, loop 0 \, phaselock 0 \, blocksize
-1024 \, overlap 4 \,;
+#X msg 30 60 open /home/philipp/Documents/Pd/samples/Reflections - Dry.wav
+\, play 1 \, freeze 0 \, speed 4 \, transposition 0 \, position 0 \,
+position% 0 \, loop 0 \, phaselock 0 \, random-phase 1 \, blocksize
+16384 \, overlap 8 \,;
 #X connect 0 0 1 0;
 #X restore 570 178 pd message-out;
 #X obj 397 139 pp.fft-stretch~ 1024 4;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X connect 4 0 29 4;
 #X connect 5 0 29 0;
