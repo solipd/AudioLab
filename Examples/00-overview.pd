@@ -39,9 +39,9 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #A saved;
 #X obj 256 252 pp.pan~;
 #A saved;
-#X obj 70 487 pp.freqshift~;
+#X obj 69 485 pp.freqshift~;
 #A saved;
-#X obj 253 487 pp.freqshift-st~;
+#X obj 253 485 pp.freqshift-st~;
 #A saved;
 #X obj 231 82 pp.sfplayer~;
 #A saved;
@@ -87,8 +87,8 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #A saved;
 #X text 16 62 Soundfile processing;
 #X text 21 441 Effects;
-#X text 260 465 stereo;
-#X text 74 464 mono;
+#X text 260 463 stereo;
+#X text 74 462 mono;
 #X text 15 901 Spectral processing;
 #X text 37 932 mono;
 #X text 237 933 stereo;
@@ -113,7 +113,7 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X text 429 167 pvoc time stretching & pitch shifting;
 #X text 428 258 constant power panning;
 #X text 430 393 doppler effect;
-#X text 428 489 frequency shifting;
+#X text 428 487 frequency shifting;
 #X text 429 527 pitch shifting;
 #X text 430 705 compressor/expander;
 #X text 430 746 simple envelope follower;

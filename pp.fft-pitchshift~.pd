@@ -1,4 +1,4 @@
-#N canvas 228 247 917 370 10;
+#N canvas 126 212 917 370 10;
 #X obj 468 114 inlet~;
 #X obj 467 258 outlet~;
 #X obj 709 115 inlet;
@@ -482,7 +482,7 @@
 #X msg 64 71 0;
 #X obj 128 158 i;
 #X obj 64 50 loadbang;
-#N canvas 3 52 450 300 stuff 0;
+#N canvas 3 54 450 300 stuff 0;
 #X obj 135 55 loadbang;
 #X obj 136 195 pack \$0 1024 4;
 #X obj 135 77 t b b b;
@@ -769,9 +769,9 @@
 #X restore 709 138 pd in;
 #N canvas 144 395 450 300 delwrite 0;
 #X obj 170 41 inlet~;
-#X obj 169 143 delwrite~ \$0-input 1000;
 #X obj 170 183 outlet~;
-#X connect 0 0 1 0;
+#X obj 169 143 delwrite~ \$0-input 3000;
+#X connect 0 0 2 0;
 #X restore 468 138 pd delwrite;
 #X text 718 337 philipp schmalfuß \, 2018;
 #X connect 0 0 19 0;

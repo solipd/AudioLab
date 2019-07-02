@@ -1,11 +1,11 @@
-#N struct 1101-template float x float y float c float s float th float
-stretch array 1101-plus 1101-template-y array 1101-minus 1101-template-y
+#N struct 1597-template float x float y float c float s float th float
+stretch array 1597-plus 1597-template-y array 1597-minus 1597-template-y
 ;
-#N struct 1101-template-y float y;
-#N struct 1102-template float x float y float c float s float th float
-stretch array 1102-plus 1102-template-y array 1102-minus 1102-template-y
+#N struct 1597-template-y float y;
+#N struct 1598-template float x float y float c float s float th float
+stretch array 1598-plus 1598-template-y array 1598-minus 1598-template-y
 ;
-#N struct 1102-template-y float y;
+#N struct 1598-template-y float y;
 #N canvas 2 54 1191 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -70,11 +70,11 @@ stretch array 1102-plus 1102-template-y array 1102-minus 1102-template-y
 #X obj 4 0 cnv 15 380 700 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 19 228 hsl 200 15 0 30 0 0 \$0-depth \$0-depthr Movement_depth
--2 -8 2 12 -262144 -1 -1 5767 1;
+-2 -8 2 12 -262144 -1 -1 13267 1;
 #X obj 19 295 hsl 200 15 0 100 0 0 \$0-room \$0-roomr Room-Presence
 -2 -8 2 12 -262144 -1 -1 19900 1;
 #X obj 19 194 hsl 200 15 0.1 10 1 0 \$0-speed \$0-speedr Movement-speed
--2 -8 2 12 -262144 -1 -1 10900 1;
+-2 -8 2 12 -262144 -1 -1 5990 1;
 #X obj 16 316 tgl 15 0 \$0-bypass \$0-bypassr Bypass 17 7 2 12 -262144
 -1 -1 0 1;
 #X msg 18 384 Trumpet.wav;
@@ -86,8 +86,8 @@ stretch array 1102-plus 1102-template-y array 1102-minus 1102-template-y
 #X obj 177 109 f \$0;
 #X obj 190 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 177 130 \; \$1-roomr 100 \; \$1-room-depthr 20 \; \$1-room-widthr
-20 \; \$1-speedr 0.4 \;;
+#X msg 177 130 \; \$1-roomr 100 \; \$1-depthr 20 \; \$1-widthr 20 \;
+\$1-speedr 0.4 \;;
 #X connect 0 0 1 0;
 #X connect 0 0 2 0;
 #X connect 2 0 4 0;
@@ -155,7 +155,7 @@ path in a room in front of the listener.;
 #X restore 740 473 pd magnitude;
 #X obj 740 504 expr~ 1-$v1;
 #X obj 19 261 hsl 200 15 0 30 0 0 \$0-width \$0-widthr Movement-width
--2 -8 2 12 -262144 -1 -1 15067 1;
+-2 -8 2 12 -262144 -1 -1 13267 1;
 #X obj 550 203 *~;
 #X text 716 162 Random signal generater \, normalized to 0-1 and squared.
 This gives a preference for movements in front of the listener.;

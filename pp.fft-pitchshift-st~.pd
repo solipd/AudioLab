@@ -534,9 +534,9 @@
 #X msg 213 150 set \$1;
 #N canvas 144 395 450 300 delwrite 0;
 #X obj 170 41 inlet~;
-#X obj 169 143 delwrite~ \$0-input 1000;
 #X obj 170 183 outlet~;
-#X connect 0 0 1 0;
+#X obj 169 143 delwrite~ \$0-input 3000;
+#X connect 0 0 2 0;
 #X restore 468 138 pd delwrite;
 #X obj 566 114 inlet~;
 #N canvas 144 395 450 300 delwrite 0;
