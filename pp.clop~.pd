@@ -441,14 +441,14 @@
 #X text 775 440 philipp schmalfuß \, 2019;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
 8 2 10 -233017 -233017 -1 0 1;
-#N canvas 50 88 230 135 \$0-clop 1;
+#N canvas 50 88 230 135 \$0-clop 0;
 #N canvas 166 352 714 345 mask 0;
 #X obj 100 100 cnv 15 219 129 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #X obj 112 139 hsl 128 12 0 119 0 0 \$0-fgui \$0-fguir Lop-Frequency
--2 -6 2 10 -262144 -1 -1 11600 1;
+-2 -6 2 10 -262144 -1 -1 0 1;
 #X obj 246 139 nbx 5 12 0 1e+17 0 0 \$0-lopfreq \$0-lopfreqr hz 47
-7 2 10 -262144 -1 -1 4357 256;
+7 2 10 -262144 -1 -1 0 256;
 #N canvas 3 54 450 300 map 0;
 #X obj 43 26 inlet;
 #X obj 192 54 inlet;
@@ -476,9 +476,9 @@
 #X connect 10 1 4 0;
 #X restore 49 137 pd map;
 #X obj 112 194 hsl 128 12 0 1 0 0 \$0-qgui \$0-qguir Resonance -2 -7
-2 10 -262144 -1 -1 8700 1;
+2 10 -262144 -1 -1 0 1;
 #X obj 246 194 nbx 5 12 -99 100 0 0 \$0-q \$0-qr empty 47 7 2 10 -262144
--1 -1 0.703918 256;
+-1 -1 0 256;
 #N canvas 3 54 450 300 map 0;
 #X obj 94 33 inlet;
 #X obj 192 56 inlet;
@@ -558,7 +558,8 @@
 #X msg 528 173 \$1 20;
 #X obj 528 196 line~;
 #X obj 472 75 r \$0-combfreq;
-#X connect 0 0 1 0;
+#X obj 322 405 hip~ 5;
+#X connect 0 0 40 0;
 #X connect 2 0 0 0;
 #X connect 4 0 30 0;
 #X connect 5 0 29 0;
@@ -586,4 +587,5 @@
 #X connect 37 0 38 0;
 #X connect 38 0 28 1;
 #X connect 39 0 35 0;
+#X connect 40 0 1 0;
 #X coords 0 -1 1 1 155 33 1 100 100;

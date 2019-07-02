@@ -171,7 +171,7 @@
 #X connect 23 0 2 0;
 #X restore 406 375 pd smallblock;
 #X f 28;
-#X obj 406 481 outlet~;
+#X obj 368 513 outlet~;
 #X obj 406 36 inlet~;
 #X text 354 35 sig;
 #X obj 461 34 inlet~;
@@ -730,9 +730,11 @@
 #X connect 23 0 2 0;
 #X restore 292 441 pd smallblock;
 #X f 28;
-#X obj 293 484 outlet~;
+#X obj 292 514 outlet~;
 #X obj 291 37 inlet~;
-#X connect 0 0 1 0;
+#X obj 293 488 hip~ 5;
+#X obj 367 488 hip~ 5;
+#X connect 0 0 44 0;
 #X connect 2 0 0 0;
 #X connect 4 0 30 0;
 #X connect 5 0 29 0;
@@ -763,6 +765,8 @@
 #X connect 37 0 38 0;
 #X connect 38 0 28 1;
 #X connect 39 0 35 0;
-#X connect 40 0 41 0;
+#X connect 40 0 43 0;
 #X connect 42 0 40 0;
+#X connect 43 0 41 0;
+#X connect 44 0 1 0;
 #X coords 0 -1 1 1 155 33 1 100 100;
