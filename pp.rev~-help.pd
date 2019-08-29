@@ -1,11 +1,11 @@
-#N struct 1101-template float x float y float c float s float th float
-stretch array 1101-plus 1101-template-y array 1101-minus 1101-template-y
+#N struct 1036-template float x float y float c float s float th float
+stretch array 1036-plus 1036-template-y array 1036-minus 1036-template-y
 ;
-#N struct 1101-template-y float y;
-#N struct 1102-template float x float y float c float s float th float
-stretch array 1102-plus 1102-template-y array 1102-minus 1102-template-y
+#N struct 1036-template-y float y;
+#N struct 1037-template float x float y float c float s float th float
+stretch array 1037-plus 1037-template-y array 1037-minus 1037-template-y
 ;
-#N struct 1102-template-y float y;
+#N struct 1037-template-y float y;
 #N canvas 351 204 785 461 10;
 #X declare -path ./Examples/audio;
 #X obj 398 397 pp.out~;
@@ -28,18 +28,13 @@ stretch array 1102-plus 1102-template-y array 1102-minus 1102-template-y
 #X text 274 74 (%)feedback;
 #X text 312 122 hz.;
 #X text 288 164 (%);
-#X msg 226 306 rise \$1;
-#X floatatom 257 329 5 -1e+07 1e+10 0 - - -;
-#X msg 250 348 curve \$1;
-#X floatatom 273 373 5 -1e+07 1e+10 0 - - -;
-#X msg 266 392 slope \$1;
+#X floatatom 249 328 5 -1e+07 1e+10 0 - - -;
+#X msg 242 347 curve \$1;
+#X floatatom 265 371 5 -1e+07 1e+10 0 - - -;
+#X msg 258 390 slope \$1;
 #X msg 326 404 early 4.8 5.99996 9.19997 11.6 15.6;
 #X msg 326 434 tail 30 58 100 125 124 114 88 42 48 60 64 60 50 44 28
 24;
-#X text 362 379 send a list of values to set early & tail delay-times
-;
-#X text 289 291 use "rise" "curve" and "slope" to set tail delay times
-;
 #X text 274 31 (%);
 #X obj 272 482 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
@@ -80,34 +75,36 @@ with the parrent patch;
 #X msg 202 208 hip-frequency \$1;
 #X msg 202 251 lf-damping \$1;
 #X text 313 252 low frequency damping;
-#X connect 1 0 23 0;
-#X connect 2 0 24 0;
-#X connect 3 0 11 0;
+#X text 362 368 send a list of values to set early reflections & reverb
+tail delay times;
+#X msg 226 306 center \$1;
+#X text 289 291 use "center" "curve" and "slope" to set reverb-tail
+delay times;
+#X connect 1 0 20 0;
+#X connect 2 0 21 0;
+#X connect 3 0 31 0;
 #X connect 4 0 6 0;
 #X connect 5 0 7 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X connect 11 0 0 0;
-#X connect 12 0 13 0;
-#X connect 13 0 0 0;
-#X connect 14 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 0 0;
 #X connect 15 0 0 0;
 #X connect 16 0 0 0;
-#X connect 17 0 0 0;
-#X connect 22 0 0 0;
-#X connect 23 0 0 0;
-#X connect 24 0 0 0;
-#X connect 26 0 30 0;
-#X connect 27 0 31 0;
-#X connect 30 0 0 0;
+#X connect 19 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 0 0;
+#X connect 23 0 27 0;
+#X connect 24 0 28 0;
+#X connect 27 0 0 0;
+#X connect 28 0 0 0;
 #X connect 31 0 0 0;
 #X restore 546 256 pd control-messages;
 #X text 556 297 <-- click to open GUI;
 #X text 10 128 Inlets:;
 #X text 10 205 Outlets:;
-#X text 66 205 1:(~)left out;
-#X text 66 218 2:(~)right out;
-#X text 66 231 3:message;
 #X text 11 92 Creation arguments: none;
 #X obj 191 9 declare -path ./Examples/audio;
 #X text 526 71 soundfile;
@@ -189,10 +186,10 @@ with the parrent patch;
 #N canvas 686 449 454 180 message-out 0;
 #X obj 20 20 inlet;
 #X msg 20 45 dry/wet 60 \, feedback 50 \, lop-frequency 3000 \, hf-damping
-50 \, hip-frequency 0 \, lf-damping 0 \, rise 10 \, curve 10 \, slope
+50 \, hip-frequency 0 \, lf-damping 0 \, center 75 \, curve 10 \, slope
 130 \, width 100 \, early 0 1.42763 3.23873 5.2345 7.82312 \, tail
-10 10.5778 12.3111 15.2 19.2444 24.4444 30.8 38.3111 46.9778 56.8 67.7778
-79.9111 93.2 107.644 123.244 140 \,;
+10 11.6356 13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838
+55.4567 65.1755 76.8243 88.5623 101.278 115.397 130.502 \,;
 #X connect 0 0 1 0;
 #X restore 546 332 pd message-out;
 #X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
@@ -205,13 +202,18 @@ tutorial: http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf
 #X restore 9 427 pd references;
 #X obj 398 283 pp.rev~;
 #A saved;
-#X connect 4 0 28 4;
-#X connect 20 0 22 0;
-#X connect 22 0 28 0;
-#X connect 22 1 28 1;
-#X connect 23 0 28 0;
-#X connect 23 1 28 1;
-#X connect 24 0 23 0;
-#X connect 28 0 0 0;
-#X connect 28 1 0 1;
-#X connect 28 4 25 0;
+#X text 66 205 1:(~)signal out 1;
+#X text 66 218 2:(~)signal out 2;
+#X text 66 231 3:(~)signal out 3;
+#X text 66 244 4:(~)signal out 4;
+#X text 66 257 5:message;
+#X connect 4 0 25 4;
+#X connect 17 0 19 0;
+#X connect 19 0 25 0;
+#X connect 19 1 25 1;
+#X connect 20 0 25 0;
+#X connect 20 1 25 1;
+#X connect 21 0 20 0;
+#X connect 25 0 0 0;
+#X connect 25 1 0 1;
+#X connect 25 4 22 0;
