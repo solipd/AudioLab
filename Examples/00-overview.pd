@@ -1,26 +1,26 @@
-#N struct 1005-template float x float y float c float s float th float
-stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y
+#N struct 3463-template float x float y float c float s float th float
+stretch array 3463-plus 3463-template-y array 3463-minus 3463-template-y
 ;
-#N struct 1005-template-y float y;
-#N struct 1006-template float x float y float c float s float th float
-stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
+#N struct 3463-template-y float y;
+#N struct 3464-template float x float y float c float s float th float
+stretch array 3464-plus 3464-template-y array 3464-minus 3464-template-y
 ;
-#N struct 1006-template-y float y;
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 3464-template-y float y;
+#N struct 3466-template float x float y float c float s float th float
+stretch array 3466-plus 3466-template-y array 3466-minus 3466-template-y
 ;
-#N struct 1008-template-y float y;
-#N struct 1139-xt float x float y;
-#N struct 1139-yt float x float y;
-#N struct 1147-template float x float y float c float s float th float
-stretch array 1147-plus 1147-template-y array 1147-minus 1147-template-y
+#N struct 3466-template-y float y;
+#N struct 3597-xt float x float y;
+#N struct 3597-yt float x float y;
+#N struct 3605-template float x float y float c float s float th float
+stretch array 3605-plus 3605-template-y array 3605-minus 3605-template-y
 ;
-#N struct 1147-template-y float y;
-#N struct 1148-template float x float y float c float s float th float
-stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
+#N struct 3605-template-y float y;
+#N struct 3606-template float x float y float c float s float th float
+stretch array 3606-plus 3606-template-y array 3606-minus 3606-template-y
 ;
-#N struct 1148-template-y float y;
-#N canvas 351 54 812 712 10;
+#N struct 3606-template-y float y;
+#N canvas 343 54 812 712 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
@@ -28,14 +28,14 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #A saved;
 #X obj 69 704 pp.dynamics~;
 #A saved;
-#X obj 33 1049 pp.fft-gate~;
+#X obj 33 1164 pp.fft-gate~;
 #A saved;
-#X obj 253 1517 pp.spectrum~;
-#X obj 253 1295 pp.out~;
+#X obj 253 1632 pp.spectrum~;
+#X obj 253 1410 pp.out~;
 #A saved;
-#X obj 34 1089 pp.fft-pitchshift~;
+#X obj 34 1204 pp.fft-pitchshift~;
 #A saved;
-#X obj 229 1050 pp.fft-gate-st~;
+#X obj 229 1165 pp.fft-gate-st~;
 #A saved;
 #X obj 256 252 pp.pan~;
 #A saved;
@@ -49,23 +49,23 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #A saved;
 #X obj 69 527 pp.pitchshift~ 50;
 #A saved;
-#X obj 34 1005 pp.fft-split~;
+#X obj 34 1120 pp.fft-split~;
 #A saved;
-#X obj 229 1005 pp.fft-split-st~;
+#X obj 229 1120 pp.fft-split-st~;
 #A saved;
 #X obj 254 610 pp.vcfilter-st~;
 #A saved;
 #X obj 69 612 pp.vcfilter~;
 #A saved;
-#X obj 230 1090 pp.fft-pitchshift-st~;
+#X obj 230 1205 pp.fft-pitchshift-st~;
 #A saved;
-#X obj 34 952 pp.fft-block~;
+#X obj 34 1067 pp.fft-block~;
 #A saved;
-#X obj 229 952 pp.fft-block-st~;
+#X obj 229 1067 pp.fft-block-st~;
 #A saved;
-#X obj 34 1131 pp.fft-timbre~;
+#X obj 34 1246 pp.fft-timbre~;
 #A saved;
-#X obj 229 1132 pp.fft-timbre-st~;
+#X obj 229 1247 pp.fft-timbre-st~;
 #A saved;
 #X obj 69 745 pp.env~;
 #A saved;
@@ -73,32 +73,32 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #A saved;
 #X obj 255 391 pp.doppler~;
 #A saved;
-#X obj 229 1172 pp.fft-partconv-st~;
+#X obj 229 1287 pp.fft-partconv-st~;
 #A saved;
-#X obj 309 1473 pp.lfnoise~;
+#X obj 309 1588 pp.lfnoise~;
 #A saved;
-#X obj 33 1172 pp.fft-partconv~;
+#X obj 33 1287 pp.fft-partconv~;
 #A saved;
-#X obj 301 1430 pp.sdel~;
+#X obj 301 1545 pp.sdel~;
 #A saved;
 #X obj 253 745 pp.env-st~;
 #A saved;
-#X obj 277 1251 pp.in~;
+#X obj 277 1366 pp.in~;
 #A saved;
 #X text 16 62 Soundfile processing;
 #X text 21 441 Effects;
 #X text 260 463 stereo;
 #X text 74 462 mono;
-#X text 15 901 Spectral processing;
-#X text 37 932 mono;
-#X text 237 933 stereo;
+#X text 15 1016 Spectral processing;
+#X text 37 1047 mono;
+#X text 237 1048 stereo;
 #X text 18 234 Spatialisation;
-#X text 36 1247 Misc.;
+#X text 36 1362 Misc.;
 #X obj 69 788 pp.graindelay~;
 #A saved;
 #X obj 251 840 pp.rev~;
 #A saved;
-#X obj 423 -5 cnv 15 450 1600 empty empty empty 20 12 0 14 -233017
+#X obj 423 -6 cnv 15 450 1700 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X obj -2 46 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -106,7 +106,7 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 0;
 #X obj -2 436 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj -1 892 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -1 1007 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 85 variable-speed soundfile player;
 #X text 428 124 granular sampler;
@@ -118,18 +118,17 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X text 430 705 compressor/expander;
 #X text 430 746 simple envelope follower;
 #X text 431 790 granular delay;
-#X text 428 956 audio block delay;
-#X text 429 1007 spectral splitter;
-#X text 429 1055 spectral gate;
-#X text 431 1092 pvoc based pitchshifter;
-#X text 429 1134 spectral bin-reordering;
-#X text 430 1179 partitioned convolution;
-#X obj -1 1236 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X text 428 1071 audio block delay;
+#X text 429 1122 spectral splitter;
+#X text 429 1170 spectral gate;
+#X text 431 1207 pvoc based pitchshifter;
+#X text 429 1249 spectral bin-reordering;
+#X obj -1 1351 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 351 8-channel distance based amplitude panning;
-#X text 429 1440 samplewise delay;
-#X text 428 1482 low frequency noise generator;
-#X text 429 1528 spectrum analyser;
+#X text 429 1555 samplewise delay;
+#X text 428 1597 low frequency noise generator;
+#X text 429 1643 spectrum analyser;
 #X text 429 611 signal controlled filter (lowpass \, highpass \, resonant)
 ;
 #X obj 69 569 pp.eqfilter~;
@@ -148,11 +147,11 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X text 427 306 mid-side panning;
 #X obj 253 703 pp.dynamics-st~;
 #A saved;
-#X obj 252 1360 pp.out-8~;
+#X obj 252 1475 pp.out-8~;
 #A saved;
-#X text 429 1269 mic. input;
-#X text 431 1314 stereo output & soundfile recorder;
-#X text 429 1374 8 channel output & soundfile recorder;
+#X text 429 1384 mic. input;
+#X text 431 1429 stereo output & soundfile recorder;
+#X text 429 1489 8 channel output & soundfile recorder;
 #X obj 624 5 declare -path ..;
 #X text 429 846 fdn-reverberator based on [rev3~];
 #X obj 69 658 pp.clop~;
@@ -168,3 +167,18 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
 #X text 429 662 experimental comb-lop-filter;
+#X obj 69 933 pp.shepphaser~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 69 887 pp.twisted-delays~ 12 100;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 432 896 multipurpose twisted delay-thing;
+#X text 430 943 shepard tone-like phaser effect;
+#X text 430 1294 partitioned low latency convolution;
