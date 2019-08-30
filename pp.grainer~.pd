@@ -1,7 +1,7 @@
-#N struct 1677-template float x float y float c float s float th float
-stretch array 1677-plus 1677-template-y array 1677-minus 1677-template-y
+#N struct 1706-template float x float y float c float s float th float
+stretch array 1706-plus 1706-template-y array 1706-minus 1706-template-y
 ;
-#N struct 1677-template-y float y;
+#N struct 1706-template-y float y;
 #N canvas 92 112 629 549 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -10,7 +10,7 @@ stretch array 1677-plus 1677-template-y array 1677-minus 1677-template-y
 #X msg 99 405 next bang;
 #X obj 100 454 outlet~;
 #X obj 294 452 outlet~;
-#N canvas 23 174 1057 586 stuff 0;
+#N canvas 206 109 1057 586 stuff 0;
 #X obj 28 41 r \$0-samplelength;
 #X obj 62 63 r \$0-samplerate;
 #X obj 62 86 / 1000;
@@ -132,6 +132,13 @@ of max. active grains);
 #X msg 214 65 relocate 540x340+1+1 1x1+50+60 \, vis 1 \, editmode 0
 ;
 #X msg 28 114 range 0 \$1;
+#X msg 463 538 set \$1 \, bang;
+#X obj 463 562 s waveform/\$0-sf;
+#X obj 463 438 r \$0-visbng;
+#X obj 559 443 r \$0-set;
+#X obj 463 461 t b;
+#X obj 463 514 symbol \$0-sf;
+#X obj 559 466 t b a;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
@@ -209,6 +216,13 @@ of max. active grains);
 #X connect 75 0 4 0;
 #X connect 75 0 11 0;
 #X connect 75 0 18 0;
+#X connect 76 0 77 0;
+#X connect 78 0 80 0;
+#X connect 79 0 82 0;
+#X connect 80 0 81 0;
+#X connect 81 0 76 0;
+#X connect 82 0 81 0;
+#X connect 82 1 81 1;
 #X restore 435 255 pd stuff;
 #X obj 100 348 s \$0-trigger;
 #X obj 100 169 r \$0-int_triggeronoff;
@@ -1113,7 +1127,7 @@ is redundant;
 #N canvas 252 125 841 473 mask 0;
 #X obj 100 100 cnv 15 520 320 empty empty empty 20 12 0 14 -262144
 -66577 0;
-#X obj 112 233 hsl 496 10 0 44345.5 0 0 \$0-postiongui \$0-postionguir
+#X obj 112 233 hsl 496 10 0 20809.7 0 0 \$0-postiongui \$0-postionguir
 empty -2 -8 0 10 -262144 -1 -1 0 0;
 #X obj 109 147 cnv 15 502 82 empty empty empty 20 12 0 14 -128992 -66577
 0;
@@ -1125,14 +1139,14 @@ empty -2 -8 0 10 -262144 -1 -1 0 0;
 0;
 #X coords 0 -1 1 1 500 80 2 0 0;
 #X restore 110 148 pd mask;
-#X obj 115 280 nbx 8 12 0 44345.5 0 0 \$0-position \$0-positionr Position(ms)
+#X obj 115 280 nbx 8 12 0 20809.7 0 0 \$0-position \$0-positionr Position(ms)
 70 7 2 10 -262144 -1 -1 0 256;
 #X msg 12 313 set \$1;
 #X obj 12 292 i;
 #X obj 109 251 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr
 empty 17 7 2 10 -228856 -1 -1 0 1;
 #X obj 3 336 s \$0-position;
-#X obj 284 281 nbx 8 12 0 44345.5 0 0 \$0-random-position \$0-random-positionr
+#X obj 284 281 nbx 8 12 0 20809.7 0 0 \$0-random-position \$0-random-positionr
 Random-Position(ms) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 115 295 nbx 5 12 -6400 6400 0 0 \$0-size \$0-sizer Grainsize(ms)
 69 7 2 10 -262144 -1 -1 100 256;
@@ -1351,7 +1365,7 @@ Random-Q 70 6 2 9 -262144 -1 -1 0 256;
 -1 0;
 #X obj 499 375 hsl 92 10 0 1 0 0 \$0-env-shape \$0-env-shaper Shape
 -2 -7 2 10 -262144 -1 -1 4550 1;
-#X obj 109 136 cnv 10 10 10 empty \$0-wfbg ainger-shatter-extract.wav___00:44___44100Hz
+#X obj 109 136 cnv 10 10 10 empty \$0-wfbg mysoundfile___00:20___48000Hz
 1 5 2 10 -262144 -1 0;
 #X obj 443 121 cnv 15 10 10 empty empty grainer~ 0 0 2 14 -262144 -162280
 0;
@@ -1748,8 +1762,8 @@ int.grain-trigger \$25 \,;
 #X connect 39 0 20 0;
 #X connect 40 0 39 0;
 #X restore 435 318 pd playback+position;
-#X obj 103 118 cnv 10 10 10 empty \$0-namecnv ainger-shatter-extract.wav
-0 5 2 10 -233017 -1 0;
+#X obj 103 118 cnv 10 10 10 empty \$0-namecnv mysoundfile 0 5 2 10
+-233017 -1 0;
 #N canvas 689 58 450 300 init 0;
 #X obj 196 22 loadbang;
 #X obj 201 86 f \$0;
@@ -1826,7 +1840,6 @@ random-grainsize;
 #X obj 99 241 array size;
 #X obj 220 295 samplerate~;
 #X obj 181 180 t b s b;
-#X msg 347 318 set \$1 \, bang;
 #N canvas 445 148 797 561 sondfile-info 0;
 #X obj 172 519 s \$0-wfbg;
 #X obj 107 135 /;
@@ -1893,28 +1906,18 @@ random-grainsize;
 #X restore 51 315 pd sondfile-info;
 #X obj 346 212 s \$0-set;
 #X obj 346 83 symbol;
-#X obj 347 347 s waveform/\$0-sf;
 #X obj 108 263 s \$0-samplelength;
 #X obj 220 318 s \$0-samplerate;
-#X obj 347 245 r \$0-visbng;
-#X obj 430 293 r \$0-set;
-#X obj 347 268 t b;
-#X obj 347 294 symbol \$0-sf;
-#X connect 0 0 7 0;
-#X connect 1 0 5 0;
-#X connect 1 0 9 0;
-#X connect 2 0 10 0;
+#X connect 0 0 6 0;
+#X connect 1 0 4 0;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
 #X connect 3 0 1 0;
 #X connect 3 1 1 1;
-#X connect 3 1 5 1;
+#X connect 3 1 4 1;
 #X connect 3 2 2 0;
-#X connect 4 0 8 0;
-#X connect 7 0 3 0;
-#X connect 7 0 6 0;
-#X connect 11 0 13 0;
-#X connect 12 0 14 1;
-#X connect 13 0 14 0;
-#X connect 14 0 4 0;
+#X connect 6 0 3 0;
+#X connect 6 0 5 0;
 #X restore 360 842 pd set;
 #X obj 453 808 symbol;
 #X obj 453 828 s \$0-env-set;
