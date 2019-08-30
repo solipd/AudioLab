@@ -1,11 +1,11 @@
-#N struct 1597-template float x float y float c float s float th float
-stretch array 1597-plus 1597-template-y array 1597-minus 1597-template-y
+#N struct 3296-template float x float y float c float s float th float
+stretch array 3296-plus 3296-template-y array 3296-minus 3296-template-y
 ;
-#N struct 1597-template-y float y;
-#N struct 1598-template float x float y float c float s float th float
-stretch array 1598-plus 1598-template-y array 1598-minus 1598-template-y
+#N struct 3296-template-y float y;
+#N struct 3297-template float x float y float c float s float th float
+stretch array 3297-plus 3297-template-y array 3297-minus 3297-template-y
 ;
-#N struct 1598-template-y float y;
+#N struct 3297-template-y float y;
 #N canvas 2 54 1191 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -15,13 +15,9 @@ stretch array 1598-plus 1598-template-y array 1598-minus 1598-template-y
 #X obj 401 67 pp.sfplayer~;
 #A saved;
 #X obj 576 471 r \$0-room;
-#X obj 550 126 pp.lfnoise~;
-#A saved;
 #X obj 551 227 *~;
 #X obj 460 373 *~;
 #X obj 474 398 *~;
-#X obj 550 161 *~ 0.5;
-#X obj 550 182 +~ 0.5;
 #X obj 461 257 pp.doppler~;
 #A saved;
 #X msg 742 111 frequency \$1;
@@ -60,7 +56,7 @@ stretch array 1598-plus 1598-template-y array 1598-minus 1598-template-y
 #X msg 117 88 smooth 100;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 643 105 pd init;
+#X restore 642 124 pd init;
 #X obj 576 4 r \$0-sample;
 #X obj 576 24 symbol;
 #X msg 576 45 open \$1 \, loop 1 \, play 1;
@@ -94,9 +90,7 @@ stretch array 1598-plus 1598-template-y array 1598-minus 1598-template-y
 #X connect 3 0 2 0;
 #X restore 11 8 pd init;
 #X obj 19 160 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 19900 1;
-#X obj 461 319 pp.lfnoise~;
-#A saved;
+-8 2 12 -260097 -1 -1 0 1;
 #X obj 401 423 pp.doppler~;
 #A saved;
 #X obj 248 25 declare -path ./audio;
@@ -157,8 +151,6 @@ path in a room in front of the listener.;
 #X obj 19 261 hsl 200 15 0 30 0 0 \$0-width \$0-widthr Movement-width
 -2 -8 2 12 -262144 -1 -1 13267 1;
 #X obj 550 203 *~;
-#X text 716 162 Random signal generater \, normalized to 0-1 and squared.
-This gives a preference for movements in front of the listener.;
 #X obj 402 484 pp.pan~ sqrt;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
@@ -170,70 +162,82 @@ This gives a preference for movements in front of the listener.;
 #X text 823 472 total distance from the listener;
 #X text 759 530 multiply the dry signal by 1-distance;
 #X text 801 573 latency compensation for fft-partconv~;
-#X connect 0 0 63 1;
-#X connect 1 0 63 0;
-#X connect 2 0 62 3;
+#X obj 549 145 pp.lfnoise~ 0 1;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 668 177 Random unitpolar signal generator \, squared. This
+gives a preference for movements in front of the listener.;
+#X obj 461 319 pp.lfnoise~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X connect 0 0 59 1;
+#X connect 1 0 59 0;
+#X connect 2 0 58 3;
+#X connect 3 0 40 0;
 #X connect 3 0 44 0;
-#X connect 3 0 48 0;
-#X connect 4 0 20 0;
-#X connect 5 0 9 0;
-#X connect 6 0 11 1;
-#X connect 7 0 8 0;
-#X connect 8 0 41 1;
-#X connect 9 0 10 0;
-#X connect 10 0 70 0;
-#X connect 10 0 70 1;
-#X connect 11 0 41 0;
-#X connect 11 1 17 0;
-#X connect 11 1 67 1;
+#X connect 4 0 17 0;
+#X connect 5 0 8 1;
+#X connect 6 0 7 0;
+#X connect 7 0 37 1;
+#X connect 8 0 37 0;
+#X connect 8 1 14 0;
+#X connect 8 1 63 1;
+#X connect 9 0 73 1;
+#X connect 9 0 75 1;
+#X connect 10 0 11 0;
+#X connect 11 0 9 0;
 #X connect 12 0 5 1;
-#X connect 12 0 40 1;
-#X connect 13 0 14 0;
-#X connect 14 0 12 0;
-#X connect 15 0 6 1;
-#X connect 16 0 7 1;
-#X connect 17 0 8 1;
-#X connect 18 0 11 2;
-#X connect 19 0 62 3;
-#X connect 20 0 2 0;
-#X connect 22 0 40 1;
-#X connect 23 0 5 1;
-#X connect 24 0 25 0;
+#X connect 13 0 6 1;
+#X connect 14 0 7 1;
+#X connect 15 0 8 2;
+#X connect 16 0 58 3;
+#X connect 17 0 2 0;
+#X connect 19 0 75 1;
+#X connect 20 0 73 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 3 3;
 #X connect 25 0 26 0;
-#X connect 26 0 3 3;
-#X connect 28 0 29 0;
-#X connect 29 0 21 2;
-#X connect 35 0 37 0;
-#X connect 36 0 37 0;
-#X connect 40 0 7 0;
-#X connect 41 0 72 0;
-#X connect 41 1 72 1;
-#X connect 41 1 67 0;
+#X connect 26 0 18 2;
+#X connect 32 0 34 0;
+#X connect 33 0 34 0;
+#X connect 37 0 67 0;
+#X connect 37 1 67 1;
+#X connect 37 1 63 0;
+#X connect 41 0 42 0;
+#X connect 42 0 39 0;
+#X connect 42 0 39 1;
+#X connect 43 0 50 0;
+#X connect 44 0 8 0;
 #X connect 45 0 46 0;
-#X connect 46 0 43 0;
-#X connect 46 0 43 1;
-#X connect 47 0 54 0;
-#X connect 48 0 11 0;
-#X connect 49 0 50 0;
-#X connect 50 0 43 2;
-#X connect 51 0 46 1;
-#X connect 52 0 3 3;
-#X connect 54 0 48 1;
-#X connect 58 0 62 3;
-#X connect 62 0 21 0;
-#X connect 62 1 21 1;
-#X connect 63 0 21 0;
-#X connect 63 1 21 1;
-#X connect 64 0 65 0;
-#X connect 65 0 66 0;
-#X connect 66 0 57 0;
-#X connect 67 0 68 0;
-#X connect 68 0 0 1;
-#X connect 68 0 1 1;
-#X connect 70 0 6 0;
-#X connect 72 0 1 0;
-#X connect 72 0 62 0;
-#X connect 72 1 0 0;
-#X connect 72 1 62 1;
-#X connect 73 0 16 0;
-#X connect 74 0 15 0;
+#X connect 46 0 39 2;
+#X connect 47 0 42 1;
+#X connect 48 0 3 3;
+#X connect 50 0 44 1;
+#X connect 54 0 58 3;
+#X connect 58 0 18 0;
+#X connect 58 1 18 1;
+#X connect 59 0 18 0;
+#X connect 59 1 18 1;
+#X connect 60 0 61 0;
+#X connect 61 0 62 0;
+#X connect 62 0 53 0;
+#X connect 63 0 64 0;
+#X connect 64 0 0 1;
+#X connect 64 0 1 1;
+#X connect 66 0 5 0;
+#X connect 67 0 1 0;
+#X connect 67 0 58 0;
+#X connect 67 1 0 0;
+#X connect 67 1 58 1;
+#X connect 68 0 13 0;
+#X connect 69 0 12 0;
+#X connect 73 0 66 0;
+#X connect 73 0 66 1;
+#X connect 75 0 6 0;

@@ -5,7 +5,7 @@
 #X obj 18 148 hsl 200 15 0 360 0 0 \$0-angle \$0-angler Angle -2 -8
 2 12 -262144 -1 -1 4975 1;
 #X obj 19 111 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 0 1;
+-8 2 12 -260097 -1 -1 0 1;
 #X obj 18 184 hsl 200 15 -1 1 0 0 \$0-spread \$0-spreadr Spread -2
 -8 2 12 -262144 -1 -1 0 1;
 #N canvas 213 465 450 300 init 0;
@@ -21,26 +21,6 @@
 #X connect 2 0 1 0;
 #X restore 17 11 pd init;
 #X obj 404 221 pp.spat8~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 403 114 noise~;
 #X obj 568 260 r \$0-volume;
@@ -67,26 +47,6 @@ can use the GUI of [pp.spat8~] to see how the speaker amplitudes changes.
 #X text 7 385 Philipp Schmalfuß \, 2018;
 #X obj 278 5 declare -path ..;
 #X obj 404 327 pp.out-8~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X msg 568 303 volume \$1;
 #X connect 5 0 26 0;

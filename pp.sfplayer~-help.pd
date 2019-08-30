@@ -1,33 +1,13 @@
-#N struct 1100-template float x float y float c float s float th float
-stretch array 1100-plus 1100-template-y array 1100-minus 1100-template-y
+#N struct 2679-template float x float y float c float s float th float
+stretch array 2679-plus 2679-template-y array 2679-minus 2679-template-y
 ;
-#N struct 1100-template-y float y;
-#N struct 1101-template float x float y float c float s float th float
-stretch array 1101-plus 1101-template-y array 1101-minus 1101-template-y
+#N struct 2679-template-y float y;
+#N struct 2680-template float x float y float c float s float th float
+stretch array 2680-plus 2680-template-y array 2680-minus 2680-template-y
 ;
-#N struct 1101-template-y float y;
-#N canvas 170 239 784 309 10;
+#N struct 2680-template-y float y;
+#N canvas 267 326 849 315 10;
 #X obj 397 246 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -129,27 +109,7 @@ with the parrent patch;
 #X restore 570 117 pd control-messages;
 #X obj 397 139 pp.sfplayer~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#X obj 397 24 adc~;
+#X obj 397 9 adc~;
 #X obj 511 69 sig~;
 #X floatatom 511 50 5 0 0 0 - - -;
 #X text 547 51 playback-speed in %;
@@ -184,6 +144,26 @@ is exposed in pd-examples B16.long-varispeed.pd;
 #X restore 570 178 pd message-out;
 #X text 10 29 sfplayer~ allows clean variable-speed playback of extra
 long soundfiles;
+#X obj 715 4 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 721 15 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X obj 721 36 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
+0 10 -262144 -1 -1;
+#X text 740 13 open example-1;
+#X text 740 35 open example-2;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 26 r \$0-example1;
+#X obj 94 72 s pd;
+#X obj 93 144 s pd;
+#X obj 93 98 r \$0-example2;
+#X msg 94 49 open 03-looping_with_sfplayer~.pd ./Examples;
+#X msg 93 121 open 09-old_tapedeck.pd ./Examples;
+#X connect 0 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X connect 5 0 2 0;
+#X restore 304 280 pd examples;
 #X connect 4 0 5 3;
 #X connect 5 0 0 0;
 #X connect 5 1 0 1;

@@ -1,12 +1,12 @@
-#N canvas 172 211 914 332 10;
-#X obj 3 2 cnv 15 380 320 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 257 127 897 337 10;
+#X obj 3 3 cnv 15 380 320 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 74 117 1:(~)signal;
-#X text 16 118 Inlets:;
-#X text 16 189 Outlets:;
-#X obj 14 30 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 -233017 -262144
+#X text 74 120 1:(~)signal;
+#X text 16 121 Inlets:;
+#X text 16 192 Outlets:;
+#X obj 14 33 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 -233017 -262144
 0;
-#X obj 539 158 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 539 161 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 423 472 control-messages 0;
 #X obj 70 439 outlet;
@@ -69,91 +69,63 @@ with the parrent patch;
 #X connect 18 0 0 0;
 #X connect 19 0 0 0;
 #X connect 23 0 0 0;
-#X restore 539 158 pd control-messages;
-#X obj 392 16 noise~;
-#X obj 421 56 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
+#X restore 539 161 pd control-messages;
+#X obj 392 19 noise~;
+#X obj 421 59 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X floatatom 418 120 5 0 0 0 - - -;
-#X obj 418 140 sig~;
-#X obj 465 12 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X floatatom 418 123 5 0 0 0 - - -;
+#X obj 418 143 sig~;
+#X obj 465 15 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X floatatom 464 120 5 0 0 0 - - -;
-#X obj 464 140 sig~;
-#X text 425 102 x;
-#X text 483 103 y;
-#X floatatom 506 121 5 -1 1 0 - - -;
-#X obj 506 141 sig~;
-#X text 542 120 spatial spread (-1 \, 1);
-#X text 74 129 2:(~)x-position;
-#X text 74 141 3:(~)y-position;
-#X text 74 153 4:(~)spatial spread;
-#X text 74 166 5:control-messages;
-#X text 74 188 1:(~)signal ch.1;
-#X text 74 201 2:(~)signal ch.2;
-#X text 74 214 3:(~)signal ch.3;
-#X text 74 227 4:(~)signal ch.4;
-#X text 74 239 5:(~)signal ch.5;
-#X text 74 252 6:(~)signal ch.6;
-#X text 74 265 7:(~)signal ch.7;
-#X text 74 278 8:(~)signal ch.8;
-#X text 74 292 9:message;
-#X text 9 46 8 channel distance based amplitude panning;
-#X text 14 74 Creation arguments: panning law: "cos" or "sqrt";
-#X text 135 87 default: cos;
+#X floatatom 464 123 5 0 0 0 - - -;
+#X obj 464 143 sig~;
+#X text 425 105 x;
+#X text 483 106 y;
+#X floatatom 506 124 5 -1 1 0 - - -;
+#X obj 506 144 sig~;
+#X text 542 123 spatial spread (-1 \, 1);
+#X text 74 132 2:(~)x-position;
+#X text 74 144 3:(~)y-position;
+#X text 74 156 4:(~)spatial spread;
+#X text 74 169 5:control-messages;
+#X text 74 191 1:(~)signal ch.1;
+#X text 74 204 2:(~)signal ch.2;
+#X text 74 217 3:(~)signal ch.3;
+#X text 74 230 4:(~)signal ch.4;
+#X text 74 242 5:(~)signal ch.5;
+#X text 74 255 6:(~)signal ch.6;
+#X text 74 268 7:(~)signal ch.7;
+#X text 74 281 8:(~)signal ch.8;
+#X text 74 295 9:message;
+#X text 9 49 8 channel distance based amplitude panning;
+#X text 14 77 Creation arguments: panning law: "cos" or "sqrt";
+#X text 135 90 default: cos;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
 #X msg 30 60 speaker-1 -0.42623 0.909836 \, speaker-2 0.418033 0.909836
 \, speaker-3 -0.909836 0.426229 \, speaker-4 0.901639 0.426229 \, speaker-5
 -0.909836 -0.418033 \, speaker-6 0.901639 -0.418033 \, speaker-7 -0.42623
--0.901639 \, speaker-8 0.418033 -0.901639 \,  \,;
+-0.901639 \, speaker-8 0.418033 -0.901639 \, cos \,;
 #X connect 0 0 1 0;
-#X restore 539 222 pd message-out;
-#X obj 391 181 pp.spat8~;
+#X restore 539 225 pd message-out;
+#X obj 391 184 pp.spat8~;
 #A saved;
+#X obj 390 266 pp.out-8~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#X obj 390 263 pp.out-8~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#X text 552 187 <-- click to open GUI \, switch to editmode to change
+#X text 552 190 <-- click to open GUI \, switch to editmode to change
 loudspeaker positions;
+#X obj 771 4 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 777 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X text 796 11 open example-1;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 26 r \$0-example1;
+#X obj 94 72 s pd;
+#X msg 94 49 open 07-8-channel_circular_movement.pd ./Examples;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 307 301 pd examples;
 #X connect 6 0 36 4;
 #X connect 7 0 36 0;
 #X connect 8 0 9 0;

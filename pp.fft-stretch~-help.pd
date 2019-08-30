@@ -1,12 +1,12 @@
-#N struct 1043-template float x float y float c float s float th float
-stretch array 1043-plus 1043-template-y array 1043-minus 1043-template-y
+#N struct 2373-template float x float y float c float s float th float
+stretch array 2373-plus 2373-template-y array 2373-minus 2373-template-y
 ;
-#N struct 1043-template-y float y;
-#N struct 1044-template float x float y float c float s float th float
-stretch array 1044-plus 1044-template-y array 1044-minus 1044-template-y
+#N struct 2373-template-y float y;
+#N struct 2374-template float x float y float c float s float th float
+stretch array 2374-plus 2374-template-y array 2374-minus 2374-template-y
 ;
-#N struct 1044-template-y float y;
-#N canvas 154 122 971 306 10;
+#N struct 2374-template-y float y;
+#N canvas 154 122 860 311 10;
 #X obj 397 248 pp.out~;
 #A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -184,14 +184,25 @@ vocoder;
 #X text 131 73 \$2: overlap \, default: 4;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 open /home/philipp/Documents/Pd/samples/Reflections - Dry.wav
-\, play 1 \, freeze 0 \, speed 4 \, transposition 0 \, position 0 \,
-position% 0 \, loop 0 \, phaselock 0 \, random-phase 1 \, blocksize
-16384 \, overlap 8 \,;
+#X msg 30 60 open symbol \, play 0 \, freeze 0 \, speed 100 \, transposition
+0 \, position 0 \, position% 0 \, loop 0 \, phaselock 0 \, random-phase
+0 \, blocksize 1024 \, overlap 4 \,;
 #X connect 0 0 1 0;
 #X restore 570 178 pd message-out;
 #X obj 397 139 pp.fft-stretch~ 1024 4;
 #A saved;
+#X obj 737 3 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 743 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X text 762 9 open example-1;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 26 r \$0-example1;
+#X obj 94 72 s pd;
+#X msg 94 49 open 06-time-stretching.pd ./Examples;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 308 281 pd examples;
 #X connect 4 0 29 4;
 #X connect 5 0 29 0;
 #X connect 5 1 29 1;

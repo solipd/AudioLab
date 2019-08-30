@@ -1,39 +1,19 @@
-#N struct 2148-template float x float y float c float s float th float
-stretch array 2148-plus 2148-template-y array 2148-minus 2148-template-y
+#N struct 3159-template float x float y float c float s float th float
+stretch array 3159-plus 3159-template-y array 3159-minus 3159-template-y
 ;
-#N struct 2148-template-y float y;
-#N struct 2278-template float x float y float c float s float th float
-stretch array 2278-plus 2278-template-y array 2278-minus 2278-template-y
+#N struct 3159-template-y float y;
+#N struct 3289-template float x float y float c float s float th float
+stretch array 3289-plus 3289-template-y array 3289-minus 3289-template-y
 ;
-#N struct 2278-template-y float y;
-#N struct 2279-template float x float y float c float s float th float
-stretch array 2279-plus 2279-template-y array 2279-minus 2279-template-y
+#N struct 3289-template-y float y;
+#N struct 3290-template float x float y float c float s float th float
+stretch array 3290-plus 3290-template-y array 3290-minus 3290-template-y
 ;
-#N struct 2279-template-y float y;
-#N canvas 160 52 909 451 10;
+#N struct 3290-template-y float y;
+#N canvas 160 54 909 451 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 394 389 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #N canvas 3 50 450 300 init 0;
 #X obj 48 57 loadbang;
@@ -57,7 +37,7 @@ grainsize 300 \, pitch 0 \, panorama 0 \, amplitude -6 \, filter-bypass
 #X obj 15 203 hsl 200 15 0 100 0 0 \$0-speed \$0-speedr Playback-speed
 -2 -8 2 12 -262144 -1 -1 19900 1;
 #X obj 14 132 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 0 1;
+-8 2 12 -260097 -1 -1 0 1;
 #X obj 15 237 hsl 200 15 -1200 1200 0 0 \$0-transposition \$0-transpositionr
 Transposition -2 -8 2 12 -262144 -1 -1 9950 1;
 #X floatatom 559 387 5 0 0 0 - - -;
@@ -89,50 +69,10 @@ transposition 0 \, position 0 \, position% 0 \, loop 1 \, phaselock
 #X restore 727 197 pd init;
 #X obj 394 109 pp.grainer~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X obj 559 366 r \$0-volume;
 #X obj 11 159 hradio 20 1 0 2 \$0-switch \$0-switchr Granular/Phasevoc
 45 10 2 12 -262144 -1 -1 0;
 #X obj 536 192 pp.fft-stretch~ 1024 4;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 415 231 r \$0-switch;
 #X obj 394 285 *~ 1;

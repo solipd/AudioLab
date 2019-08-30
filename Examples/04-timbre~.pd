@@ -1,11 +1,11 @@
-#N struct 2134-template float x float y float c float s float th float
-stretch array 2134-plus 2134-template-y array 2134-minus 2134-template-y
+#N struct 3145-template float x float y float c float s float th float
+stretch array 3145-plus 3145-template-y array 3145-minus 3145-template-y
 ;
-#N struct 2134-template-y float y;
-#N struct 2135-template float x float y float c float s float th float
-stretch array 2135-plus 2135-template-y array 2135-minus 2135-template-y
+#N struct 3145-template-y float y;
+#N struct 3146-template float x float y float c float s float th float
+stretch array 3146-plus 3146-template-y array 3146-minus 3146-template-y
 ;
-#N struct 2135-template-y float y;
+#N struct 3146-template-y float y;
 #N canvas 376 163 761 406 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -14,7 +14,7 @@ stretch array 2135-plus 2135-template-y array 2135-minus 2135-template-y
 #X obj 19 153 hsl 200 15 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet -2
 -8 2 12 -262144 -1 -1 19900 1;
 #X obj 19 117 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 0 1;
+-8 2 12 -260097 -1 -1 0 1;
 #N canvas 491 400 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
@@ -29,50 +29,10 @@ stretch array 2135-plus 2135-template-y array 2135-minus 2135-template-y
 #X restore 17 11 pd init;
 #X obj 426 346 pp.out~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X floatatom 589 339 5 0 0 0 - - -;
 #X msg 589 359 volume \$1;
 #X obj 589 318 r \$0-volume;
 #X obj 427 34 pp.sfplayer~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #N canvas 3 50 450 300 init 0;
 #X obj 194 72 loadbang;
@@ -83,26 +43,6 @@ position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
 #X connect 1 0 2 0;
 #X restore 600 13 pd init;
 #X obj 427 202 pp.fft-timbre-st~ 512 4;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 15 352 s \$0-timb;
 #X obj 600 146 r \$0-timb;

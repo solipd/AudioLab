@@ -1,26 +1,6 @@
-#N canvas 488 290 784 313 10;
+#N canvas 234 280 864 315 10;
 #X declare -path ./Examples/audio;
 #X obj 396 248 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -52,26 +32,6 @@ IR's;
 #X text 37 99 \$1: fft-blocksize of the first partition \, default:
 1024;
 #X obj 397 139 pp.fft-partconv-st~ 1024;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 570 116 cnv 16 118 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
@@ -6270,7 +6230,7 @@ IR's;
 -2.89e-05 -6.74113e-06 -0.000112419 -1.26596e-05 4.42977e-05 -7.2892e-05
 -3.24482e-05 1.64986e-05 -5.66246e-05 4.61081e-05 -2.56442e-05 -0.000192904
 4.99438e-05 0.000120866 8.35527e-06 -5.28818e-05 6.93476e-06 8.86817e-06
--3.6486e-05 -0.000100093 1.50254e-06 9.88726e-05 -7.6439e-05;
+-3.6486e-05 -0.000100093 1.50254e-06 9.88726e-05 -7.6439e-05 ;
 #A 38000 4.96139e-05 -4.89368e-05 -0.000135427 8.68705e-05 9.49696e-05
 -6.96682e-05 -4.47704e-05 1.86895e-05 -1.94277e-05 7.19656e-05 -8.26973e-06
 -3.75278e-05 4.96504e-05 4.47007e-05 6.07065e-05 1.04698e-05 -5.0415e-05
@@ -7569,26 +7529,6 @@ be the same size;
 #X obj 108 54 + 300;
 #X obj 32 262 pp.pan~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;
 #X connect 3 0 4 0;
@@ -7616,6 +7556,26 @@ be the same size;
 \, max-blocksize 65536 \,;
 #X connect 0 0 1 0;
 #X restore 570 199 pd message-out;
+#X obj 735 4 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 741 15 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X obj 741 36 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
+0 10 -262144 -1 -1;
+#X text 760 13 open example-1;
+#X text 760 35 open example-2;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 26 r \$0-example1;
+#X obj 94 72 s pd;
+#X obj 93 144 s pd;
+#X obj 93 98 r \$0-example2;
+#X msg 93 121 open 09-old_tapedeck.pd ./Examples;
+#X msg 94 49 open 08-chaotic_movement.pd ./Examples;
+#X connect 0 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 5 0 1 0;
+#X restore 309 279 pd examples;
 #X connect 5 0 20 2;
 #X connect 6 0 5 0;
 #X connect 8 0 20 3;

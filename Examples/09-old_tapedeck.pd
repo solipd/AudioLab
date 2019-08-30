@@ -1,57 +1,17 @@
-#N struct 2326-template float x float y float c float s float th float
-stretch array 2326-plus 2326-template-y array 2326-minus 2326-template-y
+#N struct 3116-template float x float y float c float s float th float
+stretch array 3116-plus 3116-template-y array 3116-minus 3116-template-y
 ;
-#N struct 2326-template-y float y;
-#N struct 2327-template float x float y float c float s float th float
-stretch array 2327-plus 2327-template-y array 2327-minus 2327-template-y
+#N struct 3116-template-y float y;
+#N struct 3117-template float x float y float c float s float th float
+stretch array 3117-plus 3117-template-y array 3117-minus 3117-template-y
 ;
-#N struct 2327-template-y float y;
-#N canvas 204 52 814 713 10;
+#N struct 3117-template-y float y;
+#N canvas 204 54 814 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 399 293 pp.sfplayer~;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X obj 401 652 pp.out~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 657 256 openpanel;
 #X obj 657 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -63,26 +23,6 @@ stretch array 2327-plus 2327-template-y array 2327-minus 2327-template-y
 #X obj 462 93 sel 0;
 #X obj 433 185 lop~ 1.2;
 #X obj 400 508 pp.fft-partconv-st~;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 513 268 +~;
 #X obj 390 8 r \$0-play/pause;
@@ -136,28 +76,8 @@ stretch array 2327-plus 2327-template-y array 2327-minus 2327-template-y
 7 2 12 -262144 -1 -1;
 #X obj 528 82 pp.lfnoise~ 30;
 #A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #X obj 30 187 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -262144 -1 -1 0 1;
+-8 2 12 -260097 -1 -1 0 1;
 #X msg 657 277 open \$1 \, play 1;
 #X msg 27 368 IR-Dual-CC3600-1.wav;
 #X msg 27 390 IR-Dual-CC3600-2.wav;
@@ -212,26 +132,6 @@ stretch array 2327-plus 2327-template-y array 2327-minus 2327-template-y
 #X connect 2 0 1 0;
 #X restore 740 63 pd init;
 #X obj 647 83 pp.lfnoise~ 0.3;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
-#A saved;
 #A saved;
 #X obj 667 122 r \$0-wowflutter;
 #X obj 527 165 *~ 1;
