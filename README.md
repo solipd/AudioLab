@@ -5,7 +5,7 @@ live electronics and sound design.
 
 ## Installation
 
-To run this software you’ll need to install Pure Data version 0.49 or later. 
+To run this software you’ll need to install Pure Data version 0.50 or later. 
 Pd can be downloaded from https://puredata.info/ 
 
 In Pd go to Preferences→Path...→New... and set the path to the AudioLab directory.
