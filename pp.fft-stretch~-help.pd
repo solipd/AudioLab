@@ -1,11 +1,11 @@
-#N struct 2373-template float x float y float c float s float th float
-stretch array 2373-plus 2373-template-y array 2373-minus 2373-template-y
+#N struct 1232-template float x float y float c float s float th float
+stretch array 1232-plus 1232-template-y array 1232-minus 1232-template-y
 ;
-#N struct 2373-template-y float y;
-#N struct 2374-template float x float y float c float s float th float
-stretch array 2374-plus 2374-template-y array 2374-minus 2374-template-y
+#N struct 1232-template-y float y;
+#N struct 1233-template float x float y float c float s float th float
+stretch array 1233-plus 1233-template-y array 1233-minus 1233-template-y
 ;
-#N struct 2374-template-y float y;
+#N struct 1233-template-y float y;
 #N canvas 154 122 860 311 10;
 #X obj 397 248 pp.out~;
 #A saved;
@@ -197,11 +197,15 @@ vocoder;
 0 10 -262144 -1 -1;
 #X text 762 9 open example-1;
 #N canvas 102 154 450 300 examples 0;
-#X obj 94 26 r \$0-example1;
-#X obj 94 72 s pd;
-#X msg 94 49 open 06-time-stretching.pd ./Examples;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#X obj 94 107 s pd;
+#X obj 94 11 r \$0-example1;
+#X msg 94 34 dir;
+#X obj 94 57 pdcontrol;
+#X msg 94 84 open 06-time-stretching.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
 #X restore 308 281 pd examples;
 #X connect 4 0 29 4;
 #X connect 5 0 29 0;

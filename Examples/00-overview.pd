@@ -1,26 +1,26 @@
-#N struct 3463-template float x float y float c float s float th float
-stretch array 3463-plus 3463-template-y array 3463-minus 3463-template-y
+#N struct 2003-template float x float y float c float s float th float
+stretch array 2003-plus 2003-template-y array 2003-minus 2003-template-y
 ;
-#N struct 3463-template-y float y;
-#N struct 3464-template float x float y float c float s float th float
-stretch array 3464-plus 3464-template-y array 3464-minus 3464-template-y
+#N struct 2003-template-y float y;
+#N struct 2004-template float x float y float c float s float th float
+stretch array 2004-plus 2004-template-y array 2004-minus 2004-template-y
 ;
-#N struct 3464-template-y float y;
-#N struct 3466-template float x float y float c float s float th float
-stretch array 3466-plus 3466-template-y array 3466-minus 3466-template-y
+#N struct 2004-template-y float y;
+#N struct 2006-template float x float y float c float s float th float
+stretch array 2006-plus 2006-template-y array 2006-minus 2006-template-y
 ;
-#N struct 3466-template-y float y;
-#N struct 3597-xt float x float y;
-#N struct 3597-yt float x float y;
-#N struct 3605-template float x float y float c float s float th float
-stretch array 3605-plus 3605-template-y array 3605-minus 3605-template-y
+#N struct 2006-template-y float y;
+#N struct 2137-xt float x float y;
+#N struct 2137-yt float x float y;
+#N struct 2145-template float x float y float c float s float th float
+stretch array 2145-plus 2145-template-y array 2145-minus 2145-template-y
 ;
-#N struct 3605-template-y float y;
-#N struct 3606-template float x float y float c float s float th float
-stretch array 3606-plus 3606-template-y array 3606-minus 3606-template-y
+#N struct 2145-template-y float y;
+#N struct 2146-template float x float y float c float s float th float
+stretch array 2146-plus 2146-template-y array 2146-minus 2146-template-y
 ;
-#N struct 3606-template-y float y;
-#N canvas 343 54 812 712 10;
+#N struct 2146-template-y float y;
+#N canvas 333 76 812 712 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
@@ -78,8 +78,6 @@ stretch array 3606-plus 3606-template-y array 3606-minus 3606-template-y
 #X obj 309 1588 pp.lfnoise~;
 #A saved;
 #X obj 33 1287 pp.fft-partconv~;
-#A saved;
-#X obj 301 1545 pp.sdel~;
 #A saved;
 #X obj 253 745 pp.env-st~;
 #A saved;
@@ -182,3 +180,10 @@ stretch array 3606-plus 3606-template-y array 3606-minus 3606-template-y
 #X text 432 896 multipurpose twisted delay-thing;
 #X text 430 943 shepard tone-like phaser effect;
 #X text 430 1294 partitioned low latency convolution;
+#X obj 301 1544 pp.sdel-st~;
+#X obj 174 1545 pp.sdel~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;

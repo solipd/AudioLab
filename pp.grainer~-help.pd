@@ -1,7 +1,7 @@
-#N struct 2525-template float x float y float c float s float th float
-stretch array 2525-plus 2525-template-y array 2525-minus 2525-template-y
+#N struct 1382-template float x float y float c float s float th float
+stretch array 1382-plus 1382-template-y array 1382-minus 1382-template-y
 ;
-#N struct 2525-template-y float y;
+#N struct 1382-template-y float y;
 #N canvas 339 262 800 355 10;
 #X obj 397 293 pp.out~;
 #A saved;
@@ -264,11 +264,15 @@ with the parrent patch;
 0 10 -262144 -1 -1;
 #X text 701 9 open example-1;
 #N canvas 102 154 450 300 examples 0;
-#X obj 94 26 r \$0-example1;
-#X obj 94 72 s pd;
-#X msg 94 49 open 06-time-stretching.pd ./Examples;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#X obj 94 103 s pd;
+#X obj 94 11 r \$0-example1;
+#X msg 94 34 dir;
+#X obj 94 57 pdcontrol;
+#X msg 94 80 open 06-time-stretching.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
 #X restore 308 331 pd examples;
 #X connect 4 0 13 1;
 #X connect 5 0 13 0;

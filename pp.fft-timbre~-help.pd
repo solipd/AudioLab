@@ -1,4 +1,4 @@
-#N canvas 378 252 818 309 10;
+#N canvas 362 226 818 309 10;
 #X obj 390 248 pp.out~;
 #A saved;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -193,11 +193,15 @@ curve-2 0 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 0 \, dry/wet
 0 10 -262144 -1 -1;
 #X text 719 9 open example-1;
 #N canvas 102 154 450 300 examples 0;
-#X obj 94 26 r \$0-example1;
-#X obj 94 72 s pd;
-#X msg 94 49 open 04-timbre~.pd ./Examples;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
+#X obj 94 125 s pd;
+#X obj 94 32 r \$0-example1;
+#X msg 94 55 dir;
+#X obj 94 78 pdcontrol;
+#X msg 94 102 open 04-timbre~.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
 #X restore 307 282 pd examples;
 #X connect 3 0 24 1;
 #X connect 8 0 13 0;

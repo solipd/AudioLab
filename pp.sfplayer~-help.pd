@@ -1,12 +1,12 @@
-#N struct 2679-template float x float y float c float s float th float
-stretch array 2679-plus 2679-template-y array 2679-minus 2679-template-y
+#N struct 1372-template float x float y float c float s float th float
+stretch array 1372-plus 1372-template-y array 1372-minus 1372-template-y
 ;
-#N struct 2679-template-y float y;
-#N struct 2680-template float x float y float c float s float th float
-stretch array 2680-plus 2680-template-y array 2680-minus 2680-template-y
+#N struct 1372-template-y float y;
+#N struct 1373-template float x float y float c float s float th float
+stretch array 1373-plus 1373-template-y array 1373-minus 1373-template-y
 ;
-#N struct 2680-template-y float y;
-#N canvas 267 326 849 315 10;
+#N struct 1373-template-y float y;
+#N canvas 267 326 841 315 10;
 #X obj 397 246 pp.out~;
 #A saved;
 #X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -153,16 +153,24 @@ long soundfiles;
 #X text 740 13 open example-1;
 #X text 740 35 open example-2;
 #N canvas 102 154 450 300 examples 0;
-#X obj 94 26 r \$0-example1;
-#X obj 94 72 s pd;
-#X obj 93 144 s pd;
-#X obj 93 98 r \$0-example2;
-#X msg 94 49 open 03-looping_with_sfplayer~.pd ./Examples;
-#X msg 93 121 open 09-old_tapedeck.pd ./Examples;
-#X connect 0 0 4 0;
-#X connect 3 0 5 0;
-#X connect 4 0 1 0;
-#X connect 5 0 2 0;
+#X obj 95 98 s pd;
+#X obj 97 233 s pd;
+#X obj 95 7 r \$0-example1;
+#X msg 95 30 dir;
+#X obj 95 53 pdcontrol;
+#X msg 97 163 dir;
+#X obj 97 186 pdcontrol;
+#X obj 97 141 r \$0-example2;
+#X msg 95 75 open 03-looping_with_sfplayer~.pd \$1/Examples;
+#X msg 97 210 open 09-old_tapedeck.pd \$1/Examples;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 0 0;
+#X connect 9 0 1 0;
 #X restore 304 280 pd examples;
 #X connect 4 0 5 3;
 #X connect 5 0 0 0;
