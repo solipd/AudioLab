@@ -1,11 +1,11 @@
-#N struct 3296-template float x float y float c float s float th float
-stretch array 3296-plus 3296-template-y array 3296-minus 3296-template-y
+#N struct 1638-template float x float y float c float s float th float
+stretch array 1638-plus 1638-template-y array 1638-minus 1638-template-y
 ;
-#N struct 3296-template-y float y;
-#N struct 3297-template float x float y float c float s float th float
-stretch array 3297-plus 3297-template-y array 3297-minus 3297-template-y
+#N struct 1638-template-y float y;
+#N struct 1639-template float x float y float c float s float th float
+stretch array 1639-plus 1639-template-y array 1639-minus 1639-template-y
 ;
-#N struct 3297-template-y float y;
+#N struct 1639-template-y float y;
 #N canvas 2 54 1191 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -168,14 +168,14 @@ path in a room in front of the listener.;
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 668 177 Random unitpolar signal generator \, squared. This
-gives a preference for movements in front of the listener.;
 #X obj 461 319 pp.lfnoise~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
+#X text 668 177 Random unipolar signal generator \, squared. This gives
+a preference for movements in front of the listener.;
 #X connect 0 0 59 1;
 #X connect 1 0 59 0;
 #X connect 2 0 58 3;
@@ -189,7 +189,7 @@ gives a preference for movements in front of the listener.;
 #X connect 8 1 14 0;
 #X connect 8 1 63 1;
 #X connect 9 0 73 1;
-#X connect 9 0 75 1;
+#X connect 9 0 74 1;
 #X connect 10 0 11 0;
 #X connect 11 0 9 0;
 #X connect 12 0 5 1;
@@ -198,7 +198,7 @@ gives a preference for movements in front of the listener.;
 #X connect 15 0 8 2;
 #X connect 16 0 58 3;
 #X connect 17 0 2 0;
-#X connect 19 0 75 1;
+#X connect 19 0 74 1;
 #X connect 20 0 73 1;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
@@ -240,4 +240,4 @@ gives a preference for movements in front of the listener.;
 #X connect 69 0 12 0;
 #X connect 73 0 66 0;
 #X connect 73 0 66 1;
-#X connect 75 0 6 0;
+#X connect 74 0 6 0;
