@@ -1,0 +1,120 @@
+#N struct 1243-xt float x float y;
+#N struct 1243-yt float x float y;
+#N canvas 351 204 785 461 10;
+#X obj 391 396 pp.out~;
+#A saved;
+#X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.shepphaser-st~ 0 0 2 16 -233017
+-262144 0;
+#X obj 539 152 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 319 85 500 457 control-messages 0;
+#X obj 97 341 outlet;
+#X floatatom 142 183 5 0 1e+37 0 - - -;
+#X floatatom 143 233 5 0 1e+33 0 - - -;
+#X floatatom 104 66 5 0 100 0 - - -;
+#X floatatom 139 128 5 0 100 0 - - -;
+#X msg 97 85 dry/wet \$1;
+#X text 169 86 (%);
+#X obj 167 317 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 167 316 pd save&recall;
+#X msg 133 148 shift \$1;
+#X text 188 149 0-1 ^ one cycle;
+#X msg 135 202 resonance \$1;
+#X msg 137 253 stages \$1;
+#X text 204 254 active allpass filter stages;
+#X connect 1 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 5 0;
+#X connect 4 0 9 0;
+#X connect 5 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X restore 539 151 pd control-messages;
+#X text 549 192 <-- click to open GUI;
+#X text 10 128 Inlets:;
+#X text 10 212 Outlets:;
+#N canvas 686 449 454 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 45 shift 0 \, resonance 0.748346 \, stages 8 \, dry/wet 100
+\,;
+#X connect 0 0 1 0;
+#X restore 539 227 pd message-out;
+#X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 133 281 450 99 references 0;
+#X text 21 71 http://yehar.com/blog/?p=368;
+#X text 21 52 http://www.katjaas.nl/hilbert/hilbert.html;
+#X text 20 10 this abstraction uses Olli Niemitalo's quadrature transform
+coefficients that katja intruduced in her blog instead of [hilbert~]
+;
+#X restore 9 427 pd references;
+#X obj 391 12 noise~;
+#X obj 466 125 phasor~ 0.2;
+#X floatatom 466 58 5 0 0 0 - - -;
+#X obj 466 80 / 100;
+#X floatatom 466 103 5 0 0 0 - - -;
+#X obj 494 284 pp.spectrum~;
+#X text 650 297 <-- click to analyze;
+#X text 10 80 Creation arguments: \$1: max. number of allpass filter
+stages;
+#X text 153 93 default: 4;
+#X text 505 109 phase shift 0-1 ^ one cycle;
+#X obj 391 178 pp.shepphaser-st~ 8;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 429 34 noise~;
+#X text 10 34 stereo version of pp.shephaser~ - shepard tone-like phaser
+effect;
+#X text 67 127 1:(~)signal-left;
+#X text 67 142 2:(~)signal-right;
+#X text 67 157 3:(~)phase shift;
+#X text 67 172 4:(~)stages;
+#X text 67 187 5:control-messages;
+#X text 66 212 1:(~)signal out-left;
+#X text 66 227 2:(~)signal out-right;
+#X text 66 242 3:message;
+#X connect 4 0 21 4;
+#X connect 11 0 21 0;
+#X connect 12 0 21 2;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 0;
+#X connect 21 0 0 0;
+#X connect 21 1 16 0;
+#X connect 21 1 0 1;
+#X connect 21 2 8 0;
+#X connect 22 0 21 1;
