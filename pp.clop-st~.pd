@@ -143,7 +143,7 @@
 #X text 597 64 combfreq;
 #X text 303 79 sig;
 #X obj 413 483 delwrite~ \$0-comb-r 1000;
-#X obj 280 169 vd~ \$0-comb-r;
+#X obj 280 169 delread4~ \$0-comb-r;
 #X connect 0 0 11 0;
 #X connect 1 0 22 0;
 #X connect 2 0 0 0;
@@ -702,7 +702,7 @@
 #X text 597 64 combfreq;
 #X text 303 79 sig;
 #X obj 413 483 delwrite~ \$0-comb-l 1000;
-#X obj 280 169 vd~ \$0-comb-l;
+#X obj 280 169 delread4~ \$0-comb-l;
 #X connect 0 0 11 0;
 #X connect 1 0 22 0;
 #X connect 2 0 0 0;
