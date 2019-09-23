@@ -292,9 +292,9 @@
 -2 -6 2 10 -262144 -1 -1 4950 1;
 #X msg 46 197 set \$1;
 #X obj 218 176 nbx 5 12 0 20000 0 0 \$0-crossover \$0-crossoverr hz.
-50 7 2 10 -262144 -1 -1 8839.91 256;
+50 7 2 10 -262144 -1 -1 7000 256;
 #X obj 112 176 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Crossover-Frequency
--2 -6 2 10 -262144 -1 -1 7600 1;
+-2 -6 2 10 -262144 -1 -1 6763 1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
 #X msg 105 180 set \$1;
@@ -314,9 +314,9 @@
 #X connect 8 0 3 0;
 #X restore 47 171 pd map;
 #X obj 218 150 nbx 4 12 -1e+37 1e+37 0 0 \$0-feedback \$0-feedbackr
-% 41 7 2 10 -262144 -1 -1 94.9495 256;
+% 41 7 2 10 -262144 -1 -1 90 256;
 #X obj 112 150 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2
--6 2 10 -262144 -1 -1 9400 1;
+-6 2 10 -262144 -1 -1 8910 1;
 #X msg 47 147 set \$1;
 #X obj 285 128 cnv 15 152 102 empty empty empty 20 12 0 14 -128992
 -66577 0;
@@ -325,8 +325,7 @@
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-times 12 float 3;
-#A 0 120 19.0996 122 9.93738 7.40099 5.39271 3.72476 2.29528 1.04257
-0 0 0;
+#A 0 100 100 100 100 100 100 100 100 100 100 100 100;
 #X coords 0 200 12 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
@@ -337,15 +336,15 @@
 #X obj 286 112 cnv 10 100 15 empty empty Times 0 5 2 10 -262144 -1
 0;
 #X obj 285 234 nbx 3 12 0 100 0 0 \$0-times-center \$0-times-centerr
-Center 33 7 2 10 -262144 -1 -1 29 256;
+Center 33 7 2 10 -262144 -1 -1 50 256;
 #X obj 348 234 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-slope \$0-times-sloper
-Slope 33 7 2 10 -262144 -1 -1 -60 256;
+Slope 33 7 2 10 -262144 -1 -1 0 256;
 #X obj 407 234 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-curve \$0-times-curver
-Curve 33 7 2 10 -262144 -1 -1 -114 256;
+Curve 33 7 2 10 -262144 -1 -1 0 256;
 #X obj 163 117 cnv 10 10 10 empty empty twisted-delays~ 0 5 2 17 -262144
 -162280 0;
 #X obj 109 230 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 42 256;
+-262144 -1 -1 100 256;
 #X obj 109 218 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
 0;
 #X obj 475 128 cnv 15 152 102 empty empty empty 20 12 0 14 -128992
@@ -355,8 +354,8 @@ Curve 33 7 2 10 -262144 -1 -1 -114 256;
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-angles 12 float 3;
-#A 0 122.4 66.0503 60.5302 57.0985 54.5682 52.5491 50.8618 49.4082
-48.1289 46.9845 45.9481 45;
+#A 0 135 71.1042 64.4533 60.2464 57.1102 54.5872 52.4653 50.6276 49.0027
+47.5434 46.2171 45;
 #X coords 0 180 12 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
@@ -373,9 +372,9 @@ Center 33 7 2 10 -262144 -1 -1 90 256;
 #X obj 538 234 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-slope \$0-angles-sloper
 Slope 33 7 2 10 -262144 -1 -1 -90 256;
 #X obj 597 234 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-curve \$0-angles-curver
-Curve 33 7 2 10 -262144 -1 -1 -80 256;
+Curve 33 7 2 10 -262144 -1 -1 -60 256;
 #X obj 218 230 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 7
-2 10 -262144 -1 -1 14 256;
+2 10 -262144 -1 -1 0 256;
 #X obj 218 218 cnv 10 10 10 empty empty Gain 0 5 2 10 -262144 -1 0
 ;
 #X connect 1 0 3 0;
@@ -787,14 +786,14 @@ setblock gain;
 #X obj 156 237 list prepend times;
 #X obj 142 182 t b b b a b;
 #X obj 280 237 list prepend angles;
-#X obj 61 85 loadbang;
-#X obj 61 108 metro 1000;
+#X obj 33 31 loadbang;
+#X obj 33 54 metro 1000;
 #X obj 389 41 r \$0-gain;
-#X obj 485 184 print;
 #X msg 330 295 dry/wet \$1 \, feedback \$2 \, crossover-frequency \$3
 \, damping \$4 \, times-center \$5 \, times-slope \$6 \, times-curve
 \$7 \, angles-center \$8 \, angles-slope \$9 \, angles-curve \$10 \,
 gain \$11 \, transition-time \$12 \, setblock \$13;
+#X obj 142 123 f 100;
 #X connect 0 0 19 11;
 #X connect 1 0 19 12;
 #X connect 2 0 19 9;
@@ -806,7 +805,7 @@ gain \$11 \, transition-time \$12 \, setblock \$13;
 #X connect 8 0 19 3;
 #X connect 9 0 19 2;
 #X connect 10 0 19 1;
-#X connect 11 0 19 0;
+#X connect 11 0 29 0;
 #X connect 12 0 16 0;
 #X connect 13 0 16 0;
 #X connect 14 0 16 0;
@@ -821,13 +820,14 @@ gain \$11 \, transition-time \$12 \, setblock \$13;
 #X connect 23 0 16 0;
 #X connect 23 1 20 0;
 #X connect 23 2 21 0;
-#X connect 23 3 29 0;
+#X connect 23 3 28 0;
 #X connect 23 4 14 0;
 #X connect 24 0 17 0;
 #X connect 25 0 26 0;
-#X connect 26 0 19 0;
+#X connect 26 0 29 0;
 #X connect 27 0 19 10;
-#X connect 29 0 17 0;
+#X connect 28 0 17 0;
+#X connect 29 0 19 0;
 #X restore 687 261 pd outlet-message;
 #X obj 605 45 inlet~;
 #X obj 605 92 /~ 360;

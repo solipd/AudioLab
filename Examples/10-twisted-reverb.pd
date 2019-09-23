@@ -1,0 +1,179 @@
+#N struct 1945-template float x float y float c float s float th float
+stretch array 1945-plus 1945-template-y array 1945-minus 1945-template-y
+;
+#N struct 1945-template-y float y;
+#N struct 1946-template float x float y float c float s float th float
+stretch array 1946-plus 1946-template-y array 1946-minus 1946-template-y
+;
+#N struct 1946-template-y float y;
+#N canvas 294 141 748 410 10;
+#X declare -path ./audio;
+#X declare -path ..;
+#X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 20 172 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
+-8 2 12 -260097 -1 -1 19300 1;
+#X obj 20 250 hsl 200 15 0 100 0 0 \$0-dry/wet \$0-dry/wetr Dry/Wet
+-2 -8 2 12 -262144 -1 -1 19900 1;
+#N canvas 529 337 450 300 init 0;
+#X obj 164 32 loadbang;
+#X obj 164 53 f \$0;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 70 61 \; pd dsp 1;
+#X msg 163 74 \; \$1-dry/wetr 100 \; \$1-presetsr 0;
+#X connect 0 0 1 0;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X restore 17 11 pd init;
+#X obj 560 340 r \$0-volume;
+#X floatatom 560 361 5 0 0 0 - - -;
+#X msg 560 383 volume \$1;
+#X obj 404 266 pp.twisted-delays~ 12 200;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 397 348 pp.out~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#N canvas 593 169 200 283 burst 0;
+#X obj 31 252 outlet~;
+#X obj 30 81 line~;
+#X obj 30 102 *~;
+#X obj 31 136 bp~ 1000 100;
+#X obj 31 157 *~ 30;
+#X obj 71 161 noise~;
+#X obj 56 185 *~;
+#X obj 32 214 +~;
+#X msg 30 60 1 \, 0 5;
+#X obj 30 15 inlet;
+#X obj 80 58 random 1000;
+#X obj 80 81 + 300;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 1;
+#X connect 7 0 0 0;
+#X connect 8 0 1 0;
+#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 1;
+#X restore 405 54 pd burst;
+#X obj 405 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 436 112 pp.sfplayer~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 247 26 declare -path ./audio;
+#X obj 277 5 declare -path ..;
+#N canvas 2 54 450 300 init 0;
+#X obj 203 92 outlet;
+#X obj 211 39 loadbang;
+#X msg 203 69 open Trumpet.wav \, loop 1;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X restore 622 113 pd init;
+#X msg 551 57 play 1;
+#X msg 609 57 stop;
+#N canvas 45 118 1202 448 messages 0;
+#X obj 27 400 outlet;
+#X obj 339 9 r \$0-presets;
+#X obj 339 32 sel 0 1 2 3 4;
+#X msg 26 111 feedback 96 \, crossover-frequency 7000 \, damping 50
+\, times-center 33 \, times-slope -62 \, times-curve -67 \, angles-center
+90 \, angles-slope -90 \, angles-curve -60 \, gain 6 \, transition-time
+1000 \, setblock 64 \, angles 135 71.1042 64.4533 60.2464 57.1102 54.5872
+52.4653 50.6276 49.0027 47.5434 46.2171 45 \, times 128 37.1812 28.6265
+23.2535 19.266 16.0688 13.3868 11.0692 9.02374 7.18983 5.5254 4 \,
+;
+#X msg 413 111 feedback 97 \, crossover-frequency 6870.22 \, damping
+50 \, times-center 40 \, times-slope -76 \, times-curve -251 \, angles-center
+90 \, angles-slope -88 \, angles-curve -60 \, gain 22 \, transition-time
+1000 \, setblock 64 \, angles 174.6 71.5241 65.021 60.9076 57.8411
+55.3742 53.2994 51.5025 49.9137 48.4869 47.1901 46 \, times 156 17.3425
+94 12 9.77861 8.52312 7.48932 6.60959 5.84332 5.16418 4.55405 4 \,
+;
+#X msg 794 109 feedback 99 \, crossover-frequency 3526.17 \, damping
+29.2929 \, times-center 58 \, times-slope -110 \, times-curve -251
+\, angles-center 90 \, angles-slope -88 \, angles-curve -60 \, gain
+6 \, transition-time 1000 \, setblock 64 \, angles 127.8 71.5241 65.021
+60.9076 57.8411 55.3742 53.2994 51.5025 49.9137 48.4869 47.1901 46
+\, times 46 25.3115 34 16.6837 26 12.5466 11.0503 9.77704 8.66797 7.685
+6.80191 6 \,;
+#X msg 442 224 feedback 99 \, crossover-frequency 8608.82 \, damping
+50 \, times-center 4 \, times-slope -5 \, times-curve -90 \, angles-center
+90 \, angles-slope -90 \, angles-curve 124 \, gain 20 \, transition-time
+1000 \, setblock 1 \, angles 172.8 135 135 135 135 134.998 134.973
+134.789 133.738 128.885 109.905 45 \, times 13 5.13207 4.56736 4.21842
+3.96212 3.75817 3.58813 3.44192 3.31344 3.19867 3.09486 3 \,;
+#X msg 42 227 dry/wet 100 \, feedback 100 \, crossover-frequency 6000
+\, damping 50 \, times-center 46 \, times-slope 79 \, times-curve 13
+\, angles-center 90 \, angles-slope -34 \, angles-curve -135 \, gain
+6 \, transition-time 1000 \, setblock 64 \, angles 107 78.1823 76.7713
+75.9141 75.2912 74.7994 74.392 74.0435 73.7386 73.4673 73.2227 73 \,
+times 13 13.636 16.132 20.9585 28.4238 38.7682 52.1924 68.8701 88.9558
+112.589 139.898 171 \,;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 7 0;
+#X connect 2 4 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X restore 572 228 pd messages;
+#X obj 459 185 osc~ 1;
+#X obj 459 208 *~ 0.1;
+#X obj 20 118 tgl 17 0 \$0-play \$0-playr empty 17 7 0 10 -262144 -1
+-1 0 1;
+#X obj 20 94 bng 17 250 50 0 \$0-burst \$0-burstr empty 17 7 0 10 -262144
+-1 -1;
+#X obj 405 10 r \$0-burst;
+#X obj 590 8 r \$0-play;
+#X obj 590 31 sel 1 0;
+#X text 7 385 Philipp Schmalfuß \, 2019;
+#X obj 17 208 hradio 17 1 0 5 \$0-presets \$0-presetsr Presets 0 -8
+2 12 -262144 -1 -1 0;
+#X text 42 94 <-- burst;
+#X text 41 118 <-- play/stop soundfile;
+#X text 505 186 delay times are slightly modulated;
+#X obj 588 254 r \$0-dry/wet;
+#X msg 588 277 dry/wet \$1;
+#X text 17 61 some reverb presets for pp.twisted-delays~;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 6 0 8 2;
+#X connect 7 2 8 0;
+#X connect 7 3 8 1;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 7 0;
+#X connect 14 0 11 3;
+#X connect 15 0 11 3;
+#X connect 16 0 11 3;
+#X connect 17 0 7 3;
+#X connect 18 0 19 0;
+#X connect 19 0 7 1;
+#X connect 22 0 10 0;
+#X connect 23 0 24 0;
+#X connect 24 0 15 0;
+#X connect 24 1 16 0;
+#X connect 30 0 31 0;
+#X connect 31 0 7 3;

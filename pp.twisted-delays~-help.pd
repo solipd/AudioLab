@@ -1,4 +1,4 @@
-#N canvas 319 180 767 461 10;
+#N canvas 151 140 775 460 10;
 #X obj 392 395 pp.out~;
 #A saved;
 #X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 -233017 -66577
@@ -105,12 +105,12 @@ with the parrent patch;
 #X text 9 269 Outlets:;
 #N canvas 686 449 454 180 message-out 0;
 #X obj 20 20 inlet;
-#X msg 20 44 dry/wet 50 \, feedback 90 \, crossover-frequency 7000
-\, damping 50 \, times-center 50 \, times-slope 0 \, times-curve 0
-\, angles-center 90 \, angles-slope -90 \, angles-curve -60 \, transition-time
-1000 \, setblock 64 \, angles 135 71.1042 64.4533 60.2464 57.1102 54.5872
-52.4653 50.6276 49.0027 47.5434 46.2171 45 \, times 100 100 100 100
-100 100 100 100 100 100 100 100 \,;
+#X msg 20 44 dry/wet 0 \, feedback 90 \, crossover-frequency 7000 \,
+damping 50 \, times-center 50 \, times-slope 0 \, times-curve 0 \,
+angles-center 90 \, angles-slope -90 \, angles-curve -60 \, gain 0
+\, transition-time 1000 \, setblock 64 \, angles 135 71.1042 64.4533
+60.2464 57.1102 54.5872 52.4653 50.6276 49.0027 47.5434 46.2171 45
+\, times 100 100 100 100 100 100 100 100 100 100 100 100 \,;
 #X connect 0 0 1 0;
 #X restore 559 244 pd message-out;
 #X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
@@ -182,6 +182,22 @@ Music \, chapter 7.5: "Power conservation and complex delay networks"
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
+#X obj 647 4 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 653 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X text 670 10 open example-1;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 103 s pd;
+#X obj 94 11 r \$0-example1;
+#X msg 94 34 dir;
+#X obj 94 57 pdcontrol;
+#X msg 94 80 open 10-twisted-reverb.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X restore 309 430 pd examples;
 #X connect 4 0 36 3;
 #X connect 16 0 36 0;
 #X connect 17 0 16 0;
