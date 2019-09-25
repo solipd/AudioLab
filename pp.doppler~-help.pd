@@ -1,15 +1,15 @@
-#N canvas 384 130 801 361 10;
+#N canvas 310 130 801 361 10;
 #X obj 392 298 pp.out~;
 #A saved;
 #X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X text 68 104 1:(~)signal;
-#X text 10 105 Inlets:;
-#X text 10 165 Outlets:;
+#X text 74 142 1:(~)signal;
+#X text 16 143 Inlets:;
+#X text 16 203 Outlets:;
 #X obj 12 20 cnv 15 10 10 empty empty pp.doppler~ 0 0 2 16 -233017
 -262144 0;
 #X text 552 183 <-- click to open GUI;
-#X text 10 55 Creation arguments: none;
+#X text 16 93 Creation arguments: none;
 #X obj 539 146 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 423 269 control-messages 0;
@@ -74,9 +74,9 @@ with the parrent patch;
 #X connect 4 0 3 0;
 #X connect 5 0 3 0;
 #X restore 390 9 pd synth;
-#X text 68 165 1:(~)transposed signal;
-#X text 68 191 3:message;
-#X text 68 178 2:(~)pan modulation;
+#X text 74 203 1:(~)transposed signal;
+#X text 74 229 3:message;
+#X text 74 216 2:(~)pan modulation;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
 #X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping
@@ -109,38 +109,40 @@ with the parrent patch;
 0 10 -262144 -1 -1;
 #X obj 680 37 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
 0 10 -262144 -1 -1;
-#X text 8 36 signal controlled doppler effect;
 #X text 699 14 open example-1;
 #X text 699 36 open example-2;
-#X obj 440 97 sig~ 1;
-#X floatatom 440 70 5 0 0 0 - - -;
-#X text 68 116 2:(~)X trajectory;
-#X text 68 130 3:(~)Y trajectory;
-#X text 68 143 4:control-messages;
-#X msg 490 98 -50 \, 50 5000;
-#X obj 490 121 line~;
+#X obj 490 132 sig~ 1;
+#X floatatom 490 105 5 0 0 0 - - -;
+#X text 74 154 2:(~)X trajectory;
+#X text 74 168 3:(~)Y trajectory;
+#X text 74 181 4:control-messages;
+#X msg 441 53 -50 \, 50 5000;
+#X obj 441 76 line~;
 #X obj 391 169 pp.doppler~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 537 116 y trajectory;
-#X text 474 71 x trajectory (distance);
 #X obj 392 236 pp.pan~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X connect 9 0 29 3;
-#X connect 10 0 29 0;
-#X connect 22 0 29 1;
-#X connect 23 0 22 0;
-#X connect 27 0 28 0;
-#X connect 28 0 29 2;
-#X connect 29 0 32 0;
-#X connect 29 1 32 1;
-#X connect 29 2 14 0;
-#X connect 32 0 0 0;
-#X connect 32 1 0 1;
+#X text 524 104 y trajectory (distance);
+#X text 488 71 x trajectory;
+#X text 8 36 pp.doppler~ emulates the changes in pitch \, amplitude
+and high frequency attenuation that occour when a sound source is moving
+relative to the standpoint of an observer.;
+#X connect 9 0 28 3;
+#X connect 10 0 28 0;
+#X connect 21 0 28 2;
+#X connect 22 0 21 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 1;
+#X connect 28 0 29 0;
+#X connect 28 1 29 1;
+#X connect 28 2 14 0;
+#X connect 29 0 0 0;
+#X connect 29 1 0 1;
