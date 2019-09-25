@@ -1,12 +1,12 @@
-#N struct 2060-template float x float y float c float s float th float
-stretch array 2060-plus 2060-template-y array 2060-minus 2060-template-y
+#N struct 1438-template float x float y float c float s float th float
+stretch array 1438-plus 1438-template-y array 1438-minus 1438-template-y
 ;
-#N struct 2060-template-y float y;
-#N struct 2061-template float x float y float c float s float th float
-stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
+#N struct 1438-template-y float y;
+#N struct 1439-template float x float y float c float s float th float
+stretch array 1439-plus 1439-template-y array 1439-minus 1439-template-y
 ;
-#N struct 2061-template-y float y;
-#N canvas 100 54 1191 712 10;
+#N struct 1439-template-y float y;
+#N canvas 100 54 1225 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 726 552 *~;
@@ -15,13 +15,13 @@ stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
 #X obj 401 67 pp.sfplayer~;
 #A saved;
 #X obj 576 471 r \$0-room;
-#X obj 451 345 *~;
-#X obj 693 380 *~;
-#X msg 650 158 frequency \$1;
-#X obj 650 117 r \$0-speed;
-#X floatatom 650 138 5 0 0 0 - - -;
-#X floatatom 480 345 5 0 0 0 - - -;
-#X floatatom 708 346 5 0 0 0 - - -;
+#X obj 499 363 *~;
+#X obj 449 284 *~;
+#X msg 900 117 frequency \$1;
+#X obj 900 76 r \$0-speed;
+#X floatatom 900 97 5 0 0 0 - - -;
+#X floatatom 514 324 5 0 0 0 - - -;
+#X floatatom 464 254 5 0 0 0 - - -;
 #N canvas 3 52 450 300 init 0;
 #X obj 117 109 outlet;
 #X obj 117 63 loadbang;
@@ -38,14 +38,14 @@ stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
 #X msg 117 88 smooth 100;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 913 311 pd init;
+#X restore 832 129 pd init;
 #N canvas 3 54 450 300 init 0;
 #X obj 117 109 outlet;
 #X obj 117 63 loadbang;
 #X msg 117 88 smooth 100;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X restore 542 182 pd init;
+#X restore 911 247 pd init;
 #X obj 576 4 r \$0-sample;
 #X obj 576 24 symbol;
 #X msg 576 45 open \$1 \, loop 1 \, play 1;
@@ -54,11 +54,11 @@ stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
 #X obj 4 0 cnv 15 380 700 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 19 228 hsl 200 15 0 30 0 0 \$0-depth \$0-depthr Movement_depth
--2 -8 2 12 -262144 -1 -1 13267 1;
+-2 -8 2 12 -262144 -1 -1 15000 1;
 #X obj 19 295 hsl 200 15 0 100 0 0 \$0-room \$0-roomr Room-Presence
 -2 -8 2 12 -262144 -1 -1 19900 1;
 #X obj 19 194 hsl 200 15 0.1 10 1 0 \$0-speed \$0-speedr Movement-speed
--2 -8 2 12 -262144 -1 -1 4390 1;
+-2 -8 2 12 -262144 -1 -1 10490 1;
 #X obj 16 316 tgl 15 0 \$0-bypass \$0-bypassr Bypass 17 7 2 12 -262144
 -1 -1 0 1;
 #X msg 18 384 Trumpet.wav;
@@ -87,7 +87,7 @@ stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
 #X obj 426 110 s~ \$0-bp;
 #X obj 924 605 r~ \$0-bp;
 #X obj 924 630 *~;
-#X obj 415 164 r \$0-bypass;
+#X obj 423 163 r \$0-bypass;
 #X obj 402 206 *~ 1;
 #X obj 1086 654 r \$0-volume;
 #X msg 1086 675 volume \$1;
@@ -99,7 +99,7 @@ stretch array 2061-plus 2061-template-y array 2061-minus 2061-template-y
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 586 68 pd init;
-#X obj 415 185 == 0;
+#X obj 423 184 == 0;
 #X text 11 60 Emulation of a sound source that moves on an arbitrary
 path in a room in front of the listener.;
 #X text 16 342 load a sound source;
@@ -135,27 +135,27 @@ path in a room in front of the listener.;
 #X restore 740 473 pd magnitude;
 #X obj 740 504 expr~ 1-$v1;
 #X obj 19 261 hsl 200 15 0 30 0 0 \$0-width \$0-widthr Movement-width
--2 -8 2 12 -262144 -1 -1 13267 1;
-#X obj 708 326 r \$0-width;
-#X obj 480 324 r \$0-depth;
+-2 -8 2 12 -262144 -1 -1 15200 1;
+#X obj 464 234 r \$0-width;
+#X obj 514 303 r \$0-depth;
 #X text 823 472 total distance from the listener;
 #X text 759 530 multiply the dry signal by 1-distance;
 #X text 801 573 latency compensation for fft-partconv~;
-#X obj 449 209 pp.lfnoise~ 0 1;
+#X obj 807 247 pp.lfnoise~ 0 1;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 810 306 pp.lfnoise~;
+#X obj 739 171 pp.lfnoise~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 450 381 +~ 0.5;
-#X obj 450 247 pow~ 3;
-#X text 554 211 Random unipolar signal generator \, raised to the 3rd
+#X obj 498 388 +~ 0.5;
+#X obj 808 285 pow~ 3;
+#X text 851 280 Random unipolar signal generator \, raised to the 3rd
 power. This gives a preference for movements in front of the listener.
 ;
 #X text 16 679 Philipp Schmalfuß \, 2018/19;
@@ -172,7 +172,7 @@ power. This gives a preference for movements in front of the listener.
 #X connect 3 0 39 0;
 #X connect 4 0 13 0;
 #X connect 5 0 66 0;
-#X connect 6 0 32 2;
+#X connect 6 0 32 1;
 #X connect 7 0 64 1;
 #X connect 7 0 65 1;
 #X connect 8 0 9 0;
@@ -217,10 +217,10 @@ power. This gives a preference for movements in front of the listener.
 #X connect 60 0 10 0;
 #X connect 64 0 67 0;
 #X connect 65 0 6 0;
-#X connect 65 0 56 1;
-#X connect 66 0 32 1;
+#X connect 65 0 56 0;
+#X connect 66 0 32 2;
 #X connect 67 0 5 0;
-#X connect 67 0 56 0;
+#X connect 67 0 56 1;
 #X connect 70 0 1 0;
 #X connect 70 0 51 0;
 #X connect 70 1 0 0;

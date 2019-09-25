@@ -1,22 +1,22 @@
-#N struct 2049-template float x float y float c float s float th float
-stretch array 2049-plus 2049-template-y array 2049-minus 2049-template-y
+#N struct 1426-template float x float y float c float s float th float
+stretch array 1426-plus 1426-template-y array 1426-minus 1426-template-y
 ;
-#N struct 2049-template-y float y;
-#N struct 2050-template float x float y float c float s float th float
-stretch array 2050-plus 2050-template-y array 2050-minus 2050-template-y
+#N struct 1426-template-y float y;
+#N struct 1427-template float x float y float c float s float th float
+stretch array 1427-plus 1427-template-y array 1427-minus 1427-template-y
 ;
-#N struct 2050-template-y float y;
-#N canvas 188 54 791 555 10;
+#N struct 1427-template-y float y;
+#N canvas 188 54 836 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 550 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 18 175 hsl 200 15 0.1 10 1 0 \$0-speed \$0-speedr Speed -2 -8
-2 12 -262144 -1 -1 8300 1;
+2 12 -262144 -1 -1 12500 1;
 #X obj 18 137 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
 -8 2 12 -260097 -1 -1 0 1;
 #X obj 18 212 hsl 200 15 0 5 0 0 \$0-diameter \$0-diameterr Diameter
--2 -8 2 12 -262144 -1 -1 10800 1;
+-2 -8 2 12 -262144 -1 -1 19900 1;
 #N canvas 67 368 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
@@ -43,7 +43,7 @@ stretch array 2050-plus 2050-template-y array 2050-minus 2050-template-y
 #X obj 517 29 pp.sfplayer~;
 #A saved;
 #X obj 672 87 r \$0-speed;
-#X floatatom 687 225 5 0 0 0 - - -;
+#X floatatom 712 203 5 0 0 0 - - -;
 #X obj 564 483 r \$0-volume;
 #X msg 564 523 volume \$1;
 #X obj 421 59 r \$0-switch;
@@ -60,16 +60,14 @@ stretch array 2050-plus 2050-template-y array 2050-minus 2050-template-y
 #X restore 690 9 pd init;
 #X obj 248 25 declare -path ./audio;
 #X obj 278 5 declare -path ..;
-#X obj 474 315 +~;
-#X obj 474 286 *~;
-#X obj 671 306 *~;
-#X obj 687 245 sig~;
-#X obj 687 267 lop~ 10;
+#X obj 473 304 *~;
+#X obj 671 289 *~;
+#X obj 712 223 sig~;
+#X obj 712 245 lop~ 10;
 #X floatatom 564 503 5 0 0 0 - - -;
-#X obj 474 343 +~ 1;
 #X text 13 74 This example shows how to use the doppler module to emulate
 circular movement of a sound source in front of the observer;
-#X obj 687 205 r \$0-diameter;
+#X obj 712 183 r \$0-diameter;
 #X obj 399 10 noise~;
 #X text 8 533 Philipp Schmalfuß \, 2018/19;
 #X obj 400 447 pp.pan~;
@@ -78,18 +76,20 @@ circular movement of a sound source in front of the observer;
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X connect 7 0 36 0;
-#X connect 7 1 36 1;
+#X obj 672 340 +~ 1;
+#X obj 672 316 +~;
+#X connect 7 0 34 0;
+#X connect 7 1 34 1;
 #X connect 8 0 9 0;
 #X connect 8 0 12 0;
-#X connect 9 0 26 0;
-#X connect 10 0 27 0;
+#X connect 9 0 25 0;
+#X connect 10 0 26 0;
 #X connect 11 0 8 0;
 #X connect 12 0 10 0;
 #X connect 13 0 21 1;
 #X connect 14 0 11 0;
-#X connect 15 0 28 0;
-#X connect 16 0 30 0;
+#X connect 15 0 27 0;
+#X connect 16 0 29 0;
 #X connect 17 0 6 2;
 #X connect 18 0 19 0;
 #X connect 18 0 21 0;
@@ -97,16 +97,16 @@ circular movement of a sound source in front of the observer;
 #X connect 20 0 7 0;
 #X connect 21 0 7 0;
 #X connect 22 0 13 3;
-#X connect 25 0 31 0;
-#X connect 26 0 25 0;
-#X connect 27 0 7 2;
-#X connect 28 0 29 0;
-#X connect 29 0 27 1;
-#X connect 29 0 25 1;
-#X connect 29 0 26 1;
-#X connect 30 0 17 0;
-#X connect 31 0 7 1;
-#X connect 33 0 15 0;
-#X connect 34 0 20 0;
-#X connect 36 0 6 0;
-#X connect 36 1 6 1;
+#X connect 25 0 7 1;
+#X connect 26 0 36 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 1;
+#X connect 28 0 25 1;
+#X connect 28 0 36 1;
+#X connect 29 0 17 0;
+#X connect 31 0 15 0;
+#X connect 32 0 20 0;
+#X connect 34 0 6 0;
+#X connect 34 1 6 1;
+#X connect 35 0 7 2;
+#X connect 36 0 35 0;

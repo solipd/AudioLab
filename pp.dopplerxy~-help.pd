@@ -1,0 +1,141 @@
+#N canvas 230 137 801 410 10;
+#X obj 1 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 68 139 1:(~)signal;
+#X text 10 140 Inlets:;
+#X text 10 200 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.dopplerxy~ 0 0 2 16 -233017
+-262144 0;
+#X text 552 234 <-- click to open GUI;
+#X text 10 98 Creation arguments: none;
+#X obj 539 197 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 561 87 423 269 control-messages 0;
+#X obj 70 241 outlet;
+#X msg 70 29 pitch-mod \$1;
+#X floatatom 70 10 5 0 0 0 - - -;
+#X msg 87 75 amp-mod \$1;
+#X floatatom 88 54 5 0 0 0 - - -;
+#X floatatom 97 98 5 0 0 0 - - -;
+#X msg 96 119 pan-mod \$1;
+#X floatatom 115 149 5 0 0 0 - - -;
+#X msg 115 169 damping \$1;
+#X obj 111 214 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 111 213 pd save&recall;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 10 0 0 0;
+#X restore 539 197 pd control-messages;
+#N canvas 3 54 450 300 synth 0;
+#X obj 97 6 osc~ 660;
+#X obj 125 173 outlet~;
+#X obj 50 39 noise~;
+#X obj 125 109 *~ 0.2;
+#X obj 142 66 osc~ 1020;
+#X obj 124 30 osc~ 120;
+#X connect 0 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 3 0;
+#X restore 390 9 pd synth;
+#X text 68 200 1:(~)transposed signal;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping
+100 \,;
+#X connect 0 0 1 0;
+#X restore 539 259 pd message-out;
+#X text 68 151 2:(~)X trajectory;
+#X text 68 165 3:(~)Y trajectory;
+#X text 68 178 4:control-messages;
+#X obj 490 187 line~;
+#X obj 391 220 pp.dopplerxy~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 392 349 pp.out-8~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X msg 490 164 \$1 500;
+#X obj 444 71 hsl 100 12 -5 5 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 1600 1;
+#X floatatom 441 133 5 0 0 0 - - -;
+#X obj 487 26 vsl 12 100 -5 5 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8500 1;
+#X floatatom 486 134 5 0 0 0 - - -;
+#X text 448 115 x;
+#X text 505 117 y;
+#X obj 441 186 line~;
+#X msg 441 163 \$1 500;
+#X obj 392 296 pp.spat8~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 68 213 2:(~)pan modulation X;
+#X text 68 242 4:message;
+#X text 68 227 3:(~)pan modulation Y;
+#X text 11 41 like pp.doppler~ \, but with pan modulation outlets for
+x and y.;
+#X connect 8 0 16 3;
+#X connect 9 0 16 0;
+#X connect 15 0 16 2;
+#X connect 16 0 27 0;
+#X connect 16 1 27 1;
+#X connect 16 2 27 2;
+#X connect 16 3 11 0;
+#X connect 18 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 26 0;
+#X connect 21 0 22 0;
+#X connect 22 0 18 0;
+#X connect 25 0 16 1;
+#X connect 26 0 25 0;
+#X connect 27 0 17 0;
+#X connect 27 1 17 1;
+#X connect 27 2 17 2;
+#X connect 27 3 17 3;
+#X connect 27 4 17 4;
+#X connect 27 5 17 5;
+#X connect 27 6 17 6;
+#X connect 27 7 17 7;

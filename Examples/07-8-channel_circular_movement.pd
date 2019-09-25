@@ -3,7 +3,7 @@
 #X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 18 148 hsl 200 15 0 360 0 0 \$0-angle \$0-angler Angle -2 -8
-2 12 -262144 -1 -1 4975 1;
+2 12 -262144 -1 -1 2500 1;
 #X obj 19 111 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
 -8 2 12 -260097 -1 -1 0 1;
 #X obj 18 184 hsl 200 15 -1 1 0 0 \$0-spread \$0-spreadr Spread -2
@@ -29,12 +29,10 @@
 #X obj 440 192 cos~;
 #X obj 477 193 cos~;
 #X msg 477 117 \$1 100;
-#X obj 477 18 r \$0-angle;
-#X obj 477 77 / 360;
-#X obj 477 172 +~ 0.25;
+#X obj 477 24 r \$0-angle;
+#X obj 477 73 / 360;
 #X floatatom 477 97 5 0 0 0 - - -;
-#X obj 477 57 expr 360-$f1;
-#X floatatom 477 38 5 0 0 0 - - -;
+#X floatatom 477 50 5 0 0 0 - - -;
 #X obj 529 152 r \$0-spread;
 #X floatatom 529 173 5 0 0 0 - - -;
 #X obj 529 193 sig~;
@@ -49,29 +47,29 @@ can use the GUI of [pp.spat8~] to see how the speaker amplitudes changes.
 #X obj 404 327 pp.out-8~;
 #A saved;
 #X msg 568 303 volume \$1;
-#X connect 5 0 26 0;
-#X connect 5 1 26 1;
-#X connect 5 2 26 2;
-#X connect 5 3 26 3;
-#X connect 5 4 26 4;
-#X connect 5 5 26 5;
-#X connect 5 6 26 6;
-#X connect 5 7 26 7;
+#X obj 477 172 -~ 0.25;
+#X connect 5 0 24 0;
+#X connect 5 1 24 1;
+#X connect 5 2 24 2;
+#X connect 5 3 24 3;
+#X connect 5 4 24 4;
+#X connect 5 5 24 5;
+#X connect 5 6 24 6;
+#X connect 5 7 24 7;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 8 0 27 0;
+#X connect 8 0 25 0;
 #X connect 9 0 10 0;
-#X connect 9 0 15 0;
+#X connect 9 0 26 0;
 #X connect 10 0 5 1;
 #X connect 11 0 5 2;
 #X connect 12 0 9 0;
-#X connect 13 0 18 0;
-#X connect 14 0 16 0;
-#X connect 15 0 11 0;
-#X connect 16 0 12 0;
-#X connect 17 0 14 0;
-#X connect 18 0 17 0;
-#X connect 19 0 20 0;
-#X connect 20 0 21 0;
-#X connect 21 0 5 3;
-#X connect 27 0 26 8;
+#X connect 13 0 16 0;
+#X connect 14 0 15 0;
+#X connect 15 0 12 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 19 0 5 3;
+#X connect 25 0 24 8;
+#X connect 26 0 11 0;
