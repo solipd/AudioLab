@@ -168,8 +168,8 @@
 #N canvas 515 97 714 345 mask 0;
 #X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 -262144
 -66577 0;
-#X obj 214 109 cnv 10 10 10 empty empty doppler~ 0 5 2 17 -262144 -162280
-0;
+#X obj 214 109 cnv 10 10 10 empty empty dopplerxy~ 0 5 2 17 -262144
+-162280 0;
 #X obj 113 136 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pitch-mod -2
 -6 2 10 -262144 -1 -1 12700 1;
 #X obj 247 136 nbx 5 12 0 1e+17 0 0 \$0-pitchmod \$0-pitchmodr % 47
