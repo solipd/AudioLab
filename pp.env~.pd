@@ -141,8 +141,9 @@
 #X restore 282 62 pd recall;
 #X obj 307 184 s \$0-method;
 #X obj 193 108 route responsiveness rms peak;
-#X msg 322 139 symbol peak;
-#X msg 250 139 symbol rms;
+#X msg 322 147 symbol peak;
+#X msg 250 147 symbol rms;
+#X obj 403 109 loadbang;
 #X connect 0 0 2 0;
 #X connect 0 0 5 0;
 #X connect 3 0 5 0;
@@ -151,10 +152,11 @@
 #X connect 5 2 6 0;
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
+#X connect 8 0 7 0;
 #X restore 499 130 pd in;
 #X obj 404 122 r \$0-response;
 #X obj 103 115 hsl 105 15 0 100 0 0 \$0-gui \$0-guir Responsiveness
-3 8 2 10 -233017 -1 -1 2080 1;
+3 8 2 10 -233017 -1 -1 2180 1;
 #X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 -233017
 -228856 -1 0 1;
 #X obj 210 115 nbx 5 15 0 1000 0 0 \$0-response \$0-responser empty

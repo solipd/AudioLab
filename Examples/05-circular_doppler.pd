@@ -1,22 +1,22 @@
-#N struct 1426-template float x float y float c float s float th float
-stretch array 1426-plus 1426-template-y array 1426-minus 1426-template-y
+#N struct 1566-template float x float y float c float s float th float
+stretch array 1566-plus 1566-template-y array 1566-minus 1566-template-y
 ;
-#N struct 1426-template-y float y;
-#N struct 1427-template float x float y float c float s float th float
-stretch array 1427-plus 1427-template-y array 1427-minus 1427-template-y
+#N struct 1566-template-y float y;
+#N struct 1567-template float x float y float c float s float th float
+stretch array 1567-plus 1567-template-y array 1567-minus 1567-template-y
 ;
-#N struct 1427-template-y float y;
+#N struct 1567-template-y float y;
 #N canvas 188 54 836 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 550 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 18 175 hsl 200 15 0.1 10 1 0 \$0-speed \$0-speedr Speed -2 -8
-2 12 -262144 -1 -1 12500 1;
+2 12 -262144 -1 -1 3500 1;
 #X obj 18 137 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 0 1;
-#X obj 18 212 hsl 200 15 0 5 0 0 \$0-diameter \$0-diameterr Diameter
--2 -8 2 12 -262144 -1 -1 19900 1;
+-8 2 12 -260097 -1 -1 19900 1;
+#X obj 18 212 hsl 200 15 0 10 0 0 \$0-diameter \$0-diameterr Diameter
+-2 -8 2 12 -262144 -1 -1 15600 1;
 #N canvas 67 368 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
@@ -30,7 +30,7 @@ stretch array 1427-plus 1427-template-y array 1427-minus 1427-template-y
 #X connect 2 0 1 0;
 #X restore 17 11 pd init;
 #X obj 15 241 hradio 15 1 0 2 \$0-switch \$0-switchr Noise/Sample 35
-8 2 12 -262144 -1 -1 0;
+8 2 12 -262144 -1 -1 1;
 #X obj 401 499 pp.out~;
 #A saved;
 #X obj 400 380 pp.doppler~;
@@ -76,8 +76,8 @@ circular movement of a sound source in front of the observer;
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 672 340 +~ 1;
 #X obj 672 316 +~;
+#X obj 672 340 +~ 0.5;
 #X connect 7 0 34 0;
 #X connect 7 1 34 1;
 #X connect 8 0 9 0;
@@ -98,15 +98,15 @@ circular movement of a sound source in front of the observer;
 #X connect 21 0 7 0;
 #X connect 22 0 13 3;
 #X connect 25 0 7 1;
-#X connect 26 0 36 0;
+#X connect 26 0 35 0;
 #X connect 27 0 28 0;
 #X connect 28 0 26 1;
 #X connect 28 0 25 1;
-#X connect 28 0 36 1;
+#X connect 28 0 35 1;
 #X connect 29 0 17 0;
 #X connect 31 0 15 0;
 #X connect 32 0 20 0;
 #X connect 34 0 6 0;
 #X connect 34 1 6 1;
-#X connect 35 0 7 2;
-#X connect 36 0 35 0;
+#X connect 35 0 36 0;
+#X connect 36 0 7 2;
