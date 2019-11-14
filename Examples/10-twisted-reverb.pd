@@ -1,75 +1,41 @@
-#N struct 1945-template float x float y float c float s float th float
-stretch array 1945-plus 1945-template-y array 1945-minus 1945-template-y
+#N struct 1311-template float x float y float c float s float th float
+stretch array 1311-plus 1311-template-y array 1311-minus 1311-template-y
 ;
-#N struct 1945-template-y float y;
-#N struct 1946-template float x float y float c float s float th float
-stretch array 1946-plus 1946-template-y array 1946-minus 1946-template-y
+#N struct 1311-template-y float y;
+#N struct 1312-template float x float y float c float s float th float
+stretch array 1312-plus 1312-template-y array 1312-minus 1312-template-y
 ;
-#N struct 1946-template-y float y;
-#N canvas 294 141 748 410 10;
+#N struct 1312-template-y float y;
+#N canvas 74 282 754 410 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 20 172 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 19300 1;
-#X obj 20 250 hsl 200 15 0 100 0 0 \$0-dry/wet \$0-dry/wetr Dry/Wet
--2 -8 2 12 -262144 -1 -1 19900 1;
+#X obj 23 118 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
+-8 2 12 -260097 -1 -1 19000 1;
+#X obj 20 301 hsl 200 15 0 100 0 0 \$0-dry/wet \$0-dry/wetr Dry/Wet
+-2 -8 2 12 -262144 -1 -1 11940 1;
 #N canvas 529 337 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
 #X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 70 61 \; pd dsp 1;
-#X msg 163 74 \; \$1-dry/wetr 100 \; \$1-presetsr 0;
+#X msg 163 74 \; \$1-dry/wetr 60 \; \$1-presetsr 0;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X restore 17 11 pd init;
-#X obj 560 340 r \$0-volume;
-#X floatatom 560 361 5 0 0 0 - - -;
-#X msg 560 383 volume \$1;
-#X obj 404 266 pp.twisted-delays~ 12 200;
+#X obj 568 338 r \$0-volume;
+#X floatatom 568 359 5 0 0 0 - - -;
+#X msg 568 381 volume \$1;
+#X obj 405 346 pp.out~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 397 348 pp.out~;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
-#N canvas 593 169 200 283 burst 0;
-#X obj 31 252 outlet~;
-#X obj 30 81 line~;
-#X obj 30 102 *~;
-#X obj 31 136 bp~ 1000 100;
-#X obj 31 157 *~ 30;
-#X obj 71 161 noise~;
-#X obj 56 185 *~;
-#X obj 32 214 +~;
-#X msg 30 60 1 \, 0 5;
-#X obj 30 15 inlet;
-#X obj 80 58 random 1000;
-#X obj 80 81 + 300;
-#X connect 1 0 2 0;
-#X connect 1 0 2 1;
-#X connect 2 0 3 0;
-#X connect 2 0 6 0;
-#X connect 3 0 4 0;
-#X connect 4 0 7 0;
-#X connect 5 0 6 1;
-#X connect 6 0 7 1;
-#X connect 7 0 0 0;
-#X connect 8 0 1 0;
-#X connect 9 0 8 0;
-#X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 11 0 3 1;
-#X restore 405 54 pd burst;
 #X obj 405 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 436 112 pp.sfplayer~;
@@ -89,91 +55,177 @@ stretch array 1946-plus 1946-template-y array 1946-minus 1946-template-y
 #X restore 622 113 pd init;
 #X msg 551 57 play 1;
 #X msg 609 57 stop;
-#N canvas 45 118 1202 448 messages 0;
+#N canvas 110 241 1202 448 messages 0;
 #X obj 27 400 outlet;
-#X obj 339 9 r \$0-presets;
-#X obj 339 32 sel 0 1 2 3 4;
-#X msg 26 111 feedback 96 \, crossover-frequency 7000 \, damping 50
-\, times-center 33 \, times-slope -62 \, times-curve -67 \, angles-center
-90 \, angles-slope -90 \, angles-curve -60 \, gain 6 \, transition-time
-1000 \, setblock 64 \, angles 135 71.1042 64.4533 60.2464 57.1102 54.5872
-52.4653 50.6276 49.0027 47.5434 46.2171 45 \, times 128 37.1812 28.6265
-23.2535 19.266 16.0688 13.3868 11.0692 9.02374 7.18983 5.5254 4 \,
+#X obj 451 0 r \$0-presets;
+#X msg 435 236 feedback 99 \, crossover-frequency 1115.7 \, damping
+49.4949 \, modulation 0.1 \, predelay 100 \, times-center 29 \, times-slope
+-52 \, times-curve 16 \, angles-center 90 \, angles-slope -71 \, angles-curve
+-43 \, gain 10 \, transition-time 1000 \, setblock 64 \, early 3.33334
+10 15.0003 146.666 \, times 6 6.2039 7.23621 9.54755 13.4949 19.3886
+27.5083 38.112 51.4408 67.7224 87.1731 110 \, angles 125.5 80.3384
+74.0284 69.9362 66.8369 64.3142 62.1728 60.3039 58.6404 57.138 55.7654
+54.5 \,;
+#X obj 451 23 sel 0 1 2 3 4 5;
+#X msg 817 235 feedback 99 \, crossover-frequency 12396.7 \, damping
+49.4949 \, modulation 0.2 \, predelay 0 \, times-center 27 \, times-slope
+-51 \, times-curve 44 \, angles-center 90 \, angles-slope -71 \, angles-curve
+-43 \, gain 16 \, transition-time 1000 \, setblock 64 \, early 3.33334
+6.66667 8.33337 11.6667 \, times 3 3.00024 3.01025 3.09152 3.43272
+4.44384 6.86452 11.884 21.2711 37.5135 63.9649 105 \, angles 169.5
+80.3384 74.0284 69.9362 66.8369 64.3142 62.1728 60.3039 58.6404 57.138
+55.7654 54.5 \,;
+#X msg 413 111 feedback 94 \, crossover-frequency 7000 \, damping 50
+\, modulation 0.1 \, predelay 100 \, times-center 33 \, times-slope
+60 \, times-curve -67 \, angles-center 90 \, angles-slope -90 \, angles-curve
+-60 \, gain 18 \, transition-time 1000 \, setblock 64 \, early 3.33334
+5.00005 10 11.6667 \, times 55 38.1108 96.6666 24.6324 20.7735 17.6795
+15.084 12.8412 10.8617 9.08693 7.47619 6 \, angles 172.5 71.1042 64.4533
+60.2464 57.1102 54.5872 52.4653 50.6276 49.0027 47.5434 46.2171 45
+\,;
+#X msg 42 227 feedback 97 \, crossover-frequency 6000 \, damping 80
+\, modulation 0 \, predelay 70 \, times-center 49 \, times-slope 36
+\, times-curve -80 \, angles-center 90 \, angles-slope -90 \, angles-curve
+-30 \, gain 18 \, transition-time 1000 \, setblock 64 \, early 28.3335
+8.33348 26.6666 49.9999 \, times 134 78.8403 74.4242 71.6788 69.6546
+68.0393 66.6894 65.5266 64.5031 63.5876 62.7585 62 \, angles 174 85.5809
+76.2305 69.9609 65.1109 61.1013 57.655 54.6161 51.8874 49.4037 47.1191
+45 \,;
+#X msg 27 99 feedback 95 \, crossover-frequency 7000 \, damping 50
+\, modulation 0.1 \, predelay 50 \, times-center 33 \, times-slope
+-62 \, times-curve -67 \, angles-center 90 \, angles-slope -90 \, angles-curve
+-60 \, gain 6 \, transition-time 1000 \, setblock 64 \, early 1.42763
+3.23873 5.2345 7.82312 \, times 128 37.1812 28.6265 23.2535 19.266
+16.0688 13.3868 11.0692 9.02374 7.18983 5.5254 4 \, angles 135 71.1042
+64.4533 60.2464 57.1102 54.5872 52.4653 50.6276 49.0027 47.5434 46.2171
+45 \,;
+#X msg 794 109 feedback 88 \, crossover-frequency 3000 \, damping 75
+\, modulation 0.1 \, predelay 12 \, times-center 33 \, times-slope
+34 \, times-curve -359 \, angles-center 90 \, angles-slope -90 \, angles-curve
+-273 \, gain 5 \, transition-time 1000 \, setblock 64 \, early 3.33331
+6.66667 11.6666 15 \, times 100 36.2784 35.0701 34.3527 33.8389 33.4376
+33.1079 32.8278 32.5843 32.3688 32.1754 32 \, angles 135 52.3117 50.2614
+49.0386 48.1603 47.4729 46.9071 46.426 46.0071 45.6359 45.3026 45 \,
 ;
-#X msg 413 111 feedback 97 \, crossover-frequency 6870.22 \, damping
-50 \, times-center 40 \, times-slope -76 \, times-curve -251 \, angles-center
-90 \, angles-slope -88 \, angles-curve -60 \, gain 22 \, transition-time
-1000 \, setblock 64 \, angles 174.6 71.5241 65.021 60.9076 57.8411
-55.3742 53.2994 51.5025 49.9137 48.4869 47.1901 46 \, times 156 17.3425
-94 12 9.77861 8.52312 7.48932 6.60959 5.84332 5.16418 4.55405 4 \,
-;
-#X msg 794 109 feedback 99 \, crossover-frequency 3526.17 \, damping
-29.2929 \, times-center 58 \, times-slope -110 \, times-curve -251
-\, angles-center 90 \, angles-slope -88 \, angles-curve -60 \, gain
-6 \, transition-time 1000 \, setblock 64 \, angles 127.8 71.5241 65.021
-60.9076 57.8411 55.3742 53.2994 51.5025 49.9137 48.4869 47.1901 46
-\, times 46 25.3115 34 16.6837 26 12.5466 11.0503 9.77704 8.66797 7.685
-6.80191 6 \,;
-#X msg 442 224 feedback 99 \, crossover-frequency 8608.82 \, damping
-50 \, times-center 4 \, times-slope -5 \, times-curve -90 \, angles-center
-90 \, angles-slope -90 \, angles-curve 124 \, gain 20 \, transition-time
-1000 \, setblock 1 \, angles 172.8 135 135 135 135 134.998 134.973
-134.789 133.738 128.885 109.905 45 \, times 13 5.13207 4.56736 4.21842
-3.96212 3.75817 3.58813 3.44192 3.31344 3.19867 3.09486 3 \,;
-#X msg 42 227 dry/wet 100 \, feedback 100 \, crossover-frequency 6000
-\, damping 50 \, times-center 46 \, times-slope 79 \, times-curve 13
-\, angles-center 90 \, angles-slope -34 \, angles-curve -135 \, gain
-6 \, transition-time 1000 \, setblock 64 \, angles 107 78.1823 76.7713
-75.9141 75.2912 74.7994 74.392 74.0435 73.7386 73.4673 73.2227 73 \,
-times 13 13.636 16.132 20.9585 28.4238 38.7682 52.1924 68.8701 88.9558
-112.589 139.898 171 \,;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
-#X connect 2 2 5 0;
-#X connect 2 3 7 0;
-#X connect 2 4 6 0;
-#X connect 3 0 0 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X connect 3 0 7 0;
+#X connect 3 1 5 0;
+#X connect 3 2 8 0;
+#X connect 3 3 6 0;
+#X connect 3 4 2 0;
+#X connect 3 5 4 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X restore 572 228 pd messages;
-#X obj 459 185 osc~ 1;
-#X obj 459 208 *~ 0.1;
-#X obj 20 118 tgl 17 0 \$0-play \$0-playr empty 17 7 0 10 -262144 -1
+#X connect 8 0 0 0;
+#X restore 572 229 pd messages;
+#X obj 20 251 tgl 17 0 \$0-play \$0-playr empty 17 7 0 10 -262144 -1
 -1 0 1;
-#X obj 20 94 bng 17 250 50 0 \$0-burst \$0-burstr empty 17 7 0 10 -262144
--1 -1;
+#X obj 20 192 bng 17 250 50 0 \$0-burst \$0-burstr empty 17 7 0 10
+-262144 -1 -1;
 #X obj 405 10 r \$0-burst;
 #X obj 590 8 r \$0-play;
 #X obj 590 31 sel 1 0;
 #X text 7 385 Philipp Schmalfuß \, 2019;
-#X obj 17 208 hradio 17 1 0 5 \$0-presets \$0-presetsr Presets 0 -8
-2 12 -262144 -1 -1 0;
-#X text 42 94 <-- burst;
-#X text 41 118 <-- play/stop soundfile;
-#X text 505 186 delay times are slightly modulated;
+#X obj 20 164 hradio 17 1 0 6 \$0-presets \$0-presetsr Presets 0 -8
+2 12 -262144 -1 -1 4;
+#X text 42 192 <-- burst;
+#X text 41 251 <-- play/stop soundfile;
 #X obj 588 254 r \$0-dry/wet;
 #X msg 588 277 dry/wet \$1;
-#X text 17 61 some reverb presets for pp.twisted-delays~;
+#X obj 404 266 pp.twisted-delays2~ 12 200;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 17 61 some reverb presets for pp.twisted-delays2~;
+#N canvas 644 178 517 386 excite 0;
+#X obj 31 302 outlet~;
+#X obj 30 81 line~;
+#X obj 30 102 *~;
+#X obj 31 136 bp~ 1000 100;
+#X obj 31 157 *~ 30;
+#X obj 71 161 noise~;
+#X obj 56 185 *~;
+#X obj 32 214 +~;
+#X msg 30 60 1 \, 0 5;
+#X obj 30 15 inlet;
+#X obj 80 58 random 1000;
+#X obj 80 81 + 300;
+#X obj 284 148 noise~;
+#X obj 313 217 bp~, f 7;
+#X obj 297 249 *~;
+#X obj 332 160 t f b;
+#X obj 333 140 mtof;
+#X obj 205 30 t b b b;
+#X obj 206 180 *~;
+#X obj 333 118 + 84;
+#X msg 352 191 5;
+#X obj 333 96 random 36;
+#X msg 205 118 0 100;
+#X msg 244 117 2 0;
+#X obj 205 7 inlet;
+#X obj 205 150 line~;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 3 0;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 1;
+#X connect 7 0 0 0;
+#X connect 8 0 1 0;
+#X connect 9 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 3 1;
+#X connect 12 0 13 0;
+#X connect 13 0 14 1;
+#X connect 14 0 0 0;
+#X connect 15 0 13 1;
+#X connect 15 1 20 0;
+#X connect 16 0 15 0;
+#X connect 17 0 22 0;
+#X connect 17 1 23 0;
+#X connect 17 2 21 0;
+#X connect 18 0 14 0;
+#X connect 19 0 16 0;
+#X connect 20 0 13 2;
+#X connect 21 0 19 0;
+#X connect 22 0 25 0;
+#X connect 23 0 25 0;
+#X connect 24 0 17 0;
+#X connect 25 0 18 0;
+#X connect 25 0 18 1;
+#X restore 405 54 pd excite;
+#X f 12;
+#X obj 474 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 474 10 r \$0-pish;
+#X obj 20 220 bng 17 250 50 0 \$0-pish \$0-pishr empty 17 7 0 10 -262144
+-1 -1;
+#X text 42 220 <-- pish;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
-#X connect 6 0 8 2;
-#X connect 7 2 8 0;
-#X connect 7 3 8 1;
-#X connect 9 0 7 0;
-#X connect 10 0 9 0;
-#X connect 11 0 7 0;
-#X connect 14 0 11 3;
-#X connect 15 0 11 3;
-#X connect 16 0 11 3;
-#X connect 17 0 7 3;
-#X connect 18 0 19 0;
-#X connect 19 0 7 1;
-#X connect 22 0 10 0;
-#X connect 23 0 24 0;
-#X connect 24 0 15 0;
-#X connect 24 1 16 0;
-#X connect 30 0 31 0;
-#X connect 31 0 7 3;
+#X connect 6 0 7 2;
+#X connect 8 0 29 0;
+#X connect 9 0 27 0;
+#X connect 12 0 9 3;
+#X connect 13 0 9 3;
+#X connect 14 0 9 3;
+#X connect 15 0 27 1;
+#X connect 18 0 8 0;
+#X connect 19 0 20 0;
+#X connect 20 0 13 0;
+#X connect 20 1 14 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 1;
+#X connect 27 0 7 0;
+#X connect 27 1 7 1;
+#X connect 29 0 27 0;
+#X connect 30 0 29 1;
+#X connect 31 0 30 0;
