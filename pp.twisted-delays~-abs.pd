@@ -1,33 +1,33 @@
-#N canvas 292 108 863 612 10;
-#N canvas 184 248 738 366 create 0;
+#N canvas 297 110 863 612 10;
+#N canvas 84 279 738 366 create 0;
 #X obj 197 -15 loadbang;
 #X obj 197 49 f \$2;
 #X obj 197 72 - 1;
 #X obj 197 95 t f f;
 #X obj 209 196 f;
-#X obj 256 -14 r \$1-\$2-loadbang;
 #X obj 148 153 sel 0 1;
 #X obj 148 130 > 0;
 #X msg 92 223 connect 0 0 1 0;
 #X obj 209 318 s pd-\$0-matryoshka;
-#X obj 209 220 pack f \$1 \$3 \$4;
-#X msg 209 252 obj 100 100 pp.twisted-delays~-abs \$2 \$1 \$3 \$4 \,
-connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect 6
-0 1 0 \, connect 6 1 3 0 \, connect 6 2 4 0 \; \$2-\$1-loadbang bang
-;
+#X obj 256 -14 r \$1-\$2-\$5-loadbang;
+#X obj 209 220 pack f \$1 \$3 \$4 \$5;
+#X msg 209 252 obj 100 100 pp.twisted-delays~-abs \$2 \$1 \$3 \$4 \$5
+\, connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect
+6 0 1 0 \, connect 6 1 3 0 \, connect 6 2 4 0 \; \$2-\$1-\$5-loadbang
+bang;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 7 0;
+#X connect 3 0 6 0;
 #X connect 3 1 4 1;
 #X connect 4 0 10 0;
-#X connect 5 0 1 0;
-#X connect 6 0 8 0;
-#X connect 6 1 4 0;
-#X connect 7 0 6 0;
-#X connect 8 0 9 0;
+#X connect 5 0 7 0;
+#X connect 5 1 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 8 0;
+#X connect 9 0 1 0;
 #X connect 10 0 11 0;
-#X connect 11 0 9 0;
+#X connect 11 0 8 0;
 #X restore 710 44 pd create;
 #X obj 253 26 sig~ \$2;
 #X obj 195 22 sig~ \$3;
@@ -147,8 +147,6 @@ connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect 6
 #X restore 292 381 pd \$0-matryoshka;
 #X f 20;
 #X obj 194 260 delread4~ \$0-del;
-#X obj 497 375 r \$1-feedback;
-#X obj 497 397 / 100;
 #X obj 481 567 delwrite~ \$0-del \$4;
 #X obj 195 217 +~;
 #X obj 639 140 inlet~;
@@ -156,20 +154,22 @@ connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect 6
 #X obj 409 315 delread4~ \$0-rotate;
 #X obj 532 275 delwrite~ \$0-t \$4;
 #X obj 351 339 delread4~ \$0-t;
+#X obj 497 375 r \$1-feedback;
+#X obj 497 397 / 100;
 #X connect 1 0 3 1;
 #X connect 2 0 3 0;
 #X connect 3 0 16 0;
 #X connect 3 0 17 0;
 #X connect 4 0 13 0;
 #X connect 5 0 10 0;
-#X connect 6 0 36 0;
+#X connect 6 0 34 0;
+#X connect 6 0 37 0;
 #X connect 6 0 39 0;
-#X connect 6 0 41 0;
 #X connect 8 0 9 0;
 #X connect 9 0 7 0;
 #X connect 10 0 13 2;
-#X connect 11 0 40 0;
-#X connect 11 0 36 1;
+#X connect 11 0 38 0;
+#X connect 11 0 34 1;
 #X connect 13 0 21 0;
 #X connect 13 1 31 0;
 #X connect 14 0 23 1;
@@ -183,7 +183,7 @@ connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect 6
 #X connect 19 0 18 0;
 #X connect 23 0 24 0;
 #X connect 24 0 25 1;
-#X connect 25 0 35 0;
+#X connect 25 0 33 0;
 #X connect 26 0 30 0;
 #X connect 27 0 28 1;
 #X connect 28 0 23 0;
@@ -194,10 +194,10 @@ connect 0 0 6 0 \, connect 2 0 6 1 \, connect 5 0 6 2 \, connect 6
 #X connect 31 1 20 0;
 #X connect 31 2 22 0;
 #X connect 32 0 15 0;
-#X connect 33 0 34 0;
-#X connect 34 0 14 1;
-#X connect 36 0 32 0;
-#X connect 37 0 38 0;
-#X connect 37 0 10 1;
-#X connect 39 0 31 2;
-#X connect 41 0 31 1;
+#X connect 34 0 32 0;
+#X connect 35 0 36 0;
+#X connect 35 0 10 1;
+#X connect 37 0 31 2;
+#X connect 39 0 31 1;
+#X connect 40 0 41 0;
+#X connect 41 0 14 1;
