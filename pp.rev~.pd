@@ -815,7 +815,7 @@ hf-damping lf-damping center curve slope width;
 #X connect 21 10 5 0;
 #X connect 21 11 12 0;
 #X restore 739 104 pd in;
-#N canvas 99 131 475 205 \$0-rev~ 1;
+#N canvas 50 60 475 205 \$0-rev~ 0;
 #N canvas 423 168 866 485 mask 0;
 #X obj 100 100 cnv 15 459 189 empty empty empty 2 2 0 14 -262144 -66577
 0;
@@ -900,7 +900,7 @@ hf-damping lf-damping center curve slope width;
 2 10 -262144 -1 -1 9900 1;
 #X msg 53 253 set \$1;
 #X obj 499 270 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 62 256;
+-262144 -1 -1 60 256;
 #X obj 499 258 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
 0;
 #X obj 217 230 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr %
@@ -1199,7 +1199,6 @@ hf-damping lf-damping center curve slope width;
 #X obj 161 41 sel 0 1 2 3 4 5 6 7;
 #X text 162 206 miller's original rev3~;
 #X obj 161 4 r \$0-presetrd;
-#X msg 95 171 dry/wet 60;
 #X text 470 265 reflections;
 #X msg 467 5 feedback 50 \, lop-frequency 300 \, hf-damping 98 \, hip-frequency
 0 \, lf-damping 0 \, center 35 \, curve 10 \, slope 60 \, width 100
@@ -1242,20 +1241,21 @@ hip-frequency 60 \, lf-damping 0 \, center 17 \, curve 11 \, slope
 7 \, slope 180 \, width 100 \, early 40 7.59999 17.2 25.2 32.3 \, tail
 10 11.8027 15.8569 21.6687 29.0292 37.8078 47.9118 59.2702 71.8259
 85.5318 100.348 116.239 133.176 151.131 170.079 190 \,;
-#X connect 1 0 13 0;
-#X connect 1 0 10 0;
-#X connect 7 0 13 0;
-#X connect 7 1 12 0;
-#X connect 7 2 20 0;
-#X connect 7 3 15 0;
-#X connect 7 4 16 0;
-#X connect 7 5 17 0;
-#X connect 7 6 18 0;
-#X connect 7 7 19 0;
+#X msg 95 171 dry/wet 100;
+#X connect 1 0 12 0;
+#X connect 1 0 20 0;
+#X connect 7 0 12 0;
+#X connect 7 1 11 0;
+#X connect 7 2 19 0;
+#X connect 7 3 14 0;
+#X connect 7 4 15 0;
+#X connect 7 5 16 0;
+#X connect 7 6 17 0;
+#X connect 7 7 18 0;
 #X connect 9 0 7 0;
-#X connect 10 0 0 0;
+#X connect 11 0 0 0;
 #X connect 12 0 0 0;
-#X connect 13 0 0 0;
+#X connect 14 0 0 0;
 #X connect 15 0 0 0;
 #X connect 16 0 0 0;
 #X connect 17 0 0 0;
