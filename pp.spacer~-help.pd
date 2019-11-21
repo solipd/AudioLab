@@ -1,0 +1,185 @@
+#N canvas 211 142 801 361 10;
+#X obj 392 298 pp.out~;
+#A saved;
+#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 74 142 1:(~)signal;
+#X text 16 143 Inlets:;
+#X text 16 203 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.spacer~ 0 0 2 16 -233017 -262144
+0;
+#X text 552 183 <-- click to open GUI;
+#X text 16 93 Creation arguments: none;
+#X obj 539 146 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 561 87 673 380 control-messages 0;
+#X obj 70 353 outlet;
+#X msg 70 29 pitch-mod \$1;
+#X floatatom 70 10 5 0 0 0 - - -;
+#X msg 87 75 amp-mod \$1;
+#X floatatom 88 54 5 0 0 0 - - -;
+#X floatatom 97 98 5 0 0 0 - - -;
+#X msg 96 119 pan-mod \$1;
+#X floatatom 108 143 5 0 0 0 - - -;
+#X msg 108 163 damping \$1;
+#X obj 141 319 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 141 318 pd save&recall;
+#X msg 146 228 amp-mod_wet \$1;
+#X msg 146 277 localize \$1;
+#X floatatom 146 207 5 0 0 0 - - -;
+#X floatatom 146 256 5 0 0 0 - - -;
+#X text 246 228 amplitude modulation of the "wet" signals (outlet~
+3 \, 4);
+#X text 234 281 localization of the "wet" signals;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 10 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 11 0;
+#X connect 14 0 12 0;
+#X restore 539 146 pd control-messages;
+#N canvas 3 54 326 300 synth 0;
+#X obj 138 275 outlet~;
+#X obj 136 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 136 63 metro 300;
+#X obj 136 108 line~;
+#X obj 129 134 *~;
+#X obj 177 188 noise~;
+#X obj 162 212 *~;
+#X obj 138 250 +~;
+#X msg 136 87 1 \, 0 10;
+#X obj 137 184 *~ 50;
+#X obj 137 163 bp~ 800 300;
+#X obj 55 161 bp~ 500 300;
+#X obj 55 182 *~ 30;
+#X obj 135 18 loadbang;
+#X connect 1 0 2 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 6 0;
+#X connect 4 0 10 0;
+#X connect 4 0 11 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 1;
+#X connect 7 0 0 0;
+#X connect 8 0 3 0;
+#X connect 9 0 7 0;
+#X connect 10 0 9 0;
+#X connect 11 0 12 0;
+#X connect 12 0 7 0;
+#X connect 13 0 1 0;
+#X restore 390 9 pd synth;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping
+100 \, amp-mod_wet 50 \, localize 50 \,;
+#X connect 0 0 1 0;
+#X restore 539 208 pd message-out;
+#N canvas 213 231 450 300 examples 0;
+#X obj 98 148 s pd;
+#X msg 98 77 dir;
+#X obj 98 100 pdcontrol;
+#X msg 98 125 open 08-chaotic_movement.pd \$1/Examples;
+#X obj 98 54 r \$0-example1;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X restore 307 330 pd examples;
+#X obj 674 5 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 680 14 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X text 699 12 open example-1;
+#X obj 490 132 sig~ 1;
+#X floatatom 490 105 5 0 0 0 - - -;
+#X text 74 154 2:(~)X trajectory;
+#X text 74 168 3:(~)Y trajectory;
+#X text 74 181 4:control-messages;
+#X obj 441 76 line~;
+#X text 524 104 y trajectory (distance);
+#X text 488 71 x trajectory;
+#X obj 391 169 pp.spacer~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 74 203 1:(~)dry signal left;
+#X text 74 216 2:(~)dry signal right;
+#X text 74 255 5:message;
+#X text 74 229 3:(~)wet signal left;
+#X text 74 242 4:(~)wet signal right;
+#N canvas 2 54 450 300 rev~ 0;
+#X obj 97 45 inlet~;
+#X obj 265 48 inlet~;
+#X obj 98 96 pp.rev~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 264 97 pp.rev~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 98 186 outlet~;
+#X obj 302 185 outlet~;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 1 5 0;
+#X restore 466 230 pd rev~;
+#X msg 441 53 -50 \, 50 7000;
+#X text 8 36;
+#X connect 9 0 24 3;
+#X connect 10 0 24 0;
+#X connect 16 0 24 2;
+#X connect 17 0 16 0;
+#X connect 21 0 24 1;
+#X connect 24 0 0 0;
+#X connect 24 1 0 1;
+#X connect 24 2 30 0;
+#X connect 24 3 30 1;
+#X connect 24 4 11 0;
+#X connect 30 0 0 0;
+#X connect 30 1 0 1;
+#X connect 31 0 21 0;
