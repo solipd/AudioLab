@@ -86,31 +86,19 @@ with the parrent patch;
 #N canvas 213 231 450 300 examples 0;
 #X obj 94 11 r \$0-example1;
 #X obj 94 105 s pd;
-#X obj 94 227 s pd;
 #X msg 94 34 dir;
 #X obj 94 57 pdcontrol;
 #X msg 94 82 open 05-circular_doppler.pd \$1/Examples;
-#X msg 94 156 dir;
-#X obj 94 179 pdcontrol;
-#X obj 94 133 r \$0-example2;
-#X msg 94 204 open 08-chaotic_movement.pd \$1/Examples;
-#X connect 0 0 3 0;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 1 0;
-#X connect 6 0 7 0;
-#X connect 7 0 9 0;
-#X connect 8 0 6 0;
-#X connect 9 0 2 0;
+#X connect 4 0 1 0;
 #X restore 307 330 pd examples;
-#X obj 674 5 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 674 5 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
 0;
-#X obj 680 16 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+#X obj 680 13 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
 0 10 -262144 -1 -1;
-#X obj 680 37 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
-0 10 -262144 -1 -1;
-#X text 699 14 open example-1;
-#X text 699 36 open example-2;
+#X text 699 11 open example-1;
 #X obj 490 132 sig~ 1;
 #X floatatom 490 105 5 0 0 0 - - -;
 #X text 74 154 2:(~)X trajectory;
@@ -135,14 +123,14 @@ with the parrent patch;
 #X text 8 36 pp.doppler~ emulates the changes in pitch \, amplitude
 and high frequency attenuation that occour when a sound source is moving
 relative to the standpoint of an observer.;
-#X connect 9 0 28 3;
-#X connect 10 0 28 0;
-#X connect 21 0 28 2;
-#X connect 22 0 21 0;
+#X connect 9 0 26 3;
+#X connect 10 0 26 0;
+#X connect 19 0 26 2;
+#X connect 20 0 19 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 1;
 #X connect 26 0 27 0;
-#X connect 27 0 28 1;
-#X connect 28 0 29 0;
-#X connect 28 1 29 1;
-#X connect 28 2 14 0;
-#X connect 29 0 0 0;
-#X connect 29 1 0 1;
+#X connect 26 1 27 1;
+#X connect 26 2 14 0;
+#X connect 27 0 0 0;
+#X connect 27 1 0 1;
