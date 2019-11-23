@@ -1,25 +1,25 @@
-#N struct 1559-template float x float y float c float s float th float
-stretch array 1559-plus 1559-template-y array 1559-minus 1559-template-y
+#N struct 1949-template float x float y float c float s float th float
+stretch array 1949-plus 1949-template-y array 1949-minus 1949-template-y
 ;
-#N struct 1559-template-y float y;
-#N struct 1560-template float x float y float c float s float th float
-stretch array 1560-plus 1560-template-y array 1560-minus 1560-template-y
+#N struct 1949-template-y float y;
+#N struct 1950-template float x float y float c float s float th float
+stretch array 1950-plus 1950-template-y array 1950-minus 1950-template-y
 ;
-#N struct 1560-template-y float y;
-#N struct 1562-template float x float y float c float s float th float
-stretch array 1562-plus 1562-template-y array 1562-minus 1562-template-y
+#N struct 1950-template-y float y;
+#N struct 1952-template float x float y float c float s float th float
+stretch array 1952-plus 1952-template-y array 1952-minus 1952-template-y
 ;
-#N struct 1562-template-y float y;
-#N struct 1693-xt float x float y;
-#N struct 1693-yt float x float y;
-#N struct 1701-template float x float y float c float s float th float
-stretch array 1701-plus 1701-template-y array 1701-minus 1701-template-y
+#N struct 1952-template-y float y;
+#N struct 2083-xt float x float y;
+#N struct 2083-yt float x float y;
+#N struct 2091-template float x float y float c float s float th float
+stretch array 2091-plus 2091-template-y array 2091-minus 2091-template-y
 ;
-#N struct 1701-template-y float y;
-#N struct 1702-template float x float y float c float s float th float
-stretch array 1702-plus 1702-template-y array 1702-minus 1702-template-y
+#N struct 2091-template-y float y;
+#N struct 2092-template float x float y float c float s float th float
+stretch array 2092-plus 2092-template-y array 2092-minus 2092-template-y
 ;
-#N struct 1702-template-y float y;
+#N struct 2092-template-y float y;
 #N canvas 333 54 812 712 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
@@ -90,7 +90,6 @@ stretch array 1702-plus 1702-template-y array 1702-minus 1702-template-y
 #X text 15 1142 Spectral processing;
 #X text 37 1173 mono;
 #X text 237 1174 stereo;
-#X text 18 234 Spatialisation;
 #X text 36 1488 Misc.;
 #X obj 253 883 pp.graindelay~;
 #A saved;
@@ -225,3 +224,4 @@ for "wet" signals;
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
+#X text 18 234 Spatialization;
