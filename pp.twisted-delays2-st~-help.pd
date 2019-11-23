@@ -1,0 +1,225 @@
+#N canvas 323 146 770 460 10;
+#X obj 392 395 pp.out~;
+#A saved;
+#X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.twisted-delays2-st~ 0 0 2
+16 -233017 -262144 0;
+#X obj 569 180 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 687 101 664 665 control-messages 0;
+#X obj 75 618 outlet;
+#X floatatom 107 83 5 0 1e+37 0 - - -;
+#X floatatom 113 126 5 0 1e+33 0 - - -;
+#X floatatom 81 -6 5 0 100 0 - - -;
+#X floatatom 100 40 5 0 1e+12 0 - - -;
+#X msg 74 13 dry/wet \$1;
+#X text 143 12 (%);
+#X obj 145 594 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 145 593 pd save&recall;
+#X msg 94 60 feedback \$1;
+#X text 166 61 (%)feedback amount;
+#X msg 100 102 crossover-frequency \$1;
+#X text 243 127 hz;
+#X msg 107 146 damping \$1;
+#X text 173 146 (%);
+#X msg 115 203 setblock \$1;
+#X msg 115 177 1;
+#X msg 146 178 64;
+#X msg 149 515 times 94 41 61 84 31 25 14 37 23 8 31 9;
+#X msg 148 545 angles 16.2 71.1042 64.4533 60.2464 57.1102 54.5872
+52.4653 50.6276 49.0027 47.5434 46.8 45;
+#X text 187 202 set internal blocksize -min. delay time in samples
+;
+#X obj 402 284 cnv 15 250 160 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X floatatom 414 298 5 0 0 0 - - -;
+#X msg 414 318 times-center \$1;
+#X floatatom 414 381 5 0 0 0 - - -;
+#X msg 414 401 times-curve \$1;
+#X floatatom 413 339 5 0 0 0 - - -;
+#X msg 413 359 times-slope \$1;
+#X floatatom 536 299 5 0 0 0 - - -;
+#X floatatom 536 382 5 0 0 0 - - -;
+#X floatatom 535 340 5 0 0 0 - - -;
+#X msg 536 319 angles-center \$1;
+#X msg 535 360 angles-slope \$1;
+#X msg 536 402 angles-curve \$1;
+#X floatatom 145 406 5 0 0 0 - - -;
+#X msg 145 428 transition-time \$1;
+#X text 149 471 set delay times & angles of rotation;
+#X text 148 449 smooth transition between times & angles;
+#X text 402 264 set times & angles curve parameters;
+#X floatatom 145 274 5 0 0 0 - - -;
+#X floatatom 130 228 5 0 0 0 - - -;
+#X msg 130 250 predelay \$1;
+#X msg 145 296 modulation \$1;
+#X text 207 249 (ms);
+#X msg 149 491 early 0.1 1.123 3.21 10;
+#X floatatom 149 319 5 0 0 0 - - -;
+#X msg 149 341 modulation-frequency \$1;
+#X text 295 341 (hz);
+#X connect 1 0 11 0;
+#X connect 2 0 13 0;
+#X connect 3 0 5 0;
+#X connect 4 0 9 0;
+#X connect 5 0 0 0;
+#X connect 8 0 0 0;
+#X connect 9 0 0 0;
+#X connect 11 0 0 0;
+#X connect 13 0 0 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 18 0 0 0;
+#X connect 19 0 0 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 28 0 31 0;
+#X connect 29 0 33 0;
+#X connect 30 0 32 0;
+#X connect 34 0 35 0;
+#X connect 35 0 0 0;
+#X connect 39 0 42 0;
+#X connect 40 0 41 0;
+#X connect 41 0 0 0;
+#X connect 42 0 0 0;
+#X connect 44 0 0 0;
+#X connect 45 0 46 0;
+#X connect 46 0 0 0;
+#X restore 569 179 pd control-messages;
+#X text 582 214 <-- click to open GUI;
+#X text 10 192 Inlets:;
+#X text 9 269 Outlets:;
+#N canvas 686 449 454 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 44 dry/wet 100 \, feedback 90 \, crossover-frequency 7000
+\, damping 50 \, modulation 0.1 \, predelay 0 \, times-center 50 \,
+times-slope 0 \, times-curve 0 \, angles-center 90 \, angles-slope
+-90 \, angles-curve -60 \, gain 0 \, transition-time 1000 \, setblock
+64 \, early 1.42763 3.23873 5.2345 7.82312 \, times 50 50 50 50 50
+50 50 50 \, angles 135 66.8424 59.7479 55.2603 51.915 49.2237 46.9603
+45 \,;
+#X connect 0 0 1 0;
+#X restore 569 242 pd message-out;
+#X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 133 281 450 99 references 0;
+#X text 8 56 http://msp.ucsd.edu/techniques.htm;
+#X text 7 11 inspired by Miller's Theory and Techniques of Electronic
+Music \, chapter 7.5: "Power conservation and complex delay networks"
+;
+#X restore 9 427 pd references;
+#X text 67 191 1:(~)signal;
+#X text 67 232 4:control-messages;
+#X text 6 118 Creation arguments: \$1(obligatory): delay instances
+;
+#X text 126 133 \$2(obligatory): max. delay time;
+#X text 126 148 \$3: blocksize (min. delay time in samples);
+#X obj 391 12 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 410 11 <-- click;
+#X text 67 204 2:(~)delay times;
+#X text 67 218 3:(~)angles;
+#X text 66 269 1:(~)signal out 1;
+#X text 66 283 2:(~)signal out 2;
+#X text 66 296 3:(~)signal out 3;
+#X text 66 309 4:(~)signal out 4;
+#X text 66 323 5:message;
+#X obj 647 4 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#X obj 653 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
+0 10 -262144 -1 -1;
+#X text 670 10 open example-1;
+#N canvas 102 154 450 300 examples 0;
+#X obj 94 103 s pd;
+#X obj 94 11 r \$0-example1;
+#X msg 94 34 dir;
+#X obj 94 57 pdcontrol;
+#X msg 94 80 open 10-twisted-reverb.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X restore 309 430 pd examples;
+#X obj 391 201 pp.twisted-delays2-st~ 8 100;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#N canvas 581 381 306 385 st.burst 0;
+#X obj 33 337 outlet~;
+#X obj 106 336 outlet~;
+#X obj 30 58 line~;
+#X obj 30 79 *~;
+#X obj 31 127 bp~ 1000 100;
+#X msg 30 37 1 \, 0 10;
+#X obj 31 148 *~ 30;
+#X obj 71 147 noise~;
+#X obj 56 170 *~;
+#X obj 32 193 +~;
+#X obj 30 -1 inlet;
+#X obj 180 200 snapshot~;
+#X msg 180 223 panorama \$1;
+#X obj 108 31 random 1000;
+#X obj 108 54 + 300;
+#X obj 32 262 pp.pan~;
+#A saved;
+#X connect 2 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 9 0;
+#X connect 7 0 8 1;
+#X connect 7 0 11 0;
+#X connect 8 0 9 1;
+#X connect 9 0 15 0;
+#X connect 10 0 5 0;
+#X connect 10 0 11 0;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 2;
+#X connect 13 0 14 0;
+#X connect 14 0 4 1;
+#X connect 15 0 0 0;
+#X connect 15 1 1 0;
+#X restore 391 57 pd st.burst;
+#X text 21 39 stereo version of pp.twisted-delays2~;
+#X connect 4 0 29 2;
+#X connect 16 0 30 0;
+#X connect 29 0 0 0;
+#X connect 29 1 0 1;
+#X connect 29 2 8 0;
+#X connect 30 0 29 0;
+#X connect 30 1 29 1;

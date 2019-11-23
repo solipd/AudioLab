@@ -5,6 +5,6 @@ v0.2
 * changed lowpass filtering in pp.doppler~ pp.dopplerxy~
 * pp.rev~ 100% wet by default
 * buffer length calc. in pp.fft-partconv~ pp.fft-partconv-st~
-* new objects: pp.twisted-delays2~ pp.spacer~
+* new objects: pp.twisted-delays2~ pp.twisted-delays2-st~ pp.spacer~
 * fixed some bugs
 

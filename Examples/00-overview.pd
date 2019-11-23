@@ -1,25 +1,25 @@
-#N struct 1005-template float x float y float c float s float th float
-stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y
+#N struct 1559-template float x float y float c float s float th float
+stretch array 1559-plus 1559-template-y array 1559-minus 1559-template-y
 ;
-#N struct 1005-template-y float y;
-#N struct 1006-template float x float y float c float s float th float
-stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
+#N struct 1559-template-y float y;
+#N struct 1560-template float x float y float c float s float th float
+stretch array 1560-plus 1560-template-y array 1560-minus 1560-template-y
 ;
-#N struct 1006-template-y float y;
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 1560-template-y float y;
+#N struct 1562-template float x float y float c float s float th float
+stretch array 1562-plus 1562-template-y array 1562-minus 1562-template-y
 ;
-#N struct 1008-template-y float y;
-#N struct 1139-xt float x float y;
-#N struct 1139-yt float x float y;
-#N struct 1147-template float x float y float c float s float th float
-stretch array 1147-plus 1147-template-y array 1147-minus 1147-template-y
+#N struct 1562-template-y float y;
+#N struct 1693-xt float x float y;
+#N struct 1693-yt float x float y;
+#N struct 1701-template float x float y float c float s float th float
+stretch array 1701-plus 1701-template-y array 1701-minus 1701-template-y
 ;
-#N struct 1147-template-y float y;
-#N struct 1148-template float x float y float c float s float th float
-stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
+#N struct 1701-template-y float y;
+#N struct 1702-template float x float y float c float s float th float
+stretch array 1702-plus 1702-template-y array 1702-minus 1702-template-y
 ;
-#N struct 1148-template-y float y;
+#N struct 1702-template-y float y;
 #N canvas 333 54 812 712 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
@@ -107,9 +107,9 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X obj -1 1133 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 85 variable-speed soundfile player;
-#X text 428 124 granular sampler;
+#X text 428 128 granular sampler;
 #X text 429 173 pvoc time stretching & pitch shifting;
-#X text 428 254 constant power panning;
+#X text 428 257 constant power panning;
 #X text 428 580 frequency shifting;
 #X text 429 617 pitch shifting;
 #X text 430 798 compressor/expander;
@@ -204,12 +204,6 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 233 1023 pp.twisted-delays2~ 6 100;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
 #X text 432 1032 a nice reverberator;
 #X obj 255 478 pp.spacer~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
@@ -219,3 +213,15 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 \; empty_slot \;;
 #X text 428 479 like pp.pan~ + pp.doppler~ \, but with addition outlets
 for "wet" signals;
+#X obj 25 1023 pp.twisted-delays2~ 6 100;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 223 1023 pp.twisted-delays2-st~ 6 100;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
