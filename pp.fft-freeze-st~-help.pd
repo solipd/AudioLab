@@ -1,0 +1,129 @@
+#N struct 1354-template float x float y float c float s float th float
+stretch array 1354-plus 1354-template-y array 1354-minus 1354-template-y
+;
+#N struct 1354-template-y float y;
+#N struct 1355-template float x float y float c float s float th float
+stretch array 1355-plus 1355-template-y array 1355-minus 1355-template-y
+;
+#N struct 1355-template-y float y;
+#N canvas 209 321 786 309 10;
+#X declare -path ./Examples/audio;
+#X obj 397 248 pp.out~;
+#A saved;
+#X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.fft-freeze-st~ 0 0 2 16 -233017
+-262144 0;
+#X obj 582 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 195 89 443 304 control-messages 0;
+#X obj 106 205 outlet;
+#X msg 143 101 blocksize \$1;
+#X msg 143 77 512;
+#X msg 172 77 1024;
+#X msg 208 78 2048;
+#X msg 144 150 overlap \$1;
+#X msg 144 125 2;
+#X msg 173 126 4;
+#X msg 204 126 8;
+#X text 229 101 fft-blocksize;
+#X floatatom 106 22 5 0 100 0 - - -;
+#X obj 145 178 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 145 177 pd save&recall;
+#X msg 106 42 feedback \$1;
+#X text 184 41 (%);
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 5 0;
+#X connect 10 0 13 0;
+#X connect 12 0 0 0;
+#X connect 13 0 0 0;
+#X restore 582 117 pd control-messages;
+#X text 10 93 Inlets:;
+#X text 11 161 Outlets:;
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 596 106 504 105 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 21 41 help -> browser -> PureData/audio-examples/I08.pvoc.reverb.pd
+;
+#X text 21 12 based on;
+#X restore 7 279 pd references;
+#X text 11 51 Creation arguments: \$1: fft-blocksize \, default: 1024
+;
+#X text 131 63 \$2: overlap \, default: 4;
+#X text 67 92 1:(~)signal;
+#X text 67 175 2:message;
+#N canvas 740 417 503 292 message-out 0;
+#X obj 30 33 inlet;
+#X msg 30 60 feedback 100 \, blocksize 1024 \, overlap 4 \,;
+#X connect 0 0 1 0;
+#X restore 570 177 pd message-out;
+#X obj 570 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 590 74 bang to freeze;
+#X obj 396 18 pp.sfplayer~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 67 108 2:control-messages;
+#X text 67 161 1:(~)freezed signal;
+#N canvas 360 194 450 300 init 0;
+#X obj 153 33 loadbang;
+#X obj 153 79 outlet;
+#X msg 153 56 open MusicBox.wav \, loop 1 \, play 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 580 18 pd init;
+#X obj 195 8 declare -path ./Examples/audio;
+#X obj 397 139 pp.fft-freeze-st~ 1024 4;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X connect 4 0 21 2;
+#X connect 14 0 21 2;
+#X connect 16 0 21 0;
+#X connect 16 1 21 1;
+#X connect 19 0 16 3;
+#X connect 21 0 0 0;
+#X connect 21 1 0 1;
+#X connect 21 2 13 0;
