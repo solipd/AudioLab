@@ -1,5 +1,5 @@
-#N struct 1262-xt float x float y;
-#N struct 1262-yt float x float y;
+#N struct 1291-xt float x float y;
+#N struct 1291-yt float x float y;
 #N canvas 431 172 857 308 10;
 #X obj 390 248 pp.out~;
 #A saved;
@@ -73,6 +73,7 @@ with the parrent patch;
 #X text 15 71 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
 #X text 14 32 Filter coefficients are calculated following Robert Bristow-Johnsons
 Audio-EQ-cookbook rezipes:;
+#X text 14 9 https://github.com/dotmmb/mmb;
 #X restore 5 282 pd references;
 #X obj 389 9 noise~;
 #X text 10 56 Creation arguments:;
