@@ -1,22 +1,22 @@
-#N canvas 191 195 921 570 10;
+#N canvas 205 92 921 570 10;
 #X obj 294 107 inlet~;
 #X obj 363 107 inlet~;
 #X obj 365 347 *~;
-#X msg 809 258 \$1 50;
-#X obj 809 280 line~;
+#X msg 812 270 \$1 50;
+#X obj 812 292 line~;
 #X obj 294 347 *~;
-#X obj 120 115 hsl 133 17 0 1 0 0 \$0-vol \$0-volr 0db 5 8 2 10 -228856
+#X obj 120 115 hsl 166 17 0 1 0 0 \$0-vol \$0-volr 0db 5 8 2 10 -228856
 -1 -1 0 1;
 #X obj 100 115 tgl 17 0 \$0-dsp \$0-dspr dsp 1 8 2 10 -228856 -258113
--1 0 1;
-#X obj 810 153 r \$0-vol;
+-1 1 1;
+#X obj 813 165 r \$0-vol;
 #X obj 294 129 hip~ 5;
 #X obj 364 130 hip~ 5;
-#X obj 809 215 * 100;
-#X obj 810 174 sqrt;
-#X obj 810 195 sqrt;
-#X obj 809 236 dbtorms;
-#X obj 816 54 inlet;
+#X obj 812 227 * 100;
+#X obj 813 186 sqrt;
+#X obj 813 207 sqrt;
+#X obj 812 248 dbtorms;
+#X obj 816 28 inlet;
 #X obj 107 426 r \$0-set;
 #X obj 756 483 outlet;
 #N canvas 3 78 781 543 outlet-message 0;
@@ -369,7 +369,7 @@
 #X connect 84 0 85 0;
 #X connect 85 0 67 0;
 #X connect 86 0 48 0;
-#X restore 814 110 pd stuff;
+#X restore 814 84 pd stuff;
 #N canvas 565 210 396 300 in 0;
 #X obj 20 20 inlet;
 #X obj 30 138 / 100;
@@ -507,7 +507,7 @@
 #X connect 12 2 10 0;
 #X connect 12 3 13 0;
 #X connect 14 0 5 0;
-#X restore 816 78 pd in;
+#X restore 816 52 pd in;
 #X text 690 531 philipp schmalfuß \, 2019;
 #X obj 100 132 tgl 17 0 \$0-recguitgl \$0-recguitglr rec 2 8 2 10 -233017
 -233017 -1 0 1;
@@ -541,19 +541,41 @@
 -233017 -233017 -1;
 #X obj 164 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 179 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+#X obj 178 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 194 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+#X obj 193 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 209 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+#X obj 208 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 222 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+#X obj 223 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 239 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+#X obj 238 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 120 132 hsl 133 17 0 127 0 0 \$0-opensl \$0-openr empty... 3
+#N canvas 328 344 450 300 init 0;
+#X obj 133 38 loadbang;
+#X obj 160 182 s \$0-set;
+#X msg 82 83 args 0;
+#X obj 82 106 pdcontrol;
+#X obj 133 61 t b b;
+#X obj 82 130 route bang;
+#X msg 160 99 1 2 3 4 5 6 7 8;
+#X connect 0 0 4 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 2 0;
+#X connect 4 1 6 0;
+#X connect 5 1 1 0;
+#X connect 6 0 1 0;
+#X restore 814 108 pd init;
+#X obj 253 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+-233017 -233017 -1;
+#X obj 268 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+-233017 -233017 -1;
+#X obj 272 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
+-233017 -233017 -1;
+#X obj 120 132 hsl 166 17 0 127 0 0 \$0-opensl \$0-openr empty... 3
 7 2 10 -233017 -233017 -1 0 1;
-#X obj 229 141 cnv 3 3 3 empty \$0-filelength 00:00 0 2 2 10 -233017
+#X obj 263 141 cnv 3 3 3 empty \$0-filelength 00:00 0 2 2 10 -233017
 -1 0;
 #X connect 0 0 9 0;
 #X connect 1 0 10 0;
@@ -606,4 +628,4 @@
 #X connect 40 0 39 0;
 #X connect 41 0 38 0;
 #X connect 44 0 42 0;
-#X coords 0 -1 1 1 155 52 1 100 100;
+#X coords 0 -1 1 1 188 52 1 100 100;

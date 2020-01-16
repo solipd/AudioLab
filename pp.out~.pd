@@ -537,12 +537,21 @@
 7 2 10 -233017 -233017 -1 0 1;
 #X obj 229 141 cnv 3 3 3 empty \$0-filelength 00:00 0 2 2 10 -233017
 -1 0;
-#N canvas 2 54 450 300 init 0;
-#X obj 112 46 loadbang;
-#X obj 112 92 s \$0-set;
+#N canvas 382 178 450 300 init 0;
+#X obj 85 9 loadbang;
+#X obj 112 153 s \$0-set;
 #X obj 112 69 pack 1 2;
-#X connect 0 0 2 0;
+#X msg 34 54 args 0;
+#X obj 34 77 pdcontrol;
+#X obj 85 32 t b b;
+#X obj 34 101 route bang;
+#X connect 0 0 5 0;
 #X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X connect 5 1 2 0;
+#X connect 6 1 1 0;
 #X restore 757 112 pd init;
 #X connect 0 0 10 0;
 #X connect 1 0 11 0;
