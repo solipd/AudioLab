@@ -125,7 +125,7 @@ label Preset:Default \; \$1-smoothr 0;
 1 \; \$1-presetr label Preset:Extreme \; \$1-smoothr 0;
 #X msg 749 429 \; \$1-threshold-compr -42 \; \$1-threshold-expr -42
 \; \$1-attackr 0 \; \$1-decayr 0 \; \$1-compressr 100 \; \$1-expandr
-50 \; \$1-gainr 25 \; \$1-drywetr 80 \; \$1-sensr 0 \; \$1-modusr 0
+0 \; \$1-gainr 25 \; \$1-drywetr 80 \; \$1-sensr 0 \; \$1-modusr 0
 \; \$1-presetr label Preset:Distortion \; \$1-smoothr 0;
 #X connect 0 0 28 0;
 #X connect 1 0 30 0;
@@ -748,7 +748,7 @@ compression expansion gain dry/wet lookahead smooth;
 #X connect 16 10 12 0;
 #X connect 19 0 16 0;
 #X restore 608 103 pd in;
-#N canvas 50 60 515 205 \$0-dynamics~ 0;
+#N canvas 50 60 515 205 \$0-dynamics~ 1;
 #N canvas 98 116 835 445 mask 0;
 #X obj 100 100 cnv 15 509 199 empty empty empty 20 12 0 14 -262144
 -66577 0;

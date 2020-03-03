@@ -1,4 +1,4 @@
-#N canvas 424 173 918 514 10;
+#N canvas 308 179 918 514 10;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
 8 2 10 -233017 -233017 -1 0 1;
 #X obj 302 86 inlet~;
@@ -734,7 +734,7 @@ label Preset:Default \; \$1-smoothr 0;
 1 \; \$1-presetr label Preset:Extreme \; \$1-smoothr 0;
 #X msg 749 429 \; \$1-threshold-compr -42 \; \$1-threshold-expr -42
 \; \$1-attackr 0 \; \$1-decayr 0 \; \$1-compressr 100 \; \$1-expandr
-50 \; \$1-gainr 25 \; \$1-drywetr 80 \; \$1-sensr 0 \; \$1-modusr 0
+0 \; \$1-gainr 25 \; \$1-drywetr 80 \; \$1-sensr 0 \; \$1-modusr 0
 \; \$1-presetr label Preset:Distortion \; \$1-smoothr 0;
 #X connect 0 0 28 0;
 #X connect 1 0 30 0;

@@ -1,11 +1,11 @@
-#N struct 1403-template float x float y float c float s float th float
-stretch array 1403-plus 1403-template-y array 1403-minus 1403-template-y
+#N struct 1107-template float x float y float c float s float th float
+stretch array 1107-plus 1107-template-y array 1107-minus 1107-template-y
 ;
-#N struct 1403-template-y float y;
-#N struct 1404-template float x float y float c float s float th float
-stretch array 1404-plus 1404-template-y array 1404-minus 1404-template-y
+#N struct 1107-template-y float y;
+#N struct 1108-template float x float y float c float s float th float
+stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
 ;
-#N struct 1404-template-y float y;
+#N struct 1108-template-y float y;
 #N canvas 386 181 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -2071,7 +2071,7 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 #X obj 96 355 != 0;
 #X obj 96 378 s \$0-playbacktglr;
 #X obj 69 331 s \$0-recordr;
-#X obj 122 426 s \$0-stoptglr;
+#X obj 123 443 s \$0-stoptglr;
 #X obj 149 249 != 0;
 #X obj 149 270 s \$0-freezer;
 #X obj 176 294 s \$0-speedr;
@@ -2088,7 +2088,6 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 #X obj 390 210 s \$0-positionr;
 #X obj 390 192 / 100;
 #X obj 579 221 s \$0-open-sf;
-#X obj 122 405 sel 1;
 #X obj 579 199 symbol;
 #N canvas 196 182 728 433 set 0;
 #X obj 344 50 inlet;
@@ -2312,8 +2311,10 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 loop phaselock blocksize overlap position% set random-phase open;
 #X obj 436 171 s \$0-randomphasetglr;
 #X obj 436 148 != 0;
-#X connect 0 0 25 0;
-#X connect 0 0 27 0;
+#X obj 123 397 t b;
+#X msg 123 417 0;
+#X connect 0 0 24 0;
+#X connect 0 0 26 0;
 #X connect 1 0 4 0;
 #X connect 2 0 3 0;
 #X connect 6 0 7 0;
@@ -2322,25 +2323,26 @@ loop phaselock blocksize overlap position% set random-phase open;
 #X connect 17 0 16 0;
 #X connect 18 0 15 0;
 #X connect 20 0 19 0;
-#X connect 22 0 5 0;
-#X connect 23 0 21 0;
-#X connect 26 0 27 0;
-#X connect 27 0 1 0;
-#X connect 27 1 2 0;
-#X connect 27 2 22 0;
-#X connect 27 3 6 0;
-#X connect 27 4 8 0;
-#X connect 27 5 9 0;
-#X connect 27 6 10 0;
-#X connect 27 7 11 0;
-#X connect 27 8 13 0;
-#X connect 27 9 18 0;
-#X connect 27 10 17 0;
-#X connect 27 11 20 0;
-#X connect 27 12 24 0;
-#X connect 27 13 29 0;
-#X connect 27 14 23 0;
-#X connect 29 0 28 0;
+#X connect 22 0 21 0;
+#X connect 25 0 26 0;
+#X connect 26 0 1 0;
+#X connect 26 1 2 0;
+#X connect 26 2 29 0;
+#X connect 26 3 6 0;
+#X connect 26 4 8 0;
+#X connect 26 5 9 0;
+#X connect 26 6 10 0;
+#X connect 26 7 11 0;
+#X connect 26 8 13 0;
+#X connect 26 9 18 0;
+#X connect 26 10 17 0;
+#X connect 26 11 20 0;
+#X connect 26 12 23 0;
+#X connect 26 13 28 0;
+#X connect 26 14 22 0;
+#X connect 28 0 27 0;
+#X connect 29 0 30 0;
+#X connect 30 0 5 0;
 #X restore 497 94 pd in;
 #X text 580 467 philipp schmalfuß \, 2018/19;
 #X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 -233017

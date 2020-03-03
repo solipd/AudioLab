@@ -1,26 +1,26 @@
-#N struct 1070-template float x float y float c float s float th float
-stretch array 1070-plus 1070-template-y array 1070-minus 1070-template-y
+#N struct 1142-template float x float y float c float s float th float
+stretch array 1142-plus 1142-template-y array 1142-minus 1142-template-y
 ;
-#N struct 1070-template-y float y;
-#N struct 1071-template float x float y float c float s float th float
-stretch array 1071-plus 1071-template-y array 1071-minus 1071-template-y
+#N struct 1142-template-y float y;
+#N struct 1143-template float x float y float c float s float th float
+stretch array 1143-plus 1143-template-y array 1143-minus 1143-template-y
 ;
-#N struct 1071-template-y float y;
-#N struct 1073-template float x float y float c float s float th float
-stretch array 1073-plus 1073-template-y array 1073-minus 1073-template-y
+#N struct 1143-template-y float y;
+#N struct 1145-template float x float y float c float s float th float
+stretch array 1145-plus 1145-template-y array 1145-minus 1145-template-y
 ;
-#N struct 1073-template-y float y;
-#N struct 1204-xt float x float y;
-#N struct 1204-yt float x float y;
-#N struct 1212-template float x float y float c float s float th float
-stretch array 1212-plus 1212-template-y array 1212-minus 1212-template-y
+#N struct 1145-template-y float y;
+#N struct 1276-xt float x float y;
+#N struct 1276-yt float x float y;
+#N struct 1284-template float x float y float c float s float th float
+stretch array 1284-plus 1284-template-y array 1284-minus 1284-template-y
 ;
-#N struct 1212-template-y float y;
-#N struct 1213-template float x float y float c float s float th float
-stretch array 1213-plus 1213-template-y array 1213-minus 1213-template-y
+#N struct 1284-template-y float y;
+#N struct 1285-template float x float y float c float s float th float
+stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 ;
-#N struct 1213-template-y float y;
-#N canvas 333 54 812 712 10;
+#N struct 1285-template-y float y;
+#N canvas 333 57 812 710 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
@@ -143,7 +143,7 @@ stretch array 1213-plus 1213-template-y array 1213-minus 1213-template-y
 #X text 427 302 mid-side panning;
 #X obj 253 793 pp.dynamics-st~;
 #A saved;
-#X obj 252 1662 pp.out-8~;
+#X obj 220 1662 pp.out-8~;
 #A saved;
 #X text 429 1571 mic. input;
 #X text 431 1616 stereo output & soundfile recorder;

@@ -13,12 +13,10 @@
 #X obj 606 302 r \$0-panmod;
 #N canvas 186 269 494 300 in 0;
 #X obj 31 56 inlet;
-#X obj 31 181 s \$0-distancer;
-#X obj 202 181 s \$0-pitchmodr;
-#X obj 294 180 s \$0-panmodr;
-#X obj 123 181 s \$0-ampmodr;
-#X obj 31 127 route distance amp-mod pitch-mod pan-mod damping;
-#X obj 376 181 s \$0-dampingr;
+#X obj 110 171 s \$0-pitchmodr;
+#X obj 202 170 s \$0-panmodr;
+#X obj 31 171 s \$0-ampmodr;
+#X obj 284 171 s \$0-dampingr;
 #N canvas 698 546 200 251 route 0;
 #X obj 20 20 inlet;
 #X obj 30 60 route save recall;
@@ -127,14 +125,14 @@
 #X connect 19 0 20 1;
 #X connect 20 0 6 0;
 #X restore 109 104 pd recall;
+#X obj 31 127 route amp-mod pitch-mod pan-mod damping;
 #X connect 0 0 5 0;
 #X connect 0 0 7 0;
-#X connect 5 0 1 0;
-#X connect 5 1 4 0;
-#X connect 5 2 2 0;
-#X connect 5 3 3 0;
-#X connect 5 4 6 0;
-#X connect 8 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 3 0;
+#X connect 7 1 1 0;
+#X connect 7 2 2 0;
+#X connect 7 3 4 0;
 #X restore 814 54 pd in;
 #N canvas 370 196 600 343 stuff 0;
 #X obj 90 69 loadbang;
@@ -164,7 +162,7 @@
 #X obj 469 132 / 100;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
 8 2 10 -233017 -233017 -1 0 1;
-#N canvas 50 88 230 149 \$0-doppler 1;
+#N canvas 50 90 230 149 \$0-doppler 1;
 #N canvas 515 97 714 345 mask 0;
 #X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 -262144
 -66577 0;
