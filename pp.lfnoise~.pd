@@ -1,7 +1,7 @@
 #N canvas 547 73 705 658 10;
 #X obj 223 253 wrap~;
 #X obj 173 281 samphold~;
-#N canvas 3 50 450 545 rand~ 0;
+#N canvas 3 57 450 545 rand~ 0;
 #X obj 207 133 noise~;
 #X obj 208 162 samphold~;
 #X obj 276 191 rzero_rev~;
@@ -84,14 +84,14 @@
 #X connect 18 0 20 0;
 #X connect 19 0 20 0;
 #X restore 461 217 pd stuff;
-#N canvas 50 82 200 215 \$0-randLFO 1;
+#N canvas 50 87 200 215 \$0-randLFO 0;
 #N canvas 81 69 450 409 mask 0;
 #X obj 50 40 cnv 15 189 204 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X obj 189 70 nbx 4 12 -1e+08 1e+08 0 0 \$0-freq \$0-freqr empty 41
-8 2 10 -262144 -1 -1 0 256;
+8 2 10 -262144 -1 -1 0.289942 256;
 #X obj 59 70 hsl 124 12 0 1 0 0 \$0-fgui \$0-fguir Frequency(hz) -2
--6 2 10 -262144 -1 -1 0 1;
+-6 2 10 -262144 -1 -1 2094 1;
 #N canvas 436 142 450 300 map 0;
 #X obj 124 65 pow 2;
 #X obj 125 143 outlet;
@@ -117,9 +117,9 @@
 #X obj 262 87 i;
 #X msg -4 109 set \$1;
 #X obj 189 120 nbx 4 12 0 1e+13 0 0 \$0-lop \$0-lopr empty 41 8 2 10
--262144 -1 -1 0 256;
+-262144 -1 -1 100 256;
 #X obj 59 120 hsl 124 12 0 100 0 0 \$0-smgui \$0-smguir Smooth -2 -6
-2 10 -262144 -1 -1 0 1;
+2 10 -262144 -1 -1 12300 1;
 #X msg -14 274 set \$1;
 #X obj 229 225 cnv 10 10 10 empty empty -1 0 5 2 10 -262144 -66577
 0;
@@ -135,7 +135,15 @@
 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-scope 441 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#A 0 -0.0674107 -0.0651513 -0.0629493 -0.0607677 -0.0586061 -0.0567985
+-0.0547185 -0.0526577 -0.0506274 -0.0486493 -0.0466894 -0.0447477 -0.0428625
+-0.041001 -0.0391567 -0.0376042 -0.0358373 -0.0340867 -0.0323523 -0.0306755
+-0.0290175 -0.0273747 -0.0257711 -0.0242033 -0.022871 -0.0213299 -0.0198477
+-0.0183795 -0.0169249 -0.0155106 -0.0141274 -0.0127569 -0.0114082 -0.0102929
+-0.00900307 -0.00772512 -0.00648892 -0.00527914 -0.00408065 -0.00290544
+-0.0017739 -0.000652788 0.000299923 0.00136883 0.00241585 0.00345315
+0.00446562 0.00543888 0.00640317 0.00735857 0.00826277 0.00902894 0.00991514
+0.0107748 0.0115997 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -146,9 +154,7 @@
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0;
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 440 -1 168 90 1 0 0;
 #X restore 57 145 graph;
 #X obj 56 133 cnv 10 100 10 empty empty empty 20 12 0 14 -262144 -66577
@@ -444,27 +450,6 @@
 #X connect 6 3 7 0;
 #X connect 7 0 8 0;
 #X restore 465 101 pd in;
-#N canvas 290 219 450 300 unit-bipol 0;
-#X obj 128 25 inlet~;
-#X obj 180 77 *~ 0.5;
-#X obj 180 100 +~ 0.5;
-#X obj 180 155 *~;
-#X obj 129 223 outlet~;
-#X obj 258 48 r \$0-unibi;
-#X obj 128 147 *~ 1;
-#X obj 258 89 == 0;
-#X obj 293 89 != 0;
-#X connect 0 0 6 0;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 5 0 7 0;
-#X connect 5 0 8 0;
-#X connect 6 0 4 0;
-#X connect 7 0 6 1;
-#X connect 8 0 3 1;
-#X restore 292 449 pd unit-bipol;
 #N canvas 530 399 318 306 lop 0;
 #X obj 29 24 inlet~;
 #X obj 166 21 inlet~;
@@ -512,11 +497,32 @@
 #X obj 382 301 loadbang;
 #X msg 381 323 100;
 #X text 545 621 philipp schmalfuß \, 2018/19;
+#N canvas 290 219 450 300 uni-bipol 0;
+#X obj 128 25 inlet~;
+#X obj 180 77 *~ 0.5;
+#X obj 180 100 +~ 0.5;
+#X obj 180 155 *~;
+#X obj 129 223 outlet~;
+#X obj 258 48 r \$0-unibi;
+#X obj 128 147 *~ 1;
+#X obj 258 89 == 0;
+#X obj 293 89 != 0;
+#X connect 0 0 6 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 0 4 0;
+#X connect 7 0 6 1;
+#X connect 8 0 3 1;
+#X restore 292 449 pd uni-bipol;
 #X connect 0 0 1 1;
-#X connect 1 0 24 0;
+#X connect 1 0 23 0;
 #X connect 2 0 1 0;
 #X connect 4 0 5 0;
-#X connect 4 0 28 0;
+#X connect 4 0 27 0;
 #X connect 5 0 2 0;
 #X connect 5 0 8 0;
 #X connect 6 0 4 1;
@@ -526,19 +532,19 @@
 #X connect 10 0 14 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
-#X connect 13 0 25 0;
+#X connect 13 0 24 0;
 #X connect 14 0 8 1;
 #X connect 18 0 22 0;
 #X connect 20 0 19 0;
-#X connect 23 0 3 0;
-#X connect 23 0 21 0;
-#X connect 24 0 23 0;
-#X connect 25 0 26 0;
-#X connect 25 1 26 1;
-#X connect 26 0 29 0;
-#X connect 27 0 28 1;
-#X connect 28 0 24 1;
-#X connect 29 0 27 0;
-#X connect 30 0 31 0;
-#X connect 31 0 27 0;
+#X connect 23 0 32 0;
+#X connect 24 0 25 0;
+#X connect 24 1 25 1;
+#X connect 25 0 28 0;
+#X connect 26 0 27 1;
+#X connect 27 0 23 1;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 26 0;
+#X connect 32 0 3 0;
+#X connect 32 0 21 0;
 #X coords 0 -1 1 1 100 33 1 100 100;

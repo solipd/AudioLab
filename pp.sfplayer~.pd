@@ -1,11 +1,11 @@
-#N struct 1007-template float x float y float c float s float th float
-stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y
+#N struct 1030-template float x float y float c float s float th float
+stretch array 1030-plus 1030-template-y array 1030-minus 1030-template-y
 ;
-#N struct 1007-template-y float y;
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 1030-template-y float y;
+#N struct 1031-template float x float y float c float s float th float
+stretch array 1031-plus 1031-template-y array 1031-minus 1031-template-y
 ;
-#N struct 1008-template-y float y;
+#N struct 1031-template-y float y;
 #N canvas 534 138 591 448 10;
 #N canvas 564 180 751 540 open 0;
 #X obj 272 251 soundfiler;
