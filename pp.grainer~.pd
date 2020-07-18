@@ -1,7 +1,7 @@
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
+#N struct 1300-template float x float y float c float s float th float
+stretch array 1300-plus 1300-template-y array 1300-minus 1300-template-y
 ;
-#N struct 1008-template-y float y;
+#N struct 1300-template-y float y;
 #N canvas 92 112 629 549 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -18,17 +18,17 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 44 142 s \$0-postionguir;
 #X obj 152 315 r \$0-trigger-speed;
 #X obj 152 337 * 128;
-#X obj 139 399 * -1;
-#X obj 147 420 pack;
-#X msg 147 442 range \$1 \$2;
-#X obj 147 464 s \$0-sizer;
+#X obj 139 457 * -1;
+#X obj 147 478 pack;
+#X msg 147 500 range \$1 \$2;
+#X obj 147 531 s \$0-sizer;
 #X obj 43 166 s \$0-positionr;
-#X obj 225 369 r \$0-size;
-#X obj 207 396 <;
-#X obj 253 402 f;
-#X obj 152 370 t f f f f;
-#X obj 207 418 sel 1;
-#X obj 253 445 s \$0-size;
+#X obj 225 427 r \$0-size;
+#X obj 207 454 <;
+#X obj 253 460 f;
+#X obj 152 428 t f f f f;
+#X obj 207 476 sel 1;
+#X obj 253 503 s \$0-size;
 #X obj 28 187 s \$0-random-positionr;
 #X obj 496 401 s \$0-playguicnv;
 #X obj 461 325 sel 0 1;
@@ -139,12 +139,17 @@ of max. active grains);
 #X obj 463 461 t b;
 #X obj 463 514 symbol \$0-sf;
 #X obj 559 466 t b a;
+#X obj 152 398 spigot;
+#X obj 196 340 r \$0-int_triggeronoff;
+#X obj 196 363 t f f;
+#X obj 8 407 sel 0;
+#X msg 8 430 range -1e+06 1e+06;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
 #X connect 3 0 75 0;
 #X connect 5 0 6 0;
-#X connect 6 0 15 0;
+#X connect 6 0 83 0;
 #X connect 7 0 8 0;
 #X connect 8 0 9 0;
 #X connect 9 0 10 0;
@@ -223,6 +228,12 @@ of max. active grains);
 #X connect 81 0 76 0;
 #X connect 82 0 81 0;
 #X connect 82 1 81 1;
+#X connect 83 0 15 0;
+#X connect 84 0 85 0;
+#X connect 85 0 86 0;
+#X connect 85 1 83 1;
+#X connect 86 0 87 0;
+#X connect 87 0 10 0;
 #X restore 435 255 pd stuff;
 #X obj 100 348 s \$0-trigger;
 #X obj 100 169 r \$0-int_triggeronoff;
@@ -1161,7 +1172,7 @@ is redundant;
 #X restore 435 234 pd open-sf;
 #X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 1
 8 2 10 -233017 -233017 -1 0 1;
-#N canvas 681 173 540 340 \$0-grainer~ 0;
+#N canvas 50 60 540 340 \$0-grainer~ 0;
 #N canvas 252 125 841 473 mask 0;
 #X obj 100 100 cnv 15 520 320 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -1186,10 +1197,10 @@ empty 17 7 2 10 -228856 -1 -1 0 1;
 #X obj 3 336 s \$0-position;
 #X obj 284 281 nbx 8 12 0 44345.5 0 0 \$0-random-position \$0-random-positionr
 Random-Position(ms) 70 7 2 10 -262144 -1 -1 0 256;
-#X obj 115 295 nbx 5 12 -6400 6400 0 0 \$0-size \$0-sizer Grainsize(ms)
-69 7 2 10 -262144 -1 -1 100 256;
+#X obj 115 295 nbx 5 12 -1e+06 1e+06 0 0 \$0-size \$0-sizer Grainsize(ms)
+69 7 2 10 -262144 -1 -1 0 256;
 #X obj 142 265 nbx 4 12 1 1e+37 0 0 \$0-trigger-speed \$0-trigger-speedr
-Grain-Distance(ms) 42 7 2 10 -262144 -1 -1 50 256;
+Grain-Distance(ms) 42 7 2 10 -262144 -1 -1 172 256;
 #X obj 284 296 nbx 5 12 0 1e+11 0 0 \$0-random-size \$0-random-sizer
 Random-Grainsize(ms) 70 7 2 10 -262144 -1 -1 0 256;
 #X obj 284 266 nbx 4 12 0 1e+37 0 0 \$0-random-trigger-speed \$0-random-trigger-speedr
@@ -1242,7 +1253,7 @@ Playback-Speed 0 -11 2 10 -262144 -1 -1 100 256;
 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-window 1024 float 3;
-#A 0 0 9.41753e-06 3.76403e-05 8.46982e-05 0.000150591 0.000235319
+#A 0 0 9.41753e-06 3.76403e-05 8.46982e-05 0.000150591 0.000235289
 0.000338793 0.000461131 0.000602275 0.000762194 0.000940949 0.00113848
 0.00135478 0.00158983 0.00184369 0.00211629 0.00240764 0.0027177 0.00304651
 0.00339401 0.00376022 0.00414512 0.00454867 0.00497088 0.00541174 0.00587121
@@ -1403,8 +1414,8 @@ Random-Q 70 6 2 9 -262144 -1 -1 0 256;
 -1 0;
 #X obj 499 375 hsl 92 10 0 1 0 0 \$0-env-shape \$0-env-shaper Shape
 -2 -7 2 10 -262144 -1 -1 4550 1;
-#X obj 109 136 cnv 10 10 10 empty \$0-wfbg ainger-shatter-extract.wav___00:44___44100Hz
-1 5 2 10 -262144 -1 0;
+#X obj 109 136 cnv 10 10 10 empty \$0-wfbg empty.. 1 5 2 10 -262144
+-1 0;
 #X obj 443 121 cnv 15 10 10 empty empty grainer~ 0 0 2 14 -262144 -162280
 0;
 #X obj 540 105 cnv 10 10 10 empty \$0-active-grains 0 0 5 2 11 -262144
@@ -1802,8 +1813,8 @@ int.grain-trigger \$25 \,;
 #X connect 39 0 20 0;
 #X connect 40 0 39 0;
 #X restore 435 318 pd playback+position;
-#X obj 103 118 cnv 10 10 10 empty \$0-namecnv ainger-shatter-extract.wav
-0 5 2 10 -233017 -1 0;
+#X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 -233017
+-1 0;
 #N canvas 689 58 450 300 init 0;
 #X obj 196 22 loadbang;
 #X obj 201 86 f \$0;
