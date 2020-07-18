@@ -230,17 +230,17 @@ highshelf allpass;
 #X connect 64 0 26 0;
 #X connect 65 0 26 0;
 #X restore 557 170 pd stuff;
-#N canvas 50 90 230 135 \$0-filter 0;
+#N canvas 50 90 230 135 \$0-filter 1;
 #N canvas 166 352 714 345 mask 0;
 #X obj 100 100 cnv 15 219 129 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #X obj 110 127 hradio 11 1 0 9 \$0-filtertype \$0-filtertyper Lowpass
 105 6 2 10 -262144 -1 -1 0;
 #X obj 112 155 hsl 128 12 0 135.076 0 0 \$0-fgui \$0-fguir Frequency
--2 -6 2 10 -262144 -1 -1 6332 1;
+-2 -6 2 10 -262144 -1 -1 9504 1;
 #X obj 246 155 nbx 5 12 0 1e+17 0 0 \$0-freq \$0-freqr hz 47 7 2 10
--262144 -1 -1 400 256;
-#N canvas 3 52 450 300 map 0;
+-262144 -1 -1 2807 256;
+#N canvas 3 57 450 300 map 0;
 #X obj 43 26 inlet;
 #X obj 192 54 inlet;
 #X obj 94 160 outlet;
@@ -267,26 +267,30 @@ highshelf allpass;
 #X connect 11 1 4 0;
 #X restore 49 153 pd map;
 #X obj 112 181 hsl 128 12 0 1 0 0 \$0-qgui \$0-qguir Q -2 -7 2 10 -262144
--1 -1 0 1;
+-1 -1 4384 1;
 #X obj 246 181 nbx 5 12 -99 100 0 0 \$0-q \$0-qr empty 47 7 2 10 -262144
--1 -1 0 256;
-#N canvas 3 52 450 300 map 0;
+-1 -1 2.85997 256;
+#N canvas 3 57 450 300 map 0;
 #X obj 94 33 inlet;
-#X obj 192 56 inlet;
+#X obj 192 33 inlet;
 #X obj 94 160 outlet;
-#X obj 192 127 outlet;
-#X msg 192 102 set \$1;
+#X obj 192 155 outlet;
+#X msg 192 130 set \$1;
 #X msg 94 140 set \$1;
 #X obj 23 153 s \$0-q;
 #X obj 94 79 * 24;
 #X obj 94 56 pow 2;
+#X obj 192 68 / 24;
+#X obj 192 91 sqrt;
 #X connect 0 0 8 0;
-#X connect 1 0 4 0;
+#X connect 1 0 9 0;
 #X connect 4 0 3 0;
 #X connect 5 0 2 0;
 #X connect 7 0 5 0;
 #X connect 7 0 6 0;
 #X connect 8 0 7 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 0;
 #X restore 49 179 pd map;
 #X obj 112 209 hsl 128 12 -24 24 0 0 \$0-ggui \$0-gguir Gain -2 -7
 2 10 -166441 -1 -1 6350 1;
