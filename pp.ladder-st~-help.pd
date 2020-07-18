@@ -1,0 +1,121 @@
+#N struct 1259-xt float x float y;
+#N struct 1259-yt float x float y;
+#N canvas 121 302 857 308 10;
+#X obj 390 248 pp.out~;
+#A saved;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 537 82 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 397 outlet;
+#X floatatom 86 94 5 0 0 0 - - -;
+#X msg 86 114 frequency \$1;
+#X text 127 95 filter frequency in hz;
+#X floatatom 117 154 5 0 0 0 - - -;
+#X msg 117 174 q \$1;
+#X msg 152 251 lowpass;
+#X msg 152 271 highpass;
+#X text 159 233 filtertype;
+#X obj 155 368 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 155 367 pd save&recall;
+#X text 153 174 filter resonance;
+#X msg 152 291 reson;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 10 0 0 0;
+#X connect 12 0 0 0;
+#X restore 537 82 pd control-messages;
+#X text 10 116 Inlets:;
+#X text 10 193 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.ladder-st~ 0 0 2 16 -233017
+-262144 0;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 14 14 http://www.willpirkle.com/Downloads/AN-4VirtualAnalogFilters.2.0.pdf
+;
+#X text 14 56 https://www.native-instruments.com/fileadmin/ni_media/downloads/pdf/VAFilterDesign_1.1.1.pdf
+;
+#X restore 5 282 pd references;
+#X text 10 62 Creation arguments:;
+#X floatatom 480 17 5 0 0 0 - - -;
+#X obj 480 37 sig~;
+#X floatatom 529 36 5 0 0 0 - - -;
+#X obj 529 56 sig~;
+#X text 516 18 filter frequency(hz);
+#X text 551 124 <-- click to open GUI;
+#X obj 491 191 pp.spectrum~;
+#X text 652 204 <-- click to analyze;
+#X text 15 82 \$1: filtertype (lowpass \, highpass \, reson) \, default:
+lowpass;
+#N canvas 925 317 420 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 48 lowpass \, frequency 2190 \, q 2.71654 \,;
+#X connect 0 0 1 0;
+#X restore 537 148 pd message-out;
+#X text 565 39 Q;
+#X text 15 36 "Moog" 4th Order Ladder Filter;
+#X obj 427 52 noise~;
+#X obj 389 110 pp.ladder-st~ lowpass;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 389 26 noise~;
+#X text 68 219 3:message;
+#X text 68 115 1:(~)signal left;
+#X text 68 193 1:(~)filtered signal left;
+#X text 68 206 2:(~)filtered signal right;
+#X text 68 127 2:(~)signal right;
+#X text 68 140 3:(~)frequency;
+#X text 68 153 4:(~)filter-q;
+#X text 68 166 5:control-messages;
+#X text 269 12 !!!cpu-heavy!!!;
+#X connect 3 0 23 4;
+#X connect 10 0 11 0;
+#X connect 11 0 23 2;
+#X connect 12 0 13 0;
+#X connect 13 0 23 3;
+#X connect 22 0 23 1;
+#X connect 23 0 0 0;
+#X connect 23 1 0 1;
+#X connect 23 1 16 0;
+#X connect 23 2 19 0;
+#X connect 24 0 23 0;

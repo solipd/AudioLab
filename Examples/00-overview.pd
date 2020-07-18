@@ -1,41 +1,41 @@
-#N struct 1142-template float x float y float c float s float th float
-stretch array 1142-plus 1142-template-y array 1142-minus 1142-template-y
+#N struct 1277-template float x float y float c float s float th float
+stretch array 1277-plus 1277-template-y array 1277-minus 1277-template-y
 ;
-#N struct 1142-template-y float y;
-#N struct 1143-template float x float y float c float s float th float
-stretch array 1143-plus 1143-template-y array 1143-minus 1143-template-y
+#N struct 1277-template-y float y;
+#N struct 1278-template float x float y float c float s float th float
+stretch array 1278-plus 1278-template-y array 1278-minus 1278-template-y
 ;
-#N struct 1143-template-y float y;
-#N struct 1145-template float x float y float c float s float th float
-stretch array 1145-plus 1145-template-y array 1145-minus 1145-template-y
+#N struct 1278-template-y float y;
+#N struct 1280-template float x float y float c float s float th float
+stretch array 1280-plus 1280-template-y array 1280-minus 1280-template-y
 ;
-#N struct 1145-template-y float y;
-#N struct 1276-xt float x float y;
-#N struct 1276-yt float x float y;
-#N struct 1284-template float x float y float c float s float th float
-stretch array 1284-plus 1284-template-y array 1284-minus 1284-template-y
+#N struct 1280-template-y float y;
+#N struct 1411-xt float x float y;
+#N struct 1411-yt float x float y;
+#N struct 1419-template float x float y float c float s float th float
+stretch array 1419-plus 1419-template-y array 1419-minus 1419-template-y
 ;
-#N struct 1284-template-y float y;
-#N struct 1285-template float x float y float c float s float th float
-stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
+#N struct 1419-template-y float y;
+#N struct 1420-template float x float y float c float s float th float
+stretch array 1420-plus 1420-template-y array 1420-minus 1420-template-y
 ;
-#N struct 1285-template-y float y;
+#N struct 1420-template-y float y;
 #N canvas 333 57 812 710 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
 #X obj 231 124 pp.grainer~;
 #A saved;
-#X obj 69 794 pp.dynamics~;
+#X obj 69 847 pp.dynamics~;
 #A saved;
-#X obj 33 1290 pp.fft-gate~;
+#X obj 33 1340 pp.fft-gate~;
 #A saved;
-#X obj 253 1819 pp.spectrum~;
-#X obj 253 1597 pp.out~;
+#X obj 253 1869 pp.spectrum~;
+#X obj 253 1647 pp.out~;
 #A saved;
-#X obj 34 1330 pp.fft-pitchshift~;
+#X obj 34 1380 pp.fft-pitchshift~;
 #A saved;
-#X obj 229 1291 pp.fft-gate-st~;
+#X obj 229 1341 pp.fft-gate-st~;
 #A saved;
 #X obj 256 248 pp.pan~;
 #A saved;
@@ -49,53 +49,53 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 #A saved;
 #X obj 69 617 pp.pitchshift~ 50;
 #A saved;
-#X obj 34 1246 pp.fft-split~;
+#X obj 34 1296 pp.fft-split~;
 #A saved;
-#X obj 229 1246 pp.fft-split-st~;
+#X obj 229 1296 pp.fft-split-st~;
 #A saved;
 #X obj 254 700 pp.vcfilter-st~;
 #A saved;
 #X obj 69 702 pp.vcfilter~;
 #A saved;
-#X obj 230 1331 pp.fft-pitchshift-st~;
+#X obj 230 1381 pp.fft-pitchshift-st~;
 #A saved;
-#X obj 34 1193 pp.fft-block~;
+#X obj 34 1243 pp.fft-block~;
 #A saved;
-#X obj 229 1193 pp.fft-block-st~;
+#X obj 229 1243 pp.fft-block-st~;
 #A saved;
-#X obj 34 1417 pp.fft-timbre~;
+#X obj 34 1467 pp.fft-timbre~;
 #A saved;
-#X obj 229 1418 pp.fft-timbre-st~;
+#X obj 229 1468 pp.fft-timbre-st~;
 #A saved;
-#X obj 69 835 pp.env~;
+#X obj 69 888 pp.env~;
 #A saved;
 #X obj 255 343 pp.spat8~;
 #A saved;
 #X obj 255 387 pp.doppler~;
 #A saved;
-#X obj 229 1458 pp.fft-partconv-st~;
+#X obj 229 1508 pp.fft-partconv-st~;
 #A saved;
-#X obj 309 1775 pp.lfnoise~;
+#X obj 309 1825 pp.lfnoise~;
 #A saved;
-#X obj 33 1458 pp.fft-partconv~;
+#X obj 33 1508 pp.fft-partconv~;
 #A saved;
-#X obj 253 835 pp.env-st~;
+#X obj 253 888 pp.env-st~;
 #A saved;
-#X obj 277 1553 pp.in~;
+#X obj 277 1603 pp.in~;
 #A saved;
 #X text 16 62 Soundfile processing;
 #X text 21 531 Effects;
 #X text 260 553 stereo;
 #X text 74 552 mono;
-#X text 15 1142 Spectral processing;
-#X text 37 1173 mono;
-#X text 237 1174 stereo;
-#X text 36 1549 Misc.;
-#X obj 253 883 pp.graindelay~;
+#X text 15 1192 Spectral processing;
+#X text 37 1223 mono;
+#X text 237 1224 stereo;
+#X text 36 1599 Misc.;
+#X obj 253 936 pp.graindelay~;
 #A saved;
-#X obj 253 930 pp.rev~;
+#X obj 253 983 pp.rev~;
 #A saved;
-#X obj 423 -6 cnv 15 450 1900 empty empty empty 20 12 0 14 -233017
+#X obj 423 -6 cnv 15 450 2200 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X obj -2 46 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -103,7 +103,7 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 0;
 #X obj -2 526 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj -1 1133 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -1 1183 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 85 variable-speed soundfile player;
 #X text 428 128 granular sampler;
@@ -111,20 +111,20 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 #X text 428 257 constant power panning;
 #X text 428 580 frequency shifting;
 #X text 429 617 pitch shifting;
-#X text 430 798 compressor/expander;
-#X text 430 844 simple envelope follower;
-#X text 431 889 granular delay;
-#X text 428 1197 audio block delay;
-#X text 429 1248 spectral splitter;
-#X text 429 1296 spectral gate;
-#X text 430 1336 pvoc based pitchshifter;
-#X text 429 1420 spectral bin-reordering;
-#X obj -1 1527 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X text 430 851 compressor/expander;
+#X text 430 897 simple envelope follower;
+#X text 431 942 granular delay;
+#X text 428 1247 audio block delay;
+#X text 429 1298 spectral splitter;
+#X text 429 1346 spectral gate;
+#X text 430 1386 pvoc based pitchshifter;
+#X text 429 1470 spectral bin-reordering;
+#X obj -1 1577 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 429 347 8-channel distance based amplitude panning;
-#X text 429 1742 samplewise delay;
-#X text 428 1784 low frequency noise generator;
-#X text 429 1830 spectrum analyser;
+#X text 429 1792 samplewise delay;
+#X text 428 1834 low frequency noise generator;
+#X text 429 1880 spectrum analyser;
 #X text 429 707 signal controlled filter (lowpass \, highpass \, resonant)
 ;
 #X obj 69 659 pp.eqfilter~;
@@ -141,50 +141,50 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 #X obj 255 295 pp.midside~;
 #A saved;
 #X text 427 302 mid-side panning;
-#X obj 253 793 pp.dynamics-st~;
+#X obj 253 846 pp.dynamics-st~;
 #A saved;
-#X obj 220 1662 pp.out-8~;
+#X obj 220 1712 pp.out-8~;
 #A saved;
-#X text 429 1571 mic. input;
-#X text 431 1616 stereo output & soundfile recorder;
-#X text 429 1676 8 channel output & soundfile recorder;
+#X text 429 1621 mic. input;
+#X text 431 1666 stereo output & soundfile recorder;
+#X text 429 1726 8 channel output & soundfile recorder;
 #X obj 624 5 declare -path ..;
-#X text 429 936 fdn-reverberator based on [rev3~];
-#X obj 69 748 pp.clop~;
+#X text 429 989 fdn-reverberator based on [rev3~];
+#X obj 69 801 pp.clop~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 254 746 pp.clop-st~;
+#X obj 254 799 pp.clop-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 429 752 experimental comb-lop-filter;
-#X obj 69 1072 pp.shepphaser~;
+#X text 429 805 experimental comb-lop-filter;
+#X obj 69 1125 pp.shepphaser~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 432 986 multipurpose twisted delay-thing;
-#X text 430 1082 shepard tone-like phaser effect;
-#X text 430 1471 partitioned low latency convolution;
-#X obj 301 1731 pp.sdel-st~;
+#X text 432 1039 multipurpose twisted delay-thing;
+#X text 430 1135 shepard tone-like phaser effect;
+#X text 430 1510 partitioned low latency convolution;
+#X obj 301 1781 pp.sdel-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 174 1732 pp.sdel~;
+#X obj 174 1782 pp.sdel~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 253 1072 pp.shepphaser-st~;
+#X obj 253 1125 pp.shepphaser-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
@@ -197,13 +197,13 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 233 977 pp.twisted-delays~ 6 100;
+#X obj 233 1030 pp.twisted-delays~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 432 1032 a nice reverberator;
+#X text 432 1085 a nice reverberator;
 #X obj 255 478 pp.spacer~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
@@ -212,29 +212,45 @@ stretch array 1285-plus 1285-template-y array 1285-minus 1285-template-y
 \; empty_slot \;;
 #X text 428 479 like pp.pan~ + pp.doppler~ \, but with addition outlets
 for "wet" signals;
-#X obj 25 1023 pp.twisted-delays2~ 6 100;
+#X obj 25 1076 pp.twisted-delays2~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 223 1023 pp.twisted-delays2-st~ 6 100;
+#X obj 223 1076 pp.twisted-delays2-st~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
 #X text 18 234 Spatialization;
-#X obj 33 1374 pp.fft-freeze~;
+#X obj 33 1424 pp.fft-freeze~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 230 1373 pp.fft-freeze-st~;
+#X obj 230 1423 pp.fft-freeze-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 429 1380 spectral freezer;
+#X text 429 1430 spectral freezer;
+#X obj 69 749 pp.ladder~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 254 749 pp.ladder-st~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 512 763 !!!cpu-heavy!!!;
+#X text 428 744 "moog" style 4th order ladder filter (lowpass \, highpass
+\, resonant);
+#X text 480 1531 !!!experimental!!!;
