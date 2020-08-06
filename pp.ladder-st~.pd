@@ -140,7 +140,6 @@
 #X text 168 545 hip;
 #X text 233 544 bp;
 #X obj 170 468 -~;
-#X obj 170 491 *~ 0.25;
 #X obj 219 31 inlet~;
 #X obj 302 29 inlet~;
 #X obj 230 466 -~;
@@ -152,24 +151,23 @@
 #X connect 6 0 13 0;
 #X connect 7 0 1 0;
 #X connect 8 0 9 0;
-#X connect 8 0 24 0;
+#X connect 8 0 23 0;
 #X connect 9 0 20 1;
 #X connect 9 0 2 0;
-#X connect 9 0 24 1;
+#X connect 9 0 23 1;
 #X connect 10 0 14 0;
 #X connect 11 0 13 1;
 #X connect 13 0 7 0;
 #X connect 13 0 20 0;
 #X connect 14 0 11 0;
-#X connect 20 0 21 0;
-#X connect 21 0 15 0;
-#X connect 22 0 3 0;
-#X connect 22 0 7 1;
-#X connect 22 0 1 1;
-#X connect 22 0 8 1;
-#X connect 22 0 9 1;
-#X connect 23 0 4 1;
-#X connect 24 0 16 0;
+#X connect 20 0 15 0;
+#X connect 21 0 3 0;
+#X connect 21 0 7 1;
+#X connect 21 0 1 1;
+#X connect 21 0 8 1;
+#X connect 21 0 9 1;
+#X connect 22 0 4 1;
+#X connect 23 0 16 0;
 #X restore 426 258 pd ladder;
 #X f 37;
 #N canvas 1 57 450 584 wrap 0;
@@ -463,9 +461,9 @@
 #X obj 107 108 hradio 11 1 0 3 \$0-filtertype \$0-filtertyper Lowpass
 39 6 2 10 -262144 -1 -1 0;
 #X obj 110 138 hsl 128 12 0 135.076 0 0 \$0-fgui \$0-fguir Frequency
--2 -6 2 10 -262144 -1 -1 9100 1;
-#X obj 244 138 nbx 5 12 8 20050 0 0 \$0-freq \$0-freqr hz 47 7 2 10
--262144 -1 -1 2190 256;
+-2 -6 2 10 -262144 -1 -1 0 1;
+#X obj 244 138 nbx 5 12 0 20050 0 0 \$0-freq \$0-freqr hz 47 7 2 10
+-262144 -1 -1 0 256;
 #N canvas 1 57 450 300 map 0;
 #X obj 103 37 inlet;
 #X obj 192 54 inlet;
@@ -489,9 +487,9 @@
 #X connect 10 0 5 0;
 #X restore 47 136 pd map;
 #X obj 110 164 hsl 128 12 0 5 0 0 \$0-qgui \$0-qguir Q -2 -7 2 10 -262144
--1 -1 6900 1;
+-1 -1 0 1;
 #X obj 244 164 nbx 5 12 -99 100 0 0 \$0-q \$0-qr empty 47 7 2 10 -262144
--1 -1 2.71654 256;
+-1 -1 0 256;
 #X obj 239 113 cnv 10 10 10 empty empty ladder~ 0 5 2 14 -262144 -162280
 0;
 #X msg 47 162 set \$1;
@@ -738,7 +736,6 @@
 #X text 168 545 hip;
 #X text 233 544 bp;
 #X obj 170 468 -~;
-#X obj 170 491 *~ 0.25;
 #X obj 219 31 inlet~;
 #X obj 302 29 inlet~;
 #X obj 230 466 -~;
@@ -750,24 +747,23 @@
 #X connect 6 0 13 0;
 #X connect 7 0 1 0;
 #X connect 8 0 9 0;
-#X connect 8 0 24 0;
+#X connect 8 0 23 0;
 #X connect 9 0 20 1;
 #X connect 9 0 2 0;
-#X connect 9 0 24 1;
+#X connect 9 0 23 1;
 #X connect 10 0 14 0;
 #X connect 11 0 13 1;
 #X connect 13 0 7 0;
 #X connect 13 0 20 0;
 #X connect 14 0 11 0;
-#X connect 20 0 21 0;
-#X connect 21 0 15 0;
-#X connect 22 0 3 0;
-#X connect 22 0 7 1;
-#X connect 22 0 1 1;
-#X connect 22 0 8 1;
-#X connect 22 0 9 1;
-#X connect 23 0 4 1;
-#X connect 24 0 16 0;
+#X connect 20 0 15 0;
+#X connect 21 0 3 0;
+#X connect 21 0 7 1;
+#X connect 21 0 1 1;
+#X connect 21 0 8 1;
+#X connect 21 0 9 1;
+#X connect 22 0 4 1;
+#X connect 23 0 16 0;
 #X restore 314 317 pd ladder;
 #X f 37;
 #X obj 330 375 == 0;
