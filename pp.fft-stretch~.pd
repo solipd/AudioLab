@@ -1,11 +1,11 @@
-#N struct 1107-template float x float y float c float s float th float
-stretch array 1107-plus 1107-template-y array 1107-minus 1107-template-y
+#N struct 1062-template float x float y float c float s float th float
+stretch array 1062-plus 1062-template-y array 1062-minus 1062-template-y
 ;
-#N struct 1107-template-y float y;
-#N struct 1108-template float x float y float c float s float th float
-stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
+#N struct 1062-template-y float y;
+#N struct 1063-template float x float y float c float s float th float
+stretch array 1063-plus 1063-template-y array 1063-minus 1063-template-y
 ;
-#N struct 1108-template-y float y;
+#N struct 1063-template-y float y;
 #N canvas 386 181 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -530,7 +530,7 @@ stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
 #X connect 22 1 19 0;
 #X connect 22 2 20 2;
 #X restore 499 131 pd open;
-#N canvas 252 54 1112 712 fft 0;
+#N canvas 252 57 1112 710 fft 0;
 #N canvas 0 50 511 389 normalize 0;
 #X obj 173 313 outlet;
 #X obj 159 208 / 4;
@@ -1542,14 +1542,14 @@ stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
 #X obj 651 154 s \$0-namecnv;
 #X obj 239 236 loadbang;
 #X obj 459 163 loadbang;
-#X obj 459 264 pack \$0 1024 4;
+#X obj 459 293 pack \$0 1024 4;
 #X obj 459 185 t b b b;
 #X obj 502 215 f \$1;
-#X obj 545 215 f \$2;
-#X obj 502 237 sel 0;
-#X obj 553 239 sel 0;
+#X obj 554 214 f \$2;
+#X obj 502 266 sel 0;
+#X obj 553 268 sel 0;
 #X obj 405 98 s pd-\$0-fft-stretch;
-#X msg 459 287 \; \$1-overlap \$3 \; \$1-window-size \$2 \; \$1-transpo
+#X msg 459 316 \; \$1-overlap \$3 \; \$1-window-size \$2 \; \$1-transpo
 0 \; \$1-speedr 100;
 #N canvas 204 66 853 400 normalize 0;
 #X obj 111 128 array max \$0-links;
@@ -1626,6 +1626,26 @@ stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
 #X restore 239 355 pd normalize;
 #X msg 405 71 relocate 530x215+1+1 1x1+50+60 \, vis 1 \, editmode 0
 ;
+#N canvas 3 57 617 375 blocksize 0;
+#X obj 184 76 t f f;
+#X obj 184 212 spigot;
+#X text 249 141 prevent setting blocksizes that are not a power of
+2;
+#X msg 244 244 blocksize is not a power of 2;
+#X obj 184 294 outlet;
+#X obj 244 222 sel 0;
+#X obj 184 54 inlet;
+#X obj 217 122 expr (($f1-1) & $f1) == 0;
+#X obj 244 265 print pp.fft-stretch~;
+#X connect 0 0 1 0;
+#X connect 0 1 7 0;
+#X connect 1 0 4 0;
+#X connect 3 0 8 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 1;
+#X connect 7 0 5 0;
+#X restore 502 239 pd blocksize;
 #X connect 1 0 4 0;
 #X connect 1 0 5 0;
 #X connect 1 1 3 0;
@@ -1660,11 +1680,12 @@ stretch array 1108-plus 1108-template-y array 1108-minus 1108-template-y
 #X connect 29 0 28 0;
 #X connect 29 1 30 0;
 #X connect 29 2 31 0;
-#X connect 30 0 32 0;
+#X connect 30 0 38 0;
 #X connect 31 0 33 0;
 #X connect 32 1 28 1;
 #X connect 33 1 28 2;
 #X connect 37 0 34 0;
+#X connect 38 0 32 0;
 #X restore 499 178 pd stuff;
 #X obj 499 279 outlet;
 #N canvas 436 144 725 588 outlet-message 0;
@@ -2081,10 +2102,10 @@ transposition \$4 \, position \$5 \, position% \$6 \, loop \$7 \, phaselock
 #X obj 256 278 s \$0-looptglr;
 #X obj 306 300 != 0;
 #X obj 306 316 s \$0-lockr;
-#X obj 337 257 s \$0-window-size;
-#X obj 394 297 s \$0-overlap;
-#X obj 394 234 change;
-#X obj 337 234 change;
+#X obj 337 258 s \$0-window-size;
+#X obj 405 312 s \$0-overlap;
+#X obj 405 290 change;
+#X obj 337 210 change;
 #X obj 390 210 s \$0-positionr;
 #X obj 390 192 / 100;
 #X obj 579 221 s \$0-open-sf;
@@ -2313,6 +2334,26 @@ loop phaselock blocksize overlap position% set random-phase open;
 #X obj 436 148 != 0;
 #X obj 123 397 t b;
 #X msg 123 417 0;
+#N canvas 3 57 617 375 blocksize 0;
+#X obj 184 76 t f f;
+#X obj 184 212 spigot;
+#X text 249 141 prevent setting blocksizes that are not a power of
+2;
+#X msg 244 244 blocksize is not a power of 2;
+#X obj 184 294 outlet;
+#X obj 244 222 sel 0;
+#X obj 184 54 inlet;
+#X obj 217 122 expr (($f1-1) & $f1) == 0;
+#X obj 244 265 print pp.fft-stretch~;
+#X connect 0 0 1 0;
+#X connect 0 1 7 0;
+#X connect 1 0 4 0;
+#X connect 3 0 8 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 1;
+#X connect 7 0 5 0;
+#X restore 337 236 pd blocksize;
 #X connect 0 0 24 0;
 #X connect 0 0 26 0;
 #X connect 1 0 4 0;
@@ -2321,7 +2362,7 @@ loop phaselock blocksize overlap position% set random-phase open;
 #X connect 11 0 12 0;
 #X connect 13 0 14 0;
 #X connect 17 0 16 0;
-#X connect 18 0 15 0;
+#X connect 18 0 31 0;
 #X connect 20 0 19 0;
 #X connect 22 0 21 0;
 #X connect 25 0 26 0;
@@ -2343,6 +2384,7 @@ loop phaselock blocksize overlap position% set random-phase open;
 #X connect 28 0 27 0;
 #X connect 29 0 30 0;
 #X connect 30 0 5 0;
+#X connect 31 0 15 0;
 #X restore 497 94 pd in;
 #X text 580 467 philipp schmalfuß \, 2018/19;
 #X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 -233017

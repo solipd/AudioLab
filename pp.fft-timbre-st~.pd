@@ -329,11 +329,7 @@ resize \$1 \; \$2-clean resize \$1;
 #X obj 500 132 sel 0;
 #X msg 405 201 \; \$1-drywetr 100 \; \$1-overlap \$3 \; \$1-window-size
 \$2 \; \$1-gainr 0 \;;
-#N canvas 3 52 617 375 blocksize 0;
-#X obj 214 145 i;
-#X obj 214 120 t f f;
-#X obj 214 166 /;
-#X obj 214 186 == 1;
+#N canvas 3 57 617 375 blocksize 0;
 #X obj 184 76 t f f;
 #X obj 184 212 spigot;
 #X text 249 141 prevent setting blocksizes that are not a power of
@@ -343,20 +339,15 @@ resize \$1 \; \$2-clean resize \$1;
 #X obj 244 222 sel 0;
 #X obj 184 54 inlet;
 #X obj 244 265 print pp.fft-timbre-st~;
-#X obj 214 99 log 2;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 1 1 2 1;
-#X connect 2 0 3 0;
-#X connect 3 0 5 1;
-#X connect 3 0 9 0;
-#X connect 4 0 5 0;
-#X connect 4 1 12 0;
-#X connect 5 0 8 0;
-#X connect 7 0 11 0;
-#X connect 9 0 7 0;
-#X connect 10 0 4 0;
-#X connect 12 0 1 0;
+#X obj 217 122 expr (($f1-1) & $f1) == 0;
+#X connect 0 0 1 0;
+#X connect 0 1 8 0;
+#X connect 1 0 4 0;
+#X connect 3 0 7 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 8 0 1 1;
+#X connect 8 0 5 0;
 #X restore 445 155 pd blocksize;
 #X msg 594 180 relocate 280x270+1+1 1x1+80+80 \, vis 1;
 #X obj 173 68 loadbang;
@@ -862,9 +853,9 @@ resize \$1;
 #X obj 303 177 bng 12 250 50 0 \$0-resetbng \$0-resetbngr Reset 15
 8 2 10 -262144 -262144 -1;
 #X obj 111 205 hsl 120 12 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet
--2 -7 2 10 -262144 -1 -1 0 1;
+-2 -7 2 10 -262144 -1 -1 11900 1;
 #X obj 238 205 nbx 4 12 -1e+37 1e+37 0 0 \$0-drywetgui \$0-drywetguir
-empty 0 -8 2 10 -262144 -1 -1 0 256;
+empty 0 -8 2 10 -262144 -1 -1 100 256;
 #X msg 31 186 set \$1;
 #X obj 303 206 nbx 5 12 -1e+08 1e+08 0 0 \$0-gain \$0-gainr Gain 0
 -7 2 10 -262144 -1 -1 0 256;
@@ -874,7 +865,7 @@ empty 0 -8 2 10 -262144 -1 -1 0 256;
 #X obj 160 148 nbx 5 12 -1e+08 1e+37 0 0 \$0-breakpoint-1 \$0-breakpoint-1r
 Breakpoint-1 0 -7 2 10 -262144 -1 -1 0 256;
 #X obj 294 148 nbx 5 12 -1e+08 1e+37 0 0 \$0-breakpoint-2 \$0-breakpoint-2r
-Breakpoint-2 0 -7 2 10 -262144 -1 -1 0 256;
+Breakpoint-2 0 -7 2 10 -262144 -1 -1 500 256;
 #X obj 244 177 nbx 5 12 -1e+08 1e+08 0 0 \$0-rotate \$0-rotater Rotate
 0 -7 2 10 -262144 -1 -1 0 256;
 #X connect 8 0 10 0;
@@ -891,11 +882,7 @@ Breakpoint-2 0 -7 2 10 -262144 -1 -1 0 256;
 #X obj 224 370 s \$0-overlap;
 #X obj 153 282 change;
 #X obj 224 346 change;
-#N canvas 3 52 617 375 blocksize 0;
-#X obj 214 145 i;
-#X obj 214 120 t f f;
-#X obj 214 166 /;
-#X obj 214 186 == 1;
+#N canvas 3 57 617 375 blocksize 0;
 #X obj 184 76 t f f;
 #X obj 184 212 spigot;
 #X text 249 141 prevent setting blocksizes that are not a power of
@@ -904,21 +891,16 @@ Breakpoint-2 0 -7 2 10 -262144 -1 -1 0 256;
 #X obj 184 294 outlet;
 #X obj 244 222 sel 0;
 #X obj 184 54 inlet;
-#X obj 244 265 print pp.fft-timbre~;
-#X obj 214 99 log 2;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 1 1 2 1;
-#X connect 2 0 3 0;
-#X connect 3 0 5 1;
-#X connect 3 0 9 0;
-#X connect 4 0 5 0;
-#X connect 4 1 12 0;
-#X connect 5 0 8 0;
-#X connect 7 0 11 0;
-#X connect 9 0 7 0;
-#X connect 10 0 4 0;
-#X connect 12 0 1 0;
+#X obj 217 122 expr (($f1-1) & $f1) == 0;
+#X obj 244 265 print pp.fft-timbre-st~;
+#X connect 0 0 1 0;
+#X connect 0 1 7 0;
+#X connect 1 0 4 0;
+#X connect 3 0 8 0;
+#X connect 5 0 3 0;
+#X connect 6 0 0 0;
+#X connect 7 0 1 1;
+#X connect 7 0 5 0;
 #X restore 154 303 pd blocksize;
 #X obj 232 236 s \$0-curve-1r;
 #X obj 276 261 s \$0-curve-2r;
