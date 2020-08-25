@@ -1,0 +1,136 @@
+#N struct 1471-playhead-template float x float y;
+#N struct 1471-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1471-control-template;
+#N struct 1471-control-template float x float y;
+#N struct 1471-bezier-array float x float y float x1 float y1 float
+x2 float y2 array b-array 1471-bezier-template;
+#N struct 1471-bezier-template float x float y;
+#N canvas 84 182 775 460 10;
+#X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.xycurve 0 0 2 16 -233017 -262144
+0;
+#X obj 453 227 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 694 116 593 527 control-messages 0;
+#X obj 44 473 outlet;
+#X obj 114 438 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 114 437 pd save&recall;
+#X msg 44 12 randomize;
+#X msg 123 182 reset;
+#X obj 147 331 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 147 349 compensate-speed \$1;
+#X msg 139 228 0 0 0 \, 1 0.0546875 0.101562 \, 2 0.371094 -0.0195312
+\, 3 0.0195312 -0.683594 \, 4 -0.414062 -0.171875 \, 5 -0.90625 0.128906
+\, 6 0.0664062 0.976562 \, 7 0.785156 0.761719 \, 8 0.921875 -0.394531
+\, 9 0.550781 -0.894531 \, 10 -0.320312 -0.910156 \, 11 -0.984375 -0.300781
+\, 12 -0.644531 0.578125 \,;
+#X text 109 11 randomize points;
+#X text 170 181 clear;
+#X text 168 313 my attempt to compensate speed according to the distance
+traveled. not working properly..;
+#X text 140 208 set points (pointnr \, x coord \, y coord);
+#X msg 69 47 bang;
+#X floatatom 95 80 5 0 100 0 - - -;
+#X obj 95 102 / 100;
+#X floatatom 95 125 5 0 0 0 - - -;
+#X msg 95 147 read \$1;
+#X text 150 146 read from arrays xy (0 \, 1);
+#X text 105 48 draw curve;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 12 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X restore 453 226 pd control-messages;
+#X text 577 287 <-- click to open GUI;
+#X text 10 192 Inlets:;
+#X text 10 246 Outlets:;
+#N canvas 686 449 454 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 44 0 0 0 \,;
+#X connect 0 0 1 0;
+#X restore 564 321 pd message-out;
+#X obj 9 427 cnv 15 82 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 133 281 450 99 references 0;
+#X text 7 11 inspired Megalon's plot-seq:;
+#X text 8 39 https://github.com/megalon/pd-patch-collection;
+#X restore 9 427 pd references;
+#X msg 391 130 read \$1;
+#X msg 391 63 0 \, 1 5000;
+#X obj 391 86 line;
+#X obj 391 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 391 338 5 0 0 0 - - -;
+#X floatatom 448 338 5 0 0 0 - - -;
+#X floatatom 506 339 5 0 0 0 - - -;
+#X text 14 61 Creation arguments: none;
+#X text 66 192 1:control-messages;
+#X text 393 362 x;
+#X text 451 362 y;
+#X text 502 363 total length;
+#X obj 391 40 t b b;
+#X obj 391 274 pp.xycurve;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 35 104 hold "CTRL" and move over the points:;
+#X text 67 275 3:total lenght (when redrawn);
+#X text 67 289 4:(set message)control points coords;
+#X text 431 110 read arrays (0-1);
+#X text 67 246 1: x (-1 \, 1);
+#X text 67 260 2: y (-1 \, 1);
+#X text 35 120 Click;
+#X text 72 120 -> right side: add more points (+);
+#X text 72 136 -> left side: delete points (X);
+#X text 436 40 bang to draw curve;
+#X floatatom 391 109 5 0 0 0 - - -;
+#X connect 3 0 23 0;
+#X connect 10 0 23 0;
+#X connect 11 0 12 0;
+#X connect 12 0 34 0;
+#X connect 13 0 22 0;
+#X connect 22 0 11 0;
+#X connect 22 1 23 0;
+#X connect 23 0 14 0;
+#X connect 23 1 15 0;
+#X connect 23 2 16 0;
+#X connect 23 3 7 0;
+#X connect 34 0 10 0;
