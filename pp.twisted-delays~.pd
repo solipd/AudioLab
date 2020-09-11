@@ -235,10 +235,11 @@
 #X msg 219 128 missing argument for max. delay time;
 #X obj 410 176 f 1;
 #X msg 219 151 missing argument for delay instances;
-#X msg 56 78 \; \$1-feedbackr 90 \; \$1-crossoverr 7000 \; \$1-dampingr
-50 \; \$1-times-curver 0 \; \$1-times-centerr 50 \; \$1-times-sloper
-0 \; \$1-angles-curver -60 \; \$1-angles-sloper -90 \; \$1-angles-centerr
-90 \; \$1-drywetr 100 \; \$1-transition 1000 \;;
+#X msg 56 78 \; \$1-gain 0 \; \$1-feedbackr 90 \; \$1-crossoverr 7000
+\; \$1-dampingr 50 \; \$1-times-curver 0 \; \$1-times-centerr 50 \;
+\$1-times-sloper 0 \; \$1-angles-curver -60 \; \$1-angles-sloper -90
+\; \$1-angles-centerr 90 \; \$1-drywetr 100 \; \$1-transition 100 \;
+;
 #X connect 0 0 10 0;
 #X connect 1 0 36 0;
 #X connect 3 0 4 0;
@@ -324,13 +325,13 @@
 #X obj 100 100 cnv 15 150 100 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-times 1 float 3;
-#A 0 0.5;
-#X coords 0 1 1 0 150 100 1 0 0;
+#X array \$0-times 8 float 3;
+#A 0 50 50 50 50 50 50 50 50;
+#X coords 0 100 8 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
 #X restore 286 129 pd mask;
-#X obj 439 126 cnv 10 10 10 empty \$0-maxdelcnv 1ms 0 5 2 10 -262144
+#X obj 439 126 cnv 10 10 10 empty \$0-maxdelcnv 100ms 0 5 2 10 -262144
 -1 0;
 #X obj 440 220 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
 #X obj 286 112 cnv 10 100 15 empty empty Times 0 5 2 10 -262144 -1
@@ -353,9 +354,9 @@ Curve 33 7 2 10 -262144 -1 -1 0 256;
 #X obj 100 100 cnv 15 150 100 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-angles 1 float 3;
-#A 0 135;
-#X coords 0 180 1 0 150 100 1 0 0;
+#X array \$0-angles 8 float 3;
+#A 0 135 66.8424 59.7479 55.2603 51.915 49.2237 46.9603 45;
+#X coords 0 180 8 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
 #X restore 476 129 pd mask;
@@ -389,7 +390,7 @@ Curve 33 7 2 10 -262144 -1 -1 -60 256;
 #X coords 0 -1 1 1 560 160 2 100 100;
 #X restore 7 7 pd mask;
 #X restore 686 142 pd \$0-twisted-delays~;
-#N canvas 2 54 659 476 dry/wet 0;
+#N canvas 2 57 659 476 dry/wet 0;
 #X obj 53 29 inlet~;
 #X obj 304 19 inlet~;
 #X obj 355 19 inlet~;
@@ -832,36 +833,42 @@ gain \$11 \, transition-time \$12 \, setblock \$13;
 #X obj 617 94 /~ 360;
 #X obj 511 45 inlet~;
 #X text 691 335 philipp schmalfuß \, 2019;
-#N canvas 2 54 450 300 gain 0;
+#N canvas 2 57 681 300 gain 0;
 #X obj 54 62 inlet~;
-#X obj 54 114 *~ 1;
-#X obj 54 167 outlet~;
+#X obj 55 229 outlet~;
 #X obj 113 63 inlet~;
-#X obj 113 115 *~ 1;
-#X obj 113 168 outlet~;
+#X obj 114 230 outlet~;
 #X obj 175 62 inlet~;
-#X obj 175 114 *~ 1;
-#X obj 175 167 outlet~;
+#X obj 176 229 outlet~;
 #X obj 239 63 inlet~;
-#X obj 239 115 *~ 1;
-#X obj 239 168 outlet~;
-#X obj 339 30 r \$0-gain;
-#X obj 339 53 + 100;
-#X obj 339 76 dbtorms;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 7 0 8 0;
+#X obj 240 230 outlet~;
+#X obj 338 32 r \$0-gain;
+#X obj 338 56 + 100;
+#X obj 338 79 dbtorms;
+#X obj 395 78 r \$0-transition;
+#X obj 338 102 pack 0 100;
+#X obj 338 125 line~;
+#X obj 240 177 *~;
+#X obj 176 176 *~;
+#X obj 114 177 *~;
+#X obj 55 176 *~;
+#X connect 0 0 17 0;
+#X connect 2 0 16 0;
+#X connect 4 0 15 0;
+#X connect 6 0 14 0;
+#X connect 8 0 9 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 12 1;
 #X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 10 1;
-#X connect 14 0 7 1;
-#X connect 14 0 4 1;
-#X connect 14 0 1 1;
+#X connect 13 0 14 1;
+#X connect 13 0 15 1;
+#X connect 13 0 16 1;
+#X connect 13 0 17 1;
+#X connect 14 0 7 0;
+#X connect 15 0 5 0;
+#X connect 16 0 3 0;
+#X connect 17 0 1 0;
 #X restore 404 194 pd gain;
 #X f 36;
 #X obj 404 165 pp.twisted-delays~-abs \$0 \$1 \$1 \$2 1;
