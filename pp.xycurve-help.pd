@@ -1,10 +1,10 @@
-#N struct 1471-playhead-template float x float y;
-#N struct 1471-control-array float x float y float x1 float y1 float
-x2 float y2 array c-array 1471-control-template;
-#N struct 1471-control-template float x float y;
-#N struct 1471-bezier-array float x float y float x1 float y1 float
-x2 float y2 array b-array 1471-bezier-template;
-#N struct 1471-bezier-template float x float y;
+#N struct 1035-playhead-template float x float y;
+#N struct 1035-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1035-control-template;
+#N struct 1035-control-template float x float y;
+#N struct 1035-bezier-array float x float y float x1 float y1 float
+x2 float y2 array b-array 1035-bezier-template;
+#N struct 1035-bezier-template float x float y;
 #N canvas 84 182 775 460 10;
 #X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 -233017 -66577
 0;
@@ -57,7 +57,6 @@ with the parrent patch;
 #X text 170 181 clear;
 #X text 168 313 my attempt to compensate speed according to the distance
 traveled. not working properly..;
-#X text 140 208 set points (pointnr \, x coord \, y coord);
 #X msg 69 47 bang;
 #X floatatom 95 80 5 0 100 0 - - -;
 #X obj 95 102 / 100;
@@ -65,17 +64,19 @@ traveled. not working properly..;
 #X msg 95 147 read \$1;
 #X text 150 146 read from arrays xy (0 \, 1);
 #X text 105 48 draw curve;
+#X text 140 208 set points (pointnr \, x coord \, y coord) 34 points
+max.;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 6 0;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
-#X connect 12 0 0 0;
+#X connect 11 0 0 0;
+#X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 0 0;
+#X connect 15 0 0 0;
 #X restore 453 226 pd control-messages;
 #X text 577 287 <-- click to open GUI;
 #X text 10 192 Inlets:;

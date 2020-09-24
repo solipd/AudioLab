@@ -1,29 +1,29 @@
-#N struct 1018-playhead-template float x float y;
-#N struct 1018-control-array float x float y float x1 float y1 float
-x2 float y2 array c-array 1018-control-template;
-#N struct 1018-control-template float x float y;
-#N struct 1018-bezier-array float x float y float x1 float y1 float
-x2 float y2 array b-array 1018-bezier-template;
-#N struct 1018-bezier-template float x float y;
+#N struct 1024-playhead-template float x float y;
+#N struct 1024-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1024-control-template;
+#N struct 1024-control-template float x float y;
+#N struct 1024-bezier-array float x float y float x1 float y1 float
+x2 float y2 array b-array 1024-bezier-template;
+#N struct 1024-bezier-template float x float y;
 #N canvas 234 87 761 622 10;
 #N canvas 68 551 455 147 \$0-control-template 0;
 #X obj 24 44 filledpolygon 0 0 0 -5 0 0 5 5 0 0 -5;
 #X obj 24 15 struct \$0-control-template float x float y;
-#X restore 473 227 pd \$0-control-template;
+#X restore 473 210 pd \$0-control-template;
 #N canvas 798 583 567 184 \$0-control-array 0;
 #X obj 17 20 struct \$0-control-array float x float y float x1 float
 y1 float x2 float y2 array c-array \$0-control-template;
 #X obj 15 67 plot c-array 444 0 0 0 1;
-#X restore 473 205 pd \$0-control-array;
+#X restore 473 188 pd \$0-control-array;
 #N canvas 119 242 455 147 \$0-bezier-template 0;
 #X obj 24 15 struct \$0-bezier-template float x float y;
-#X restore 473 272 pd \$0-bezier-template;
+#X restore 473 255 pd \$0-bezier-template;
 #N canvas 186 396 567 184 \$0-bezier-array 0;
 #X obj 17 20 struct \$0-bezier-array float x float y float x1 float
 y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 15 67 plot b-array 900 1 0 0 1;
-#X restore 473 249 pd \$0-bezier-array;
-#N canvas 217 67 732 661 read 0;
+#X restore 473 232 pd \$0-bezier-array;
+#N canvas 217 67 1057 661 read 0;
 #X obj 168 489 get \$0-control-template x y;
 #X obj 357 444 r \$0-control-array-pointer;
 #X obj 168 469 element \$0-control-array c-array;
@@ -40,17 +40,14 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 168 297 getsize \$0-control-array c-array;
 #X obj 207 253 r \$0-control-array-pointer;
 #X obj 168 273 pointer;
-#X obj 168 552 *;
+#X obj 168 540 *;
 #X obj 168 587 +;
 #X obj 208 591 f;
 #X obj 139 614 f;
 #X obj 139 185 t b b b f b;
 #X obj 168 442 t float float;
-#X obj 168 321 min 14;
 #X obj 230 373 v nr\$0;
 #X obj 186 221 v tr\$0;
-#X obj 342 498 expr fact(nr\$0)/(fact($f1)*fact(nr\$0-$f1))*pow(tr\$0
-\, $f1)*pow(1- tr\$0 \, nr\$0-$f1);
 #X obj 195 564 r \$0-setzeror;
 #X obj 354 556 r \$0-setzeror;
 #X obj 231 223 s \$0-setzeror;
@@ -87,6 +84,11 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 139 50 list trim;
 #X obj 139 71 route 0 1;
 #X obj 220 8 r \$0-speedcompensation;
+#X obj 651 480 symbol \$0-fact;
+#X obj 651 457 loadbang;
+#X obj 342 502 expr $s2[ nr\$0]/($s2[$f1]*$s2[ nr\$0-$f1])*pow( tr\$0
+\, $f1)*pow(1- tr\$0 \, nr\$0-$f1);
+#X obj 168 321 min 34;
 #X connect 0 0 16 0;
 #X connect 0 1 7 0;
 #X connect 1 0 2 1;
@@ -101,48 +103,50 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 8 0 9 0;
 #X connect 9 0 8 1;
 #X connect 9 0 10 1;
-#X connect 10 0 38 0;
-#X connect 10 0 29 1;
-#X connect 11 0 28 0;
-#X connect 12 0 23 0;
-#X connect 13 0 22 0;
+#X connect 10 0 36 0;
+#X connect 10 0 27 1;
+#X connect 11 0 26 0;
+#X connect 12 0 22 0;
+#X connect 13 0 45 0;
 #X connect 14 0 15 1;
 #X connect 15 0 13 0;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 18 0 17 1;
 #X connect 18 0 19 1;
-#X connect 19 0 37 0;
-#X connect 19 0 29 0;
+#X connect 19 0 35 0;
+#X connect 19 0 27 0;
 #X connect 20 0 19 0;
 #X connect 20 1 10 0;
 #X connect 20 2 15 0;
-#X connect 20 3 24 0;
+#X connect 20 3 23 0;
 #X connect 20 4 11 0;
 #X connect 21 0 2 0;
-#X connect 21 1 25 0;
-#X connect 22 0 6 0;
-#X connect 25 0 7 1;
-#X connect 25 0 16 1;
-#X connect 26 0 17 1;
-#X connect 27 0 8 1;
-#X connect 30 0 29 2;
-#X connect 31 0 4 1;
-#X connect 32 0 20 0;
-#X connect 33 0 32 0;
-#X connect 34 0 33 0;
-#X connect 34 1 36 0;
-#X connect 35 0 40 0;
-#X connect 36 0 39 0;
-#X connect 39 0 33 1;
-#X connect 40 0 41 0;
-#X connect 41 0 42 0;
-#X connect 42 0 20 0;
-#X connect 42 1 34 0;
-#X connect 43 0 40 1;
+#X connect 21 1 44 0;
+#X connect 24 0 17 1;
+#X connect 25 0 8 1;
+#X connect 28 0 27 2;
+#X connect 29 0 4 1;
+#X connect 30 0 20 0;
+#X connect 31 0 30 0;
+#X connect 32 0 31 0;
+#X connect 32 1 34 0;
+#X connect 33 0 38 0;
+#X connect 34 0 37 0;
+#X connect 37 0 31 1;
+#X connect 38 0 39 0;
+#X connect 39 0 40 0;
+#X connect 40 0 20 0;
+#X connect 40 1 32 0;
+#X connect 41 0 38 1;
+#X connect 42 0 44 1;
+#X connect 43 0 42 0;
+#X connect 44 0 7 1;
+#X connect 44 0 16 1;
+#X connect 45 0 6 0;
 #X restore 114 383 pd read;
 #X f 14;
-#N canvas 134 57 944 710 draw 0;
+#N canvas 237 57 944 710 draw 0;
 #X obj 374 518 get \$0-control-template x y;
 #X obj 563 477 r \$0-control-array-pointer;
 #X obj 374 498 element \$0-control-array c-array;
@@ -167,7 +171,6 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 405 662 f;
 #X obj 345 686 f;
 #X obj 345 200 t b b b f b;
-#X obj 374 469 t float float;
 #X obj 321 14 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 387 37 5 0 0 0 - - -;
@@ -178,8 +181,6 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 560 628 r \$0-setzerod;
 #X obj 401 636 r \$0-setzerod;
 #X obj 436 400 v nd\$0;
-#X obj 548 570 expr fact(nd\$0)/(fact($f1)*fact(nd\$0-$f1))*pow(td\$0
-\, $f1)*pow(1- td\$0 \, nd\$0-$f1);
 #X obj 321 37 metro 200;
 #N canvas 1 57 450 300 count 0;
 #X obj 93 34 inlet;
@@ -282,6 +283,11 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 321 60 s \$0-drawbez;
 #X obj 208 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
+#X obj 839 524 symbol \$0-fact;
+#X obj 839 501 loadbang;
+#X obj 374 469 t float float;
+#X obj 548 547 expr $s2[ nd\$0]/($s2[$f1]*$s2[ nd\$0-$f1])*pow( td\$0
+\, $f1)*pow(1- td\$0 \, nd\$0-$f1);
 #X connect 0 0 19 0;
 #X connect 0 1 9 0;
 #X connect 1 0 2 1;
@@ -289,7 +295,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 3 0 4 2;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 6 0 24 0;
+#X connect 6 0 47 0;
 #X connect 7 0 6 1;
 #X connect 8 0 5 0;
 #X connect 8 1 14 0;
@@ -298,9 +304,9 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 11 0 10 1;
 #X connect 11 0 12 1;
 #X connect 12 0 4 1;
-#X connect 12 0 39 2;
-#X connect 13 0 29 0;
-#X connect 14 0 33 0;
+#X connect 12 0 37 2;
+#X connect 13 0 28 0;
+#X connect 14 0 32 0;
 #X connect 15 0 8 0;
 #X connect 16 0 17 1;
 #X connect 17 0 15 0;
@@ -310,36 +316,38 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 21 0 20 1;
 #X connect 21 0 22 1;
 #X connect 22 0 4 0;
-#X connect 22 0 39 1;
+#X connect 22 0 37 1;
 #X connect 23 0 22 0;
 #X connect 23 1 12 0;
 #X connect 23 2 17 0;
-#X connect 23 3 28 0;
+#X connect 23 3 27 0;
 #X connect 23 4 13 0;
-#X connect 24 0 2 0;
-#X connect 24 1 34 0;
-#X connect 25 0 35 0;
-#X connect 26 0 35 1;
-#X connect 27 0 23 0;
-#X connect 30 0 6 1;
-#X connect 31 0 10 1;
-#X connect 32 0 20 1;
-#X connect 34 0 9 1;
-#X connect 34 0 19 1;
-#X connect 35 0 45 0;
-#X connect 36 0 38 0;
-#X connect 37 0 42 0;
-#X connect 38 1 27 0;
-#X connect 38 2 39 3;
-#X connect 38 3 3 0;
-#X connect 40 0 41 0;
-#X connect 42 0 40 0;
-#X connect 42 0 39 0;
-#X connect 42 1 36 0;
-#X connect 42 2 39 4;
-#X connect 44 0 35 0;
-#X connect 46 0 42 0;
-#X restore 473 410 pd draw bezier;
+#X connect 24 0 33 0;
+#X connect 25 0 33 1;
+#X connect 26 0 23 0;
+#X connect 29 0 6 1;
+#X connect 30 0 10 1;
+#X connect 31 0 20 1;
+#X connect 33 0 43 0;
+#X connect 34 0 36 0;
+#X connect 35 0 40 0;
+#X connect 36 1 26 0;
+#X connect 36 2 37 3;
+#X connect 36 3 3 0;
+#X connect 38 0 39 0;
+#X connect 40 0 38 0;
+#X connect 40 0 37 0;
+#X connect 40 1 34 0;
+#X connect 40 2 37 4;
+#X connect 42 0 33 0;
+#X connect 44 0 40 0;
+#X connect 45 0 48 1;
+#X connect 46 0 45 0;
+#X connect 47 0 2 0;
+#X connect 47 1 48 0;
+#X connect 48 0 9 1;
+#X connect 48 0 19 1;
+#X restore 473 414 pd draw bezier;
 #N canvas 465 457 451 141 \$0-playhead-template 0;
 #X obj 10 12 struct \$0-playhead-template float x float y;
 #X obj 201 112 drawnumber y 0 -20 0 y:;
@@ -350,7 +358,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 4 0 5 0;
 #X connect 5 0 1 0;
 #X connect 5 0 2 0;
-#X restore 473 294 pd \$0-playhead-template;
+#X restore 473 277 pd \$0-playhead-template;
 #N canvas 66 188 571 485 set 0;
 #X obj 44 281 set \$0-control-template x y;
 #X obj 203 256 element \$0-control-array c-array;
@@ -378,7 +386,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 8 0 3 0;
 #X connect 9 0 8 1;
 #X connect 10 0 8 1;
-#X restore 473 367 pd set controlpoints;
+#X restore 473 346 pd set controlpoints;
 #N canvas 654 293 450 417 randomize 0;
 #X obj 116 125 until;
 #X obj 116 186 t b b f;
@@ -392,36 +400,36 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X msg 154 130 0;
 #X obj 116 101 f;
 #X obj 188 94 + 2;
-#X obj 188 71 random 12;
 #X obj 116 326 pack f f f;
 #X obj 116 349 s \$0-pointslist;
 #X obj 99 35 t b b b b;
 #X obj 116 154 f;
 #X obj 99 67 s \$0-drawbez;
 #X obj 99 10 r \$0-randomize;
-#X connect 0 0 15 0;
+#X obj 188 71 random 12;
+#X connect 0 0 14 0;
 #X connect 1 0 5 0;
 #X connect 1 1 3 0;
-#X connect 1 2 12 2;
-#X connect 2 0 15 1;
+#X connect 1 2 11 2;
+#X connect 2 0 14 1;
 #X connect 3 0 4 0;
-#X connect 4 0 12 1;
+#X connect 4 0 11 1;
 #X connect 5 0 6 0;
-#X connect 6 0 12 0;
-#X connect 7 0 14 0;
-#X connect 8 0 15 1;
+#X connect 6 0 11 0;
+#X connect 7 0 13 0;
+#X connect 8 0 14 1;
 #X connect 9 0 0 0;
 #X connect 10 0 9 1;
-#X connect 11 0 10 0;
-#X connect 12 0 13 0;
-#X connect 14 0 16 0;
-#X connect 14 1 9 0;
-#X connect 14 2 8 0;
-#X connect 14 3 11 0;
-#X connect 15 0 2 0;
-#X connect 15 0 1 0;
-#X connect 17 0 14 0;
-#X restore 473 389 pd randomize;
+#X connect 11 0 12 0;
+#X connect 13 0 15 0;
+#X connect 13 1 9 0;
+#X connect 13 2 8 0;
+#X connect 13 3 17 0;
+#X connect 14 0 2 0;
+#X connect 14 0 1 0;
+#X connect 16 0 13 0;
+#X connect 17 0 10 0;
+#X restore 473 368 pd randomize;
 #N canvas 894 280 450 300 init 0;
 #X obj 100 30 loadbang;
 #X obj 100 99 f \$0;
@@ -433,7 +441,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
-#X restore 473 153 pd init;
+#X restore 473 136 pd init;
 #N canvas 574 173 547 490 setup 0;
 #X obj 107 41 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -491,7 +499,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 22 0 18 0;
 #X connect 23 0 11 0;
 #X connect 24 0 7 0;
-#X restore 473 328 pd setup pointers;
+#X restore 473 311 pd setup pointers;
 #X obj 304 471 r \$0-bezier-length;
 #X obj 472 44 inlet;
 #N canvas 1 57 637 300 in 0;
@@ -763,7 +771,7 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X connect 5 0 4 0;
 #X connect 5 0 2 0;
 #X connect 6 0 7 0;
-#X restore 473 174 pd stuff;
+#X restore 473 157 pd stuff;
 #X obj 114 494 outlet;
 #X obj 195 495 outlet;
 #X obj 114 441 / 256;
@@ -787,39 +795,20 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X obj 442 525 tgl 14 0 \$0-draw-cont \$0-draw-contr Draw_const. 17
 9 2 10 -262144 -1 -1 0 1;
 #N canvas 0 57 1366 711 \$0-graph 0;
-#X scalar 1018-playhead-template 27 219 \;;
-#X scalar 1018-control-array 0 0 0 0 0 0 \; -244 186 \; -200 -214 \;
--92 169 \; 37 -66 \; 237 -222 \; -256 60 \; 160 238 \; 5 -207 \; -63
--11 \; -155 13 \; 27 219 \; \;;
-#X scalar 1018-bezier-array 0 0 0 0 0 0 \; -244 186 \; -239.317 149.36
-\; -234.087 118.818 \; -228.337 93.5145 \; -222.092 72.6829 \; -215.382
-55.6404 \; -208.235 41.7829 \; -200.684 30.5788 \; -192.764 21.5633
-\; -184.513 14.3324 \; -175.973 8.53781 \; -167.189 3.88203 \; -158.208
-0.113314 \; -149.077 -2.97877 \; -139.849 -5.56763 \; -130.572 -7.79366
-\; -121.299 -9.76811 \; -112.08 -11.5766 \; -102.964 -13.2825 \; -93.9993
--14.9298 \; -85.2304 -16.5466 \; -76.7002 -18.1468 \; -68.4478 -19.7336
-\; -60.5088 -21.3008 \; -52.9147 -22.8355 \; -45.6931 -24.3198 \; -38.8667
--25.7319 \; -32.4542 -27.0485 \; -26.4694 -28.2453 \; -20.9218 -29.2987
-\; -15.8165 -30.1862 \; -11.1542 -30.8877 \; -6.9316 -31.3859 \; -3.14169
--31.667 \; 0.226068 -31.7208 \; 3.1854 -31.5414 \; 5.75278 -31.1268
-\; 7.94706 -30.4797 \; 9.78902 -29.6065 \; 11.3011 -28.5183 \; 12.5066
--27.2295 \; 13.4299 -25.7584 \; 14.0952 -24.1265 \; 14.527 -22.3581
-\; 14.7487 -20.48 \; 14.7834 -18.5205 \; 14.6527 -16.5098 \; 14.3765
--14.4785 \; 13.9731 -12.4576 \; 13.4588 -10.478 \; 12.8477 -8.56934
-\; 12.1514 -6.76021 \; 11.3793 -5.07712 \; 10.5382 -3.54415 \; 9.63252
--2.18242 \; 8.66436 -1.00976 \; 7.63348 -0.0401855 \; 6.53752 0.716406
-\; 5.37225 1.25449 \; 4.13179 1.57325 \; 2.80882 1.67665 \; 1.39502
-1.57364 \; -0.118641 1.27814 \; -1.74155 0.80907 \; -3.483 0.190225
-\; -5.35176 -0.549908 \; -7.3557 -1.37831 \; -9.50126 -2.25776 \; -11.7931
--3.14725 \; -14.2335 -4.00235 \; -16.8221 -4.7757 \; -19.5555 -5.4176
-\; -22.4267 -5.87655 \; -25.4246 -6.09989 \; -28.534 -6.03442 \; -31.7353
--5.62718 \; -35.0036 -4.82599 \; -38.3093 -3.58023 \; -41.6173 -1.84147
-\; -44.8872 0.435953 \; -48.0727 3.29428 \; -51.1222 6.77191 \; -53.9782
-10.903 \; -56.5776 15.7171 \; -58.8518 21.2392 \; -60.7262 27.4897
-\; -62.1211 34.4841 \; -62.9509 42.2347 \; -63.1249 50.7499 \; -62.5468
-60.0363 \; -61.115 70.0996 \; -58.7222 80.9464 \; -55.2554 92.5861
-\; -50.5957 105.034 \; -44.6177 118.314 \; -37.1886 132.463 \; -28.1679
-147.535 \; -17.4055 163.604 \; -4.74121 180.773 \; 27 219 \; \;;
+#X scalar 1024-playhead-template 0 0 \;;
+#X scalar 1024-control-array 0 0 0 0 0 0 \; 0 0 \; \;;
+#X scalar 1024-bezier-array 0 0 0 0 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; \;
+;
 #X coords -256 256 256 -256 512 512 2 100 100;
 #X restore 3 4 pd \$0-graph;
 #X obj 59 525 bng 14 250 50 0 \$0-randomize \$0-randomizer Randomize
@@ -839,6 +828,40 @@ y1 float x2 float y2 array b-array \$0-bezier-template;
 #X coords 0 -1 1 1 520 545 2 0 0;
 #X restore 7 5 pd mask;
 #X restore 473 447 pd \$0-xycurve;
+#N canvas 327 225 450 402 factorials 0;
+#X obj 39 123 until;
+#X obj 81 150 + 1;
+#X msg 142 123 1;
+#X obj 73 263 *;
+#X obj 39 264 f 1;
+#X obj 39 188 t b f f, f 17;
+#X obj 39 72 t f b b;
+#X msg 92 118 0;
+#X obj 39 148 f;
+#X obj 88 239 + 1;
+#X obj 39 22 loadbang;
+#X msg 39 45 35;
+#X obj 39 296 tabwrite \$0-fact, f 17;
+#X obj 39 332 array define \$0-fact 35;
+#X connect 0 0 8 0;
+#X connect 1 0 8 1;
+#X connect 2 0 4 1;
+#X connect 3 0 4 1;
+#X connect 4 0 3 0;
+#X connect 4 0 12 0;
+#X connect 5 0 4 0;
+#X connect 5 1 9 0;
+#X connect 5 2 12 1;
+#X connect 6 0 0 0;
+#X connect 6 1 7 0;
+#X connect 6 2 2 0;
+#X connect 7 0 8 1;
+#X connect 8 0 1 0;
+#X connect 8 0 5 0;
+#X connect 9 0 3 1;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
+#X restore 473 392 pd factorials;
 #X connect 4 0 20 0;
 #X connect 4 1 21 0;
 #X connect 11 0 16 0;
