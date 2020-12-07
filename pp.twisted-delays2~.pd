@@ -933,19 +933,19 @@ setblock gain modulation predelay modulation-frequency;
 #X connect 19 0 17 0;
 #X restore 410 191 pd early;
 #X f 13;
-#N canvas 50 60 665 205 \$0-twisted-delays2~ 1;
-#N canvas 45 130 954 485 mask 0;
+#N canvas 39 281 665 205 \$0-twisted-delays2~ 0;
+#N canvas 400 12 954 485 mask 0;
 #X obj 100 100 cnv 15 649 189 empty empty empty 2 2 0 14 -262144 -66577
 0;
 #X obj 218 183 nbx 4 12 0 100 0 0 \$0-damping \$0-dampingr % 41 7 2
-10 -262144 -1 -1 50 256;
+10 -262144 -1 -1 30 256;
 #X obj 112 183 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir Damping
--2 -6 2 10 -262144 -1 -1 4950 1;
+-2 -6 2 10 -262144 -1 -1 2970 1;
 #X msg 46 179 set \$1;
 #X obj 218 158 nbx 5 12 0 20000 0 0 \$0-crossover \$0-crossoverr hz.
-50 7 2 10 -262144 -1 -1 7000 256;
+50 7 2 10 -262144 -1 -1 6000 256;
 #X obj 112 158 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Crossover-Frequency
--2 -6 2 10 -262144 -1 -1 6763 1;
+-2 -6 2 10 -262144 -1 -1 6261 1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
 #X msg 105 180 set \$1;
@@ -965,9 +965,9 @@ setblock gain modulation predelay modulation-frequency;
 #X connect 8 0 3 0;
 #X restore 47 153 pd map;
 #X obj 218 132 nbx 4 12 -1e+37 1e+37 0 0 \$0-feedback \$0-feedbackr
-% 41 7 2 10 -262144 -1 -1 90 256;
+% 41 7 2 10 -262144 -1 -1 96.9697 256;
 #X obj 112 132 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2
--6 2 10 -262144 -1 -1 8910 1;
+-6 2 10 -262144 -1 -1 9600 1;
 #X msg 47 129 set \$1;
 #X obj 371 128 cnv 15 152 122 empty empty empty 20 12 0 14 -128992
 -66577 0;
@@ -975,27 +975,28 @@ setblock gain modulation predelay modulation-frequency;
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-times 8 float 3;
-#A 0 50 50 50 50 50 50 50 50;
-#X coords 0 100 8 0 150 120 1 0 0;
+#X array \$0-times 12 float 3;
+#A 0 106 105.821 104.837 102.525 98.4446 92.1988 83.4209 71.7656 56.9046
+38.5235 16.3196 0;
+#X coords 0 200 12 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
 #X restore 372 129 pd mask;
-#X obj 525 126 cnv 10 10 10 empty \$0-maxdelcnv 100 0 5 2 10 -262144
+#X obj 525 126 cnv 10 10 10 empty \$0-maxdelcnv 200 0 5 2 10 -262144
 -1 0;
 #X obj 526 240 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
 #X obj 372 112 cnv 10 100 15 empty empty Times 0 5 2 10 -262144 -1
 0;
 #X obj 371 259 nbx 3 12 0 100 0 0 \$0-times-center \$0-times-centerr
-Center 33 7 2 10 -262144 -1 -1 50 256;
+Center 33 7 2 10 -262144 -1 -1 24 256;
 #X obj 434 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-slope \$0-times-sloper
-Slope 33 7 2 10 -262144 -1 -1 0 256;
+Slope 33 7 2 10 -262144 -1 -1 58 256;
 #X obj 493 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-curve \$0-times-curver
-Curve 33 7 2 10 -262144 -1 -1 0 256;
-#X obj 166 110 cnv 10 10 10 empty empty twisted-delays2~ 0 5 2 17 -262144
+Curve 33 7 2 10 -262144 -1 -1 17 256;
+#X obj 154 112 cnv 10 10 10 empty empty twisted-delays2~ 0 5 2 17 -262144
 -162280 0;
 #X obj 110 268 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 100 256;
+-262144 -1 -1 37.1859 256;
 #X obj 110 254 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
 0;
 #X obj 564 128 cnv 15 152 122 empty empty empty 20 12 0 14 -128992
@@ -1004,9 +1005,10 @@ Curve 33 7 2 10 -262144 -1 -1 0 256;
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-angles 8 float 3;
-#A 0 135 66.8424 59.7479 55.2603 51.915 49.2237 46.9603 45;
-#X coords 0 180 8 0 150 120 1 0 0;
+#X array \$0-angles 12 float 3;
+#A 0 125.5 75.8606 70.4501 67.0158 64.4499 62.3824 60.6413 59.1317
+57.7957 56.595 55.5029 54.5;
+#X coords 0 180 12 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
 #X restore 565 129 pd mask;
@@ -1020,9 +1022,9 @@ Curve 33 7 2 10 -262144 -1 -1 0 256;
 #X obj 564 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-center \$0-angles-centerr
 Center 33 7 2 10 -262144 -1 -1 90 256;
 #X obj 627 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-slope \$0-angles-sloper
-Slope 33 7 2 10 -262144 -1 -1 -90 256;
+Slope 33 7 2 10 -262144 -1 -1 -71 256;
 #X obj 686 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-curve \$0-angles-curver
-Curve 33 7 2 10 -262144 -1 -1 -60 256;
+Curve 33 7 2 10 -262144 -1 -1 -57 256;
 #X obj 218 268 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 7
 2 10 -262144 -1 -1 0 256;
 #X obj 218 256 cnv 10 10 10 empty empty Gain 0 5 2 10 -262144 -1 0
@@ -1034,25 +1036,25 @@ Curve 33 7 2 10 -262144 -1 -1 -60 256;
 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-early 4 float 3;
-#A 0 1.42763 3.23873 5.2345 7.82312;
-#X coords 0 100 4 0 55 120 1 0 0;
+#A 0 -11.6664 -11.6664 -11.6664 -11.6664;
+#X coords 0 200 4 0 55 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 55 120 1 100 100;
 #X restore 286 130 pd mask;
 #X obj 344 241 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
 #X obj 286 113 cnv 10 60 15 empty empty Early 0 5 2 10 -262144 -1 0
 ;
-#X obj 344 124 cnv 10 10 10 empty \$0-maxdelcnv 100 0 5 2 10 -262144
+#X obj 344 124 cnv 10 10 10 empty \$0-maxdelcnv 200 0 5 2 10 -262144
 -1 0;
-#X obj 218 209 nbx 4 12 0 100 0 0 \$0-predelay \$0-predelayr ms 41
-7 2 10 -262144 -1 -1 0 256;
-#X obj 112 209 hsl 100 12 0 100 0 0 \$0-predgui \$0-predguir Predelay
--2 -6 2 10 -262144 -1 -1 0 1;
+#X obj 218 209 nbx 4 12 0 200 0 0 \$0-predelay \$0-predelayr ms 41
+7 2 10 -262144 -1 -1 30.303 256;
+#X obj 112 209 hsl 100 12 0 200 0 0 \$0-predgui \$0-predguir Predelay
+-2 -6 2 10 -262144 -1 -1 1500 1;
 #X msg 46 205 set \$1;
 #X obj 218 236 nbx 4 12 0 100 0 0 \$0-modulation \$0-modulationr empty
-41 7 2 10 -262144 -1 -1 0.1 256;
+41 7 2 10 -262144 -1 -1 0.0909091 256;
 #X obj 112 236 hsl 100 12 0 1 0 0 \$0-modgui \$0-modguir Modulation
--2 -6 2 10 -262144 -1 -1 990 1;
+-2 -6 2 10 -262144 -1 -1 900 1;
 #X obj 320 340 nbx 4 12 0 100 0 0 \$0-modfreq \$0-modfreqr hz 41 7
 2 10 -262144 -1 -1 0 256;
 #X obj 214 340 hsl 100 12 0 100 0 0 \$0-modfreq \$0-modfreqr Modulation-freq
