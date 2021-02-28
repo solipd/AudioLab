@@ -1,4 +1,7 @@
-#N canvas 257 127 897 337 10;
+#N struct 1006-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1006-control-template;
+#N struct 1006-control-template float x float y float c float n;
+#N canvas 187 186 897 337 10;
 #X obj 3 3 cnv 15 380 320 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 74 120 1:(~)signal;
@@ -72,11 +75,11 @@ with the parrent patch;
 #X restore 539 161 pd control-messages;
 #X obj 392 19 noise~;
 #X obj 421 59 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 4900 1;
 #X floatatom 418 123 5 0 0 0 - - -;
 #X obj 418 143 sig~;
 #X obj 465 15 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 9400 1;
 #X floatatom 464 123 5 0 0 0 - - -;
 #X obj 464 143 sig~;
 #X text 425 105 x;
@@ -102,18 +105,16 @@ with the parrent patch;
 #X text 135 90 default: cos;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 speaker-1 -0.42623 0.909836 \, speaker-2 0.418033 0.909836
-\, speaker-3 -0.909836 0.426229 \, speaker-4 0.901639 0.426229 \, speaker-5
--0.909836 -0.418033 \, speaker-6 0.901639 -0.418033 \, speaker-7 -0.42623
--0.901639 \, speaker-8 0.418033 -0.901639 \, cos \,;
+#X msg 30 60 speaker-1 -0.394445 0.845887 \, speaker-2 0.394443 0.845888
+\, speaker-3 -0.845888 0.394442 \, speaker-4 0.845887 0.394444 \, speaker-5
+-0.845886 -0.394446 \, speaker-6 0.845889 -0.39444 \, speaker-7 -0.394441
+-0.845889 \, speaker-8 0.394446 -0.845886 \, cos \,;
 #X connect 0 0 1 0;
 #X restore 539 225 pd message-out;
 #X obj 391 184 pp.spat8~;
 #A saved;
 #X obj 390 266 pp.out-8~;
 #A saved;
-#X text 552 190 <-- click to open GUI \, switch to editmode to change
-loudspeaker positions;
 #X obj 771 4 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #X obj 777 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
@@ -130,6 +131,7 @@ loudspeaker positions;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
 #X restore 307 301 pd examples;
+#X text 552 190 <-- click to open GUI;
 #X connect 6 0 36 4;
 #X connect 7 0 36 0;
 #X connect 8 0 9 0;
