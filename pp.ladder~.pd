@@ -477,22 +477,22 @@
 #X connect 11 1 13 3;
 #X connect 12 0 11 0;
 #X connect 13 0 6 0;
-#X restore 241 314 pd bang_once.......................................
+#X restore 222 244 pd bang_once.......................................
 ;
-#X obj 309 497 list trim;
-#X msg 228 465 addcomma;
-#X msg 164 472 set;
-#X obj 309 474 list prepend add2;
-#X obj 308 552 outlet;
-#X obj 241 149 r \$0-freq;
-#X obj 342 149 r \$0-q;
-#X obj 544 132 r \$0-filtertype;
-#X obj 544 292 symbol;
-#X msg 544 187 lowpass;
-#X msg 558 208 highpass;
-#X obj 544 166 sel 0 1 2;
-#X obj 240 334 t b a b;
-#X obj 262 420 t b a a;
+#X obj 290 427 list trim;
+#X msg 209 395 addcomma;
+#X msg 145 402 set;
+#X obj 290 404 list prepend add2;
+#X obj 289 482 outlet;
+#X obj 222 79 r \$0-freq;
+#X obj 296 105 r \$0-q;
+#X obj 525 62 r \$0-filtertype;
+#X obj 525 222 symbol;
+#X msg 525 117 lowpass;
+#X msg 539 138 highpass;
+#X obj 525 96 sel 0 1 2;
+#X obj 221 264 t b a b;
+#X obj 243 350 t b a a;
 #N canvas 497 319 297 264 save 0;
 #X obj 48 16 inlet;
 #N canvas 690 259 481 384 collect 0;
@@ -528,11 +528,11 @@
 #X connect 5 0 4 0;
 #X connect 5 1 3 1;
 #X connect 6 0 5 0;
-#X restore 310 444 pd save;
-#X msg 576 232 reson;
-#X obj 402 149 r \$0-clip-func;
-#X obj 468 196 r \$0-sat;
-#X msg 262 393 \$5 \, frequency \$1 \, q \$2 \, saturation \$3 \, func
+#X restore 291 374 pd save;
+#X msg 557 162 reson;
+#X obj 449 28 r \$0-clip-func;
+#X obj 373 126 r \$0-sat;
+#X msg 243 323 \$5 \, frequency \$1 \, q \$2 \, saturation \$3 \, func
 \$4;
 #X connect 0 0 13 0;
 #X connect 1 0 5 0;
@@ -555,22 +555,22 @@
 #X connect 14 1 4 0;
 #X connect 14 2 15 0;
 #X connect 16 0 9 0;
-#X connect 17 0 0 2;
-#X connect 18 0 0 3;
+#X connect 17 0 0 3;
+#X connect 18 0 0 2;
 #X connect 19 0 14 0;
 #X restore 796 406 pd outlet-message;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr Lowpass
 50 8 2 10 -233017 -233017 -1 0 1;
-#N canvas 50 100 235 130 \$0-ladder 0;
+#N canvas 50 100 235 130 \$0-ladder 1;
 #N canvas 124 220 714 345 mask 0;
 #X obj 100 100 cnv 15 219 119 empty empty empty 20 12 0 14 -262144
 -66577 0;
 #X obj 107 108 hradio 11 1 0 3 \$0-filtertype \$0-filtertyper Lowpass
 39 6 2 10 -262144 -1 -1 0;
 #X obj 110 138 hsl 128 12 0 135.076 0 0 \$0-fgui \$0-fguir Frequency
--2 -6 2 10 -262144 -1 -1 7300 1;
+-2 -6 2 10 -262144 -1 -1 5200 1;
 #X obj 244 138 nbx 5 12 0 20050 0 0 \$0-freq \$0-freqr hz 47 7 2 10
--262144 -1 -1 725 256;
+-262144 -1 -1 200 256;
 #N canvas 1 57 450 300 map 0;
 #X obj 103 37 inlet;
 #X obj 192 54 inlet;
@@ -594,16 +594,16 @@
 #X connect 10 0 5 0;
 #X restore 47 136 pd map;
 #X obj 110 165 hsl 128 12 0 5 0 0 \$0-qgui \$0-qguir Q -2 -7 2 10 -262144
--1 -1 9800 1;
+-1 -1 9500 1;
 #X obj 244 165 nbx 5 12 -99 100 0 0 \$0-q \$0-qr empty 47 7 2 10 -262144
--1 -1 3.85827 256;
+-1 -1 3.74016 256;
 #X obj 239 113 cnv 10 10 10 empty empty ladder~ 0 5 2 14 -262144 -162280
 0;
 #X msg 47 163 set \$1;
 #X obj 110 193 hsl 128 12 0 5 0 0 \$0-satgui \$0-satguir Saturation
--2 -7 2 10 -262144 -1 -1 2700 1;
+-2 -7 2 10 -262144 -1 -1 5300 1;
 #X obj 244 193 nbx 5 12 0 100 0 0 \$0-sat \$0-satr empty 47 7 2 10
--262144 -1 -1 1.06299 256;
+-262144 -1 -1 2.08661 256;
 #X msg 47 186 set \$1;
 #X connect 2 0 4 0;
 #X connect 3 0 4 1;
