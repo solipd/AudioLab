@@ -1,0 +1,166 @@
+#N struct 1077-xt float x float y;
+#N struct 1077-yt float x float y;
+#N struct 1077-numbers0 float x float y float n;
+#N struct 1077-numbers1 float x float y float n;
+#N struct 1077-numbers2 float x float y float n;
+#N struct 1077-numbers3 float x float y float n;
+#N struct 1077-numbers4 float x float y float n;
+#N struct 1077-numbers5 float x float y float n;
+#N struct 1077-control-array float x float y array 1077-c-array 1077-control-template
+;
+#N struct 1077-control-template float x float y float c float n;
+#N struct 1077-filter-template float x float y float c float s float
+th array 1077-filter0 1077-template-y array 1077-filter1 1077-template-y
+array 1077-filter2 1077-template-y array 1077-filter3 1077-template-y
+array 1077-filter4 1077-template-y array 1077-filter5 1077-template-y
+array 1077-filter6 1077-template-y;
+#N struct 1077-template-y float y float c;
+#N canvas 213 270 961 308 10;
+#X obj 390 241 pp.out~;
+#A saved;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 537 65 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 341 73 572 632 control-messages 0;
+#X obj 86 582 outlet;
+#X floatatom 102 52 5 0 20000 0 - - -;
+#X text 139 52 filter frequency in hz;
+#X floatatom 122 157 5 0 0 0 - - -;
+#X floatatom 141 208 5 0 120 0 - - -;
+#X obj 186 550 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 731 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 186 549 pd save&recall;
+#X msg 87 125 frequency \$1 \$2;
+#X text 192 127 frequency (\$2) to filter n (\$1);
+#X obj 102 72 t b f;
+#X floatatom 87 13 5 0 5 0 - - -;
+#X msg 122 177 q 1 \$1;
+#X text 168 179 Q to filter 1;
+#X msg 141 228 gain 1 \$1;
+#X text 176 208 db;
+#X text 205 227 gain to filter 1;
+#X text 270 411 filtertype to filter 1;
+#X msg 166 408 filtertype 1 \$1;
+#X msg 166 263 peaking;
+#X msg 180 287 highpass;
+#X msg 198 310 lowpass;
+#X msg 238 356 highshelf;
+#X msg 219 332 lowshelf;
+#X msg 275 378 notch;
+#X obj 87 101 pack;
+#X text 122 10 filter nr. 0-5 (0: orange \, 1 red \, 2 green \, 3 blue
+\, 4 yellow \, 5 pink), f 61;
+#N canvas 743 233 520 295 more 0;
+#X msg 71 74 dbrange \$1;
+#X floatatom 71 52 5 0 120 0 - - -;
+#X text 142 73 visible db-range;
+#X floatatom 90 118 5 10 1000 0 - - -;
+#X msg 90 140 update-rate;
+#X text 129 121 ms;
+#X obj 71 232 outlet;
+#X text 167 140 rate at which the filter is redrawn (default 100ms)
+;
+#X msg 106 189 reset;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 8 0 6 0;
+#X restore 186 472 pd more;
+#X connect 1 0 9 0;
+#X connect 3 0 11 0;
+#X connect 4 0 13 0;
+#X connect 6 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 24 0;
+#X connect 9 1 24 1;
+#X connect 10 0 24 0;
+#X connect 11 0 0 0;
+#X connect 13 0 0 0;
+#X connect 17 0 0 0;
+#X connect 18 0 17 0;
+#X connect 19 0 17 0;
+#X connect 20 0 17 0;
+#X connect 21 0 17 0;
+#X connect 22 0 17 0;
+#X connect 23 0 17 0;
+#X connect 24 0 7 0;
+#X connect 26 0 0 0;
+#X restore 537 65 pd control-messages;
+#X text 69 117 1:(~)signal;
+#X text 11 118 Inlets:;
+#X text 11 153 Outlets:;
+#X text 69 167 2:message;
+#X obj 12 20 cnv 15 10 10 empty empty pp.parameq-st~ 0 0 2 16 -233017
+-262144 0;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 484 150 507 105 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 13 40 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
+#X text 14 8 Filter coefficients are calculated following Robert Bristow-Johnsons
+Audio-EQ-cookbook rezipes:;
+#X text 13 64 stripped-down version of filterplot.mmb: https://github.com/dotmmb/mmb
+;
+#X restore 5 282 pd references;
+#X obj 389 24 noise~;
+#X text 69 153 1:(~)filtered signal;
+#X text 69 132 2:control-messages;
+#N canvas 806 348 432 206 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 47 frequency 0 47.3 \, frequency 1 243.4 \, frequency 2 821.8
+\, frequency 3 2304.7 \, frequency 4 5772.3 \, frequency 5 13361 \,
+q 0 0 \, q 1 0 \, q 2 0 \, q 3 0 \, q 4 0 \, q 5 0 \, gain 0 0 \, gain
+1 0 \, gain 2 0 \, gain 3 0 \, gain 4 0 \, gain 5 0 \, filtertype 0
+lowshelf \, filtertype 1 peaking \, filtertype 2 peaking \, filtertype
+3 peaking \, filtertype 4 peaking \, filtertype 5 highshelf \, dbrange
+24 \,;
+#X connect 0 0 1 0;
+#X restore 537 141 pd message-out;
+#X text 10 71 Creation arguments: none;
+#X text 552 103 <-- click to open GUI \, move the colored rectangles
+to change gain and frequency of the filters ...;
+#X obj 389 93 pp.parameq-st~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 462 25 noise~;
+#X text 36 38 parametric equalizer using biquad;
+#X connect 3 0 17 2;
+#X connect 11 0 17 0;
+#X connect 17 0 0 0;
+#X connect 17 1 0 1;
+#X connect 17 2 14 0;
+#X connect 18 0 17 1;
