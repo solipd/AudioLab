@@ -1,5 +1,5 @@
-#N struct 1240-xt float x float y;
-#N struct 1240-yt float x float y;
+#N struct 1127-xt float x float y;
+#N struct 1127-yt float x float y;
 #N canvas 303 239 857 308 10;
 #X obj 390 248 pp.out~;
 #A saved;
@@ -117,8 +117,9 @@ lowpass;
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
 #X text 15 36 "Moog" 4th Order Ladder Filter;
-#X obj 389 9 noise~;
-#X text 269 12 !!!cpu-heavy!!!;
+#X text 208 9 !!!cpu-heavy!!!;
+#X text 241 25 (better use bob~);
+#X obj 389 9 phasor~ 41;
 #X connect 3 0 27 3;
 #X connect 14 0 15 0;
 #X connect 15 0 27 1;
@@ -128,4 +129,4 @@ lowpass;
 #X connect 27 0 0 1;
 #X connect 27 0 21 0;
 #X connect 27 1 25 0;
-#X connect 29 0 27 0;
+#X connect 31 0 27 0;
