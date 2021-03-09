@@ -1,23 +1,23 @@
-#N struct 1013-xt float x float y;
-#N struct 1013-yt float x float y;
-#N struct 1014-xt float x float y;
-#N struct 1014-yt float x float y;
-#N struct 1014-numbers0 float x float y float n;
-#N struct 1014-numbers1 float x float y float n;
-#N struct 1014-numbers2 float x float y float n;
-#N struct 1014-numbers3 float x float y float n;
-#N struct 1014-numbers4 float x float y float n;
-#N struct 1014-numbers5 float x float y float n;
-#N struct 1014-control-array float x float y array 1014-c-array 1014-control-template
+#N struct 1313-xt float x float y;
+#N struct 1313-yt float x float y;
+#N struct 1314-xt float x float y;
+#N struct 1314-yt float x float y;
+#N struct 1314-numbers0 float x float y float n;
+#N struct 1314-numbers1 float x float y float n;
+#N struct 1314-numbers2 float x float y float n;
+#N struct 1314-numbers3 float x float y float n;
+#N struct 1314-numbers4 float x float y float n;
+#N struct 1314-numbers5 float x float y float n;
+#N struct 1314-control-array float x float y array 1314-c-array 1314-control-template
 ;
-#N struct 1014-control-template float x float y float c float n;
-#N struct 1014-filter-template float x float y float c float s float
-th array 1014-filter0 1014-template-y array 1014-filter1 1014-template-y
-array 1014-filter2 1014-template-y array 1014-filter3 1014-template-y
-array 1014-filter4 1014-template-y array 1014-filter5 1014-template-y
-array 1014-filter6 1014-template-y;
-#N struct 1014-template-y float y float c;
-#N canvas 195 160 978 308 10;
+#N struct 1314-control-template float x float y float c float n;
+#N struct 1314-filter-template float x float y float c float s float
+th array 1314-filter0 1314-template-y array 1314-filter1 1314-template-y
+array 1314-filter2 1314-template-y array 1314-filter3 1314-template-y
+array 1314-filter4 1314-template-y array 1314-filter5 1314-template-y
+array 1314-filter6 1314-template-y;
+#N struct 1314-template-y float y float c;
+#N canvas 200 160 973 309 10;
 #X obj 390 239 pp.out~;
 #A saved;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
@@ -132,8 +132,7 @@ with the parrent patch;
 #X text 13 40 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
 #X text 14 8 Filter coefficients are calculated following Robert Bristow-Johnsons
 Audio-EQ-cookbook rezipes:;
-#X text 13 64 stripped-down version of filterplot.mmb: https://github.com/dotmmb/mmb
-;
+#X text 13 64 filterplot.mmb: https://github.com/dotmmb/mmb;
 #X restore 5 282 pd references;
 #X obj 389 20 noise~;
 #X text 69 149 1:(~)filtered signal;

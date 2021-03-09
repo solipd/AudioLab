@@ -1,20 +1,20 @@
-#N struct 1077-xt float x float y;
-#N struct 1077-yt float x float y;
-#N struct 1077-numbers0 float x float y float n;
-#N struct 1077-numbers1 float x float y float n;
-#N struct 1077-numbers2 float x float y float n;
-#N struct 1077-numbers3 float x float y float n;
-#N struct 1077-numbers4 float x float y float n;
-#N struct 1077-numbers5 float x float y float n;
-#N struct 1077-control-array float x float y array 1077-c-array 1077-control-template
+#N struct 1323-xt float x float y;
+#N struct 1323-yt float x float y;
+#N struct 1323-numbers0 float x float y float n;
+#N struct 1323-numbers1 float x float y float n;
+#N struct 1323-numbers2 float x float y float n;
+#N struct 1323-numbers3 float x float y float n;
+#N struct 1323-numbers4 float x float y float n;
+#N struct 1323-numbers5 float x float y float n;
+#N struct 1323-control-array float x float y array 1323-c-array 1323-control-template
 ;
-#N struct 1077-control-template float x float y float c float n;
-#N struct 1077-filter-template float x float y float c float s float
-th array 1077-filter0 1077-template-y array 1077-filter1 1077-template-y
-array 1077-filter2 1077-template-y array 1077-filter3 1077-template-y
-array 1077-filter4 1077-template-y array 1077-filter5 1077-template-y
-array 1077-filter6 1077-template-y;
-#N struct 1077-template-y float y float c;
+#N struct 1323-control-template float x float y float c float n;
+#N struct 1323-filter-template float x float y float c float s float
+th array 1323-filter0 1323-template-y array 1323-filter1 1323-template-y
+array 1323-filter2 1323-template-y array 1323-filter3 1323-template-y
+array 1323-filter4 1323-template-y array 1323-filter5 1323-template-y
+array 1323-filter6 1323-template-y;
+#N struct 1323-template-y float y float c;
 #N canvas 213 270 961 308 10;
 #X obj 390 241 pp.out~;
 #A saved;
@@ -130,8 +130,7 @@ with the parrent patch;
 #X text 13 40 http://www.musicdsp.org/files/Audio-EQ-Cookbook.txt;
 #X text 14 8 Filter coefficients are calculated following Robert Bristow-Johnsons
 Audio-EQ-cookbook rezipes:;
-#X text 13 64 stripped-down version of filterplot.mmb: https://github.com/dotmmb/mmb
-;
+#X text 13 64 filterplot.mmb: https://github.com/dotmmb/mmb;
 #X restore 5 282 pd references;
 #X obj 389 24 noise~;
 #X text 69 153 1:(~)filtered signal;
