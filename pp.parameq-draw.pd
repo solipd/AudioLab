@@ -923,6 +923,7 @@ has been changed.;
 #X restore 454 123 pd init;
 #X obj 195 180 t b l b;
 #X text 333 449 striped-down version of filterplot.mmb;
+#X text 362 474 https://github.com/dotmmb/mmb;
 #X connect 0 0 11 0;
 #X connect 4 0 5 0;
 #X connect 6 0 7 0;

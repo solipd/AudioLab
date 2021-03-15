@@ -1,24 +1,24 @@
-#N struct 1239-xt float x float y;
-#N struct 1239-yt float x float y;
-#N struct 1239-numbers0 float x float y float n;
-#N struct 1239-numbers1 float x float y float n;
-#N struct 1239-numbers2 float x float y float n;
-#N struct 1239-numbers3 float x float y float n;
-#N struct 1239-numbers4 float x float y float n;
-#N struct 1239-numbers5 float x float y float n;
-#N struct 1239-control-array float x float y array 1239-c-array 1239-control-template
+#N struct 1006-xt float x float y;
+#N struct 1006-yt float x float y;
+#N struct 1006-numbers0 float x float y float n;
+#N struct 1006-numbers1 float x float y float n;
+#N struct 1006-numbers2 float x float y float n;
+#N struct 1006-numbers3 float x float y float n;
+#N struct 1006-numbers4 float x float y float n;
+#N struct 1006-numbers5 float x float y float n;
+#N struct 1006-control-array float x float y array 1006-c-array 1006-control-template
 ;
-#N struct 1239-control-template float x float y float c float n;
-#N struct 1239-filter-template float x float y float c float s float
-th array 1239-filter0 1239-template-y array 1239-filter1 1239-template-y
-array 1239-filter2 1239-template-y array 1239-filter3 1239-template-y
-array 1239-filter4 1239-template-y array 1239-filter5 1239-template-y
-array 1239-filter6 1239-template-y;
-#N struct 1239-template-y float y float c;
+#N struct 1006-control-template float x float y float c float n;
+#N struct 1006-filter-template float x float y float c float s float
+th array 1006-filter0 1006-template-y array 1006-filter1 1006-template-y
+array 1006-filter2 1006-template-y array 1006-filter3 1006-template-y
+array 1006-filter4 1006-template-y array 1006-filter5 1006-template-y
+array 1006-filter6 1006-template-y;
+#N struct 1006-template-y float y float c;
 #N canvas 116 100 915 519 10;
 #X obj 347 185 biquad~;
-#N canvas 70 251 374 268 read&draw 0;
-#N canvas 155 52 940 599 cascade 0;
+#N canvas 70 251 374 268 read&draw 1;
+#N canvas 155 52 940 599 cascade 1;
 #X obj 209 431 list append;
 #X obj 209 403 list;
 #X obj 245 379 t b l;
@@ -135,7 +135,7 @@ has been changed.;
 #X connect 24 0 22 0;
 #X connect 25 0 19 0;
 #X restore 246 203 pd frequencies;
-#N canvas 684 33 681 734 calculate 0;
+#N canvas 507 -4 681 717 calculate 0;
 #X obj 492 -28 inlet;
 #X text 778 390 z-Transform:;
 #X text 827 417 H(z) = b0 + b1*z^-1 + b2*z^-2;
@@ -349,7 +349,8 @@ has been changed.;
 #X connect 9 0 10 0;
 #X connect 11 0 9 0;
 #X restore 454 123 pd init;
-#X text 333 449 striped-down version of filterplot.mmb;
+#X text 327 429 striped-down version of filterplot.mmb;
+#X text 366 451 https://github.com/dotmmb/mmb;
 #X connect 0 0 9 1;
 #X connect 0 0 16 0;
 #X connect 3 0 7 0;
@@ -858,7 +859,7 @@ has been changed.;
 #X connect 102 0 96 0;
 #X connect 103 0 1 1;
 #X restore 634 314 pd stuff;
-#N canvas 146 108 733 370 \$0-parameq 0;
+#N canvas 50 70 733 370 \$0-parameq 0;
 #N canvas 32 57 1033 544 mask 0;
 #X obj 100 100 cnv 15 719 354 empty empty empty 20 12 0 14 -262144
 -66577 0;
@@ -881,51 +882,51 @@ draw_Filter 17 7 2 10 -262144 -1 -1 1 1;
 #X obj 112 432 nbx 1 12 0 5 0 0 \$0-touch-gui \$0-touch-guir empty
 2 -9 2 10 -258699 -1 -1 1 256;
 #N canvas 537 267 450 300 \$0-grid 0;
-#X scalar 1239-xt 1.57974 -150 \;;
-#X scalar 1239-xt 18.9587 -150 \;;
-#X scalar 1239-xt 35.3494 -150 \;;
-#X scalar 1239-xt 49.3265 -150 \;;
-#X scalar 1239-xt 61.4141 -150 \;;
-#X scalar 1239-xt 72.0618 -150 \;;
-#X scalar 1239-xt 81.588 -150 \;;
-#X scalar 1239-xt 90.2181 -150 \;;
-#X scalar 1239-xt 98.1158 -150 \;;
-#X scalar 1239-xt 105.403 -150 \;;
-#X scalar 1239-xt 158.393 -150 \;;
-#X scalar 1239-xt 193.269 -150 \;;
-#X scalar 1239-xt 219.669 -150 \;;
-#X scalar 1239-xt 241.069 -150 \;;
-#X scalar 1239-xt 259.139 -150 \;;
-#X scalar 1239-xt 274.822 -150 \;;
-#X scalar 1239-xt 288.704 -150 \;;
-#X scalar 1239-xt 301.174 -150 \;;
-#X scalar 1239-xt 312.508 -150 \;;
-#X scalar 1239-xt 391.173 -150 \;;
-#X scalar 1239-xt 440.41 -150 \;;
-#X scalar 1239-xt 476.747 -150 \;;
-#X scalar 1239-xt 505.72 -150 \;;
-#X scalar 1239-xt 529.898 -150 \;;
-#X scalar 1239-xt 550.69 -150 \;;
-#X scalar 1239-xt 568.96 -150 \;;
-#X scalar 1239-xt 585.272 -150 \;;
-#X scalar 1239-xt 600.019 -150 \;;
-#X scalar 1239-yt 1 -37.5 \;;
-#X scalar 1239-yt 1 37.5 \;;
-#X scalar 1239-yt 1 -75 \;;
-#X scalar 1239-yt 1 75 \;;
+#X scalar 1006-xt 1.57974 -150 \;;
+#X scalar 1006-xt 18.9587 -150 \;;
+#X scalar 1006-xt 35.3494 -150 \;;
+#X scalar 1006-xt 49.3265 -150 \;;
+#X scalar 1006-xt 61.4141 -150 \;;
+#X scalar 1006-xt 72.0618 -150 \;;
+#X scalar 1006-xt 81.588 -150 \;;
+#X scalar 1006-xt 90.2181 -150 \;;
+#X scalar 1006-xt 98.1158 -150 \;;
+#X scalar 1006-xt 105.403 -150 \;;
+#X scalar 1006-xt 158.393 -150 \;;
+#X scalar 1006-xt 193.269 -150 \;;
+#X scalar 1006-xt 219.669 -150 \;;
+#X scalar 1006-xt 241.069 -150 \;;
+#X scalar 1006-xt 259.139 -150 \;;
+#X scalar 1006-xt 274.822 -150 \;;
+#X scalar 1006-xt 288.704 -150 \;;
+#X scalar 1006-xt 301.174 -150 \;;
+#X scalar 1006-xt 312.508 -150 \;;
+#X scalar 1006-xt 391.173 -150 \;;
+#X scalar 1006-xt 440.41 -150 \;;
+#X scalar 1006-xt 476.747 -150 \;;
+#X scalar 1006-xt 505.72 -150 \;;
+#X scalar 1006-xt 529.898 -150 \;;
+#X scalar 1006-xt 550.69 -150 \;;
+#X scalar 1006-xt 568.96 -150 \;;
+#X scalar 1006-xt 585.272 -150 \;;
+#X scalar 1006-xt 600.019 -150 \;;
+#X scalar 1006-yt 1 -37.5 \;;
+#X scalar 1006-yt 1 37.5 \;;
+#X scalar 1006-yt 1 -75 \;;
+#X scalar 1006-yt 1 75 \;;
 #X coords 0 -150 700 150 700 300 2 100 100;
 #X restore 110 109 pd \$0-grid;
 #N canvas 340 269 450 300 \$0-graph 0;
-#X scalar 1239-numbers0 58.3297 0 0 \;;
-#X scalar 1239-numbers1 174.93 0 0 \;;
-#X scalar 1239-numbers2 291.53 0 0 \;;
-#X scalar 1239-numbers3 408.13 0 0 \;;
-#X scalar 1239-numbers4 524.73 0 0 \;;
-#X scalar 1239-numbers5 641.33 0 0 \;;
-#X scalar 1239-control-array 0 0 \; 58.3297 0 950 0 \; 174.93 0 900
+#X scalar 1006-numbers0 58.3297 0 0 \;;
+#X scalar 1006-numbers1 174.93 0 0 \;;
+#X scalar 1006-numbers2 291.53 0 0 \;;
+#X scalar 1006-numbers3 408.13 0 0 \;;
+#X scalar 1006-numbers4 524.73 0 0 \;;
+#X scalar 1006-numbers5 641.33 0 0 \;;
+#X scalar 1006-control-array 0 0 \; 58.3297 0 950 0 \; 174.93 0 900
 0 \; 291.53 0 70 0 \; 408.13 0 9 0 \; 524.73 0 770 0 \; 641.33 0 707
 0 \; \;;
-#X scalar 1239-filter-template 1 0 900 0 1 \; 0 0 \; 0 0 \; 0 0 \;
+#X scalar 1006-filter-template 1 0 900 0 1 \; 0 0 \; 0 0 \; 0 0 \;
 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
