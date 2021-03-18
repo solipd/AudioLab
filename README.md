@@ -1,6 +1,6 @@
 # AudioLab
 
-A libary of high level Pure Data abstractions with a focus on electroacoustic composition,
+A library of high level Pure Data abstractions with a focus on electroacoustic composition,
 live electronics and sound design.
 
 ## Installation
