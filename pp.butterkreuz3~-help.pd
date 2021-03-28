@@ -1,0 +1,117 @@
+#N struct 1069-xt float x float y;
+#N struct 1069-yt float x float y;
+#N canvas 260 199 852 311 10;
+#X obj 390 248 pp.out~;
+#A saved;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 562 28 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 397 outlet;
+#X floatatom 86 164 5 0 0 0 - - -;
+#X obj 155 368 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 155 367 pd save&recall;
+#X msg 86 184 frequency-1 \$1;
+#X floatatom 125 236 5 0 0 0 - - -;
+#X msg 125 256 frequency-1 \$1;
+#X text 127 165 crossover 1 frequency in hz;
+#X text 162 236 crossover 2 frequency in hz;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X restore 562 28 pd control-messages;
+#X text 68 144 1:(~)signal;
+#X text 10 145 Inlets:;
+#X text 10 195 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.butterkreuz3~ 0 0 2 16 -233017
+-262144 0;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 17 26 Help->Browser->Pure Data/3.audio.examples/H13.butterworth.pd
+;
+#X restore 5 282 pd references;
+#X obj 389 9 noise~;
+#X text 10 77 Creation arguments:;
+#X text 575 68 <-- click to open GUI;
+#X obj 507 198 pp.spectrum~;
+#X text 668 211 <-- click to analyze;
+#N canvas 925 317 420 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 48 frequency-1 1000 \, frequency-2 1500 \,;
+#X connect 0 0 1 0;
+#X restore 562 93 pd message-out;
+#X text 68 160 2:control-messages;
+#X text 68 195 1:(~)low band;
+#X text 68 210 2:(~)mid band;
+#X text 68 225 3:(~)high band;
+#X text 68 240 4:message;
+#X obj 390 128 *~;
+#X obj 446 129 *~;
+#X obj 504 129 *~;
+#X obj 390 168 +~;
+#X obj 405 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 461 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 519 106 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 15 97 \$1: crossover 1 frequency (default: 500hz);
+#X text 15 112 \$2: crossover 2 frequency (default: 2000hz);
+#X text 20 33 3-band crossover filter with a relatively flat magnitude
+response;
+#X obj 389 55 pp.butterkreuz3~ 1000 1500;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X connect 3 0 31 1;
+#X connect 10 0 31 0;
+#X connect 21 0 24 0;
+#X connect 22 0 24 1;
+#X connect 23 0 24 1;
+#X connect 24 0 0 0;
+#X connect 24 0 0 1;
+#X connect 24 0 13 0;
+#X connect 25 0 21 1;
+#X connect 26 0 22 1;
+#X connect 27 0 23 1;
+#X connect 31 0 21 0;
+#X connect 31 1 22 0;
+#X connect 31 2 23 0;
+#X connect 31 3 15 0;

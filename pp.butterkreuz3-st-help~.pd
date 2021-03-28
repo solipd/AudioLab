@@ -1,0 +1,136 @@
+#N struct 1069-xt float x float y;
+#N struct 1069-yt float x float y;
+#N canvas 246 203 850 359 10;
+#X obj 408 292 pp.out~;
+#A saved;
+#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 580 28 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 152 124 552 519 control-messages 0;
+#X obj 86 397 outlet;
+#X floatatom 86 164 5 0 0 0 - - -;
+#X obj 155 368 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 864 246 634 307 save&recall 0;
+#X obj 93 233 outlet;
+#X msg 93 60 0;
+#X msg 125 60 1;
+#X msg 158 60 2;
+#X msg 93 99 save \$1;
+#X text 185 63 ...;
+#X msg 207 60 20;
+#X msg 149 154 0;
+#X msg 181 154 1;
+#X msg 214 154 2;
+#X text 241 157 ...;
+#X msg 263 154 20;
+#X msg 149 193 recall \$1;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved
+with the parrent patch;
+#X connect 1 0 4 0;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 6 0 4 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X restore 155 367 pd save&recall;
+#X msg 86 184 frequency-1 \$1;
+#X floatatom 125 236 5 0 0 0 - - -;
+#X msg 125 256 frequency-1 \$1;
+#X text 127 165 crossover 1 frequency in hz;
+#X text 162 236 crossover 2 frequency in hz;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 0;
+#X restore 580 28 pd control-messages;
+#X text 10 145 Inlets:;
+#X text 10 207 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.butterkreuz3-st~ 0 0 2 16
+-233017 -262144 0;
+#X obj 5 331 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
+0;
+#N canvas 599 176 505 104 references 0;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 17 26 Help->Browser->Pure Data/3.audio.examples/H13.butterworth.pd
+;
+#X restore 5 331 pd references;
+#X obj 407 9 noise~;
+#X text 10 77 Creation arguments:;
+#X text 593 68 <-- click to open GUI;
+#X obj 530 240 pp.spectrum~;
+#X text 691 253 <-- click to analyze;
+#N canvas 925 317 420 180 message-out 0;
+#X obj 20 20 inlet;
+#X msg 20 48 frequency-1 1000 \, frequency-2 1500 \,;
+#X connect 0 0 1 0;
+#X restore 580 93 pd message-out;
+#X obj 408 175 *~;
+#X obj 444 175 *~;
+#X obj 477 174 *~;
+#X obj 408 215 +~;
+#X obj 583 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 619 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 654 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 15 97 \$1: crossover 1 frequency (default: 500hz);
+#X text 15 112 \$2: crossover 2 frequency (default: 2000hz);
+#X text 20 33 3-band crossover filter with a relatively flat magnitude
+response;
+#X obj 407 55 pp.butterkreuz3-st~ 1000 1500;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 493 8 noise~;
+#X obj 511 175 *~;
+#X obj 547 175 *~;
+#X obj 582 174 *~;
+#X obj 512 213 +~;
+#X text 68 207 1:(~)low band left;
+#X text 68 222 2:(~)mid band left;
+#X text 68 237 3:(~)high band left;
+#X text 210 208 4:(~)low band right;
+#X text 210 223 5:(~)mid band right;
+#X text 210 238 6:(~)high band right;
+#X text 68 258 7:message;
+#X text 68 144 1:(~)signal left;
+#X text 68 159 2:(~)signal left;
+#X text 68 174 3:control-messages;
+#X connect 3 0 25 2;
+#X connect 9 0 25 0;
+#X connect 15 0 18 0;
+#X connect 16 0 18 1;
+#X connect 17 0 18 1;
+#X connect 18 0 0 0;
+#X connect 19 0 15 1;
+#X connect 19 0 27 1;
+#X connect 20 0 16 1;
+#X connect 20 0 28 1;
+#X connect 21 0 17 1;
+#X connect 21 0 29 1;
+#X connect 25 0 15 0;
+#X connect 25 1 16 0;
+#X connect 25 2 17 0;
+#X connect 25 3 27 0;
+#X connect 25 4 28 0;
+#X connect 25 5 29 0;
+#X connect 25 6 14 0;
+#X connect 26 0 25 1;
+#X connect 27 0 30 0;
+#X connect 28 0 30 1;
+#X connect 29 0 30 1;
+#X connect 30 0 12 0;
+#X connect 30 0 0 1;
