@@ -1,4 +1,4 @@
-#N canvas 387 125 848 333 10;
+#N canvas 374 138 848 310 10;
 #X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X text 20 120 Inlets:;
@@ -11,11 +11,26 @@
 #X msg 30 60 volume 0 \, set 1 2 3 4 5 6 7 8 \,;
 #X connect 0 0 1 0;
 #X restore 410 212 pd message-out;
-#X obj 591 129 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
+#X text 11 34 8 channel speaker output & soundfile recorder;
+#X text 78 121 1:(~)signal channel 1;
+#X text 78 134 2:(~)signal channel 2;
+#X text 78 148 3:(~)signal channel 3;
+#X text 78 161 4:(~)signal channel 4;
+#X text 78 174 5:(~)signal channel 5;
+#X text 78 187 6:(~)signal channel 6;
+#X text 78 200 7:(~)signal channel 7;
+#X text 78 213 8:(~)signal channel 8;
+#X text 78 227 9:control-messages;
+#X obj 410 152 pp.out-8~;
+#A saved;
+#X text 607 186 <-- click to open savepanel;
+#X text 9 70 Creation arguments: \$1-\$8: output channels (default:
+1 2 3 4 5 6 7 8);
+#X obj 591 128 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 483 477 control-messages 0;
-#X obj 57 438 outlet;
-#X obj 126 401 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 59 476 outlet;
+#X obj 128 439 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
@@ -43,7 +58,7 @@ with the parrent patch;
 #X connect 9 0 12 0;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
-#X restore 126 400 pd save&recall;
+#X restore 128 438 pd save&recall;
 #X floatatom 57 31 5 0 1e+06 0 - - -;
 #X msg 57 55 volume \$1;
 #X text 96 34 db;
@@ -51,19 +66,24 @@ with the parrent patch;
 #X text 145 88 The "set" message resets the channels. This requires
 Pd to restart DSP and so should only be done at setup time \, not while
 audio is being computed., f 51;
-#X obj 115 174 cnv 15 200 200 empty empty empty 20 12 0 14 -233017
+#X obj 118 170 cnv 15 270 240 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 190 205 open savepanel;
-#X msg 154 235 start;
-#X text 190 235 start recording;
-#X msg 159 265 stop;
-#X text 193 264 stop recording;
-#X msg 166 339 bitsize \$1;
-#X msg 166 308 16;
-#X msg 198 307 24;
-#X msg 234 306 32;
+#X msg 154 289 start;
+#X text 190 289 start recording;
+#X msg 159 319 stop;
+#X text 193 318 stop recording;
+#X msg 159 381 bitsize \$1;
+#X msg 159 350 16;
+#X msg 189 350 24;
+#X msg 222 350 32;
 #X msg 142 205 save_as;
 #X text 125 176 record to soundfile (.wav);
+#X msg 151 233 pre;
+#X msg 151 258 post;
+#X text 178 232 set record pre-fader;
+#X text 182 259 set record post-fader (default);
+#X text 225 383 set bitsize (default: 24);
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
@@ -75,21 +95,8 @@ audio is being computed., f 51;
 #X connect 16 0 14 0;
 #X connect 17 0 14 0;
 #X connect 18 0 0 0;
-#X restore 591 129 pd control-messages;
-#X text 11 34 8 channel speaker output & soundfile recorder;
-#X text 78 121 1:(~)signal channel 1;
-#X text 78 134 2:(~)signal channel 2;
-#X text 78 148 3:(~)signal channel 3;
-#X text 78 161 4:(~)signal channel 4;
-#X text 78 174 5:(~)signal channel 5;
-#X text 78 187 6:(~)signal channel 6;
-#X text 78 200 7:(~)signal channel 7;
-#X text 78 213 8:(~)signal channel 8;
-#X text 78 227 9:control-messages;
-#X obj 410 152 pp.out-8~;
-#A saved;
-#X text 607 186 <-- click to open savepanel;
-#X text 9 70 Creation arguments: \$1-\$8: output channels (default:
-1 2 3 4 5 6 7 8);
-#X connect 7 0 18 8;
-#X connect 18 0 5 0;
+#X connect 20 0 0 0;
+#X connect 21 0 0 0;
+#X restore 591 128 pd control-messages;
+#X connect 16 0 5 0;
+#X connect 20 0 16 8;

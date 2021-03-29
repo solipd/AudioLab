@@ -20,8 +20,8 @@
 #X obj 558 129 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 561 87 483 477 control-messages 0;
-#X obj 57 438 outlet;
-#X obj 126 401 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
+#X obj 59 476 outlet;
+#X obj 128 439 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
@@ -49,7 +49,7 @@ with the parrent patch;
 #X connect 9 0 12 0;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
-#X restore 126 400 pd save&recall;
+#X restore 128 438 pd save&recall;
 #X floatatom 57 31 5 0 1e+06 0 - - -;
 #X msg 57 55 volume \$1;
 #X text 96 34 db;
@@ -57,19 +57,24 @@ with the parrent patch;
 #X text 145 88 The "set" message resets the channels. This requires
 Pd to restart DSP and so should only be done at setup time \, not while
 audio is being computed., f 51;
-#X obj 115 174 cnv 15 200 200 empty empty empty 20 12 0 14 -233017
+#X obj 118 170 cnv 15 270 240 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 190 205 open savepanel;
-#X msg 154 235 start;
-#X text 190 235 start recording;
-#X msg 159 265 stop;
-#X text 193 264 stop recording;
-#X msg 166 339 bitsize \$1;
-#X msg 166 308 16;
-#X msg 198 307 24;
-#X msg 234 306 32;
+#X msg 154 289 start;
+#X text 190 289 start recording;
+#X msg 159 319 stop;
+#X text 193 318 stop recording;
+#X msg 159 381 bitsize \$1;
+#X msg 159 350 16;
+#X msg 189 350 24;
+#X msg 222 350 32;
 #X msg 142 205 save_as;
 #X text 125 176 record to soundfile (.wav);
+#X msg 151 233 pre;
+#X msg 151 258 post;
+#X text 178 232 set record pre-fader;
+#X text 182 259 set record post-fader (default);
+#X text 225 383 set bitsize (default: 24);
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
@@ -81,9 +86,11 @@ audio is being computed., f 51;
 #X connect 16 0 14 0;
 #X connect 17 0 14 0;
 #X connect 18 0 0 0;
+#X connect 20 0 0 0;
+#X connect 21 0 0 0;
 #X restore 558 129 pd control-messages;
 #X text 11 34 stereo speaker output & soundfile recorder;
-#X text 566 185 <-- click to open savepanel;
+#X text 570 185 <-- click to open savepanel;
 #X text 20 86 Creation arguments: \$1: first output channel (default:
 1);
 #X text 140 103 \$2: second output channel (default: 2);
