@@ -249,9 +249,9 @@
 #X obj 1018 143 route dsp;
 #X obj 985 165 spigot;
 #X obj 686 415 symbol noname\$0;
-#X obj 478 591 list trim;
-#X obj 478 568 list prepend post;
-#X obj 590 567 r \$0-prepost;
+#X obj 341 586 list trim;
+#X obj 341 563 list prepend post;
+#X obj 453 562 r \$0-prepost;
 #X obj 493 222 symbol noname\$0;
 #X obj 479 498 list prepend 3;
 #X connect 1 0 0 0;
@@ -275,7 +275,7 @@
 #X connect 18 0 19 0;
 #X connect 19 0 20 0;
 #X connect 20 0 1 0;
-#X connect 21 0 53 0;
+#X connect 21 0 89 0;
 #X connect 22 0 28 0;
 #X connect 22 0 35 0;
 #X connect 23 0 27 0;
@@ -530,7 +530,7 @@
 -233017 -233017 -1;
 #X obj 239 134 bng 15 250 50 0 \$0-open \$0-openbng empty 17 7 0 10
 -233017 -233017 -1;
-#X obj 120 132 hsl 133 17 0 127 0 0 \$0-opensl \$0-openr noname1420
+#X obj 120 132 hsl 133 17 0 127 0 0 \$0-opensl \$0-openr noname1004
 3 10 2 10 -233017 -233017 -1 0 1;
 #X obj 229 141 cnv 3 3 3 empty \$0-filelength 00:00 0 2 2 10 -233017
 -1 0;
