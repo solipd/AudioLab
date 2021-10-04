@@ -1,12 +1,12 @@
-#N struct 1147-template float x float y float c float s float th float
-stretch array 1147-plus 1147-template-y array 1147-minus 1147-template-y
+#N struct 1006-template float x float y float c float s float th float
+stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y
 ;
-#N struct 1147-template-y float y;
-#N struct 1148-template float x float y float c float s float th float
-stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
+#N struct 1006-template-y float y;
+#N struct 1007-template float x float y float c float s float th float
+stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y
 ;
-#N struct 1148-template-y float y;
-#N canvas 534 138 591 448 10;
+#N struct 1007-template-y float y;
+#N canvas 534 2 591 448 10;
 #N canvas 564 180 751 540 open 0;
 #X obj 272 251 soundfiler;
 #X obj 465 388 s \$0-samplerate;
@@ -503,7 +503,7 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X restore 349 138 pd stuff;
 #X obj 172 165 inlet~;
 #X obj 350 54 inlet;
-#N canvas 302 57 919 710 playback 0;
+#N canvas 302 2 919 710 playback 0;
 #X obj 304 313 phasor~;
 #X obj 410 510 snapshot~;
 #X obj 304 338 -~ 0.5;
@@ -513,14 +513,13 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X text 372 262 cycles/sec;
 #X text 372 251 convert to;
 #X obj 35 617 tabread4~ \$0-links;
-#X obj 634 441 bang~;
 #X obj 427 368 *~ 10000;
 #X obj 410 389 +~;
 #X obj 317 214 r \$0-samplerate;
 #X obj 302 235 *~;
 #X obj 207 616 tabread4~ \$0-rechts;
 #X obj 303 261 /~ 10000;
-#N canvas 181 54 990 628 onset+phase 0;
+#N canvas 193 2 990 628 onset+phase 0;
 #X obj 123 100 inlet;
 #X obj 149 770 outlet onset;
 #X obj 291 773 outlet phase;
@@ -616,45 +615,45 @@ stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y
 #X text 345 745 convert phase back to range 0-1;
 #X text 321 693 (approximately zero but not exactly because of truncation
 error!;
-#N canvas 2 54 450 300 loop 0;
+#N canvas 838 87 536 369 loop 0;
 #X obj 171 39 inlet;
 #X obj 171 60 t f f;
-#X msg 233 239 0;
-#X obj 255 65 r \$0-samplelenght;
-#X obj 347 205 r \$0-looptgl;
-#X obj 282 110 <=;
-#X obj 282 130 sel 0;
-#X obj 282 153 del 1;
-#X obj 198 241 f;
-#X obj 171 133 sel 0;
-#X obj 171 156 del 1;
-#X obj 171 113 >= 0;
-#X obj 282 260 s \$0-stoptgl;
-#X obj 347 227 != 1;
-#X obj 282 176 t b b;
-#X obj 171 177 t b b;
-#X obj 282 227 spigot 1;
-#X obj 198 269 outlet;
+#X msg 233 253 0;
+#X obj 255 56 r \$0-samplelenght;
+#X obj 347 219 r \$0-looptgl;
+#X obj 282 109 <=;
+#X obj 282 156 sel 0;
+#X obj 198 255 f;
+#X obj 171 159 sel 0;
+#X obj 171 112 >= 0;
+#X obj 282 274 s \$0-stoptgl;
+#X obj 347 241 != 1;
+#X obj 282 190 t b b;
+#X obj 171 191 t b b;
+#X obj 282 241 spigot 1;
+#X obj 198 283 outlet;
+#X obj 171 135 change;
+#X obj 282 134 change;
 #X connect 0 0 1 0;
-#X connect 1 0 11 0;
+#X connect 1 0 9 0;
 #X connect 1 1 5 0;
-#X connect 2 0 17 0;
+#X connect 2 0 15 0;
 #X connect 3 0 5 1;
-#X connect 3 0 8 1;
-#X connect 4 0 13 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 14 0;
-#X connect 8 0 17 0;
-#X connect 9 0 10 0;
-#X connect 10 0 15 0;
-#X connect 11 0 9 0;
-#X connect 13 0 16 1;
-#X connect 14 0 16 0;
-#X connect 14 1 2 0;
-#X connect 15 0 16 0;
-#X connect 15 1 8 0;
-#X connect 16 0 12 0;
+#X connect 3 0 7 1;
+#X connect 4 0 11 0;
+#X connect 5 0 17 0;
+#X connect 6 0 12 0;
+#X connect 7 0 15 0;
+#X connect 8 0 13 0;
+#X connect 9 0 16 0;
+#X connect 11 0 14 1;
+#X connect 12 0 14 0;
+#X connect 12 1 2 0;
+#X connect 13 0 14 0;
+#X connect 13 1 7 0;
+#X connect 14 0 10 0;
+#X connect 16 0 8 0;
+#X connect 17 0 6 0;
 #X restore 539 472 pd loop;
 #X obj 399 456 t f f;
 #X connect 0 0 3 0;
@@ -706,7 +705,7 @@ error!;
 #X obj 698 407 r \$0-playbacktgl;
 #X obj 303 137 +~;
 #X obj 303 81 *~ 0.01;
-#N canvas 1 57 450 300 samplerate 0;
+#N canvas 1 26 450 300 samplerate 0;
 #X obj 230 123 outlet;
 #X obj 230 96 samplerate~;
 #X obj 230 75 r pd-dsp-started;
@@ -722,46 +721,47 @@ error!;
 #X obj 634 469 spigot 0;
 #X obj 303 51 inlet~;
 #X text 349 49 playback speed;
+#X obj 634 392 bang~;
 #X connect 0 0 2 0;
-#X connect 1 0 16 0;
+#X connect 1 0 15 0;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
-#X connect 3 0 11 0;
-#X connect 3 0 14 0;
-#X connect 8 0 21 0;
-#X connect 9 0 43 0;
-#X connect 10 0 11 1;
-#X connect 11 0 1 0;
-#X connect 12 0 13 1;
-#X connect 13 0 15 0;
-#X connect 14 0 20 0;
-#X connect 15 0 0 0;
-#X connect 15 0 38 0;
-#X connect 16 0 14 1;
-#X connect 16 0 8 1;
-#X connect 16 1 0 1;
-#X connect 17 0 18 0;
-#X connect 18 0 34 1;
-#X connect 19 0 17 0;
+#X connect 3 0 10 0;
+#X connect 3 0 13 0;
+#X connect 8 0 20 0;
+#X connect 9 0 10 1;
+#X connect 10 0 1 0;
+#X connect 11 0 12 1;
+#X connect 12 0 14 0;
+#X connect 13 0 19 0;
+#X connect 14 0 0 0;
+#X connect 14 0 37 0;
+#X connect 15 0 13 1;
+#X connect 15 0 8 1;
+#X connect 15 1 0 1;
+#X connect 16 0 17 0;
+#X connect 17 0 33 1;
+#X connect 18 0 16 0;
+#X connect 25 0 26 0;
 #X connect 26 0 27 0;
-#X connect 27 0 28 0;
-#X connect 28 0 25 0;
-#X connect 29 0 25 0;
+#X connect 27 0 24 0;
+#X connect 28 0 24 0;
+#X connect 29 0 30 0;
 #X connect 30 0 31 0;
-#X connect 31 0 32 0;
-#X connect 32 0 43 1;
-#X connect 33 0 43 1;
-#X connect 34 0 13 0;
-#X connect 35 0 34 0;
-#X connect 36 0 37 0;
-#X connect 37 0 38 1;
-#X connect 38 0 10 0;
-#X connect 39 0 8 0;
-#X connect 40 0 39 0;
-#X connect 41 0 14 0;
-#X connect 42 0 41 0;
-#X connect 43 0 1 0;
-#X connect 44 0 35 0;
+#X connect 31 0 42 1;
+#X connect 32 0 42 1;
+#X connect 33 0 12 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
+#X connect 36 0 37 1;
+#X connect 37 0 9 0;
+#X connect 38 0 8 0;
+#X connect 39 0 38 0;
+#X connect 40 0 13 0;
+#X connect 41 0 40 0;
+#X connect 42 0 1 0;
+#X connect 43 0 34 0;
+#X connect 45 0 42 0;
 #X restore 173 193 pd playback;
 #X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 2
 8 2 10 -233017 -233017 -1 0 1;
@@ -894,44 +894,44 @@ error!;
 #X restore 55 196 pd record;
 #X obj 54 167 inlet~;
 #X obj 114 165 inlet~;
-#N canvas 50 60 620 180 \$0-sfplayer~ 0;
+#N canvas 50 29 620 180 \$0-sfplayer~ 1;
 #N canvas 411 112 715 391 maske 0;
 #X obj 0 0 cnv 15 600 168 empty empty empty 20 12 0 14 -262144 -66577
 0;
 #X obj 10 25 bng 16 250 50 0 \$0-op \$0-opr Open 0 -7 2 10 -262144
 -4034 -1;
 #X obj 38 57 tgl 16 0 \$0-stoptgl \$0-stoptglr Stop 0 -7 2 10 -262144
--262144 -1 0 1;
-#X obj 10 57 tgl 16 0 \$0-playbacktgl \$0-playbacktglr Play 0 -7 2
-10 -262144 -262144 -1 0 1;
-#X obj 16 60 cnv 1 1 10 empty \$0-playguicnv empty 20 12 0 14 -128992
+-262144 -1 1 1;
+#X obj 10 57 tgl 16 0 \$0-playbacktgl \$0-playbacktglr Pause 0 -7 2
+10 -262144 -262144 -1 1 1;
+#X obj 16 60 cnv 1 1 10 empty \$0-playguicnv empty 20 12 0 14 -24198
 -262144 0;
-#X obj 17 61 cnv 1 1 8 empty \$0-playguicnv empty 20 12 0 14 -128992
+#X obj 17 61 cnv 1 1 8 empty \$0-playguicnv empty 20 12 0 14 -24198
 -262144 0;
-#X obj 18 62 cnv 1 1 6 empty \$0-playguicnv empty 20 12 0 14 -128992
+#X obj 18 62 cnv 1 1 6 empty \$0-playguicnv empty 20 12 0 14 -24198
 -262144 0;
-#X obj 19 63 cnv 1 1 4 empty \$0-playguicnv empty 20 12 0 14 -128992
+#X obj 19 63 cnv 1 1 4 empty \$0-playguicnv empty 20 12 0 14 -24198
 -262144 0;
-#X obj 20 64 cnv 1 1 2 empty \$0-playguicnv empty 20 12 0 14 -128992
+#X obj 20 64 cnv 1 1 2 empty \$0-playguicnv empty 20 12 0 14 -24198
 -262144 0;
 #X obj 10 91 nbx 4 12 -1e+37 1e+37 0 0 \$0-playbackspeed \$0-playbackspeedr
-Playback-Speed 0 -8 2 10 -262144 -1 -1 100 256;
+Playback-Speed 0 -8 2 10 -262144 -1 -1 -57 256;
 #X obj 49 87 cnv 15 10 15 empty empty % 1 10 2 10 -262144 -1 0;
-#X obj 82 4 cnv 10 10 10 empty \$0-wfbg empty.. 1 5 2 10 -262144 -1
-0;
+#X obj 82 4 cnv 10 10 10 empty \$0-wfbg autumn.wav___00:06___44100Hz___Mono
+1 5 2 10 -262144 -1 0;
 #X obj 10 110 tgl 10 0 \$0-looptgl \$0-looptglr loop 14 6 2 10 -262144
--1 -1 0 1;
+-1 -1 1 1;
 #X obj 82 15 cnv 15 502 122 empty empty empty 20 12 0 14 -128992 -66577
 0;
 #N canvas 641 183 532 272 waveform 0;
 #X obj 0 1 cnv 15 500 119 empty empty empty 3 6 2 10 -228856 -1 0;
-#X obj 1 0 cnv 1 1 120 empty \$0-zeiger empty 20 12 0 14 -258113 -66577
+#X obj 93 0 cnv 1 1 120 empty \$0-zeiger empty 20 12 0 14 -258113 -66577
 0;
 #X obj 0 0 pp.waveform \$0-links 500 60 1 -1 999 1 1 100;
 #X obj 0 60 pp.waveform \$0-rechts 500 60 1 -1 999 1 1 100;
 #X coords 0 -1 1 1 500 120 1 0 0;
 #X restore 83 16 pd waveform;
-#X obj 555 119 cnv 3 3 3 empty \$0-minutes 00:00 1 10 2 10 -228856
+#X obj 555 119 cnv 3 3 3 empty \$0-minutes 00:01 1 10 2 10 -228856
 -1 0;
 #X obj 82 153 nbx 8 12 0 1e+37 0 0 \$0-positionms \$0-positionmsr Position(ms)
 70 7 2 10 -262144 -1 -1 0 256;
@@ -1114,7 +1114,7 @@ Playback-Speed 0 -8 2 10 -262144 -1 -1 100 256;
 #X connect 23 1 3 0;
 #X connect 23 2 24 0;
 #X restore 345 252 pd outlet-message;
-#X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 -233017
+#X obj 103 118 cnv 10 10 10 empty \$0-namecnv autumn.wav 0 5 2 10 -233017
 -1 0;
 #N canvas 392 281 686 380 in 0;
 #X obj 128 16 inlet;
