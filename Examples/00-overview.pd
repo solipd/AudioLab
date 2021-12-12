@@ -64,282 +64,309 @@ array 1246-filter2 1246-template-y array 1246-filter3 1246-template-y
 array 1246-filter4 1246-template-y array 1246-filter5 1246-template-y
 array 1246-filter6 1246-template-y;
 #N struct 1246-template-y float y float c;
-#N canvas 333 57 812 710 10;
+#N struct 1292-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1292-control-template;
+#N struct 1292-control-template float x float y float c float n;
+#N struct 1293-control-array float x float y float x1 float y1 float
+x2 float y2 array c-array 1293-control-template;
+#N struct 1293-control-template float x float y float c float n;
+#N canvas 264 16 828 925 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
 #X obj 231 124 pp.grainer~;
 #A saved;
-#X obj 69 1006 pp.dynamics~;
+#X obj 69 1047 pp.dynamics~;
 #A saved;
-#X obj 33 1550 pp.fft-gate~;
+#X obj 33 1591 pp.fft-gate~;
 #A saved;
-#X obj 253 2079 pp.spectrum~;
-#X obj 253 1857 pp.out~;
+#X obj 253 2184 pp.spectrum~;
+#X obj 253 1896 pp.out~;
 #A saved;
-#X obj 34 1590 pp.fft-pitchshift~;
+#X obj 34 1631 pp.fft-pitchshift~;
 #A saved;
-#X obj 229 1551 pp.fft-gate-st~;
+#X obj 229 1592 pp.fft-gate-st~;
 #A saved;
 #X obj 256 248 pp.pan~;
 #A saved;
-#X obj 68 917 pp.freqshift~;
+#X obj 68 958 pp.freqshift~;
 #A saved;
-#X obj 252 917 pp.freqshift-st~;
+#X obj 252 958 pp.freqshift-st~;
 #A saved;
 #X obj 231 82 pp.sfplayer~;
 #A saved;
-#X obj 252 958 pp.pitchshift-st~ 50;
+#X obj 252 999 pp.pitchshift-st~ 50;
 #A saved;
-#X obj 68 959 pp.pitchshift~ 50;
+#X obj 68 1000 pp.pitchshift~ 50;
 #A saved;
-#X obj 34 1506 pp.fft-split~;
+#X obj 34 1547 pp.fft-split~;
 #A saved;
-#X obj 229 1506 pp.fft-split-st~;
+#X obj 229 1547 pp.fft-split-st~;
 #A saved;
-#X obj 254 610 pp.vcfilter-st~;
+#X obj 254 651 pp.vcfilter-st~;
 #A saved;
-#X obj 57 612 pp.vcfilter~;
+#X obj 57 653 pp.vcfilter~;
 #A saved;
-#X obj 230 1591 pp.fft-pitchshift-st~;
+#X obj 230 1632 pp.fft-pitchshift-st~;
 #A saved;
-#X obj 34 1453 pp.fft-block~;
+#X obj 34 1494 pp.fft-block~;
 #A saved;
-#X obj 229 1453 pp.fft-block-st~;
+#X obj 229 1494 pp.fft-block-st~;
 #A saved;
-#X obj 34 1677 pp.fft-timbre~;
+#X obj 34 1718 pp.fft-timbre~;
 #A saved;
-#X obj 229 1678 pp.fft-timbre-st~;
+#X obj 229 1719 pp.fft-timbre-st~;
 #A saved;
-#X obj 69 1047 pp.env~;
+#X obj 69 1088 pp.env~;
 #A saved;
-#X obj 255 343 pp.spat8~;
+#X obj 255 384 pp.spat8~;
 #A saved;
-#X obj 255 387 pp.doppler~;
+#X obj 255 428 pp.doppler~;
 #A saved;
-#X obj 229 1718 pp.fft-partconv-st~;
+#X obj 229 1759 pp.fft-partconv-st~;
 #A saved;
-#X obj 309 2035 pp.lfnoise~;
+#X obj 309 2140 pp.lfnoise~;
 #A saved;
-#X obj 33 1718 pp.fft-partconv~;
+#X obj 33 1759 pp.fft-partconv~;
 #A saved;
-#X obj 253 1047 pp.env-st~;
+#X obj 253 1088 pp.env-st~;
 #A saved;
-#X obj 277 1813 pp.in~;
+#X obj 277 1848 pp.in~;
 #A saved;
-#X text 16 62 Soundfile processing;
-#X text 259 896 stereo;
-#X text 73 895 mono;
-#X text 15 1402 Spectral processing;
-#X text 37 1433 mono;
-#X text 237 1434 stereo;
-#X text 36 1809 Misc.;
-#X obj 253 1095 pp.graindelay~;
+#X text 16 72 Soundfile processing;
+#X text 259 937 stereo;
+#X text 73 936 mono;
+#X text 15 1443 Spectral processing;
+#X text 37 1474 mono;
+#X text 237 1475 stereo;
+#X text 36 1844 Misc.;
+#X obj 253 1136 pp.graindelay~;
 #A saved;
-#X obj 253 1142 pp.rev~;
+#X obj 253 1183 pp.rev~;
 #A saved;
-#X obj 423 -6 cnv 15 450 2200 empty empty empty 20 12 0 14 -233017
--66577 0;
-#X obj -2 46 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 423 -6 cnv 15 450 2500 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
+#X obj -2 61 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj -1 229 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -1 229 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj -2 526 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -2 567 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj -1 1393 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X obj -1 1434 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
 #X text 429 85 variable-speed soundfile player;
 #X text 428 128 granular sampler;
 #X text 429 173 pvoc time stretching & pitch shifting;
 #X text 428 257 constant power panning;
-#X text 827 833 frequency shifting;
-#X text 828 870 pitch shifting;
-#X text 430 1010 compressor/expander;
-#X text 430 1056 simple envelope follower;
-#X text 431 1101 granular delay;
-#X text 428 1457 audio block delay;
-#X text 429 1508 spectral splitter;
-#X text 429 1556 spectral gate;
-#X text 430 1596 pvoc based pitchshifter;
-#X text 429 1680 spectral bin-reordering;
-#X obj -1 1787 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X text 431 966 frequency shifting;
+#X text 431 1006 pitch shifting;
+#X text 430 1051 compressor/expander;
+#X text 430 1097 simple envelope follower;
+#X text 431 1142 granular delay;
+#X text 428 1498 audio block delay;
+#X text 429 1549 spectral splitter;
+#X text 429 1597 spectral gate;
+#X text 430 1637 pvoc based pitchshifter;
+#X text 429 1721 spectral bin-reordering;
+#X obj -1 1822 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X text 429 347 8-channel distance based amplitude panning;
-#X text 429 2002 samplewise delay;
-#X text 428 2044 low frequency noise generator;
-#X text 429 2090 spectrum analyser;
-#X text 429 617 signal controlled filter (lowpass \, highpass \, resonant)
+#X text 429 388 8-channel distance based amplitude panning;
+#X text 429 2107 samplewise delay;
+#X text 428 2149 low frequency noise generator;
+#X text 429 2195 spectrum analyser;
+#X text 429 658 signal controlled filter (lowpass \, highpass \, resonant)
 ;
-#X obj 57 567 pp.eqfilter~;
+#X obj 57 608 pp.eqfilter~;
 #A saved;
-#X obj 253 566 pp.eqfilter-st~;
+#X obj 253 607 pp.eqfilter-st~;
 #A saved;
-#X text 429 566 eq-filter (lowpass \, highpass \, resonant \, bandpass
+#X text 429 607 eq-filter (lowpass \, highpass \, resonant \, bandpass
 \, notch \, peaking \, lowshelf \, highshelf or allpass);
 #X obj 732 5 switch~ 0;
-#X obj 25 8 cnv 15 10 10 empty empty AudioLab 20 12 2 40 -262144 -99865
+#X obj 18 13 cnv 15 10 10 empty empty AudioLab 20 12 2 40 #fcfcfc #606060
 0;
-#X obj 24 7 cnv 15 10 10 empty empty AudioLab 20 12 2 40 -262144 -228856
+#X obj 17 12 cnv 15 10 10 empty empty AudioLab 20 12 2 40 #fcfcfc #dcdcdc
 0;
 #X obj 255 295 pp.midside~;
 #A saved;
 #X text 427 302 mid-side panning;
-#X obj 253 1005 pp.dynamics-st~;
+#X obj 253 1046 pp.dynamics-st~;
 #A saved;
-#X obj 220 1922 pp.out-8~;
+#X obj 220 2027 pp.out-8~;
 #A saved;
-#X text 429 1831 mic. input;
-#X text 431 1876 stereo output & soundfile recorder;
-#X text 429 1936 8 channel output & soundfile recorder;
+#X text 429 1866 mic. input;
+#X text 431 1911 stereo output & soundfile recorder;
+#X text 429 2041 8 channel output & soundfile recorder;
 #X obj 624 5 declare -path ..;
-#X text 429 1148 fdn-reverberator based on [rev3~];
-#X obj 57 710 pp.clop~;
+#X text 429 1189 fdn-reverberator based on [rev3~];
+#X obj 57 751 pp.clop~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 254 708 pp.clop-st~;
+#X obj 254 749 pp.clop-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 429 714 experimental comb-lop-filter;
-#X obj 69 1332 pp.shepphaser~;
+#X text 429 755 experimental comb-lop-filter;
+#X obj 69 1373 pp.shepphaser~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 432 1246 multipurpose twisted delay-thing;
-#X text 430 1342 shepard tone-like phaser effect;
-#X text 430 1720 partitioned low latency convolution;
-#X obj 301 1991 pp.sdel-st~;
+#X text 432 1287 multipurpose twisted delay-thing;
+#X text 430 1383 shepard tone-like phaser effect;
+#X text 430 1761 partitioned low latency convolution;
+#X obj 301 2096 pp.sdel-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 174 1992 pp.sdel~;
+#X obj 174 2097 pp.sdel~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 253 1332 pp.shepphaser-st~;
+#X obj 253 1373 pp.shepphaser-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 430 389 doppler effect;
-#X obj 255 431 pp.dopplerxy~;
+#X text 430 430 doppler effect;
+#X obj 255 472 pp.dopplerxy~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 233 1237 pp.twisted-delays~ 6 100;
+#X obj 233 1278 pp.twisted-delays~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 432 1292 a nice reverberator;
-#X obj 255 478 pp.spacer~;
+#X text 432 1333 a nice reverberator;
+#X obj 255 519 pp.spacer~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 25 1283 pp.twisted-delays2~ 6 100;
+#X obj 25 1324 pp.twisted-delays2~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 223 1283 pp.twisted-delays2-st~ 6 100;
+#X obj 223 1324 pp.twisted-delays2-st~ 6 100;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
 #X text 18 234 Spatialization;
-#X obj 33 1634 pp.fft-freeze~;
+#X obj 33 1675 pp.fft-freeze~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 230 1633 pp.fft-freeze-st~;
+#X obj 230 1674 pp.fft-freeze-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 429 1640 spectral freezer;
-#X obj 57 659 pp.ladder~;
+#X text 429 1681 spectral freezer;
+#X obj 57 700 pp.ladder~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 254 659 pp.ladder-st~;
+#X obj 254 700 pp.ladder-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 512 673 !!!cpu-heavy!!!;
-#X text 428 654 "moog" style 4th order ladder filter (lowpass \, highpass
+#X text 512 714 !!!cpu-heavy!!!;
+#X text 428 695 "moog" style 4th order ladder filter (lowpass \, highpass
 \, resonant);
-#X text 480 1741 !!!experimental!!!;
-#X obj 233 1192 pp.echo~ 1000;
+#X text 480 1782 !!!experimental!!!;
+#X obj 233 1233 pp.echo~ 1000;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 431 1199 "analog" delay;
-#X obj 229 2127 pp.xycurve;
+#X text 431 1240 "analog" delay;
+#X obj 229 2232 pp.xycurve;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 430 2136 xy bezier curve plot;
-#X text 428 479 like pp.pan~ + pp.doppler~ \, but with additional outlets
+#X text 430 2241 xy bezier curve plot;
+#X text 428 520 like pp.pan~ + pp.doppler~ \, but with additional outlets
 for "wet" signals;
-#X obj 57 759 pp.parameq~;
+#X obj 57 800 pp.parameq~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 254 759 pp.parameq-st~;
+#X obj 254 800 pp.parameq-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 432 765 parametric equalizer;
-#X obj 0 865 cnv 5 500 5 empty empty empty 20 12 0 14 -233017 -66577
+#X text 432 806 parametric equalizer;
+#X obj 0 906 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X text 19 871 Effects;
-#X text 20 532 Filter;
-#X text 259 548 stereo;
-#X text 61 547 mono;
-#X obj 32 809 pp.butterkreuz3~;
+#X text 19 912 Effects;
+#X text 20 573 Filter;
+#X text 259 589 stereo;
+#X text 61 588 mono;
+#X obj 32 850 pp.butterkreuz3~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X obj 228 808 pp.butterkreuz3-st~;
+#X obj 228 849 pp.butterkreuz3-st~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
 \; empty_slot \;;
-#X text 431 819 3 band crossover filter;
+#X text 431 860 3 band crossover filter;
+#X text 208 40 https://github.com/solipd/AudioLab;
+#X obj 85 293 pp.spat4~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X obj 255 339 pp.spat4~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 427 346 4-channel distance based amplitude panning;
+#X obj 221 1960 pp.out-4~;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
+\; empty_slot \;;
+#X text 428 1980 4 channel output & soundfile recorder;
