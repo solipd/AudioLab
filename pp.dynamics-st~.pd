@@ -1,6 +1,6 @@
-#N canvas 308 179 918 514 10;
+#N canvas 545 229 918 514 10;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #X obj 302 86 inlet~;
 #X obj 303 298 outlet~;
 #X obj 302 116 hip~ 10;
@@ -48,7 +48,7 @@
 #X connect 0 0 2 0;
 #X restore 60 171 pd delwrite;
 #X obj 60 229 outlet~;
-#X floatatom 288 56 5 0 0 0 - - -;
+#X floatatom 288 56 5 0 0 0 - - - 0;
 #X obj 138 202 / 44.1;
 #X text 275 31 sampels delay;
 #X obj 234 33 inlet;
@@ -350,7 +350,7 @@
 #X connect 0 0 2 0;
 #X restore 60 171 pd delwrite;
 #X obj 60 229 outlet~;
-#X floatatom 288 56 5 0 0 0 - - -;
+#X floatatom 288 56 5 0 0 0 - - - 0;
 #X obj 138 202 / 44.1;
 #X text 275 31 sampels delay;
 #X obj 234 33 inlet;
@@ -664,46 +664,42 @@
 #N canvas 65 146 1246 544 presets 0;
 #X obj 158 15 r \$0-preset;
 #X obj 200 121 f \$0;
-#X obj 203 99 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 203 99 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 236 121 compress;
 #X obj 10 121 f \$0;
-#X obj 12 85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 12 85 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 47 121 limit;
 #X obj 433 134 f \$0;
-#X obj 435 98 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 435 98 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 666 122 f \$0;
-#X obj 668 86 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 668 86 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 227 409 f \$0;
-#X obj 227 386 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 227 386 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 749 407 f \$0;
-#X obj 749 384 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 749 384 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 787 408 distortion;
 #X obj 509 411 f \$0;
-#X obj 509 388 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 509 388 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 10 394 f \$0;
-#X obj 6 374 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 6 374 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X text 49 395 default;
 #X text 547 413 extreme;
 #X obj 889 132 f \$0;
-#X obj 889 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 889 109 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 927 133 env-follow sidechain;
 #X text 487 136 denoise;
 #X text 704 123 soft;
 #X text 265 410 dynamic;
 #X obj 158 50 sel 0 1 2 3 4 5 6 7 8;
-#X msg 10 144 \; \$1-threshold-compr -1 \; \$1-threshold-expr -100
-\; \$1-attackr 0 \; \$1-decayr 70 \; \$1-compressr 100 \; \$1-expandr
-0 \; \$1-gainr 0 \; \$1-drywetr 100 \; \$1-sensr 64 \; \$1-modusr 1
-\; \$1-presetr label Preset:Limit \; \$1-smoothr 0;
 #X msg 200 143 \; \$1-threshold-compr -20 \; \$1-threshold-expr -100
 \; \$1-attackr 60 \; \$1-decayr 110 \; \$1-compressr 50 \; \$1-expandr
 0 \; \$1-gainr 0 \; \$1-drywetr 100 \; \$1-sensr 64 \; \$1-modusr 1
@@ -736,24 +732,28 @@ label Preset:Default \; \$1-smoothr 0;
 \; \$1-attackr 0 \; \$1-decayr 0 \; \$1-compressr 100 \; \$1-expandr
 0 \; \$1-gainr 25 \; \$1-drywetr 80 \; \$1-sensr 0 \; \$1-modusr 0
 \; \$1-presetr label Preset:Distortion \; \$1-smoothr 0;
+#X msg 10 144 \; \$1-threshold-compr -1 \; \$1-threshold-expr -100
+\; \$1-attackr 0 \; \$1-decayr 200 \; \$1-compressr 100 \; \$1-expandr
+0 \; \$1-gainr 0 \; \$1-drywetr 100 \; \$1-sensr 64 \; \$1-modusr 0
+\; \$1-presetr label Preset:Limit \; \$1-smoothr 0;
 #X connect 0 0 28 0;
-#X connect 1 0 30 0;
+#X connect 1 0 29 0;
 #X connect 2 0 1 0;
-#X connect 4 0 29 0;
+#X connect 4 0 37 0;
 #X connect 5 0 4 0;
-#X connect 7 0 31 0;
+#X connect 7 0 30 0;
 #X connect 8 0 7 0;
-#X connect 9 0 32 0;
+#X connect 9 0 31 0;
 #X connect 10 0 9 0;
-#X connect 11 0 35 0;
+#X connect 11 0 34 0;
 #X connect 12 0 11 0;
-#X connect 13 0 37 0;
+#X connect 13 0 36 0;
 #X connect 14 0 13 0;
-#X connect 16 0 36 0;
+#X connect 16 0 35 0;
 #X connect 17 0 16 0;
-#X connect 18 0 34 0;
+#X connect 18 0 33 0;
 #X connect 19 0 18 0;
-#X connect 22 0 33 0;
+#X connect 22 0 32 0;
 #X connect 23 0 22 0;
 #X connect 28 0 18 0;
 #X connect 28 1 4 0;
@@ -765,45 +765,45 @@ label Preset:Default \; \$1-smoothr 0;
 #X connect 28 7 13 0;
 #X connect 28 8 22 0;
 #X restore 737 161 pd presets;
-#N canvas 50 52 515 205 \$0-dynamics~ 0;
+#N canvas 50 60 515 205 \$0-dynamics~ 0;
 #N canvas 98 116 835 445 mask 0;
-#X obj 100 100 cnv 15 509 199 empty empty empty 20 12 0 14 -262144
--66577 0;
-#X obj 280 124 cnv 15 152 152 empty empty empty 20 12 0 14 -99865 -66577
-0;
+#X obj 100 100 cnv 15 509 199 empty empty empty 20 12 0 14 #fcfcfc
+#404040 0;
+#X obj 280 124 cnv 15 152 152 empty empty empty 20 12 0 14 #606060
+#404040 0;
 #X obj 114 144 hsl 100 12 0 1 0 0 \$0-agui \$0-aguir Attack -2 -6 2
-10 -262144 -1 -1 0 1;
+10 #fcfcfc #000000 #000000 0 1;
 #X obj 114 168 hsl 100 12 0 1 0 0 \$0-rgui \$0-rguir Release -2 -6
-2 10 -262144 -1 -1 6187 1;
+2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 551 159 nbx 4 12 -1e+37 100 0 0 \$0-compress \$0-compressr %
-41 8 2 10 -262144 -1 -1 100 256;
+41 8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 552 213 nbx 4 12 -100 1e+06 0 0 \$0-expand \$0-expandr % 41
-8 2 10 -262144 -1 -1 0 256;
+8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 551 133 nbx 4 12 -100 1000 0 0 \$0-threshold-comp \$0-threshold-compr
-db 41 8 2 10 -262144 -1 -1 -1 256;
+db 41 8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 220 201 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 8
-2 10 -262144 -1 -1 0 256;
+2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 220 144 nbx 4 12 0 1e+37 0 0 \$0-attack \$0-attackr ms 41 8
-2 10 -262144 -1 -1 0 256;
+2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 220 168 nbx 4 12 0 1e+37 0 0 \$0-decay \$0-decayr ms 41 8 2
-10 -262144 -1 -1 70 256;
+10 #fcfcfc #000000 #000000 0 256;
 #X obj 220 226 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr empty 41 8
-2 10 -262144 -1 -1 100 256;
+2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 445 159 hsl 100 12 0 100 0 0 \$0-cgui \$0-cguir Compression
--2 -6 2 10 -262144 -1 -1 9900 1;
+-2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 445 133 hsl 100 12 0 -100 0 0 \$0-thcgui \$0-thcguir Threshold-Compress
--2 -6 2 10 -262144 -1 -1 99 1;
+-2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 445 213 hsl 100 12 0 100 0 0 \$0-egui \$0-eguir Expansion -2
--6 2 10 -262144 -1 -1 0 1;
+-6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 114 201 hsl 100 12 0 100 0 0 \$0-ggui \$0-gguir Gain -2 -6 2
-10 -262144 -1 -1 0 1;
+10 #fcfcfc #000000 #000000 0 1;
 #X obj 114 226 hsl 100 12 0 100 0 0 \$0-dwgui \$0-dwguir Dry/Wet -2
--6 2 10 -262144 -1 -1 9900 1;
+-6 2 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 461 201 700 420 maskgraf 0;
-#X obj 18 10 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 18 10 cnv 15 100 60 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#X obj 101 101 cnv 15 148 148 empty empty empty 20 12 0 14 -262144
--66577 0;
+#X obj 101 101 cnv 15 148 148 empty empty empty 20 12 0 14 #fcfcfc
+#404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-gaintab 1003 float 3;
 #A 0 0 0 0.001 0.002 0.003 0.004 0.005 0.006 0.007 0.008 0.009 0.01
@@ -901,8 +901,8 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X msg 621 211 set \$1;
 #X msg 47 197 set \$1;
 #X msg 51 223 set \$1;
-#X obj 110 113 hradio 10 1 0 2 \$0-modus \$0-modusr peak 24 6 2 10
--262144 -1 -1 1;
+#X obj 110 113 hradio 10 1 0 2 \$0-modus \$0-modusr rms 24 6 2 10 #fcfcfc
+#000000 #000000 0;
 #N canvas 0 50 548 360 map 0;
 #X obj 222 42 inlet hsl;
 #X obj 364 269 outlet nbx;
@@ -988,27 +988,28 @@ db 41 8 2 10 -262144 -1 -1 -1 256;
 #X connect 18 0 16 0;
 #X restore 39 165 pd map;
 #X obj 443 275 nbx 5 12 0 1e+37 0 0 \$0-sens \$0-sensr Lookahead 0
--6 2 10 -262144 -1 -1 64 256;
+-6 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 111 263 hradio 10 1 0 9 \$0-preset \$0-presetr Preset:Limit
-0 -8 2 10 -262144 -1 -1 1;
-#X obj 267 268 cnv 8 8 8 empty empty empty 20 12 0 14 -1 -66577 0;
-#X obj 268 269 cnv 6 6 6 empty \$0-clip empty 20 12 0 14 -24198 -66577
+0 -8 2 10 #fcfcfc #000000 #000000 0;
+#X obj 267 268 cnv 8 8 8 empty empty empty 20 12 0 14 #000000 #404040
 0;
-#X obj 175 109 cnv 10 10 10 empty empty dynamics~ 0 5 2 17 -262144
--191407 0;
-#X obj 491 277 cnv 10 10 10 empty empty samps. 0 5 2 10 -262144 -1
+#X obj 268 269 cnv 6 6 6 empty \$0-clip empty 20 12 0 14 #14e814 #404040
 0;
-#X obj 280 110 cnv 10 100 12 empty empty empty 20 12 0 14 -262144 -66577
+#X obj 175 109 cnv 10 10 10 empty empty dynamics~ 0 5 2 17 #fcfcfc
+#b8b8b8 0;
+#X obj 491 277 cnv 10 10 10 empty empty samps. 0 5 2 10 #fcfcfc #000000
+0;
+#X obj 280 110 cnv 10 100 12 empty empty empty 20 12 0 14 #fcfcfc #404040
 0;
 #X obj 551 186 nbx 4 12 -100 1000 0 0 \$0-threshold-exp \$0-threshold-expr
-db 41 8 2 10 -262144 -1 -1 -100 256;
+db 41 8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 445 186 hsl 100 12 -100 0 0 0 \$0-thegui \$0-theguir Threshold-Expand
--2 -6 2 10 -262144 -1 -1 0 1;
+-2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 622 182 set \$1;
 #X obj 552 240 nbx 4 12 0 100 0 0 \$0-smooth \$0-smoothr % 41 8 2 10
--262144 -1 -1 0 256;
+#fcfcfc #000000 #000000 0 256;
 #X obj 445 240 hsl 100 12 0 100 0 0 \$0-smgui \$0-smguir Smooth -2
--6 2 10 -262144 -1 -1 0 1;
+-6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 621 238 set \$1;
 #X connect 2 0 23 0;
 #X connect 3 0 24 0;
@@ -1216,7 +1217,7 @@ db 41 8 2 10 -262144 -1 -1 -100 256;
 #X obj 736 328 tabwrite \$0-gaintab;
 #X obj 823 276 r \$0-smooth;
 #X obj 736 72 inlet;
-#N canvas 104 368 745 397 in 0;
+#N canvas 140 278 745 397 in 0;
 #X obj 213 32 inlet;
 #X obj 228 209 s \$0-attackr;
 #X obj 341 202 s \$0-compressr;
@@ -1366,7 +1367,7 @@ compression expansion gain dry/wet lookahead smooth;
 #X connect 19 0 16 0;
 #X restore 736 94 pd in;
 #X obj 744 411 outlet;
-#N canvas 307 172 882 559 outlet-message 0;
+#N canvas 54 301 882 559 outlet-message 0;
 #N canvas 105 314 986 300 bang_once.......................................
 0;
 #X obj 174 87 t b f;
@@ -1452,9 +1453,6 @@ compression expansion gain dry/wet lookahead smooth;
 #X obj 251 33 r \$0-threshold-comp;
 #X obj 284 54 r \$0-threshold-exp;
 #X obj 573 128 r \$0-smooth;
-#X msg 251 266 threshold-compress \$1 \, threshold-expand \$2 \, attack
-\$3 \, release \$4 \, compression \$5 \, expansion \$6 \, smooth \$10
-\, gain \$7 \, dry/wet \$8 \, lookahead \$9 \, \$10;
 #X obj 241 207 t b a b;
 #X obj 251 316 t b a a;
 #N canvas 497 319 297 264 save 0;
@@ -1493,7 +1491,10 @@ compression expansion gain dry/wet lookahead smooth;
 #X connect 5 1 3 1;
 #X connect 6 0 5 0;
 #X restore 302 338 pd save;
-#X connect 0 0 21 0;
+#X msg 251 266 threshold-compress \$1 \, threshold-expand \$2 \, attack
+\$3 \, release \$4 \, compression \$5 \, expansion \$6 \, smooth \$10
+\, gain \$7 \, dry/wet \$8 \, lookahead \$9 \, \$11;
+#X connect 0 0 20 0;
 #X connect 1 0 5 0;
 #X connect 2 0 5 0;
 #X connect 3 0 5 0;
@@ -1513,13 +1514,13 @@ compression expansion gain dry/wet lookahead smooth;
 #X connect 17 0 0 0;
 #X connect 18 0 0 1;
 #X connect 19 0 0 9;
-#X connect 20 0 22 0;
-#X connect 21 0 5 0;
-#X connect 21 1 20 0;
-#X connect 21 2 3 0;
-#X connect 22 0 2 0;
-#X connect 22 1 4 0;
-#X connect 22 2 23 0;
+#X connect 20 0 5 0;
+#X connect 20 1 23 0;
+#X connect 20 2 3 0;
+#X connect 21 0 2 0;
+#X connect 21 1 4 0;
+#X connect 21 2 22 0;
+#X connect 23 0 21 0;
 #X restore 744 383 pd outlet-message;
 #X connect 1 0 3 0;
 #X connect 3 0 4 0;
