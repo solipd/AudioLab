@@ -1,12 +1,8 @@
-#N struct 1007-template float x float y float c float s float th float
-stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y
-;
-#N struct 1007-template-y float y;
-#N struct 1008-template float x float y float c float s float th float
-stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
-;
-#N struct 1008-template-y float y;
-#N canvas 534 2 591 448 10;
+#N struct 1147-template float x float y float c float s float th float stretch array 1147-plus 1147-template-y array 1147-minus 1147-template-y;
+#N struct 1147-template-y float y;
+#N struct 1148-template float x float y float c float s float th float stretch array 1148-plus 1148-template-y array 1148-minus 1148-template-y;
+#N struct 1148-template-y float y;
+#N canvas 540 117 591 448 10;
 #N canvas 564 180 751 540 open 0;
 #X obj 272 251 soundfiler;
 #X obj 465 388 s \$0-samplerate;
@@ -53,78 +49,15 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 39 446 r \$0-lbang;
 #X msg 39 469 label empty..;
 #N canvas 426 89 883 671 splitfilename 0;
-#X obj 425 37 list fromsymbol;
-#X obj 425 59 trigger list list bang;
-#X obj 425 81 list length;
-#X obj 310 169 until;
-#X obj 310 195 f;
-#X obj 325 218 - 1;
-#X obj 457 339 t f f;
-#X obj 425 104 t f f;
-#X obj 488 414 t l;
-#X obj 363 491 list;
-#X obj 574 355 sel;
-#X obj 363 513 list tosymbol;
-#X obj 632 275 loadbang;
-#X obj 632 297 symbol /;
-#X obj 632 319 list fromsymbol;
-#X obj 425 15 inlet symbol path;
-#X obj 457 414 list;
-#X obj 457 312 list store;
-#X msg 457 287 get \$1 1;
-#X obj 185 487 list tosymbol;
-#X obj 185 463 list store;
-#X msg 185 438 get 0 \$1;
-#X obj 185 413 f;
-#X obj 363 535 outlet;
-#X text 407 538 filename;
-#X obj 185 532 outlet;
-#X text 226 532 path;
-#X obj 617 383 t b b b;
-#X obj 312 240 t f f f;
-#X obj 363 353 sel 0;
-#X obj 310 145 + 1;
-#X obj 363 376 t b b;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 17 1;
-#X connect 1 1 20 1;
-#X connect 1 2 16 1;
-#X connect 2 0 7 0;
+#X obj 219 286 outlet;
+#X text 263 289 filename;
+#X obj 185 210 inlet;
+#X obj 185 233 file splitname;
+#X obj 185 256 list split 1;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 0 28 0;
-#X connect 5 0 4 1;
-#X connect 6 0 16 0;
-#X connect 6 1 10 0;
-#X connect 7 0 30 0;
-#X connect 7 1 4 1;
-#X connect 8 0 16 1;
-#X connect 9 0 11 0;
-#X connect 10 0 27 0;
-#X connect 11 0 23 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 10 1;
-#X connect 15 0 0 0;
-#X connect 16 0 8 0;
-#X connect 16 0 9 1;
-#X connect 17 0 6 0;
-#X connect 18 0 17 0;
-#X connect 19 0 25 0;
-#X connect 20 0 19 0;
-#X connect 21 0 20 0;
-#X connect 22 0 21 0;
-#X connect 27 0 22 0;
-#X connect 27 1 9 0;
-#X connect 27 2 3 1;
-#X connect 28 0 22 1;
-#X connect 28 1 29 0;
-#X connect 28 2 18 0;
-#X connect 29 0 31 0;
-#X connect 30 0 3 0;
-#X connect 31 0 9 0;
-#X connect 31 1 3 1;
+#X connect 3 1 0 0;
+#X connect 4 1 0 0;
 #X restore 341 67 pd splitfilename;
 #X obj 341 43 inlet;
 #X text 381 43 path;
@@ -173,7 +106,7 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X connect 31 0 32 0;
 #X connect 32 0 30 0;
 #X connect 32 0 0 0;
-#X connect 33 1 26 3;
+#X connect 33 0 26 3;
 #X connect 34 0 33 0;
 #X connect 36 0 19 0;
 #X connect 36 0 1 0;
@@ -186,79 +119,9 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 500 63 s \$0-open-sf;
 #X obj 415 98 f \$0;
 #X obj 371 76 t a a b;
-#X msg 415 121 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts
-;
+#X msg 415 121 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts;
 #X msg 272 208 read -resize \$1 \$2-links \$2-rechts;
 #N canvas 522 220 600 405 openpanel 0;
-#N canvas 76 95 883 671 splitfilename 0;
-#X obj 425 37 list fromsymbol;
-#X obj 425 59 trigger list list bang;
-#X obj 425 81 list length;
-#X obj 310 169 until;
-#X obj 310 195 f;
-#X obj 338 210 - 1;
-#X obj 383 339 t f f;
-#X obj 425 104 t f f;
-#X obj 414 413 t l;
-#X obj 363 491 list;
-#X obj 501 355 sel;
-#X obj 363 513 list tosymbol;
-#X obj 559 275 loadbang;
-#X obj 559 297 symbol /;
-#X obj 559 319 list fromsymbol;
-#X obj 425 15 inlet symbol path;
-#X obj 383 413 list;
-#X obj 331 294 sel 1;
-#X obj 383 312 list store;
-#X msg 383 287 get \$1 1;
-#X obj 185 487 list tosymbol;
-#X obj 185 463 list store;
-#X msg 185 438 get 0 \$1;
-#X obj 185 413 f;
-#X obj 363 535 outlet;
-#X text 407 538 filename;
-#X obj 185 532 outlet;
-#X text 226 532 path;
-#X obj 544 383 t b b b;
-#X obj 312 240 t f f f;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 1 18 1;
-#X connect 1 1 21 1;
-#X connect 1 2 16 1;
-#X connect 2 0 7 0;
-#X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 4 0 29 0;
-#X connect 5 0 4 1;
-#X connect 6 0 16 0;
-#X connect 6 1 10 0;
-#X connect 7 0 3 0;
-#X connect 7 1 4 1;
-#X connect 8 0 16 1;
-#X connect 9 0 11 0;
-#X connect 10 0 28 0;
-#X connect 11 0 24 0;
-#X connect 12 0 13 0;
-#X connect 13 0 14 0;
-#X connect 14 0 10 1;
-#X connect 15 0 0 0;
-#X connect 16 0 8 0;
-#X connect 16 0 9 1;
-#X connect 17 0 9 0;
-#X connect 18 0 6 0;
-#X connect 19 0 18 0;
-#X connect 20 0 26 0;
-#X connect 21 0 20 0;
-#X connect 22 0 21 0;
-#X connect 23 0 22 0;
-#X connect 28 0 23 0;
-#X connect 28 1 9 0;
-#X connect 28 2 3 1;
-#X connect 29 0 23 1;
-#X connect 29 1 17 0;
-#X connect 29 2 19 0;
-#X restore 224 92 pd splitfilename;
 #X obj 145 270 openpanel;
 #X obj 145 47 f;
 #X obj 175 48 + 1;
@@ -271,20 +134,33 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 224 67 symbol;
 #X obj 224 44 r \$0-open-sf;
 #X obj 173 210 symbol ./;
-#X connect 0 0 9 1;
-#X connect 0 0 12 1;
-#X connect 1 0 7 0;
+#N canvas 426 89 883 671 splitfilename 0;
+#X obj 219 286 outlet;
+#X text 263 289 filename;
+#X obj 185 210 inlet;
+#X obj 185 233 file splitname;
+#X obj 185 256 list split 1;
+#X obj 185 310 outlet;
 #X connect 2 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 2 1;
-#X connect 4 0 9 0;
-#X connect 4 1 5 0;
-#X connect 5 0 12 0;
-#X connect 6 0 2 0;
-#X connect 9 0 1 0;
-#X connect 10 0 0 0;
-#X connect 11 0 10 0;
-#X connect 12 0 1 0;
+#X connect 3 0 4 0;
+#X connect 3 1 0 0;
+#X connect 4 0 5 0;
+#X connect 4 1 0 0;
+#X restore 224 88 pd splitfilename;
+#X connect 0 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 1;
+#X connect 3 0 8 0;
+#X connect 3 1 4 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 8 0 0 0;
+#X connect 9 0 12 0;
+#X connect 10 0 9 0;
+#X connect 11 0 0 0;
+#X connect 12 0 8 1;
+#X connect 12 0 11 1;
 #X restore 500 42 pd openpanel;
 #N canvas 194 181 619 300 nofile 0;
 #X obj 227 31 inlet;
@@ -394,8 +270,7 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 111 205 expr if($f1<$f2 \, $f2 \, $f1);
 #X obj 194 170 abs;
 #X obj 363 158 abs;
-#X obj 111 233 expr if($f2<$f1 \, 1 \, $f1/$f2) \; if($f1<$f2 \, 1
-\, $f2/$f1);
+#X obj 111 233 expr if($f2<$f1 \, 1 \, $f1/$f2) \; if($f1<$f2 \, 1 \, $f2/$f1);
 #X msg 215 466 normalize \$1;
 #X msg 386 462 normalize \$1;
 #X obj 216 490 s \$0-links;
@@ -463,8 +338,7 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 829 141 f;
 #X obj 829 162 s \$0-positionr;
 #X obj 829 93 del 10;
-#X msg 452 74 relocate 620x180+1+1 1x1+50+60 \, vis 1 \, editmode 0
-;
+#X msg 452 74 relocate 620x180+1+1 1x1+50+60 \, vis 1 \, editmode 0;
 #X connect 1 0 4 0;
 #X connect 1 0 5 0;
 #X connect 1 1 3 0;
@@ -610,11 +484,9 @@ stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y
 #X obj 356 256 f;
 #X text 464 435 new onset is phase plus old onset;
 #X text 371 638 new onset minus old onset;
-#X text 323 680 back up phasor output by amount the onset advanced
-;
+#X text 323 680 back up phasor output by amount the onset advanced;
 #X text 345 745 convert phase back to range 0-1;
-#X text 321 693 (approximately zero but not exactly because of truncation
-error!;
+#X text 321 693 (approximately zero but not exactly because of truncation error!;
 #N canvas 829 56 536 369 loop 0;
 #X obj 170 37 inlet;
 #X msg 232 288 0;
@@ -771,8 +643,7 @@ error!;
 #X connect 43 0 34 0;
 #X connect 45 0 42 0;
 #X restore 173 193 pd playback;
-#X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 2
-8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
+#X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 2 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 3 57 888 439 record 0;
 #X msg 243 237 start;
 #X obj 464 97 sel 0 1;
@@ -860,8 +731,7 @@ error!;
 #X connect 24 0 25 0;
 #X restore 637 256 pd info;
 #X obj 443 330 f \$0;
-#X msg 443 353 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts
-;
+#X msg 443 353 \; \$1-set-l symbol \$1-links \; \$1-set-r symbol \$1-rechts;
 #X obj 524 130 t b b b;
 #X connect 0 0 15 0;
 #X connect 0 0 14 0;
@@ -904,47 +774,29 @@ error!;
 #X obj 114 165 inlet~;
 #N canvas 50 60 620 180 \$0-sfplayer~ 0;
 #N canvas 411 112 715 391 maske 0;
-#X obj 0 0 cnv 15 600 168 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
-#X obj 10 25 bng 16 250 50 0 \$0-op \$0-opr Open 0 -7 2 10 #fcfcfc
-#00fc04 #000000;
-#X obj 38 57 tgl 16 0 \$0-stoptgl \$0-stoptglr Stop 0 -7 2 10 #fcfcfc
-#fcfcfc #000000 0 1;
-#X obj 10 57 tgl 16 0 \$0-playbacktgl \$0-playbacktglr Play 0 -7 2
-10 #fcfcfc #fcfcfc #000000 0 1;
-#X obj 16 60 cnv 1 1 10 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c
-#fcfcfc 0;
-#X obj 17 61 cnv 1 1 8 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c
-#fcfcfc 0;
-#X obj 18 62 cnv 1 1 6 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c
-#fcfcfc 0;
-#X obj 19 63 cnv 1 1 4 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c
-#fcfcfc 0;
-#X obj 20 64 cnv 1 1 2 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c
-#fcfcfc 0;
-#X obj 10 91 nbx 4 12 -1e+37 1e+37 0 0 \$0-playbackspeed \$0-playbackspeedr
-Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 49 87 cnv 15 10 15 empty empty % 1 10 2 10 #fcfcfc #000000 0
-;
-#X obj 82 4 cnv 10 10 10 empty \$0-wfbg empty.. 1 5 2 10 #fcfcfc #000000
-0;
-#X obj 10 110 tgl 10 0 \$0-looptgl \$0-looptglr loop 14 6 2 10 #fcfcfc
-#000000 #000000 0 1;
-#X obj 82 15 cnv 15 502 122 empty empty empty 20 12 0 14 #7c7c7c #404040
-0;
+#X obj 0 0 cnv 15 600 168 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 10 25 bng 16 250 50 0 \$0-op \$0-opr Open 0 -7 2 10 #fcfcfc #00fc04 #000000;
+#X obj 38 57 tgl 16 0 \$0-stoptgl \$0-stoptglr Stop 0 -7 2 10 #fcfcfc #fcfcfc #000000 0 1;
+#X obj 10 57 tgl 16 0 \$0-playbacktgl \$0-playbacktglr Play 0 -7 2 10 #fcfcfc #fcfcfc #000000 0 1;
+#X obj 16 60 cnv 1 1 10 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c #fcfcfc 0;
+#X obj 17 61 cnv 1 1 8 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c #fcfcfc 0;
+#X obj 18 62 cnv 1 1 6 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c #fcfcfc 0;
+#X obj 19 63 cnv 1 1 4 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c #fcfcfc 0;
+#X obj 20 64 cnv 1 1 2 empty \$0-playguicnv empty 20 12 0 14 #7c7c7c #fcfcfc 0;
+#X obj 10 91 nbx 4 12 -1e+37 1e+37 0 0 \$0-playbackspeed \$0-playbackspeedr Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 49 87 cnv 15 10 15 empty empty % 1 10 2 10 #fcfcfc #000000 0;
+#X obj 82 4 cnv 10 10 10 empty \$0-wfbg empty.. 1 5 2 10 #fcfcfc #000000 0;
+#X obj 10 110 tgl 10 0 \$0-looptgl \$0-looptglr loop 14 6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 82 15 cnv 15 502 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 641 183 532 272 waveform 0;
-#X obj 0 1 cnv 15 500 119 empty empty empty 3 6 2 10 #dcdcdc #000000
-0;
-#X obj 1 0 cnv 1 1 120 empty \$0-zeiger empty 20 12 0 14 #fc0400 #404040
-0;
+#X obj 0 1 cnv 15 500 119 empty empty empty 3 6 2 10 #dcdcdc #000000 0;
+#X obj 1 0 cnv 1 1 120 empty \$0-zeiger empty 20 12 0 14 #fc0400 #404040 0;
 #X obj 0 0 pp.waveform \$0-links 500 60 1 -1 999 1 1 100;
 #X obj 0 60 pp.waveform \$0-rechts 500 60 1 -1 999 1 1 100;
 #X coords 0 -1 1 1 500 120 1 0 0;
 #X restore 83 16 pd waveform;
-#X obj 555 119 cnv 3 3 3 empty \$0-minutes 00:00 1 10 2 10 #dcdcdc
-#000000 0;
-#X obj 82 153 nbx 8 12 0 1e+37 0 0 \$0-positionms \$0-positionmsr Position(ms)
-70 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 555 119 cnv 3 3 3 empty \$0-minutes 00:00 1 10 2 10 #dcdcdc #000000 0;
+#X obj 82 153 nbx 8 12 0 1e+37 0 0 \$0-positionms \$0-positionmsr Position(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #N canvas 0 50 450 300 map 0;
 #X obj 188 127 r \$0-samplelenght;
 #X obj 158 127 /;
@@ -973,14 +825,10 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X connect 10 0 11 0;
 #X connect 12 0 10 0;
 #X restore 20 178 pd map;
-#X obj 85 140 hsl 496 10 0 1 0 0 \$0-position \$0-positionr empty -2
--8 2 10 #fcfcfc #000000 #000000 0 0;
-#X obj 39 25 tgl 16 0 \$0-record \$0-recordr Record 0 -7 2 10 #fcfcfc
-#fc0400 #000000 0 1;
-#X obj 42 61 cnv 8 7 7 empty \$0-stopcnv empty 20 12 0 14 #7c7c7c #7c7c7c
-0;
-#X obj 10 127 tgl 10 0 \$0-normalize \$0-normalizer normalize 14 6
-2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 85 140 hsl 496 10 0 1 0 0 \$0-position \$0-positionr empty -2 -8 2 10 #fcfcfc #000000 #000000 0 0;
+#X obj 39 25 tgl 16 0 \$0-record \$0-recordr Record 0 -7 2 10 #fcfcfc #fc0400 #000000 0 1;
+#X obj 42 61 cnv 8 7 7 empty \$0-stopcnv empty 20 12 0 14 #7c7c7c #7c7c7c 0;
+#X obj 10 127 tgl 10 0 \$0-normalize \$0-normalizer normalize 14 6 2 10 #fcfcfc #000000 #000000 0 1;
 #X connect 16 0 17 0;
 #X connect 17 0 18 0;
 #X connect 17 1 16 0;
@@ -995,8 +843,7 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 44 356 set;
 #X obj 172 384 list prepend add2;
 #X obj 172 478 outlet;
-#N canvas 78 393 736 292 bang_once...................................................
-0;
+#N canvas 78 393 736 292 bang_once................................................... 0;
 #X obj 174 87 t b f;
 #X obj 132 87 t b f;
 #X obj 89 183 del 0;
@@ -1039,8 +886,7 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X connect 16 0 2 0;
 #X connect 16 1 15 5;
 #X connect 17 0 16 0;
-#X restore 123 200 pd bang_once...................................................
-;
+#X restore 123 200 pd bang_once...................................................;
 #X obj 480 155 r \$0-open-sf;
 #X obj 480 177 symbol;
 #X obj 182 68 r \$0-playbackspeed;
@@ -1056,8 +902,7 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 301 162 * 100;
 #X obj 301 140 r \$0-position;
 #X obj 421 132 r \$0-normalize;
-#X msg 142 277 open \$7 \, play \$1 \, playback-speed \$2 \, position
-\$3 \, position% \$4 \, loop \$5 \, normalize \$6;
+#X msg 142 277 open \$7 \, play \$1 \, playback-speed \$2 \, position \$3 \, position% \$4 \, loop \$5 \, normalize \$6;
 #X obj 123 234 t b a b;
 #X obj 142 325 t b a a;
 #N canvas 497 375 297 264 save 0;
@@ -1124,8 +969,7 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X connect 23 1 3 0;
 #X connect 23 2 24 0;
 #X restore 345 252 pd outlet-message;
-#X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 #e0e0e0
-#000000 0;
+#X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 #e0e0e0 #000000 0;
 #N canvas 392 281 686 380 in 0;
 #X obj 128 16 inlet;
 #X obj 183 274 s \$0-stoptglr;
@@ -1146,8 +990,7 @@ Playback-Speed 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 578 165 symbol;
 #X obj 415 185 s \$0-normalizer;
 #X obj 415 164 != 0;
-#X obj 128 46 route play stop playback-speed loop position position%
-record normalize set open;
+#X obj 128 46 route play stop playback-speed loop position position% record normalize set open;
 #N canvas 196 182 728 433 set 0;
 #X obj 344 50 inlet;
 #X obj 451 96 list length;
