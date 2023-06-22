@@ -147,8 +147,7 @@
 #X obj 371 139 del 250;
 #X obj 255 241 s pd-\$0-doppler;
 #X msg 255 219 relocate 230x149+1+1 1x1+50+60 \, vis 1;
-#X msg 89 111 \; \$1-pitchmodr 100 \; \$1-panmodr 100 \; \$1-ampmodr
-100 \; \$1-dampingr 100 \;;
+#X msg 89 111 \; \$1-pitchmodr 100 \; \$1-panmodr 100 \; \$1-ampmodr 100 \; \$1-dampingr 100 \;;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 3 0 6 0;
@@ -162,33 +161,22 @@
 #X restore 869 89 pd stuff;
 #X obj 765 273 / 100;
 #X obj 469 132 / 100;
-#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 50 88 230 149 \$0-doppler 0;
 #N canvas 515 97 714 345 mask 0;
-#X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 -262144
--66577 0;
-#X obj 214 109 cnv 10 10 10 empty empty dopplerxy~ 0 5 2 17 -262144
--162280 0;
-#X obj 113 136 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pitch-mod -2
--6 2 10 -262144 -1 -1 12700 1;
-#X obj 247 136 nbx 5 12 0 1e+17 0 0 \$0-pitchmod \$0-pitchmodr % 47
-7 2 10 -262144 -1 -1 100 256;
-#X obj 113 163 hsl 128 12 0 100 0 0 \$0-agui \$0-aguir Amp-mod -2 -6
-2 10 -262144 -1 -1 12700 1;
-#X obj 247 163 nbx 5 12 0 1000 0 0 \$0-ampmod \$0-ampmodr % 47 7 2
-10 -262144 -1 -1 100 256;
-#X obj 113 190 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pan-mod -2 -6
-2 10 -262144 -1 -1 12700 1;
-#X obj 247 190 nbx 5 12 0 100 0 0 \$0-panmod \$0-panmodr % 47 7 2 10
--262144 -1 -1 100 256;
+#X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 214 109 cnv 10 10 10 empty empty dopplerxy~ 0 5 2 17 #fcfcfc #9c9c9c 0;
+#X obj 113 136 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pitch-mod -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 247 136 nbx 5 12 0 1e+17 0 0 \$0-pitchmod \$0-pitchmodr % 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 113 163 hsl 128 12 0 100 0 0 \$0-agui \$0-aguir Amp-mod -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 247 163 nbx 5 12 0 1000 0 0 \$0-ampmod \$0-ampmodr % 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 113 190 hsl 128 12 0 100 0 0 \$0-pgui \$0-pguir Pan-mod -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 247 190 nbx 5 12 0 100 0 0 \$0-panmod \$0-panmodr % 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 22 115 set \$1;
 #X msg 23 142 set \$1;
 #X msg 25 173 set \$1;
-#X obj 113 216 hsl 128 12 0 100 0 0 \$0-dgui \$0-dguir Damping -2 -6
-2 10 -262144 -1 -1 12700 1;
-#X obj 247 216 nbx 5 12 0 1000 0 0 \$0-damping \$0-dampingr % 47 7
-2 10 -262144 -1 -1 100 256;
+#X obj 113 216 hsl 128 12 0 100 0 0 \$0-dgui \$0-dguir Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 247 216 nbx 5 12 0 1000 0 0 \$0-damping \$0-dampingr % 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 28 207 set \$1;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
@@ -252,8 +240,7 @@
 #X obj 286 33 t b f;
 #X obj 359 32 t b f;
 #X obj 101 132 pack 1 1 0 0;
-#X msg 120 216 pitch-mod \$2 \, amp-mod \$1 \, pan-mod \$3 \, damping
-\$4;
+#X msg 120 216 pitch-mod \$2 \, amp-mod \$1 \, pan-mod \$3 \, damping \$4;
 #X obj 101 158 t b a b;
 #X obj 121 238 t b a a;
 #N canvas 497 319 297 264 save 0;
@@ -353,32 +340,32 @@
 #N canvas 354 123 450 300 amplitude 0;
 #X obj 74 20 inlet~;
 #X obj 118 160 /~;
-#X obj 146 135 pow~ 2;
-#X obj 178 92 line~;
-#X msg 178 71 \$1 100;
-#X obj 178 49 / 100;
-#X obj 178 28 r \$0-ampmod;
+#X obj 168 92 line~;
+#X msg 168 71 \$1 100;
+#X obj 168 49 / 100;
+#X obj 168 28 r \$0-ampmod;
 #X obj 251 228 *~;
 #X obj 266 24 inlet~;
 #X obj 251 251 outlet~;
 #X obj 74 256 outlet~;
 #X obj 117 186 clip~ 0 1;
 #X obj 146 159 +~ 1e-12;
-#X obj 178 113 +~ 1;
-#X connect 0 0 2 0;
-#X connect 0 0 10 0;
+#X obj 168 113 +~ 1;
+#X obj 146 135 pow~;
+#X connect 0 0 9 0;
 #X connect 0 0 1 0;
-#X connect 1 0 11 0;
+#X connect 0 0 13 0;
+#X connect 1 0 10 0;
 #X connect 2 0 12 0;
-#X connect 3 0 13 0;
+#X connect 3 0 2 0;
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
-#X connect 6 0 5 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 1;
-#X connect 11 0 7 0;
-#X connect 12 0 1 1;
-#X connect 13 0 2 1;
+#X connect 6 0 8 0;
+#X connect 7 0 6 1;
+#X connect 10 0 6 0;
+#X connect 11 0 1 1;
+#X connect 12 0 13 1;
+#X connect 13 0 11 0;
 #X restore 366 363 pd amplitude;
 #X obj 530 361 *~;
 #X obj 531 281 /~ 1.5708;
@@ -397,15 +384,14 @@
 #X connect 3 0 4 0;
 #X restore 289 260 pd clean;
 #X obj 209 351 outlet~;
-#X obj 147 119 line~;
-#X msg 147 98 \$1 100;
-#X obj 147 76 / 100;
-#X obj 147 52 r \$0-damping;
+#X obj 133 119 line~;
+#X msg 133 98 \$1 100;
+#X obj 133 76 / 100;
+#X obj 133 52 r \$0-damping;
 #X obj 85 218 clip~ 0 1;
 #X obj 85 194 /~;
-#X obj 113 169 pow~ 2;
 #X obj 113 193 +~ 1e-12;
-#X obj 147 142 +~ 1;
+#X obj 133 142 +~ 1;
 #N canvas 423 92 775 532 lowpass 0;
 #X obj 499 73 r \$0-damping;
 #X obj 499 101 != 0;
@@ -483,21 +469,22 @@
 #X connect 9 0 4 0;
 #X connect 10 0 8 0;
 #X restore 86 260 pd lowpass;
+#X obj 113 169 pow~;
 #X connect 0 0 2 0;
-#X connect 0 0 13 1;
-#X connect 1 0 10 0;
+#X connect 0 0 12 1;
 #X connect 1 0 9 0;
+#X connect 1 0 13 0;
 #X connect 2 0 3 0;
-#X connect 4 0 12 0;
+#X connect 4 0 11 0;
 #X connect 5 0 4 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
-#X connect 8 0 13 0;
+#X connect 8 0 12 0;
 #X connect 9 0 8 0;
-#X connect 10 0 11 0;
-#X connect 11 0 9 1;
-#X connect 12 0 10 1;
-#X connect 13 0 3 0;
+#X connect 10 0 9 1;
+#X connect 11 0 13 1;
+#X connect 12 0 3 0;
+#X connect 13 0 10 0;
 #X restore 367 400 pd damping;
 #X f 12;
 #X connect 0 0 12 0;
