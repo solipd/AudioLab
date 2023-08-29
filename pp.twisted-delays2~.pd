@@ -1,6 +1,5 @@
 #N canvas 123 151 1232 464 10;
-#X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 788 87 567 572 times 0;
 #X obj 64 247 until;
 #X obj 73 273 f;
@@ -39,7 +38,7 @@
 #X obj 414 54 r \$0-maxdeltime;
 #X obj 387 32 / 100;
 #X obj 387 55 *;
-#X floatatom 239 385 5 0 0 0 - - -;
+#X floatatom 239 385 5 0 0 0 - - - 0;
 #X obj 60 395 expr 1-$f1;
 #X obj 187 419 expr 9-$f1;
 #X connect 0 0 1 0;
@@ -163,7 +162,7 @@
 #X connect 28 0 22 1;
 #X connect 29 0 18 0;
 #X restore 709 214 pd angles;
-#N canvas 51 102 1297 468 stuff 0;
+#N canvas 707 214 1297 468 stuff 0;
 #X obj 555 15 loadbang;
 #X obj 615 108 max 0;
 #X obj 615 202 s \$0-ndelays;
@@ -182,8 +181,7 @@
 #X obj 846 171 pack 100 12;
 #X msg 846 194 bounds 0 \$1 \$2 0;
 #X obj 87 76 f \$0;
-#X obj 62 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 62 57 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 405 358 s \$0-visbngr;
 #X obj 387 253 r \$0-visbng;
 #X msg 385 330 color 0 0;
@@ -202,8 +200,7 @@
 #X obj 239 175 == 1;
 #X obj 184 29 t f f;
 #X obj 184 212 spigot;
-#X text 274 130 prevent setting blocksizes that are not a power of
-2;
+#X text 274 130 prevent setting blocksizes that are not a power of 2;
 #X msg 252 228 blocksize is not a power of 2;
 #X obj 184 294 outlet;
 #X obj 252 206 sel 0;
@@ -248,12 +245,7 @@
 #X msg 629 385 range 0 \$1;
 #X obj 629 407 s \$0-predguir;
 #X obj 639 430 s \$0-predelayr;
-#X msg 87 101 \; \$1-gainr 0 \; \$1-feedbackr 90 \; \$1-crossoverr
-7000 \; \$1-dampingr 50 \; \$1-times-curver 0 \; \$1-times-centerr
-50 \; \$1-times-sloper 0 \; \$1-angles-curver -60 \; \$1-angles-sloper
--90 \; \$1-angles-centerr 90 \; \$1-drywetr 100 \; \$1-transition 100
-\; \$1-modulationr 0.1 \; \$1-early 0 1.42763 3.23873 5.2345 7.82312
-;
+#X msg 87 100 \; \$1-gainr 0 \; \$1-feedbackr 90 \; \$1-crossoverr 7000 \; \$1-dampingr 50 \; \$1-times-curver 0 \; \$1-times-centerr 50 \; \$1-times-sloper 0 \; \$1-angles-curver -60 \; \$1-angles-sloper -90 \; \$1-angles-centerr 90 \; \$1-drywetr 100 \; \$1-transition 100 \; \$1-modulationr 0.1 \; \$1-modulation-freq 0.1 \; \$1-early 0 1.42763 3.23873 5.2345 7.82312;
 #X connect 0 0 10 0;
 #X connect 1 0 33 0;
 #X connect 3 0 4 0;
@@ -480,17 +472,14 @@
 #X obj 745 244 array set \$0-early;
 #X obj 491 231 s \$0-modulationr;
 #X obj 505 258 s \$0-predelayr;
-#X obj 60 96 route dry/wet feedback crossover-frequency damping times-center
-times-slope times-curve angles-center angles-slope angles-curve transition-time
-setblock gain modulation predelay modulation-frequency;
+#X obj 60 96 route dry/wet feedback crossover-frequency damping times-center times-slope times-curve angles-center angles-slope angles-curve transition-time setblock gain modulation predelay modulation-frequency;
 #X obj 478 195 s \$0-modulation-freq;
 #X obj 454 333 s \$0-setblock;
 #X obj 454 286 change;
 #N canvas 3 57 617 375 blocksize 0;
 #X obj 184 76 t f f;
 #X obj 184 212 spigot;
-#X text 249 141 prevent setting blocksizes that are not a power of
-2;
+#X text 249 141 prevent setting blocksizes that are not a power of 2;
 #X msg 244 244 blocksize is not a power of 2;
 #X obj 184 294 outlet;
 #X obj 244 222 sel 0;
@@ -603,8 +592,7 @@ setblock gain modulation predelay modulation-frequency;
 #X connect 5 1 3 1;
 #X connect 6 0 5 0;
 #X restore 340 428 pd save;
-#N canvas 153 379 986 300 bang_once..................................
-0;
+#N canvas 153 379 986 300 bang_once.................................. 0;
 #X obj 132 54 t b f;
 #X obj 89 139 del 0;
 #X obj 89 54 t b f;
@@ -708,11 +696,7 @@ setblock gain modulation predelay modulation-frequency;
 #X obj 458 108 r \$0-modulation;
 #X obj 553 133 r \$0-modulation-freq;
 #X obj 462 129 r \$0-predelay;
-#X msg 323 326 dry/wet \$1 \, feedback \$2 \, crossover-frequency \$3
-\, damping \$4 \, modulation \$14 \, predelay \$15 \, times-center
-\$5 \, times-slope \$6 \, times-curve \$7 \, angles-center \$8 \, angles-slope
-\$9 \, angles-curve \$10 \, gain \$11 \, transition-time \$12 \, setblock
-\$13;
+#X msg 323 326 dry/wet \$1 \, feedback \$2 \, crossover-frequency \$3 \, damping \$4 \, modulation \$14 \, modulation-frequency \$16 \, predelay \$15 \, times-center \$5 \, times-slope \$6 \, times-curve \$7 \, angles-center \$8 \, angles-slope \$9 \, angles-curve \$10 \, gain \$11 \, transition-time \$12 \, setblock \$13;
 #X connect 0 0 19 11;
 #X connect 1 0 19 12;
 #X connect 2 0 19 9;
@@ -930,17 +914,12 @@ setblock gain modulation predelay modulation-frequency;
 #X f 13;
 #N canvas 39 281 665 205 \$0-twisted-delays2~ 0;
 #N canvas 400 12 954 485 mask 0;
-#X obj 100 100 cnv 15 649 189 empty empty empty 2 2 0 14 -262144 -66577
-0;
-#X obj 218 183 nbx 4 12 0 100 0 0 \$0-damping \$0-dampingr % 41 7 2
-10 -262144 -1 -1 50 256;
-#X obj 112 183 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir Damping
--2 -6 2 10 -262144 -1 -1 4950 1;
+#X obj 100 100 cnv 15 649 189 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
+#X obj 218 183 nbx 4 12 0 100 0 0 \$0-damping \$0-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 183 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 46 179 set \$1;
-#X obj 218 158 nbx 5 12 0 20000 0 0 \$0-crossover \$0-crossoverr hz.
-50 7 2 10 -262144 -1 -1 7000 256;
-#X obj 112 158 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Crossover-Frequency
--2 -6 2 10 -262144 -1 -1 6763 1;
+#X obj 218 158 nbx 5 12 0 20000 0 0 \$0-crossover \$0-crossoverr hz. 50 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 158 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Crossover-Frequency -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
 #X msg 105 180 set \$1;
@@ -959,99 +938,67 @@ setblock gain modulation predelay modulation-frequency;
 #X connect 7 0 8 0;
 #X connect 8 0 3 0;
 #X restore 47 153 pd map;
-#X obj 218 132 nbx 4 12 -1e+37 1e+37 0 0 \$0-feedback \$0-feedbackr
-% 41 7 2 10 -262144 -1 -1 90 256;
-#X obj 112 132 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2
--6 2 10 -262144 -1 -1 8910 1;
+#X obj 218 132 nbx 4 12 -1e+37 1e+37 0 0 \$0-feedback \$0-feedbackr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 132 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 47 129 set \$1;
-#X obj 371 128 cnv 15 152 122 empty empty empty 20 12 0 14 -128992
--66577 0;
+#X obj 371 128 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 3 54 450 300 mask 0;
-#X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 -262144
--66577 0;
+#X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-times 1 float 3;
-#A 0 0.5;
-#X coords 0 1 1 0 150 120 1 0 0;
+#X array \$0-times 8 float 3;
+#A 0 50 50 50 50 50 50 50 50;
+#X coords 0 100 8 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
 #X restore 372 129 pd mask;
-#X obj 525 126 cnv 10 10 10 empty \$0-maxdelcnv 1 0 5 2 10 -262144
--1 0;
-#X obj 526 240 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
-#X obj 372 112 cnv 10 100 15 empty empty Times 0 5 2 10 -262144 -1
-0;
-#X obj 371 259 nbx 3 12 0 100 0 0 \$0-times-center \$0-times-centerr
-Center 33 7 2 10 -262144 -1 -1 50 256;
-#X obj 434 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-slope \$0-times-sloper
-Slope 33 7 2 10 -262144 -1 -1 0 256;
-#X obj 493 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-curve \$0-times-curver
-Curve 33 7 2 10 -262144 -1 -1 0 256;
-#X obj 154 112 cnv 10 10 10 empty empty twisted-delays2~ 0 5 2 17 -262144
--162280 0;
-#X obj 110 268 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 100 256;
-#X obj 110 254 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
-0;
-#X obj 564 128 cnv 15 152 122 empty empty empty 20 12 0 14 -128992
--66577 0;
+#X obj 525 126 cnv 10 10 10 empty \$0-maxdelcnv 100 0 5 2 10 #fcfcfc #000000 0;
+#X obj 526 240 cnv 10 10 10 empty empty 0ms 0 5 2 10 #fcfcfc #000000 0;
+#X obj 372 112 cnv 10 100 15 empty empty Times 0 5 2 10 #fcfcfc #000000 0;
+#X obj 371 259 nbx 3 12 0 100 0 0 \$0-times-center \$0-times-centerr Center 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 434 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-slope \$0-times-sloper Slope 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 493 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-times-curve \$0-times-curver Curve 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 154 112 cnv 10 10 10 empty empty twisted-delays2~ 0 5 2 17 #fcfcfc #9c9c9c 0;
+#X obj 110 268 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 110 254 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 #fcfcfc #000000 0;
+#X obj 564 128 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 3 54 450 300 mask 0;
-#X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 -262144
--66577 0;
+#X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-angles 1 float 3;
-#A 0 135;
-#X coords 0 180 1 0 150 120 1 0 0;
+#X array \$0-angles 8 float 3;
+#A 0 135 66.8424 59.7479 55.2603 51.915 49.2237 46.9603 45;
+#X coords 0 180 8 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
 #X restore 565 129 pd mask;
-#X obj 718 183 cnv 10 10 10 empty empty 90° 0 5 2 10 -262144 -1 0
-;
-#X obj 719 240 cnv 10 10 10 empty empty 0° 0 5 2 10 -262144 -1 0;
-#X obj 565 112 cnv 10 100 15 empty empty Angles 0 5 2 10 -262144 -1
-0;
-#X obj 718 126 cnv 10 10 10 empty empty 180° 0 5 2 10 -262144 -1 0
-;
-#X obj 564 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-center \$0-angles-centerr
-Center 33 7 2 10 -262144 -1 -1 90 256;
-#X obj 627 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-slope \$0-angles-sloper
-Slope 33 7 2 10 -262144 -1 -1 -90 256;
-#X obj 686 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-curve \$0-angles-curver
-Curve 33 7 2 10 -262144 -1 -1 -60 256;
-#X obj 218 268 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 7
-2 10 -262144 -1 -1 0 256;
-#X obj 218 256 cnv 10 10 10 empty empty Gain 0 5 2 10 -262144 -1 0
-;
-#X obj 285 129 cnv 15 57 122 empty empty empty 20 12 0 14 -128992 -66577
-0;
+#X obj 718 183 cnv 10 10 10 empty empty 90° 0 5 2 10 #fcfcfc #000000 0;
+#X obj 719 240 cnv 10 10 10 empty empty 0° 0 5 2 10 #fcfcfc #000000 0;
+#X obj 565 112 cnv 10 100 15 empty empty Angles 0 5 2 10 #fcfcfc #000000 0;
+#X obj 718 126 cnv 10 10 10 empty empty 180° 0 5 2 10 #fcfcfc #000000 0;
+#X obj 564 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-center \$0-angles-centerr Center 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 627 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-slope \$0-angles-sloper Slope 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 686 259 nbx 3 12 -1e+24 1e+24 0 0 \$0-angles-curve \$0-angles-curver Curve 33 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 218 268 nbx 4 12 -1e+37 1e+37 0 0 \$0-gain \$0-gainr db 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 218 256 cnv 10 10 10 empty empty Gain 0 5 2 10 #fcfcfc #000000 0;
+#X obj 285 129 cnv 15 57 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 3 57 450 300 mask 0;
-#X obj 100 100 cnv 15 55 120 empty empty empty 20 12 0 14 -262144 -66577
-0;
+#X obj 100 100 cnv 15 55 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-early 4 float 3;
 #A 0 1.42763 3.23873 5.2345 7.82312;
-#X coords 0 1 4 0 55 120 1 0 0;
+#X coords 0 100 4 0 55 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 55 120 1 100 100;
 #X restore 286 130 pd mask;
-#X obj 344 241 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
-#X obj 286 113 cnv 10 60 15 empty empty Early 0 5 2 10 -262144 -1 0
-;
-#X obj 344 124 cnv 10 10 10 empty \$0-maxdelcnv 1 0 5 2 10 -262144
--1 0;
-#X obj 218 209 nbx 4 12 0 1 0 0 \$0-predelay \$0-predelayr ms 41 7
-2 10 -262144 -1 -1 0 256;
-#X obj 112 209 hsl 100 12 0 1 0 0 \$0-predgui \$0-predguir Predelay
--2 -6 2 10 -262144 -1 -1 0 1;
+#X obj 344 241 cnv 10 10 10 empty empty 0ms 0 5 2 10 #fcfcfc #000000 0;
+#X obj 286 113 cnv 10 60 15 empty empty Early 0 5 2 10 #fcfcfc #000000 0;
+#X obj 344 124 cnv 10 10 10 empty \$0-maxdelcnv 100 0 5 2 10 #fcfcfc #000000 0;
+#X obj 218 209 nbx 4 12 0 100 0 0 \$0-predelay \$0-predelayr ms 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 209 hsl 100 12 0 100 0 0 \$0-predgui \$0-predguir Predelay -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 46 205 set \$1;
-#X obj 218 236 nbx 4 12 0 100 0 0 \$0-modulation \$0-modulationr empty
-41 7 2 10 -262144 -1 -1 0.1 256;
-#X obj 112 236 hsl 100 12 0 1 0 0 \$0-modgui \$0-modguir Modulation
--2 -6 2 10 -262144 -1 -1 990 1;
-#X obj 320 340 nbx 4 12 0 100 0 0 \$0-modfreq \$0-modfreqr hz 41 7
-2 10 -262144 -1 -1 0 256;
-#X obj 214 340 hsl 100 12 0 100 0 0 \$0-modfreq \$0-modfreqr Modulation-freq
--2 -6 2 10 -262144 -1 -1 0 1;
+#X obj 218 236 nbx 4 12 0 100 0 0 \$0-modulation \$0-modulationr empty 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 236 hsl 100 12 0 1 0 0 \$0-modgui \$0-modguir Modulation -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 320 340 nbx 4 12 0 100 0 0 \$0-modfreq \$0-modfreqr hz 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 214 340 hsl 100 12 0 100 0 0 \$0-modfreq \$0-modfreqr Modulation-freq -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 148 336 set \$1;
 #X msg 47 232 set \$1;
 #X connect 1 0 3 0;
@@ -1094,7 +1041,7 @@ Curve 33 7 2 10 -262144 -1 -1 -60 256;
 #X obj 208 65 inlet~;
 #X obj 273 376 outlet~;
 #X obj 340 378 outlet~;
-#X obj 313 25 r \$0-modulation-freq;
+#X obj 311 25 r \$0-modulation-freq;
 #X obj 312 96 +~ 1.12;
 #X obj 313 47 phasor~ 0.1;
 #X obj 435 99 r \$0-transition;
