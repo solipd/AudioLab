@@ -1,15 +1,9 @@
-#N struct 3159-template float x float y float c float s float th float
-stretch array 3159-plus 3159-template-y array 3159-minus 3159-template-y
-;
-#N struct 3159-template-y float y;
-#N struct 3289-template float x float y float c float s float th float
-stretch array 3289-plus 3289-template-y array 3289-minus 3289-template-y
-;
-#N struct 3289-template-y float y;
-#N struct 3290-template float x float y float c float s float th float
-stretch array 3290-plus 3290-template-y array 3290-minus 3290-template-y
-;
-#N struct 3290-template-y float y;
+#N struct 1421-template float x float y float c float s float th float stretch array 1421-plus 1421-template-y array 1421-minus 1421-template-y;
+#N struct 1421-template-y float y;
+#N struct 1551-template float x float y float c float s float th float stretch array 1551-plus 1551-template-y array 1551-minus 1551-template-y;
+#N struct 1551-template-y float y;
+#N struct 1552-template float x float y float c float s float th float stretch array 1552-plus 1552-template-y array 1552-minus 1552-template-y;
+#N struct 1552-template-y float y;
 #N canvas 160 54 909 451 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -18,34 +12,23 @@ stretch array 3290-plus 3290-template-y array 3290-minus 3290-template-y
 #N canvas 3 50 450 300 init 0;
 #X obj 48 57 loadbang;
 #X obj 48 183 outlet;
-#X msg 48 82 open Trumpet.wav \, grain-distance 10 \, position 0 \,
-grainsize 300 \, pitch 0 \, panorama 0 \, amplitude -6 \, filter-bypass
-1 \, frequency 0 \, q 0 \, playback-speed 100 \, play 1 \, env-type
-0 \, env-bias 0.5 \, env-shape 0.5 \, random-grain-distance 0 \, random-position
-5 \, random-grainsize 5 \, random-pitch 0 \, random-panorama 0 \, random-amplitude
-0 \, random-frequency 0 \, random-q 0 \, position% 0 \, random-position%
-0.00292398 \, int.grain-trigger 1 \,;
+#X msg 48 82 open Trumpet.wav \, grain-distance 10 \, position 0 \, grainsize 300 \, pitch 0 \, panorama 0 \, amplitude -6 \, filter-bypass 1 \, frequency 0 \, q 0 \, playback-speed 100 \, play 1 \, env-type 0 \, env-bias 0.5 \, env-shape 0.5 \, random-grain-distance 0 \, random-position 5 \, random-grainsize 5 \, random-pitch 0 \, random-panorama 0 \, random-amplitude 0 \, random-frequency 0 \, random-q 0 \, position% 0 \, random-position% 0.00292398 \, int.grain-trigger 1 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 583 111 pd init;
-#X floatatom 626 56 5 0 0 0 - - -;
+#X floatatom 626 56 5 0 0 0 - - - 0;
 #X msg 626 76 playback-speed \$1;
-#X floatatom 567 32 5 0 0 0 - - -;
+#X floatatom 567 32 5 0 0 0 - - - 0;
 #X msg 567 52 pitch \$1;
-#X obj 2 2 cnv 15 380 440 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 15 203 hsl 200 15 0 100 0 0 \$0-speed \$0-speedr Playback-speed
--2 -8 2 12 -262144 -1 -1 19900 1;
-#X obj 14 132 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 0 1;
-#X obj 15 237 hsl 200 15 -1200 1200 0 0 \$0-transposition \$0-transpositionr
-Transposition -2 -8 2 12 -262144 -1 -1 9950 1;
-#X floatatom 559 387 5 0 0 0 - - -;
+#X obj 2 2 cnv 15 380 440 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 15 203 hsl 200 15 0 100 0 0 \$0-speed \$0-speedr Playback-speed -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
+#X obj 14 132 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2 -8 2 12 #fc8000 #000000 #000000 0 1;
+#X obj 15 237 hsl 200 15 -1200 1200 0 0 \$0-transposition \$0-transpositionr Transposition -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
+#X floatatom 559 387 5 0 0 0 - - - 0;
 #N canvas 67 368 450 154 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
-#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 70 61 \; pd dsp 1;
 #X msg 164 74 \; \$1-transpositionr 0 \; \$1-speedr 100;
 #X connect 0 0 1 0;
@@ -55,23 +38,20 @@ Transposition -2 -8 2 12 -262144 -1 -1 9950 1;
 #X restore 17 11 pd init;
 #X msg 559 407 volume \$1;
 #X msg 709 153 speed \$1;
-#X floatatom 709 131 5 0 0 0 - - -;
-#X floatatom 772 156 5 0 0 0 - - -;
+#X floatatom 709 131 5 0 0 0 - - - 0;
+#X floatatom 772 156 5 0 0 0 - - - 0;
 #X msg 772 176 transposition \$1;
 #N canvas 3 50 450 300 init 0;
 #X obj 179 52 loadbang;
 #X obj 179 127 outlet;
-#X msg 179 73 open Trumpet.wav \, play 1 \, freeze 0 \, speed 100 \,
-transposition 0 \, position 0 \, position% 0 \, loop 1 \, phaselock
-1 \, blocksize 1024 \, overlap 4 \,;
+#X msg 179 73 open Trumpet.wav \, play 1 \, freeze 0 \, speed 100 \, transposition 0 \, position 0 \, position% 0 \, loop 1 \, phaselock 1 \, blocksize 1024 \, overlap 4 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 727 197 pd init;
 #X obj 394 109 pp.grainer~;
 #A saved;
 #X obj 559 366 r \$0-volume;
-#X obj 11 159 hradio 20 1 0 2 \$0-switch \$0-switchr Granular/Phasevoc
-45 10 2 12 -262144 -1 -1 0;
+#X obj 11 159 hradio 20 1 0 2 \$0-switch \$0-switchr Granular/Phasevoc 45 10 2 12 #fcfcfc #000000 #000000 0;
 #X obj 536 192 pp.fft-stretch~ 1024 4;
 #A saved;
 #X obj 415 231 r \$0-switch;
@@ -83,11 +63,7 @@ transposition 0 \, position 0 \, position% 0 \, loop 1 \, phaselock
 #X obj 772 135 r \$0-transposition;
 #X obj 626 35 r \$0-speed;
 #X obj 709 110 r \$0-speed;
-#X text 10 48 Comparison of two time stretching methods. The granular
-time stretching causes phase cancelations \, most noticeable when the
-sound is transposed. The phase vocoder is in phase-lock mode. With
-a very slow playback speed it will sound artificial.;
-#X text 9 413 Philipp Schmalfuß \, 2018;
+#X text 10 48 Comparison of two time stretching methods. The granular time stretching causes phase cancelations \, most noticeable when the sound is transposed. The phase vocoder is in phase-lock mode. With a very slow playback speed it will sound artificial.;
 #X obj 278 5 declare -path ..;
 #X connect 1 0 18 1;
 #X connect 2 0 3 0;

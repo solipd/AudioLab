@@ -1,27 +1,18 @@
-#N struct 3111-template float x float y float c float s float th float
-stretch array 3111-plus 3111-template-y array 3111-minus 3111-template-y
-;
-#N struct 3111-template-y float y;
-#N struct 3112-template float x float y float c float s float th float
-stretch array 3112-plus 3112-template-y array 3112-minus 3112-template-y
-;
-#N struct 3112-template-y float y;
+#N struct 1094-template float x float y float c float s float th float stretch array 1094-plus 1094-template-y array 1094-minus 1094-template-y;
+#N struct 1094-template-y float y;
+#N struct 1095-template float x float y float c float s float th float stretch array 1095-plus 1095-template-y array 1095-minus 1095-template-y;
+#N struct 1095-template-y float y;
 #N canvas 489 192 835 410 10;
 #X declare -path ./audio;
 #X declare -path ..;
-#X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 17 163 hsl 200 15 30 1000 0 0 \$0-looplenght \$0-looplenghtr
-Loop-length -2 -8 2 12 -262144 -1 -1 7300 1;
-#X obj 17 125 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 0 1;
-#X obj 17 199 hsl 200 15 0 100 0 0 \$0-onset \$0-onsetr Position-onset
--2 -8 2 12 -262144 -1 -1 2600 1;
+#X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 17 166 hsl 200 15 30 1000 0 0 \$0-looplenght \$0-looplenghtr Loop-length -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
+#X obj 17 125 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2 -8 2 12 #fc8000 #000000 #000000 0 1;
+#X obj 17 206 hsl 200 15 0 100 0 0 \$0-onset \$0-onsetr Position-onset -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
 #N canvas 213 465 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
-#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 70 61 \; pd dsp 1;
 #X msg 164 74 \; \$1-looplenght 500 \;;
 #X connect 0 0 1 0;
@@ -31,17 +22,16 @@ Loop-length -2 -8 2 12 -262144 -1 -1 7300 1;
 #X restore 17 11 pd init;
 #X obj 400 209 pp.sfplayer~;
 #A saved;
-#X obj 649 30 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X floatatom 600 143 5 0 0 0 - - -;
+#X obj 649 30 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 600 143 5 0 0 0 - - - 0;
 #X obj 399 349 pp.out~;
 #A saved;
 #X obj 573 142 f;
 #X obj 649 51 metro 1000;
-#X floatatom 719 52 5 0 0 0 - - -;
+#X floatatom 719 52 5 0 0 0 - - - 0;
 #X obj 648 281 vline~;
 #X msg 573 175 position% \$1 \, stop \, play 1;
-#X floatatom 562 346 5 0 0 0 - - -;
+#X floatatom 562 346 5 0 0 0 - - - 0;
 #X msg 562 366 volume \$1;
 #X obj 562 325 r \$0-volume;
 #N canvas 3 50 450 300 init 0;
@@ -58,15 +48,12 @@ Loop-length -2 -8 2 12 -262144 -1 -1 7300 1;
 #X obj 648 236 f;
 #X obj 719 32 r \$0-looplenght;
 #X obj 600 123 r \$0-onset;
-#X text 14 58 This example shows how to use message commands to loop
-a short part of a soundfile. An amplitude envelope (vline~) protects
-against clicks at the loop point.;
-#X text 10 382 Philipp Schmalfuß \, 2018;
+#X text 14 58 This example shows how to use message commands to loop a short part of a soundfile. An amplitude envelope (vline~) protects against clicks at the loop point.;
 #X obj 278 5 declare -path ..;
 #X obj 399 320 *~;
 #X obj 474 320 *~;
-#X connect 5 0 28 0;
-#X connect 5 1 29 0;
+#X connect 5 0 27 0;
+#X connect 5 1 28 0;
 #X connect 6 0 10 0;
 #X connect 7 0 9 1;
 #X connect 9 0 13 0;
@@ -74,8 +61,8 @@ against clicks at the loop point.;
 #X connect 10 0 22 0;
 #X connect 11 0 10 1;
 #X connect 11 0 21 0;
-#X connect 12 0 29 1;
 #X connect 12 0 28 1;
+#X connect 12 0 27 1;
 #X connect 13 0 5 3;
 #X connect 14 0 15 0;
 #X connect 15 0 8 2;
@@ -87,5 +74,5 @@ against clicks at the loop point.;
 #X connect 22 0 20 0;
 #X connect 23 0 11 0;
 #X connect 24 0 7 0;
-#X connect 28 0 8 0;
-#X connect 29 0 8 1;
+#X connect 27 0 8 0;
+#X connect 28 0 8 1;

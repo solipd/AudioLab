@@ -1,25 +1,17 @@
-#N struct 3145-template float x float y float c float s float th float
-stretch array 3145-plus 3145-template-y array 3145-minus 3145-template-y
-;
-#N struct 3145-template-y float y;
-#N struct 3146-template float x float y float c float s float th float
-stretch array 3146-plus 3146-template-y array 3146-minus 3146-template-y
-;
-#N struct 3146-template-y float y;
+#N struct 1408-template float x float y float c float s float th float stretch array 1408-plus 1408-template-y array 1408-minus 1408-template-y;
+#N struct 1408-template-y float y;
+#N struct 1409-template float x float y float c float s float th float stretch array 1409-plus 1409-template-y array 1409-minus 1409-template-y;
+#N struct 1409-template-y float y;
 #N canvas 376 163 761 406 10;
 #X declare -path ./audio;
 #X declare -path ..;
-#X obj 2 2 cnv 15 400 400 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 19 153 hsl 200 15 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet -2
--8 2 12 -262144 -1 -1 19900 1;
-#X obj 19 117 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 0 1;
+#X obj 2 2 cnv 15 400 400 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 19 153 hsl 200 15 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
+#X obj 19 117 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2 -8 2 12 #fc8000 #000000 #000000 0 1;
 #N canvas 491 400 450 300 init 0;
 #X obj 164 32 loadbang;
 #X obj 164 53 f \$0;
-#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 70 61 \; pd dsp 1;
 #X msg 164 74 \; \$1-drywetr 100;
 #X connect 0 0 1 0;
@@ -29,45 +21,32 @@ stretch array 3146-plus 3146-template-y array 3146-minus 3146-template-y
 #X restore 17 11 pd init;
 #X obj 426 346 pp.out~;
 #A saved;
-#X floatatom 589 339 5 0 0 0 - - -;
+#X floatatom 589 339 5 0 0 0 - - - 0;
 #X msg 589 359 volume \$1;
 #X obj 589 318 r \$0-volume;
 #X obj 427 34 pp.sfplayer~;
 #A saved;
 #N canvas 3 50 450 300 init 0;
 #X obj 194 72 loadbang;
-#X msg 194 93 open MusicBox.wav \, play 1 \, playback-speed 100 \,
-position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
+#X msg 194 93 open MusicBox.wav \, play 1 \, playback-speed 100 \, position 0 \, position% 0 \, loop 1 \, normalize 1 \,;
 #X obj 194 125 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 600 13 pd init;
 #X obj 427 202 pp.fft-timbre-st~ 512 4;
 #A saved;
-#X obj 15 352 s \$0-timb;
+#X obj 15 355 s \$0-timb;
 #X obj 600 146 r \$0-timb;
 #X obj 664 145 r \$0-drywet;
-#X floatatom 664 166 5 0 0 0 - - -;
+#X floatatom 664 166 5 0 0 0 - - - 0;
 #X msg 664 186 dry/wet \$1;
-#X msg 15 250 blocksize 512 \, overlap 4 \, shift -630 \, curve-1 526
-\, curve-2 622 \, breakpoint-1 422 \, breakpoint-2 10 \, gain 12 \,
-;
-#X msg 15 216 blocksize 512 \, overlap 8 \, shift 0 \, curve-1 -314
-\, curve-2 -207 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 12 \,
-;
-#X msg 15 285 blocksize 1024 \, overlap 4 \, shift 185 \, curve-1 -1616
-\, curve-2 1201 \, breakpoint-1 -40 \, breakpoint-2 -8 \, gain 12 \,
-;
-#X msg 15 320 blocksize 1024 \, overlap 4 \, shift -559 \, curve-1
-658 \, curve-2 986 \, breakpoint-1 429 \, breakpoint-2 110 \, gain
-18 \,;
+#X msg 15 250 blocksize 512 \, overlap 4 \, shift -630 \, curve-1 526 \, curve-2 622 \, breakpoint-1 422 \, breakpoint-2 10 \, gain 12 \,;
+#X msg 15 216 blocksize 512 \, overlap 8 \, shift 0 \, curve-1 -314 \, curve-2 -207 \, breakpoint-1 0 \, breakpoint-2 500 \, gain 12 \,;
+#X msg 15 285 blocksize 1024 \, overlap 4 \, shift 185 \, curve-1 -1616 \, curve-2 1201 \, breakpoint-1 -40 \, breakpoint-2 -8 \, gain 12 \,;
+#X msg 15 320 blocksize 1024 \, overlap 4 \, shift -559 \, curve-1 658 \, curve-2 986 \, breakpoint-1 429 \, breakpoint-2 110 \, gain 18 \,;
 #X obj 262 26 declare -path ./audio;
-#X text 15 47 This example shows how different fft-blocks sizes und
-curve parameters of the [pp.fft-timbre~] module affects the acoustic
-pattern of a sound.;
-#X text 15 186 Click on the message boxes below to change parameter
-presets.;
-#X text 13 385 Philipp Schmalfuß \, 2018;
+#X text 15 47 This example shows how different fft-blocks sizes und curve parameters of the [pp.fft-timbre~] module affects the acoustic pattern of a sound.;
+#X text 15 186 Click on the message boxes below to change parameter presets.;
 #X obj 292 5 declare -path ..;
 #X connect 5 0 6 0;
 #X connect 6 0 4 2;

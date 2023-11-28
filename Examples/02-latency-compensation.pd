@@ -1,11 +1,7 @@
-#N struct 3132-template float x float y float c float s float th float
-stretch array 3132-plus 3132-template-y array 3132-minus 3132-template-y
-;
-#N struct 3132-template-y float y;
-#N struct 3133-template float x float y float c float s float th float
-stretch array 3133-plus 3133-template-y array 3133-minus 3133-template-y
-;
-#N struct 3133-template-y float y;
+#N struct 1099-template float x float y float c float s float th float stretch array 1099-plus 1099-template-y array 1099-minus 1099-template-y;
+#N struct 1099-template-y float y;
+#N struct 1100-template float x float y float c float s float th float stretch array 1100-plus 1100-template-y array 1100-minus 1100-template-y;
+#N struct 1100-template-y float y;
 #N canvas 151 117 804 355 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -13,8 +9,7 @@ stretch array 3133-plus 3133-template-y array 3133-minus 3133-template-y
 #A saved;
 #X obj 399 297 pp.out~;
 #A saved;
-#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj 442 198 pp.fft-pitchshift~ 1024 4;
 #A saved;
 #X obj 401 103 pp.fft-block~ 1024 4;
@@ -25,19 +20,16 @@ stretch array 3133-plus 3133-template-y array 3133-minus 3133-template-y
 #X obj 248 27 declare -path ./audio;
 #N canvas 3 50 450 300 init 0;
 #X obj 140 72 loadbang;
-#X msg 140 93 open Trumpet.wav \, play 1 \, playback-speed 100 \, loop
-1 \, normalize 1 \,;
+#X msg 140 93 open Trumpet.wav \, play 1 \, playback-speed 100 \, loop 1 \, normalize 1 \,;
 #X obj 140 125 outlet;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 573 19 pd init;
-#X obj 61 131 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2
--8 2 12 -260097 -1 -1 0 1;
-#X floatatom 560 274 5 0 0 0 - - -;
+#X obj 61 131 hsl 200 15 1 100 0 0 \$0-volume \$0-volumer Volume -2 -8 2 12 #fc8000 #000000 #000000 0 1;
+#X floatatom 560 274 5 0 0 0 - - - 0;
 #X msg 560 294 volume \$1;
 #X obj 560 253 r \$0-volume;
-#X obj 61 168 hsl 200 15 -1200 1200 0 0 \$0-detune \$0-detuner Detune
--2 -8 2 12 -262144 -1 -1 0 1;
+#X obj 61 168 hsl 200 15 -1200 1200 0 0 \$0-detune \$0-detuner Detune -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
 #X obj 636 176 r \$0-detune;
 #X msg 636 197 transposition \$1;
 #N canvas 3 50 450 300 init 0;
@@ -50,9 +42,7 @@ stretch array 3133-plus 3133-template-y array 3133-minus 3133-template-y
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X restore 21 11 pd init;
-#X text 10 63 This example shows how to mix a fft-processed signal
-with a dry signal using [pp.fft-block~].;
-#X text 10 333 Philipp Schmalfuß \, 2018;
+#X text 10 63 This example shows how to mix a fft-processed signal with a dry signal using [pp.fft-block~].;
 #X obj 278 5 declare -path ..;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
