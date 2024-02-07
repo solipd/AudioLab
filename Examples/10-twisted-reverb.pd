@@ -1,8 +1,8 @@
-#N struct 1691-template float x float y float c float s float th float stretch array 1691-plus 1691-template-y array 1691-minus 1691-template-y;
-#N struct 1691-template-y float y;
-#N struct 1692-template float x float y float c float s float th float stretch array 1692-plus 1692-template-y array 1692-minus 1692-template-y;
-#N struct 1692-template-y float y;
-#N canvas 183 113 806 410 10;
+#N struct 1006-template float x float y float c float s float th float stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y;
+#N struct 1006-template-y float y;
+#N struct 1007-template float x float y float c float s float th float stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y;
+#N struct 1007-template-y float y;
+#N canvas 203 353 827 420 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 400 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -48,8 +48,8 @@
 #X msg 435 236 feedback 99 \, crossover-frequency 1100 \, damping 50 \, modulation 0.1 \, predelay 100 \, times-center 29 \, times-slope -52 \, times-curve 16 \, angles-center 90 \, angles-slope -71 \, angles-curve -43 \, gain 3 \, setblock 64 \, early 3.33334 10 15.0003 146.666 \, times 6 6.2039 7.23621 9.54755 13.4949 19.3886 27.5083 38.112 51.4408 67.7224 87.1731 110 \, angles 125.5 80.3384 74.0284 69.9362 66.8369 64.3142 62.1728 60.3039 58.6404 57.138 55.7654 54.5 \,;
 #X msg 49 356 feedback 98 \, crossover-frequency 8300 \, damping 0 \, modulation 0 \, predelay 0 \, times-center 0 \, times-slope -6 \, times-curve -11 \, angles-center 90 \, angles-slope -90 \, angles-curve -60 \, gain 0 \, setblock 8 \, early 0 0 0 0 \, times 0 0 0 0.46369 1.41268 2.24371 2.99142 3.67626 4.31152 4.90639 5.46755 6 \, angles 166.5 71.1042 96 121.5 163.5 54.5872 52.4653 50.6276 49.0027 47.5434 46.2171 45 \,;
 #X obj 451 23 sel 0 1 2 3 4 5 6 7;
-#X msg 432 365 feedback 100.1 \, crossover-frequency 6000 \, damping 13.1313 \, modulation 0.020202 \, modulation-frequency 2.3 \, predelay 16.1616 \, times-center 23 \, times-slope -40 \, times-curve -9 \, angles-center 90 \, angles-slope -131 \, angles-curve -28 \, gain 0 \, transition-time 100 \, setblock 64 \, early 11.6667 6.66667 13.3333 16.6667 \, times 6 28.6458 38.6156 46.3743 52.9745 58.8284 64.1489 69.0633 73.6549 77.9816 82.0859 86 \, angles 155.5 85.802 71.8552 62.4366 55.1176 49.0465 43.8144 39.1906 35.0308 31.2384 27.7448 24.5 \,;
 #X msg 807 227 feedback 99 \, crossover-frequency 13000 \, damping 50 \, modulation 0.2 \, modulation-frequency 0.1 \, predelay 0 \, times-center 27 \, times-slope -51 \, times-curve 44 \, angles-center 90 \, angles-slope -71 \, angles-curve -43 \, gain 10 \, setblock 64 \, early 3.33334 6.66667 8.33337 11.6667 \, times 3 3.00024 3.01025 3.09152 3.43272 4.44384 6.86452 11.884 21.2711 37.5135 63.9649 105 \, angles 169.5 80.3384 74.0284 69.9362 66.8369 64.3142 62.1728 60.3039 58.6404 57.138 55.7654 54.5 \,;
+#X msg 432 365 feedback 100.1 \, crossover-frequency 6000 \, damping 13.1313 \, modulation 0.414141 \, modulation-frequency 2.3 \, predelay 16.1616 \, times-center 73 \, times-slope -40 \, times-curve -9 \, angles-center 90 \, angles-slope -131 \, angles-curve -6 \, gain 0 \, setblock 64 \, early 6.66666 11.6667 9.99998 13.3334 \, times 106 128.646 138.616 146.374 152.975 158.828 164.149 169.063 173.655 177.982 182.086 186 \, angles 155.5 126.231 110.362 97.343 85.8873 75.4692 65.8097 56.7386 48.1426 39.9414 32.0756 24.5 \,;
 #X connect 1 0 8 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -62,9 +62,9 @@
 #X connect 8 2 3 0;
 #X connect 8 3 4 0;
 #X connect 8 4 6 0;
-#X connect 8 5 10 0;
+#X connect 8 5 9 0;
 #X connect 8 6 7 0;
-#X connect 8 7 9 0;
+#X connect 8 7 10 0;
 #X connect 9 0 0 0;
 #X connect 10 0 0 0;
 #X restore 574 229 pd messages;
