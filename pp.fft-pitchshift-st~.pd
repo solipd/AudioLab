@@ -183,7 +183,7 @@
 #X connect 6 0 3 0;
 #X connect 6 1 5 0;
 #X restore 800 197 pd hanning;
-#X obj 685 126 inlet~ transpo;
+#X obj 685 126 inlet~;
 #N canvas 550 66 717 699 fft 0;
 #X obj 63 538 *~;
 #X obj 18 532 *~;
@@ -232,7 +232,7 @@
 #X obj 128 519 *~;
 #X obj 247 91 bang~;
 #X obj 247 127 snapshot~;
-#X obj 310 91 inlet~ transpo;
+#X obj 310 91 inlet~;
 #N canvas 779 315 280 168 cents 0;
 #X obj 52 57 inlet;
 #X obj 52 168 outlet;
@@ -348,7 +348,7 @@
 #X obj 98 18 tabreceive~ \$0-prev-imag;
 #X obj 19 -2 tabreceive~ \$0-prev-real;
 #X obj 519 27 r \$0-window-size;
-#X obj 330 12 inlet~ transpo;
+#X obj 330 12 inlet~;
 #N canvas 0 50 511 389 normalize 0;
 #X obj 173 313 outlet;
 #X obj 159 208 / 4;
@@ -583,7 +583,7 @@
 #X obj 128 519 *~;
 #X obj 247 91 bang~;
 #X obj 247 127 snapshot~;
-#X obj 310 91 inlet~ transpo;
+#X obj 310 91 inlet~;
 #N canvas 779 315 280 168 cents 0;
 #X obj 52 57 inlet;
 #X obj 52 168 outlet;
@@ -696,7 +696,7 @@
 #X connect 39 0 4 0;
 #X restore 330 76 pd read-windows;
 #X obj 519 27 r \$0-window-size;
-#X obj 330 12 inlet~ transpo;
+#X obj 330 12 inlet~;
 #N canvas 0 50 511 389 normalize 0;
 #X obj 173 313 outlet;
 #X obj 159 208 / 4;
