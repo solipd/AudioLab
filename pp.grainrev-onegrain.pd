@@ -5,9 +5,9 @@
 #X text 301 178 receive feedback from prev. grain;
 #X obj 286 195 catch~ \$1-\$2-feedback-l;
 #X obj 527 202 catch~ \$1-\$2-feedback-r;
-#X obj 65 260 delwrite~ \$0-del 4000;
-#X obj 257 260 delwrite~ \$0-fbdel-l 4000;
-#X obj 498 263 delwrite~ \$0-fbdel-r 4000;
+#X obj 65 260 delwrite~ \$0-del \$3;
+#X obj 257 260 delwrite~ \$0-fbdel-l \$3;
+#X obj 498 263 delwrite~ \$0-fbdel-r \$3;
 #X connect 0 0 5 0;
 #X connect 3 0 6 0;
 #X connect 4 0 7 0;
