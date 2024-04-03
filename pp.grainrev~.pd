@@ -1183,16 +1183,16 @@
 #X obj 510 570 * 0.125;
 #X obj 366 219 r \$0-distance;
 #X obj 387 155 r \$0-random-distance;
-#N canvas 50 60 532 262 \$0-grainrev~ 0;
+#N canvas 98 294 532 262 \$0-grainrev~ 1;
 #N canvas 78 500 841 473 mask 0;
 #X obj 100 100 cnv 15 520 250 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 115 157 nbx 8 12 0 171000 0 0 \$0-delay \$0-delayr Delay(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 109 128 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr empty 17 7 2 10 #dcdcdc #000000 #000000 0 1;
 #X obj 284 158 nbx 8 12 0 171000 0 0 \$0-random-delay \$0-random-delayr Random-Delay(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 115 172 nbx 5 12 -1e+09 1e+09 0 0 \$0-size \$0-sizer Grainsize(ms) 69 7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 142 142 nbx 4 12 25 1e+09 0 0 \$0-distance \$0-distancer Grain-Distance(ms) 42 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 142 142 nbx 4 12 10 1e+09 0 0 \$0-distance \$0-distancer Grain-Distance(ms) 42 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 284 173 nbx 5 12 0 1e+11 0 0 \$0-random-size \$0-random-sizer Random-Grainsize(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 284 143 nbx 4 12 0 1e+37 0 0 \$0-random-trigger-speed \$0-random-trigger-speedr Random-Grain-Distance(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 284 143 nbx 4 12 0 1e+37 0 0 \$0-random-distance \$0-random-distancer Random-Grain-Distance(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 115 187 nbx 5 12 -1e+28 1e+28 0 0 \$0-pitch \$0-pitchr Pitch(cents) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 284 188 nbx 5 12 0 1e+13 0 0 \$0-random-pitch \$0-random-pitchr Random-Pitch(cents) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 273 193 cnv 5 5 5 empty empty + 0 0 0 10 #fcfcfc #404040 0;
@@ -1225,7 +1225,7 @@
 #X obj 133 126 cnv 10 10 10 empty empty Int.Grain-Trigger 0 5 2 10 #fcfcfc #000000 0;
 #X obj 499 257 hsl 92 10 0 1 0 0 \$0-env-shape \$0-env-shaper Shape -2 -7 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 303 118 cnv 15 10 10 empty empty grainrev~ 0 0 2 14 #fcfcfc #9c9c9c 0;
-#X obj 527 109 cnv 10 10 10 empty \$0-active-grains 0 0 5 2 11 #fcfcfc #000000 0;
+#X obj 527 109 cnv 10 10 10 empty \$0-active-grains 16 0 5 2 11 #fcfcfc #000000 0;
 #X obj 546 109 cnv 10 10 10 empty empty Grains 0 5 2 10 #fcfcfc #000000 0;
 #X obj 581 109 cnv 10 10 10 empty empty active 0 5 2 10 #fcfcfc #000000 0;
 #X obj 282 258 nbx 4 12 -1000 1000 0 0 \$0-feedback \$0-feedbackr % 45 8 2 10 #fcfcfc #000000 #000000 0 256;
