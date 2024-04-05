@@ -43,7 +43,7 @@
 #N struct 1246-template-y float y float c;
 #N struct 1255-control-array float x float y float x1 float y1 float x2 float y2 array c-array 1255-control-template;
 #N struct 1255-control-template float x float y float c float n;
-#N canvas 612 55 828 925 10;
+#N canvas 599 13 824 922 10;
 #X declare -path ..;
 #X obj 231 168 pp.fft-stretch~;
 #A saved;
@@ -117,7 +117,7 @@
 #A saved;
 #X obj 68 1227 pp.rev~;
 #A saved;
-#X obj 423 -6 cnv 15 450 2500 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 423 -6 cnv 15 450 2550 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj -2 61 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj -1 229 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj -2 567 cnv 5 500 5 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -208,7 +208,6 @@
 #X text 431 1333 "analog" delay;
 #X obj 229 2495 pp.xycurve;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
-#X text 430 2504 xy bezier curve plot;
 #X text 428 520 like pp.pan~ + pp.doppler~ \, but with additional outlets for "wet" signals;
 #X obj 57 800 pp.parameq~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
@@ -251,3 +250,4 @@
 #X obj 69 1275 pp.grainrev~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
 #X text 430 1280 granular reverb;
+#X text 430 2504 xy bezier curve automation tool;
