@@ -1,17 +1,14 @@
-#N struct 1298-xt float x float y;
-#N struct 1298-yt float x float y;
-#N canvas 260 199 852 311 10;
+#N struct 1342-xt float x float y;
+#N struct 1342-yt float x float y;
+#N canvas 357 242 854 308 10;
 #X obj 390 248 pp.out~;
 #A saved;
-#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 562 28 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 562 28 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 152 124 552 519 control-messages 0;
 #X obj 86 397 outlet;
-#X floatatom 86 164 5 0 0 0 - - -;
-#X obj 155 368 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X floatatom 86 164 5 0 0 0 - - - 0;
+#X obj 155 368 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -26,8 +23,7 @@
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -40,7 +36,7 @@ with the parrent patch;
 #X connect 12 0 0 0;
 #X restore 155 367 pd save&recall;
 #X msg 86 184 frequency-1 \$1;
-#X floatatom 125 236 5 0 0 0 - - -;
+#X floatatom 125 236 5 0 0 0 - - - 0;
 #X msg 125 256 frequency-1 \$1;
 #X text 127 165 crossover 1 frequency in hz;
 #X text 162 236 crossover 2 frequency in hz;
@@ -53,17 +49,12 @@ with the parrent patch;
 #X text 68 144 1:(~)signal;
 #X text 10 145 Inlets:;
 #X text 10 195 Outlets:;
-#X obj 12 20 cnv 15 10 10 empty empty pp.butterkreuz3~ 0 0 2 16 -233017
--262144 0;
-#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 12 20 cnv 15 10 10 empty empty pp.butterkreuz3~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 5 282 cnv 15 81 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 599 176 505 104 references 0;
-#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 17 26 Help->Browser->Pure Data/3.audio.examples/H13.butterworth.pd
-;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 17 26 Help->Browser->Pure Data/3.audio.examples/H13.butterworth.pd;
 #X restore 5 282 pd references;
 #X obj 389 9 noise~;
 #X text 10 77 Creation arguments:;
@@ -84,22 +75,28 @@ with the parrent patch;
 #X obj 446 129 *~;
 #X obj 504 129 *~;
 #X obj 390 168 +~;
-#X obj 405 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 461 108 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 519 106 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 405 108 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 461 108 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 519 106 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 15 97 \$1: crossover 1 frequency (default: 500hz);
 #X text 15 112 \$2: crossover 2 frequency (default: 2000hz);
-#X text 20 33 3-band crossover filter with a relatively flat magnitude
-response;
+#X text 20 33 3-band crossover filter with a relatively flat magnitude response;
 #X obj 389 55 pp.butterkreuz3~ 1000 5000;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
+#X obj 729 3 cnv 15 120 30 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 735 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X text 754 9 open example-1;
+#N canvas 102 154 450 300 examples 0;
+#X obj 95 98 s pd;
+#X obj 95 7 r \$0-example1;
+#X msg 95 30 dir;
+#X obj 95 53 pdcontrol;
+#X msg 95 75 open 13-multiband_dynamics.pd \$1/Examples;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X restore 304 282 pd examples;
 #X connect 3 0 31 1;
 #X connect 10 0 31 0;
 #X connect 21 0 24 0;
