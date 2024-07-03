@@ -1,8 +1,8 @@
-#N struct 1161-template float x float y float c float s float th float stretch array 1161-plus 1161-template-y array 1161-minus 1161-template-y;
-#N struct 1161-template-y float y;
-#N struct 1162-template float x float y float c float s float th float stretch array 1162-plus 1162-template-y array 1162-minus 1162-template-y;
-#N struct 1162-template-y float y;
-#N canvas 894 219 811 729 10;
+#N struct 1836-template float x float y float c float s float th float stretch array 1836-plus 1836-template-y array 1836-minus 1836-template-y;
+#N struct 1836-template-y float y;
+#N struct 1837-template float x float y float c float s float th float stretch array 1837-plus 1837-template-y array 1837-minus 1837-template-y;
+#N struct 1837-template-y float y;
+#N canvas 262 91 811 729 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 399 291 pp.sfplayer~;
