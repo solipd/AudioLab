@@ -1,4 +1,4 @@
-#N canvas 103 85 1158 762 10;
+#N canvas 138 78 1158 762 10;
 #X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 533 127 1273 848 stuff 0;
 #X obj 335 132 s \$0-visbngr;
@@ -506,7 +506,7 @@
 #N canvas 371 98 450 300 delwrite 0;
 #X obj 160 78 inlet~;
 #X obj 164 163 outlet~;
-#X obj 159 106 delwrite~ \$0-predelay-l \$2;
+#X obj 159 106 delwrite~ \$0-predelay-l 200;
 #X connect 0 0 2 0;
 #X restore 88 80 pd delwrite;
 #N canvas 406 217 450 300 delread 0;
@@ -520,18 +520,16 @@
 #N canvas 371 98 450 300 delwrite 0;
 #X obj 160 78 inlet~;
 #X obj 164 163 outlet~;
-#X obj 159 106 delwrite~ \$0-predelay-r \$2;
+#X obj 159 106 delwrite~ \$0-predelay-r 200;
 #X connect 0 0 2 0;
 #X restore 215 74 pd delwrite;
-#N canvas 406 217 450 300 delread 0;
+#N canvas 414 380 450 300 delread 0;
 #X obj 37 37 inlet~;
 #X obj 40 144 outlet~;
 #X obj 39 96 r \$0-predelay;
 #X obj 40 121 delread~ \$0-predelay-r \$1;
-#X floatatom 128 81 5 0 0 0 - - - 0;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
-#X connect 4 0 3 0;
 #X restore 215 119 pd delread;
 #X obj 88 37 inlet~;
 #X obj 215 37 inlet~;
@@ -2260,7 +2258,7 @@
 #X text 677 41 mc;
 #X obj 726 41 inlet~;
 #X text 770 41 mc;
-#N canvas 266 69 753 210 \$0-phiverb 0;
+#N canvas 50 60 753 210 \$0-phiverb 0;
 #N canvas 111 191 1262 453 mask 0;
 #X obj 100 100 cnv 15 739 189 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
 #X obj 639 139 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
@@ -2297,7 +2295,7 @@
 #X obj 463 126 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 469 65 set \$1;
 #X obj 109 244 nbx 4 12 0 200 0 0 \$0-predelay \$0-predelayr ms 41 7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 459 267 hradio 14 1 0 3 \$0-mixdown \$0-mixdownr Mixdown 46 10 2 10 #fcfcfc #000000 #000000 0;
+#X obj 460 267 hradio 14 1 0 3 \$0-mixdown \$0-mixdownr Mixdown 46 10 2 10 #fcfcfc #000000 #000000 0;
 #X obj 639 127 cnv 10 100 10 empty empty Late 0 5 2 11 #fcfcfc #000000 0;
 #X obj 569 190 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 463 190 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
@@ -2323,9 +2321,9 @@
 #X connect 8 0 3 0;
 #X restore 460 312 pd map;
 #X obj 568 245 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 462 245 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 463 245 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 568 218 nbx 5 12 0 20000 0 0 \$0-hip \$0-hipr hz. 50 7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 462 218 hsl 100 12 0 1 0 0 \$0-hipgui \$0-hipguir Hip-Frequency -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 463 218 hsl 100 12 0 1 0 0 \$0-hipgui \$0-hipguir Hip-Frequency -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 460 390 set \$1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
