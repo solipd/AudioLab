@@ -2285,7 +2285,7 @@
 #X text 677 41 mc;
 #X obj 726 41 inlet~;
 #X text 770 41 mc;
-#N canvas 50 60 753 210 \$0-phiverb 1;
+#N canvas 84 449 753 210 \$0-phiverb 1;
 #N canvas 111 191 1262 453 mask 0;
 #X obj 100 100 cnv 15 739 198 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
 #X obj 639 136 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
@@ -3473,7 +3473,7 @@
 #X obj 591 377 * 0.17;
 #X obj 636 376 osc~ 0.34;
 #X obj 670 421 * 0.67;
-#X obj 552 32 r \$0-modulate-early;
+#X obj 552 32 r \$0-modulate;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
