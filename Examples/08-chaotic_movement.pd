@@ -1,7 +1,7 @@
-#N struct 1154-template float x float y float c float s float th float stretch array 1154-plus 1154-template-y array 1154-minus 1154-template-y;
-#N struct 1154-template-y float y;
-#N struct 1155-template float x float y float c float s float th float stretch array 1155-plus 1155-template-y array 1155-minus 1155-template-y;
-#N struct 1155-template-y float y;
+#N struct 1005-template float x float y float c float s float th float stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y;
+#N struct 1005-template-y float y;
+#N struct 1006-template float x float y float c float s float th float stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y;
+#N struct 1006-template-y float y;
 #N canvas 112 102 1123 712 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -92,7 +92,7 @@
 #N canvas 3 54 450 300 init 0;
 #X obj 117 109 outlet;
 #X obj 117 63 loadbang;
-#X msg 117 88 localize 75;
+#X msg 117 88 pitch-mod 70 \, localize 100;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 563 387 pd init;
