@@ -1,7 +1,7 @@
-#N struct 1377-template float x float y float c float s float th float stretch array 1377-plus 1377-template-y array 1377-minus 1377-template-y;
-#N struct 1377-template-y float y;
-#N struct 1378-template float x float y float c float s float th float stretch array 1378-plus 1378-template-y array 1378-minus 1378-template-y;
-#N struct 1378-template-y float y;
+#N struct 1009-template float x float y float c float s float th float stretch array 1009-plus 1009-template-y array 1009-minus 1009-template-y;
+#N struct 1009-template-y float y;
+#N struct 1010-template float x float y float c float s float th float stretch array 1010-plus 1010-template-y array 1010-minus 1010-template-y;
+#N struct 1010-template-y float y;
 #N canvas 176 96 1018 639 10;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 630 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -76,7 +76,7 @@
 #X obj 761 576 rmstodb;
 #X msg 746 78 open \$1 \, normalize 1 \, play 1;
 #X text 795 488 output level compensation;
-#X text 10 87 A 3-band compander setup that brings out the detail in the mids and highs while boosting the lows. I use it regularly to process voice recordings \, but it makes pretty much everything sound... better.;
+#X text 10 87 A 3-band compander setup that brings out the detail in the mids and highs while boosting the lows.;
 #X connect 5 0 6 0;
 #X connect 5 1 7 0;
 #X connect 5 2 8 0;
