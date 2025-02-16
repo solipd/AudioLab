@@ -2,74 +2,72 @@
 #N canvas 230 199 996 431 stuff 0;
 #X obj 134 27 r \$0-deltime-l;
 #X obj 228 27 r \$0-deltime-r;
-#X obj 134 89 /;
 #X obj 166 56 t b f;
 #X obj 85 115 f;
-#X obj 84 3 r \$0-link-deltime;
-#X obj 84 26 sel 1;
-#X obj 70 182 r \$0-deltime-l-gui;
-#X obj 70 308 s \$0-deltime-r;
-#X msg 104 263 set \$1;
-#X obj 104 283 s \$0-deltime-r-guir;
-#X obj 113 211 r \$0-link-deltime;
-#X obj 70 212 spigot;
-#X msg 261 260 set \$1;
-#X obj 270 208 r \$0-link-deltime;
-#X obj 227 209 spigot;
-#X obj 227 179 r \$0-deltime-r-gui;
-#X obj 70 239 / 1;
-#X obj 227 236 * 1;
-#X obj 261 280 s \$0-deltime-l-guir;
-#X obj 227 305 s \$0-deltime-l;
-#X obj 238 90 r \$0-deltime-l-gui;
-#X obj 365 89 r \$0-deltime-r-gui;
-#X obj 238 116 s \$0-deltime-l;
-#X obj 365 114 s \$0-deltime-r;
-#X obj 664 206 s \$0-visbngr;
-#X obj 646 101 r \$0-visbng;
-#X msg 644 178 color 0 0;
-#X msg 728 178 color 10 10;
-#X obj 646 123 t b;
-#X obj 726 153 del 250;
-#X obj 610 251 s pd-\$0-echo;
-#X msg 610 229 relocate 313x235+1+1 1x1+50+60 \, vis 1;
-#X connect 0 0 2 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 1;
-#X connect 3 0 2 0;
-#X connect 3 1 2 1;
-#X connect 4 0 17 1;
-#X connect 4 0 18 1;
-#X connect 5 0 6 0;
-#X connect 6 0 4 0;
-#X connect 7 0 12 0;
-#X connect 9 0 10 0;
-#X connect 11 0 12 1;
-#X connect 12 0 17 0;
-#X connect 13 0 19 0;
-#X connect 14 0 15 1;
-#X connect 15 0 18 0;
-#X connect 16 0 15 0;
-#X connect 17 0 8 0;
-#X connect 17 0 9 0;
-#X connect 18 0 13 0;
+#X obj 85 3 r \$0-link-deltime;
+#X obj 85 26 sel 1;
+#X obj 70 227 r \$0-deltime-l-gui;
+#X obj 70 353 s \$0-deltime-r;
+#X msg 104 308 set \$1;
+#X obj 104 328 s \$0-deltime-r-guir;
+#X obj 113 256 r \$0-link-deltime;
+#X obj 70 257 spigot;
+#X msg 261 305 set \$1;
+#X obj 270 253 r \$0-link-deltime;
+#X obj 227 254 spigot;
+#X obj 227 224 r \$0-deltime-r-gui;
+#X obj 261 325 s \$0-deltime-l-guir;
+#X obj 227 350 s \$0-deltime-l;
+#X obj 506 29 r \$0-deltime-l-gui;
+#X obj 633 28 r \$0-deltime-r-gui;
+#X obj 506 55 s \$0-deltime-l;
+#X obj 633 53 s \$0-deltime-r;
+#X obj 593 277 s \$0-visbngr;
+#X obj 575 172 r \$0-visbng;
+#X msg 573 249 color 0 0;
+#X msg 657 249 color 10 10;
+#X obj 575 194 t b;
+#X obj 655 224 del 250;
+#X obj 539 322 s pd-\$0-echo;
+#X msg 539 300 relocate 313x235+1+1 1x1+50+60 \, vis 1;
+#X obj 134 89 -;
+#X obj 227 282 +;
+#X obj 70 284 -;
+#X connect 0 0 30 0;
+#X connect 1 0 2 0;
+#X connect 2 0 30 0;
+#X connect 2 1 30 1;
+#X connect 3 0 31 1;
+#X connect 3 0 32 1;
+#X connect 4 0 5 0;
+#X connect 5 0 3 0;
+#X connect 6 0 11 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 1;
+#X connect 11 0 32 0;
+#X connect 12 0 16 0;
+#X connect 13 0 14 1;
+#X connect 14 0 31 0;
+#X connect 15 0 14 0;
 #X connect 18 0 20 0;
-#X connect 21 0 23 0;
-#X connect 22 0 24 0;
+#X connect 19 0 21 0;
+#X connect 23 0 26 0;
+#X connect 24 0 22 0;
+#X connect 25 0 22 0;
+#X connect 26 0 24 0;
+#X connect 26 0 27 0;
 #X connect 26 0 29 0;
 #X connect 27 0 25 0;
-#X connect 28 0 25 0;
-#X connect 29 0 27 0;
-#X connect 29 0 30 0;
-#X connect 29 0 32 0;
-#X connect 30 0 28 0;
-#X connect 32 0 31 0;
+#X connect 29 0 28 0;
+#X connect 30 0 3 1;
+#X connect 31 0 12 0;
+#X connect 31 0 17 0;
+#X connect 32 0 7 0;
+#X connect 32 0 8 0;
 #X restore 689 194 pd stuff;
-#N canvas 28 214 805 413 init 0;
+#N canvas 28 214 805 413 init 1;
 #X obj 186 32 loadbang;
-#X obj 186 86 f \$0;
-#X obj 144 33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 144 33 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 186 55 t b b;
 #X obj 503 96 max 0;
 #X obj 503 119 sel 0;
@@ -78,24 +76,21 @@
 #X obj 503 73 f \$1;
 #X obj 531 217 s \$0-deltime-l-guir;
 #X obj 560 242 s \$0-deltime-r-guir;
-#X msg 185 109 \; \$1-repeats 0 \; \$1-lopr 4000 \; \$1-hf-dampingr
-80 \; \$1-hipr 100 \; \$1-lf-dampingr 50 \; \$1-deltime-l 300 \; \$1-deltime-r
-300 \; \$1-link-deltimer 1 \; \$1-deltime-l-guir 300 \; \$1-deltime-r-guir
-300 \; \$1-flutterr 100 \; \$1-feedbackr 80 \; \$1-drywetr 50 \; \$1-dist-mode
-0 \;;
 #X msg 531 189 range 1 \$1;
-#X connect 0 0 3 0;
+#X obj 184 86 pack \$0 \$1;
+#X msg 185 109 \; \$1-repeats 0 \; \$1-lopr 4000 \; \$1-hf-dampingr 80 \; \$1-hipr 100 \; \$1-lf-dampingr 50 \; \$1-deltime-l \$2 \; \$1-deltime-r \$2 \; \$1-link-deltimer 1 \; \$1-deltime-l-guir \$2 \; \$1-deltime-r-guir \$2 \; \$1-flutterr 100 \; \$1-feedbackr 80 \; \$1-drywetr 50 \; \$1-dist-mode 0 \;;
+#X connect 0 0 2 0;
 #X connect 1 0 11 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 0;
-#X connect 3 1 8 0;
+#X connect 2 0 11 0;
+#X connect 2 1 7 0;
+#X connect 3 0 4 0;
 #X connect 4 0 5 0;
+#X connect 4 1 10 0;
 #X connect 5 0 6 0;
-#X connect 5 1 12 0;
-#X connect 6 0 7 0;
-#X connect 8 0 4 0;
-#X connect 12 0 10 0;
-#X connect 12 0 9 0;
+#X connect 7 0 3 0;
+#X connect 10 0 9 0;
+#X connect 10 0 8 0;
+#X connect 11 0 12 0;
 #X restore 689 171 pd init;
 #N canvas 1 56 1364 711 echo 0;
 #X obj 66 121 inlet~;
@@ -1410,9 +1405,7 @@
 #X obj 575 238 clip 0 1;
 #X obj 676 165 clip 0 100;
 #X obj 676 188 s \$0-drywetr;
-#X obj 66 123 route time-left time-right pingpong repeats flutter feedback
-reverb lop-frequency hip-frequency hf-damping lf-damping ssb-amount
-ssb-shift reverb-mode distortion-mode dry/wet, f 105;
+#X obj 66 123 route time-left time-right pingpong repeats flutter feedback reverb lop-frequency hip-frequency hf-damping lf-damping ssb-amount ssb-shift reverb-mode distortion-mode dry/wet, f 105;
 #X obj 654 236 i;
 #X obj 654 213 clip 0 1;
 #X obj 654 259 s \$0-dist-moder;
@@ -1455,60 +1448,36 @@ ssb-shift reverb-mode distortion-mode dry/wet, f 105;
 #X restore 688 82 pd in;
 #N canvas 50 60 313 235 \$0-echo 1;
 #N canvas 86 150 850 512 mask 0;
-#X obj 100 100 cnv 15 299 221 empty empty empty 20 12 0 14 -262144
--66577 0;
-#X obj 343 117 cnv 10 10 10 empty empty echo~ 0 5 2 17 -262144 -162280
-0;
-#X obj 117 184 hsl 100 12 0 110 0 0 \$0-feedback-gui \$0-feedback-guir
-Feedback -2 -6 2 10 -262144 -1 -1 7200 1;
-#X obj 224 184 nbx 5 12 0 1e+17 0 0 \$0-feedback \$0-feedbackr % 47
-8 2 10 -262144 -1 -1 80 256;
-#X obj 227 275 hsl 100 12 0 0.5 0 0 \$0-shift-gui \$0-shift-guir SSB-Shift
--2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 334 275 nbx 5 12 -1 1 0 0 \$0-shift \$0-shiftr empty 47 7 2
-10 -262144 -1 -1 0 256;
+#X obj 100 100 cnv 15 299 221 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 343 117 cnv 10 10 10 empty empty echo~ 0 5 2 17 #fcfcfc #9c9c9c 0;
+#X obj 117 184 hsl 100 12 0 110 0 0 \$0-feedback-gui \$0-feedback-guir Feedback -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 224 184 nbx 5 12 0 1e+17 0 0 \$0-feedback \$0-feedbackr % 47 8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 227 275 hsl 100 12 0 0.5 0 0 \$0-shift-gui \$0-shift-guir SSB-Shift -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 334 275 nbx 5 12 -1 1 0 0 \$0-shift \$0-shiftr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 52 178 set \$1;
 #X msg 458 266 set \$1;
-#X obj 256 124 nbx 7 14 0 1000 0 0 \$0-deltime-r-gui \$0-deltime-r-guir
-Time-Right 0 -7 2 10 -262144 -1 -1 667 256;
-#X obj 116 124 nbx 7 14 0 1000 0 0 \$0-deltime-l-gui \$0-deltime-l-guir
-Time-Left 0 -7 2 10 -262144 -1 -1 667 256;
-#X obj 210 126 tgl 12 0 \$0-link-deltime \$0-link-deltimer Link -4
--7 2 10 -262144 -1 -1 1 1;
-#X obj 766 139 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr %
-41 7 2 10 -262144 -1 -1 80 256;
-#X obj 660 139 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping
--2 -6 2 10 -262144 -1 -1 7920 1;
+#X obj 256 124 nbx 7 14 1 400 0 0 \$0-deltime-r-gui \$0-deltime-r-guir Time-Right 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 116 124 nbx 7 14 1 400 0 0 \$0-deltime-l-gui \$0-deltime-l-guir Time-Left 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 210 126 tgl 12 0 \$0-link-deltime \$0-link-deltimer Link -4 -7 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 766 139 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 660 139 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 606 136 set \$1;
-#X obj 114 246 nbx 5 12 0 20000 0 0 \$0-lop \$0-lopr Lop-Frequency
-0 -7 2 10 -262144 -1 -1 4000 256;
-#X obj 764 170 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr %
-41 7 2 10 -262144 -1 -1 50 256;
-#X obj 658 170 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping
--2 -6 2 10 -262144 -1 -1 4950 1;
-#X obj 114 275 nbx 5 12 0 20000 0 0 \$0-hip \$0-hipr Hip-Frequency
-0 -7 2 10 -262144 -1 -1 100 256;
+#X obj 114 246 nbx 5 12 0 20000 0 0 \$0-lop \$0-lopr Lop-Frequency 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 764 170 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 658 170 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 114 275 nbx 5 12 0 20000 0 0 \$0-hip \$0-hipr Hip-Frequency 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 606 163 set \$1;
-#X obj 116 148 tgl 12 0 \$0-pingpong \$0-pingpongr Pingpong 15 8 2
-10 -262144 -1 -1 0 1;
-#X obj 196 148 hradio 12 1 0 3 \$0-repeats \$0-repeatsr Repeats 39
-8 2 10 -262144 -1 -1 0;
-#X obj 117 212 hsl 100 12 0 50 0 0 \$0-reverb-gui \$0-reverb-guir Reverb
--2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 224 212 nbx 5 12 0 100 0 0 \$0-reverb \$0-reverbr % 47 8 2 10
--262144 -1 -1 0 256;
+#X obj 116 148 tgl 12 0 \$0-pingpong \$0-pingpongr Pingpong 15 8 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 196 148 hradio 12 1 0 3 \$0-repeats \$0-repeatsr Repeats 39 8 2 10 #fcfcfc #000000 #000000 0;
+#X obj 117 212 hsl 100 12 0 50 0 0 \$0-reverb-gui \$0-reverb-guir Reverb -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 224 212 nbx 5 12 0 100 0 0 \$0-reverb \$0-reverbr % 47 8 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 51 204 set \$1;
-#X obj 285 148 nbx 3 12 0 1e+17 0 0 \$0-flutter \$0-flutterr Flutter
-33 8 2 10 -262144 -1 -1 100 256;
-#X obj 227 246 hsl 100 12 0 100 0 0 \$0-ssb-amount-gui \$0-ssb-amount-guir
-SSB-Amount -2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 334 246 nbx 5 12 0 100 0 0 \$0-ssb-amount \$0-ssb-amountr empty
-47 7 2 10 -262144 -1 -1 0 256;
+#X obj 285 148 nbx 3 12 0 1e+17 0 0 \$0-flutter \$0-flutterr Flutter 33 8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 227 246 hsl 100 12 0 100 0 0 \$0-ssb-amount-gui \$0-ssb-amount-guir SSB-Amount -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 334 246 nbx 5 12 0 100 0 0 \$0-ssb-amount \$0-ssb-amountr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 458 242 set \$1;
-#X obj 114 300 nbx 3 12 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet 33
-8 2 10 -262144 -1 -1 50 256;
-#X obj 293 184 tgl 12 0 \$0-dist-mode \$0-dist-moder Distortion-Mode
-17 8 2 10 -262144 -1 -1 0 1;
+#X obj 114 300 nbx 3 12 0 100 0 0 \$0-drywet \$0-drywetr Dry/Wet 33 8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 293 184 tgl 12 0 \$0-dist-mode \$0-dist-moder Distortion-Mode 17 8 2 10 #fcfcfc #000000 #000000 0 1;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
@@ -1678,10 +1647,7 @@ SSB-Amount -2 -6 2 10 -262144 -1 -1 0 1;
 #X obj 494 77 r \$0-ssb-amount;
 #X obj 518 102 r \$0-shift;
 #X obj 567 149 r \$0-drywet;
-#X msg 237 291 time-left \$1 \, time-right \$2 \, pingpong \$3 \, repeats
-\$4 \, flutter \$5 \, feedback \$6 \, reverb \$7 \, lop-frequency \$8
-\, hip-frequency \$9 \, hf-damping \$10 \, lf-damping \$11 \, ssb-amount
-\$12 \, ssb-shift \$13 \, distortion-mode \$14 \, dry/wet \$15;
+#X msg 237 291 time-left \$1 \, time-right \$2 \, pingpong \$3 \, repeats \$4 \, flutter \$5 \, feedback \$6 \, reverb \$7 \, lop-frequency \$8 \, hip-frequency \$9 \, hf-damping \$10 \, lf-damping \$11 \, ssb-amount \$12 \, ssb-shift \$13 \, distortion-mode \$14 \, dry/wet \$15;
 #X obj 305 169 r \$0-feedback;
 #X obj 331 193 r \$0-reverb;
 #X obj 528 125 r \$0-dist-mode;
@@ -1725,8 +1691,7 @@ SSB-Amount -2 -6 2 10 -262144 -1 -1 0 1;
 #X text 531 182 shift;
 #X obj 345 329 outlet~;
 #X obj 487 328 outlet~;
-#X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #X connect 2 0 16 0;
 #X connect 2 1 17 0;
 #X connect 3 0 4 0;
