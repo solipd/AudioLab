@@ -1,4 +1,4 @@
-#N canvas 272 442 770 460 10;
+#N canvas 269 134 770 460 10;
 #X obj 392 395 pp.out~;
 #A saved;
 #X obj 2 2 cnv 15 380 450 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -192,7 +192,7 @@
 #X msg 95 161 dir;
 #X obj 95 184 pdcontrol;
 #X obj 95 138 r \$0-example2;
-#X msg 95 207 open 14-clitchfest.pd \$1/Examples;
+#X msg 95 207 open 14-glitchfest.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

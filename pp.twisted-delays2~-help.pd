@@ -177,7 +177,7 @@
 #X msg 95 161 dir;
 #X obj 95 184 pdcontrol;
 #X obj 95 138 r \$0-example2;
-#X msg 95 207 open 14-clitchfest.pd \$1/Examples;
+#X msg 95 207 open 14-glitchfest.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
