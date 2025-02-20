@@ -1,4 +1,4 @@
-#N canvas 278 164 1387 771 10;
+#N canvas 235 203 1387 771 10;
 #X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 436 125 1273 848 stuff 0;
 #X obj 335 132 s \$0-visbngr;
@@ -2244,7 +2244,7 @@
 #X connect 26 0 21 1;
 #X restore 800 258 pd late to prime;
 #X obj 527 55 r \$0-testimp;
-#N canvas 1060 -64 913 1108 init&preset 0;
+#N canvas 514 25 913 1108 init&preset 0;
 #X obj 33 1073 s \$0-preset;
 #X obj 33 255 loadbang;
 #X obj 161 29 sel 0 1 2 3 4 5 6 7;
@@ -2265,9 +2265,9 @@
 #X msg 464 261 predelay 4 \, modulate-early 0.1 \, modulate-late 0.1 \, feedback 30 \, lop 5880 \, hf-damping 30 \, hip 0 \, lf-damping 0 \, mixdown 1 \, early-center 30 \, early-slope -42 \, early-curve 5 \, late-center 23 \, late-slope 32 \, late-curve 5 \, filter 110.8 100 75.4 107.2 60.4 80.7998 112.6 99.4 \, early 46.6667 30 65 33.3333 46.6668 33.3334 46.6667 60 \, late 78 76.8983 74.8841 72.2757 69.1868 65.6832 61.8091 57.5972 53.0725 48.2555 43.1628 37.8087 32.2053 26.3633 20.2921 14 \,;
 #X msg 463 388 predelay 0 \, modulate-early 0.1 \, modulate-late 0.1 \, feedback 44.4444 \, lop 5300 \, hf-damping 70 \, hip 130 \, lf-damping 100 \, mixdown 1 \, early-center 30 \, early-slope -50 \, early-curve -25 \, late-center 40 \, late-slope 59 \, late-curve -16 \, filter 100 76.6001 92.2 106.6 67 100.6 61 103.6 \, early 53.3331 33.3334 105 25.0001 43.3334 86.6666 23.3335 40 \, late 139 97.3573 84.6349 75.46 68.0258 61.6654 56.0477 50.9809 46.3423 42.0483 38.0388 34.2691 30.7049 27.3191 24.09 21 \,;
 #X msg 466 655 predelay 0 \, modulate-early 0 \, modulate-late 0 \, feedback 60 \, lop 1666.67 \, hf-damping 100 \, hip 200 \, lf-damping 13 \, mixdown 1 \, early-center 45 \, early-slope 30 \, early-curve 11 \, late-center 40 \, late-slope 56 \, late-curve 12 \, filter 97.0003 107.8 102.4 98.7998 95.1998 91.5997 94.6 98.2 \, early 60 61.008 64.3212 70.1251 78.5256 89.5994 103.407 120 \, late 136 135.71 134.669 132.753 129.886 126.01 121.081 115.057 107.906 99.5959 90.0995 79.3916 67.4487 54.2491 39.7726 24 \,;
-#X msg 467 940 predelay 10 \, modulate-early 5 \, modulate-late 0.2 \, feedback 80 \, lop 6000 \, hf-damping 66.6 \, hip 0 \, lf-damping 0 \, mixdown 1 \, early-center 48 \, early-slope 87 \, early-curve -25 \, late-center 42 \, late-slope 75 \, late-curve 13 \, transition-time 10 \, filter 123.4 105.4 100 97 124 104.2 100 97 \, early 9 86.6667 126.667 145.588 157.289 167.051 175.503 183 \, late 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9 \,;
-#X msg 468 798 redelay 30 \, modulate-early 0 \, modulate-late 0.1 \, feedback 55 \, lop 3650 \, hf-damping 66.6667 \, hip 0 \, lf-damping 0 \, mixdown 1 \, early-center 46 \, early-slope 73 \, early-curve 13 \, late-center 42 \, late-slope 75 \, late-curve 13 \, transition-time 10 \, filter 113.8 105.4 100 97 115.6 104.2 100 97 \, early 76.6668 56.667 56.6667 21.6667 48.3333 86.3377 121.418 165 \, late 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9 \,;
-#X msg 466 518 predelay 6.66 \, modulate-early 0.1 \, modulate-late 0.1 \, feedback 66.6 \, lop 666 \, hf-damping 66.6667 \, hip 666 \, lf-damping 6.66 \, mixdown 1 \, early-center 21 \, early-slope 8 \, early-curve -34 \, late-center 28 \, late-slope 39 \, late-curve 8 \, transition-time 10 \, filter 110.8 107.2 103 100.6 104.2 108.4 111.4 115 \, early 74.9997 53.3334 70 84.9998 81.6665 66.6667 55 40 \, late 101.667 28.3333 78.3333 51.6667 87.775 46.6667 105 26.6667 69.8411 48.3333 93.3333 60 106.667 50 33.3333 96.6667 \,;
+#X msg 467 940 predelay 10 \, modulate-early 5 \, modulate-late 0.2 \, feedback 80 \, lop 6000 \, hf-damping 66.6 \, hip 0 \, lf-damping 0 \, mixdown 1 \, early-center 48 \, early-slope 87 \, early-curve -25 \, late-center 42 \, late-slope 75 \, late-curve 13 \, filter 123.4 105.4 100 97 124 104.2 100 97 \, early 9 86.6667 126.667 145.588 157.289 167.051 175.503 183 \, late 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9 \,;
+#X msg 468 798 redelay 30 \, modulate-early 0 \, modulate-late 0.1 \, feedback 55 \, lop 3650 \, hf-damping 66.6667 \, hip 0 \, lf-damping 0 \, mixdown 1 \, early-center 46 \, early-slope 73 \, early-curve 13 \, late-center 42 \, late-slope 75 \, late-curve 13 \, filter 113.8 105.4 100 97 115.6 104.2 100 97 \, early 76.6668 56.667 56.6667 21.6667 48.3333 86.3377 121.418 165 \, late 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9 \,;
+#X msg 466 518 predelay 6.66 \, modulate-early 0.1 \, modulate-late 0.1 \, feedback 66.6 \, lop 666 \, hf-damping 66.6667 \, hip 666 \, lf-damping 6.66 \, mixdown 1 \, early-center 21 \, early-slope 8 \, early-curve -34 \, late-center 28 \, late-slope 39 \, late-curve 8 \, filter 110.8 107.2 103 100.6 104.2 108.4 111.4 115 \, early 74.9997 53.3334 70 84.9998 81.6665 66.6667 55 40 \, late 101.667 28.3333 78.3333 51.6667 87.775 46.6667 105 26.6667 69.8411 48.3333 93.3333 60 106.667 50 33.3333 96.6667 \,;
 #X connect 1 0 10 0;
 #X connect 2 0 15 0;
 #X connect 2 1 16 0;
@@ -2294,7 +2294,7 @@
 #X text 677 41 mc;
 #X obj 726 41 inlet~;
 #X text 770 41 mc;
-#N canvas 127 377 753 210 \$0-phiverb 1;
+#N canvas 94 0 753 210 \$0-phiverb 1;
 #N canvas 111 191 1262 453 mask 0;
 #X obj 100 100 cnv 15 739 198 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
 #X obj 639 136 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
@@ -2302,7 +2302,7 @@
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-timesgui 16 float 3;
-#A 0 101.667 28.3333 78.3333 51.6667 87.775 46.6667 105 26.6667 69.8411 48.3333 93.3333 60 106.667 50 33.3333 96.6667;
+#A 0 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9;
 #X coords 0 200 16 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
@@ -2319,7 +2319,7 @@
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array \$0-early 8 float 3;
-#A 0 74.9997 53.3334 70 84.9998 81.6665 66.6667 55 40;
+#A 0 9 86.6667 126.667 145.588 157.289 167.051 175.503 183;
 #X coords 0 200 8 0 150 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 120 1 100 100;
@@ -2383,7 +2383,7 @@
 #X obj 100 100 cnv 15 75 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array \$0-difffilter 8 float 3;
-#A 0 110.8 107.2 103 100.6 104.2 108.4 111.4 115;
+#A 0 123.4 105.4 100 97 124 104.2 100 97;
 #X coords 0 127 8 55 75 120 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 75 120 1 100 100;
@@ -2395,7 +2395,7 @@
 #X obj 170 123 cnv 10 80 10 empty empty Input-Filter 0 5 2 11 #fcfcfc #000000 0;
 #X obj 798 186 bng 14 250 50 0 \$0-testimp \$0-testimpr Test 18 9 2 10 #ff8300 #000000 #000000;
 #X obj 109 230 cnv 10 10 10 empty empty Predelay 0 5 2 10 #fcfcfc #000000 0;
-#X obj 134 281 hradio 11 1 0 8 \$0-presetrd \$0-presetrdr Preset:\ Hall 0 -8 2 10 #fcfcfc #000000 #000000 0;
+#X obj 134 281 hradio 11 1 0 8 \$0-presetrd \$0-presetrdr Preset:\ Long\ Mod 0 -8 2 10 #fcfcfc #000000 #000000 0;
 #X obj 374 120 nbx 4 12 0 1e+11 0 0 \$0-modulate \$0-modulater Modulate 0 -6 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 558 277 cnv 10 10 10 empty empty phiverb~ 0 5 2 17 #fcfcfc #9c9c9c 0;
 #X obj 753 120 nbx 4 12 0 1e+11 0 0 \$0-modulate-late \$0-modulate-later Modulate 0 -6 2 10 #fcfcfc #000000 #000000 0 256;
