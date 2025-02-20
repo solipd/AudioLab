@@ -1,22 +1,20 @@
 #N canvas 222 321 748 309 10;
 #X obj 390 248 pp.out~;
 #A saved;
-#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 103 139 1:(~)signal;
-#X text 45 140 Inlets:;
-#X text 45 190 Outlets:;
-#X obj 12 20 cnv 15 10 10 empty empty pp.pan~ 0 0 2 16 -233017 -262144
-0;
-#X floatatom 464 24 5 0 0 0 - - -;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 103 129 1:(~)signal;
+#X text 45 130 Inlets:;
+#X text 45 193 Outlets:;
+#X obj 12 20 cnv 15 10 10 empty empty pp.pan~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X floatatom 464 24 5 0 0 0 - - - 0;
 #X obj 390 14 noise~;
 #X text 31 37 constant power panning;
-#X text 103 152 2:(~)panorama;
-#X text 103 190 1:(~)signal left;
-#X text 103 202 2:(~)signal right;
+#X text 103 146 2:(~)panorama;
+#X text 103 193 1:(~)signal left;
+#X text 103 208 2:(~)signal right;
 #X obj 464 44 osc~ 1;
 #X obj 464 125 *~;
-#X floatatom 479 78 5 0 100 0 - - -;
+#X floatatom 479 78 5 0 100 0 - - - 0;
 #X obj 479 100 / 100;
 #X text 30 70 Creation arguments: panning law: "cos" or "sqrt";
 #X text 151 83 default: cos;
@@ -27,12 +25,10 @@
 #X restore 539 196 pd message-out;
 #X obj 391 151 pp.pan~ cos;
 #A saved;
-#X obj 539 126 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 539 126 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 1023 138 330 209 control-messages 0;
 #X obj 54 180 outlet;
-#X obj 101 147 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 101 147 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -47,8 +43,7 @@
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -60,7 +55,7 @@ with the parrent patch;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
 #X restore 101 146 pd save&recall;
-#X floatatom 54 11 5 0 0 0 - - -;
+#X floatatom 54 11 5 0 0 0 - - - 0;
 #X msg 54 33 panorama \$1;
 #X text 93 9 -1 left \, 1 right;
 #X msg 85 83 cos;
@@ -74,36 +69,8 @@ with the parrent patch;
 #X connect 6 0 0 0;
 #X connect 7 0 0 0;
 #X restore 539 126 pd control-messages;
-#N canvas 102 154 450 300 examples 0;
-#X obj 94 118 s pd;
-#X obj 93 239 s pd;
-#X obj 94 24 r \$0-example1;
-#X msg 94 47 dir;
-#X obj 94 70 pdcontrol;
-#X msg 93 169 dir;
-#X obj 93 192 pdcontrol;
-#X obj 93 146 r \$0-example2;
-#X msg 95 95 open 05-circular_doppler.pd \$1/Examples;
-#X msg 93 216 open 08-chaotic_movement.pd \$1/Examples;
-#X connect 2 0 3 0;
-#X connect 3 0 4 0;
-#X connect 4 0 8 0;
-#X connect 5 0 6 0;
-#X connect 6 0 9 0;
-#X connect 7 0 5 0;
-#X connect 8 0 0 0;
-#X connect 9 0 1 0;
-#X restore 304 280 pd examples;
-#X obj 622 4 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 628 15 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
-#X obj 628 36 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
-0 10 -262144 -1 -1;
-#X text 647 13 open example-1;
-#X text 647 35 open example-2;
-#X text 103 214 3:message;
-#X text 103 164 3:control-message;
+#X text 103 222 3:message;
+#X text 103 161 3:control-message;
 #X connect 6 0 12 0;
 #X connect 7 0 19 0;
 #X connect 12 0 13 0;
