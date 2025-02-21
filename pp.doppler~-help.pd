@@ -1,29 +1,25 @@
-#N canvas 310 130 801 361 10;
+#N canvas 572 108 801 361 10;
 #X obj 392 298 pp.out~;
 #A saved;
-#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 74 142 1:(~)signal;
 #X text 16 143 Inlets:;
 #X text 16 203 Outlets:;
-#X obj 12 20 cnv 15 10 10 empty empty pp.doppler~ 0 0 2 16 -233017
--262144 0;
+#X obj 12 20 cnv 15 10 10 empty empty pp.doppler~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
 #X text 552 183 <-- click to open GUI;
 #X text 16 93 Creation arguments: none;
-#X obj 539 146 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 539 146 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 561 87 423 269 control-messages 0;
 #X obj 70 241 outlet;
 #X msg 70 29 pitch-mod \$1;
-#X floatatom 70 10 5 0 0 0 - - -;
+#X floatatom 70 10 5 0 0 0 - - - 0;
 #X msg 87 75 amp-mod \$1;
-#X floatatom 88 54 5 0 0 0 - - -;
-#X floatatom 97 98 5 0 0 0 - - -;
+#X floatatom 88 54 5 0 0 0 - - - 0;
+#X floatatom 97 98 5 0 0 0 - - - 0;
 #X msg 96 119 pan-mod \$1;
-#X floatatom 115 149 5 0 0 0 - - -;
+#X floatatom 115 149 5 0 0 0 - - - 0;
 #X msg 115 169 damping \$1;
-#X obj 111 214 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 111 214 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -38,8 +34,7 @@
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -79,8 +74,7 @@ with the parrent patch;
 #X text 74 216 2:(~)pan modulation;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping
-100 \,;
+#X msg 30 60 pitch-mod 100 \, amp-mod 100 \, pan-mod 100 \, damping 100 \,;
 #X connect 0 0 1 0;
 #X restore 539 208 pd message-out;
 #N canvas 213 231 450 300 examples 0;
@@ -94,43 +88,31 @@ with the parrent patch;
 #X connect 3 0 4 0;
 #X connect 4 0 1 0;
 #X restore 307 330 pd examples;
-#X obj 674 5 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 680 13 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
-#X text 699 11 open example-1;
+#X obj 674 5 cnv 15 120 30 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 680 13 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 490 132 sig~ 1;
-#X floatatom 490 105 5 0 0 0 - - -;
+#X floatatom 490 105 5 0 0 0 - - - 0;
 #X text 74 154 2:(~)X trajectory;
 #X text 74 168 3:(~)Y trajectory;
 #X text 74 181 4:control-messages;
 #X msg 441 53 -50 \, 50 5000;
 #X obj 441 76 line~;
 #X obj 391 169 pp.doppler~;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
 #X obj 392 236 pp.pan~;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
 #X text 524 104 y trajectory (distance);
 #X text 488 71 x trajectory;
-#X text 8 36 pp.doppler~ emulates the changes in pitch \, amplitude
-and high frequency attenuation that occour when a sound source is moving
-relative to the standpoint of an observer.;
-#X connect 9 0 26 3;
-#X connect 10 0 26 0;
-#X connect 19 0 26 2;
-#X connect 20 0 19 0;
-#X connect 24 0 25 0;
-#X connect 25 0 26 1;
-#X connect 26 0 27 0;
-#X connect 26 1 27 1;
-#X connect 26 2 14 0;
-#X connect 27 0 0 0;
-#X connect 27 1 0 1;
+#X text 8 36 pp.doppler~ emulates the changes in pitch \, amplitude and high frequency attenuation that occour when a sound source is moving relative to the standpoint of an observer.;
+#X text 699 11 open example;
+#X connect 9 0 25 3;
+#X connect 10 0 25 0;
+#X connect 18 0 25 2;
+#X connect 19 0 18 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 1;
+#X connect 25 0 26 0;
+#X connect 25 1 26 1;
+#X connect 25 2 14 0;
+#X connect 26 0 0 0;
+#X connect 26 1 0 1;
