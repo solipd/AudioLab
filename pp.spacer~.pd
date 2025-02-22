@@ -142,7 +142,7 @@
 #X obj 371 139 del 250;
 #X obj 255 241 s pd-\$0-spacer~;
 #X msg 255 219 relocate 230x210+1+1 1x1+50+60 \, vis 1;
-#X msg 89 111 \; \$1-pitchmodr 100 \; \$1-panmodr 100 \; \$1-ampmodr 100 \; \$1-dampingr 100 \; \$1-ampmod-wetr 50 \; \$1-localr 50;
+#X msg 89 111 \; \$1-pitchmodr 100 \; \$1-panmodr 100 \; \$1-ampmodr 100 \; \$1-dampingr 100 \; \$1-ampmod-wetr 50 \; \$1-localr 100;
 #X connect 0 0 1 0;
 #X connect 1 0 10 0;
 #X connect 3 0 6 0;
