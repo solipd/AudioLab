@@ -1,8 +1,8 @@
-#N struct 1503-template float x float y float c float s float th float stretch array 1503-plus 1503-template-y array 1503-minus 1503-template-y;
-#N struct 1503-template-y float y;
-#N struct 1504-template float x float y float c float s float th float stretch array 1504-plus 1504-template-y array 1504-minus 1504-template-y;
-#N struct 1504-template-y float y;
-#N canvas 188 23 836 555 10;
+#N struct 1007-template float x float y float c float s float th float stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y;
+#N struct 1007-template-y float y;
+#N struct 1008-template float x float y float c float s float th float stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y;
+#N struct 1008-template-y float y;
+#N canvas 154 70 836 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
 #X obj 2 2 cnv 15 380 550 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -59,8 +59,13 @@
 #X obj 672 340 +~ 0.5;
 #X obj 712 245 line~;
 #X msg 712 223 \$1 100;
-#X obj 400 447 pp.pantd~;
+#X obj 400 447 pp.pantd~ 0;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
+#X msg 565 443 distance \$1;
+#X floatatom 565 423 5 0 0 0 - - - 0;
+#X obj 18 367 hsl 200 15 0 3 0 0 \$0-stwidth \$0-stwidthr Stereo\ Width -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
+#X obj 565 402 r \$0-stwidth;
+#X text 12 286 Set the max. time difference (delay )between the two outputs of pp.pantd~ . Depending on your speaker setup this will give a wider stereo image. If the distance is to large \, this will result in perceivable phasing.;
 #X connect 7 0 35 0;
 #X connect 7 1 35 1;
 #X connect 8 0 9 0;
@@ -93,3 +98,6 @@
 #X connect 34 0 33 0;
 #X connect 35 0 6 0;
 #X connect 35 1 6 1;
+#X connect 36 0 35 2;
+#X connect 37 0 36 0;
+#X connect 39 0 37 0;
