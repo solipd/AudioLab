@@ -7,7 +7,7 @@
 #X obj 12 20 cnv 15 10 10 empty empty pp.xfade-st~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
 #N canvas 997 287 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 mix 0.0576923 \, lin \,;
+#X msg 30 60 mix 0 \, lin \,;
 #X connect 0 0 1 0;
 #X restore 599 208 pd message-out;
 #X obj 599 139 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
@@ -42,16 +42,16 @@
 #X restore 101 146 pd save&recall;
 #X floatatom 54 23 5 0 0 0 - - - 0;
 #X msg 54 45 mix \$1;
-#X text 94 21 -1 sig 1 \, 1 sig 2;
 #X msg 85 80 lin;
 #X text 114 79 linear crossfade;
 #X msg 100 108 sqrt;
 #X text 132 108 equal power crossfade;
+#X text 94 21 -1 \, 1;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
-#X connect 6 0 0 0;
-#X connect 8 0 0 0;
+#X connect 5 0 0 0;
+#X connect 7 0 0 0;
 #X restore 599 139 pd control-messages;
 #X obj 509 49 osc~ 440;
 #X floatatom 569 68 5 0 0 0 - - - 0;
