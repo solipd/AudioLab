@@ -1,4 +1,4 @@
-#N canvas 90 245 882 410 10;
+#N canvas 140 359 882 410 10;
 #N canvas 230 199 996 431 stuff 0;
 #X obj 134 27 r \$0-deltime-l;
 #X obj 228 27 r \$0-deltime-r;
@@ -65,7 +65,7 @@
 #X connect 32 0 7 0;
 #X connect 32 0 8 0;
 #X restore 689 194 pd stuff;
-#N canvas 28 214 805 413 init 1;
+#N canvas 28 214 805 413 init 0;
 #X obj 186 32 loadbang;
 #X obj 144 33 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 186 55 t b b;
@@ -1450,14 +1450,14 @@
 #N canvas 86 150 850 512 mask 0;
 #X obj 100 100 cnv 15 299 221 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 343 117 cnv 10 10 10 empty empty echo~ 0 5 2 17 #fcfcfc #9c9c9c 0;
-#X obj 117 184 hsl 100 12 0 110 0 0 \$0-feedback-gui \$0-feedback-guir Feedback -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 224 184 nbx 5 12 0 1e+17 0 0 \$0-feedback \$0-feedbackr % 47 8 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 227 275 hsl 100 12 0 0.5 0 0 \$0-shift-gui \$0-shift-guir SSB-Shift -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 334 275 nbx 5 12 -1 1 0 0 \$0-shift \$0-shiftr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 117 184 hsl 100 12 0 110 0 0 \$0-feedback-gui \$0-feedback-guir Feedback -2 -6 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 224 184 nbx 5 12 -1e+07 1e+17 0 0 \$0-feedback \$0-feedbackr % 47 8 2 10 #ffe3c6 #000000 #000000 0 256;
+#X obj 227 275 hsl 100 12 0 0.5 0 0 \$0-shift-gui \$0-shift-guir SSB-Shift -2 -6 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 334 275 nbx 5 12 -1 1 0 0 \$0-shift \$0-shiftr empty 47 7 2 10 #ffe3c6 #000000 #000000 0 256;
 #X msg 52 178 set \$1;
 #X msg 458 266 set \$1;
-#X obj 256 124 nbx 7 14 1 400 0 0 \$0-deltime-r-gui \$0-deltime-r-guir Time-Right 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
-#X obj 116 124 nbx 7 14 1 400 0 0 \$0-deltime-l-gui \$0-deltime-l-guir Time-Left 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 256 124 nbx 7 14 1 1000 0 0 \$0-deltime-r-gui \$0-deltime-r-guir Time-Right 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 116 124 nbx 7 14 1 1000 0 0 \$0-deltime-l-gui \$0-deltime-l-guir Time-Left 0 -7 2 10 #ffffff #000000 #000000 0 256;
 #X obj 210 126 tgl 12 0 \$0-link-deltime \$0-link-deltimer Link -4 -7 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 766 139 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 660 139 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
@@ -1469,8 +1469,8 @@
 #X msg 606 163 set \$1;
 #X obj 116 148 tgl 12 0 \$0-pingpong \$0-pingpongr Pingpong 15 8 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 196 148 hradio 12 1 0 3 \$0-repeats \$0-repeatsr Repeats 39 8 2 10 #fcfcfc #000000 #000000 0;
-#X obj 117 212 hsl 100 12 0 50 0 0 \$0-reverb-gui \$0-reverb-guir Reverb -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 224 212 nbx 5 12 0 100 0 0 \$0-reverb \$0-reverbr % 47 8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 117 212 hsl 100 12 0 50 0 0 \$0-reverb-gui \$0-reverb-guir Reverb -2 -6 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 224 212 nbx 5 12 0 100 0 0 \$0-reverb \$0-reverbr % 47 8 2 10 #ffe3c6 #000000 #000000 0 256;
 #X msg 51 204 set \$1;
 #X obj 285 148 nbx 3 12 0 1e+17 0 0 \$0-flutter \$0-flutterr Flutter 33 8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 227 246 hsl 100 12 0 100 0 0 \$0-ssb-amount-gui \$0-ssb-amount-guir SSB-Amount -2 -6 2 10 #fcfcfc #000000 #000000 0 1;

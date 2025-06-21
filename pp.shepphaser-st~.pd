@@ -127,7 +127,7 @@
 #X connect 6 2 5 0;
 #X connect 6 3 7 0;
 #X restore 637 72 pd in;
-#N canvas 519 277 812 357 smallblock 0;
+#N canvas 519 277 812 357 smallblock 1;
 #X obj 65 62 inlet~;
 #X obj 65 336 outlet~;
 #X obj 203 121 *~;
@@ -343,45 +343,7 @@
 #X connect 16 0 17 0;
 #X connect 18 0 2 0;
 #X restore 637 131 pd stuff;
-#N canvas 50 88 230 135 \$0-shepphaser 0;
-#N canvas 166 352 714 345 mask 0;
-#X obj 100 100 cnv 15 219 129 empty empty empty 20 12 0 14 -262144
--66577 0;
-#X obj 112 158 hsl 128 12 0 0.99 0 0 \$0-resgui \$0-resguir Resonance
--2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 246 158 nbx 5 12 -1e+17 1e+17 0 0 \$0-resonance \$0-resonancer
-empty 47 7 2 10 -262144 -1 -1 0 256;
-#X obj 208 111 cnv 10 10 10 empty empty shepphaser~ 0 5 2 14 -262144
--162280 0;
-#X msg 49 153 set \$1;
-#X obj 112 132 hsl 128 12 0 1 0 0 \$0-shiftgui \$0-shiftguir Shift
--2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 246 132 nbx 5 12 -1e+17 1e+17 0 0 \$0-shift \$0-shiftr empty
-47 7 2 10 -262144 -1 -1 0 256;
-#X msg 49 127 set \$1;
-#X obj 112 185 hsl 128 12 0 4 0 0 \$0-harmgui \$0-harmguir Stages -2
--6 2 10 -262144 -1 -1 0 1;
-#X obj 246 185 nbx 5 12 0 4 0 0 \$0-stages \$0-stagesr empty 47 7 2
-10 -262144 -1 -1 0 256;
-#X msg 49 180 set \$1;
-#X obj 246 210 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 100 256;
-#X obj 207 211 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
-0;
-#X connect 1 0 2 0;
-#X connect 2 0 4 0;
-#X connect 4 0 1 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X connect 7 0 5 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 8 0;
-#X coords 0 -1 1 1 220 130 2 100 100;
-#X restore 5 2 pd mask;
-#X restore 637 108 pd \$0-shepphaser;
-#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #X obj 485 184 +~;
 #X obj 511 184 line~;
 #X msg 511 161 \$1 100;
@@ -466,8 +428,7 @@ empty 47 7 2 10 -262144 -1 -1 0 256;
 #X obj 275 109 r \$0-resonance;
 #X obj 361 139 r \$0-stages;
 #X obj 393 172 r \$0-drywet;
-#X msg 255 261 shift \$1 \, resonance \$2 \, stages \$3 \, dry/wet
-\$4;
+#X msg 255 261 shift \$1 \, resonance \$2 \, stages \$3 \, dry/wet \$4;
 #X connect 0 0 4 0;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
@@ -510,8 +471,7 @@ empty 47 7 2 10 -262144 -1 -1 0 256;
 #X obj 138 13 r \$0-max-allps;
 #X obj 138 36 t b f f f;
 #X msg 44 212 connect 0 0 3 0;
-#X msg 322 301 obj 100 \$1 pp.shepphaser~-allp \$3 \$4 \, connect 1
-0 \$2 1 \,;
+#X msg 322 301 obj 100 \$1 pp.shepphaser~-allp \$3 \$4 \, connect 1 0 \$2 1 \,;
 #X obj 153 372 s pd-\$0-allpass-l;
 #X obj 286 373 s pd-\$0-allpass-r;
 #X connect 0 0 1 0;
@@ -593,24 +553,51 @@ empty 47 7 2 10 -262144 -1 -1 0 256;
 #X text 756 262 philipp schmalfuß 2019;
 #X obj 358 52 inlet~;
 #X obj 398 292 outlet~;
+#N canvas 50 60 230 135 \$0-shepphaser 0;
+#N canvas 166 352 714 345 mask 0;
+#X obj 100 100 cnv 15 219 129 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 112 158 hsl 128 12 0 0.99 0 0 \$0-resgui \$0-resguir Resonance -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 246 158 nbx 5 12 0 0.99 0 0 \$0-resonance \$0-resonancer empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 208 111 cnv 10 10 10 empty empty shepphaser~ 0 5 2 14 #fcfcfc #9c9c9c 0;
+#X msg 49 153 set \$1;
+#X obj 112 132 hsl 128 12 0 1 0 0 \$0-shiftgui \$0-shiftguir Shift -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 246 132 nbx 5 12 0 1 0 0 \$0-shift \$0-shiftr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X msg 49 127 set \$1;
+#X obj 112 185 hsl 128 12 0 4 0 0 \$0-harmgui \$0-harmguir Stages -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 246 185 nbx 5 12 0 4 0 0 \$0-stages \$0-stagesr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X msg 49 180 set \$1;
+#X obj 246 210 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 207 211 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 #fcfcfc #000000 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X coords 0 -1 1 1 220 130 2 100 100;
+#X restore 5 2 pd mask;
+#X restore 636 109 pd \$0-shepphaser;
 #X connect 0 0 6 0;
-#X connect 0 0 24 0;
-#X connect 1 0 15 0;
-#X connect 2 0 12 0;
+#X connect 0 0 23 0;
+#X connect 1 0 14 0;
+#X connect 2 0 11 0;
 #X connect 4 0 5 0;
-#X connect 6 0 24 2;
-#X connect 6 1 24 3;
-#X connect 12 0 6 3;
-#X connect 13 0 12 1;
-#X connect 14 0 13 0;
-#X connect 15 0 6 2;
-#X connect 16 0 15 1;
+#X connect 6 0 23 2;
+#X connect 6 1 23 3;
+#X connect 11 0 6 3;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;
+#X connect 14 0 6 2;
+#X connect 15 0 14 1;
+#X connect 16 0 15 0;
 #X connect 17 0 16 0;
-#X connect 18 0 17 0;
-#X connect 19 0 20 0;
-#X connect 22 0 14 0;
-#X connect 24 0 3 0;
-#X connect 24 1 27 0;
-#X connect 26 0 6 1;
-#X connect 26 0 24 1;
+#X connect 18 0 19 0;
+#X connect 21 0 13 0;
+#X connect 23 0 3 0;
+#X connect 23 1 26 0;
+#X connect 25 0 6 1;
+#X connect 25 0 23 1;
 #X coords 0 -1 1 1 155 33 1 100 100;

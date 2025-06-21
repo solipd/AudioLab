@@ -1,5 +1,5 @@
-#N struct 1274-template float x float y float c float s float th float stretch array 1274-plus 1274-template-y array 1274-minus 1274-template-y;
-#N struct 1274-template-y float y;
+#N struct 1337-template float x float y float c float s float th float stretch array 1337-plus 1337-template-y array 1337-minus 1337-template-y;
+#N struct 1337-template-y float y;
 #N canvas 500 119 630 615 10;
 #X obj 522 235 table \$0-sf;
 #X obj 100 213 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
@@ -1684,7 +1684,7 @@
 #X restore 435 297 pd envelope;
 #X msg 305 472 resize \$1;
 #X obj 305 451 r \$0-max-grains;
-#N canvas 127 130 540 340 \$0-grainer-mc~ 0;
+#N canvas 50 60 540 340 \$0-grainer-mc~ 1;
 #N canvas 252 125 841 473 mask 0;
 #X obj 100 100 cnv 15 520 320 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 112 233 hsl 496 10 0 171000 0 0 \$0-postiongui \$0-postionguir empty -2 -8 0 10 #fcfcfc #000000 #000000 0 0;
@@ -1698,7 +1698,7 @@
 #X obj 115 282 nbx 8 12 0 171000 0 0 \$0-position \$0-positionr Position(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 12 313 set \$1;
 #X obj 12 292 i;
-#X obj 109 251 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr empty 17 7 2 10 #dcdcdc #000000 #000000 0 1;
+#X obj 109 251 tgl 20 0 \$0-int_triggeronoff \$0-int_triggeronoffr empty 17 7 2 10 #ffc7c6 #000000 #000000 0 1;
 #X obj 3 336 s \$0-position;
 #X obj 284 283 nbx 8 12 0 171000 0 0 \$0-random-position \$0-random-positionr Random-Position(ms) 70 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 115 299 nbx 5 12 -1e+06 1e+06 0 0 \$0-size \$0-sizer Grainsize(ms) 69 7 2 10 #fcfcfc #000000 #000000 0 256;

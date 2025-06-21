@@ -77,7 +77,7 @@
 #X obj 408 75 r \$0-freq;
 #X obj 587 63 r \$0-q;
 #X obj 341 46 inlet~;
-#N canvas 50 87 230 95 \$0-vcfilter 0;
+#N canvas 50 50 230 95 \$0-vcfilter 0;
 #N canvas 124 220 714 345 mask 0;
 #X obj 100 100 cnv 15 219 89 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 107 108 hradio 11 1 0 3 \$0-filtertype \$0-filtertyper Lowpass 39 6 2 10 #fcfcfc #000000 #000000 0;
@@ -105,8 +105,8 @@
 #X connect 8 0 2 0;
 #X connect 10 0 5 0;
 #X restore 47 136 pd map;
-#X obj 110 164 hsl 128 12 -3 24 0 0 \$0-qgui \$0-qguir Q -2 -7 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 244 164 nbx 5 12 -99 100 0 0 \$0-q \$0-qr db 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 110 164 hsl 128 12 -3 24 0 0 \$0-qgui \$0-qguir Q -2 -7 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 244 164 nbx 5 12 -99 100 0 0 \$0-q \$0-qr db 47 7 2 10 #ffe3c6 #000000 #000000 0 256;
 #N canvas 0 50 450 300 map 0;
 #X obj 94 33 inlet;
 #X obj 192 56 inlet;

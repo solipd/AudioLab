@@ -414,7 +414,7 @@
 #X restore 1076 72 pd in;
 #X obj 1074 507 outlet;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr Lowpass 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
-#N canvas 51 41 235 150 \$0-ladder 0;
+#N canvas 50 70 235 150 \$0-ladder 0;
 #N canvas 124 21 478 326 mask 0;
 #X obj 100 100 cnv 15 219 139 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 107 108 hradio 11 1 0 3 \$0-filtertype \$0-filtertyper Lowpass 39 6 2 10 #fcfcfc #000000 #000000 0;
@@ -442,15 +442,15 @@
 #X connect 8 0 2 0;
 #X connect 10 0 5 0;
 #X restore 47 135 pd map;
-#X obj 110 167 hsl 128 12 0 5 0 0 \$0-resonancegui \$0-resonanceguir Resonance -2 -7 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 244 167 nbx 5 12 -99 100 0 0 \$0-resonance \$0-resonancer empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 110 167 hsl 128 12 0 5 0 0 \$0-resonancegui \$0-resonanceguir Resonance -2 -7 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 244 167 nbx 5 12 -99 100 0 0 \$0-resonance \$0-resonancer empty 47 7 2 10 #ffe3c6 #000000 #000000 0 256;
 #X obj 239 113 cnv 10 10 10 empty empty ladder~ 0 5 2 14 #fcfcfc #9c9c9c 0;
 #X msg 43 163 set \$1;
 #X obj 110 223 hsl 128 12 0 1 0 0 \$0-slopegui \$0-slopeguir Slope -2 -7 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 244 223 nbx 5 12 0 1 0 0 \$0-slope \$0-sloper empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X msg 47 216 set \$1;
-#X obj 110 195 hsl 128 12 0 5 0 0 \$0-satgui \$0-satguir Saturation -2 -7 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 244 195 nbx 5 12 0 100 0 0 \$0-sat \$0-satr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 110 195 hsl 128 12 0 5 0 0 \$0-satgui \$0-satguir Saturation -2 -7 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 244 195 nbx 5 12 0 100 0 0 \$0-sat \$0-satr empty 47 7 2 10 #ffe3c6 #000000 #000000 0 256;
 #X msg 47 188 set \$1;
 #X connect 2 0 4 0;
 #X connect 3 0 4 1;
