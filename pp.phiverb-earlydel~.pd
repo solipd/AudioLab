@@ -19,11 +19,11 @@
 #X obj 256 562 pack 0 100;
 #X obj 313 537 r \$2-transition;
 #X obj 256 323 tabread \$2-primetab;
-#X obj 256 128 f \$1;
+#X obj 256 94 f \$1;
 #X obj 256 298 i;
 #X obj 256 274 + 0.5;
-#X obj 256 83 loadbang;
-#X obj 256 151 tabread \$4;
+#X obj 256 49 loadbang;
+#X obj 256 117 tabread \$4;
 #X obj 256 174 / 200;
 #X obj 256 197 * 150;
 #X obj 256 247 + \$1;
@@ -33,7 +33,8 @@
 #X obj 313 438 t b f;
 #X obj 283 507 *;
 #X obj 313 486 / 48;
-#X obj 256 106 metro 200;
+#X obj 256 72 metro 200;
+#X obj 256 140 change;
 #X connect 2 0 5 0;
 #X connect 2 1 3 0;
 #X connect 3 0 4 0;
@@ -50,7 +51,7 @@
 #X connect 14 0 12 0;
 #X connect 15 0 14 0;
 #X connect 16 0 27 0;
-#X connect 17 0 18 0;
+#X connect 17 0 28 0;
 #X connect 18 0 19 0;
 #X connect 19 0 21 0;
 #X connect 20 0 15 0;
@@ -63,6 +64,7 @@
 #X connect 25 0 5 1;
 #X connect 26 0 25 1;
 #X connect 27 0 13 0;
+#X connect 28 0 18 0;
 #X restore 155 140 pd read;
 #X obj 156 49 inlet~;
 #X obj 154 258 outlet~;
