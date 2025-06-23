@@ -272,8 +272,8 @@
 #N canvas 50 60 230 149 \$0-loop.play 0;
 #N canvas 77 173 714 345 mask 0;
 #X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
-#X obj 114 159 hsl 128 12 -1 2 0 0 \$0-speedgui \$0-speedguir Speed -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 248 159 nbx 5 12 -1e+27 1e+17 0 0 \$0-speed \$0-speedr empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 114 159 hsl 128 12 -1 2 0 0 \$0-speedgui \$0-speedguir Speed -2 -6 2 10 #ffe3c6 #000000 #000000 0 1;
+#X obj 248 159 nbx 5 12 -1e+27 1e+17 0 0 \$0-speed \$0-speedr empty 47 7 2 10 #ffe3c6 #000000 #000000 0 256;
 #X obj 113 217 hsl 128 12 0 1 0 0 \$0-phasegui \$0-phaseguir Phase -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 247 217 nbx 5 12 0 1 0 0 \$0-phase \$0-phaser empty 47 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 114 188 hsl 128 12 0 1 0 0 \$0-positiongui \$0-positionguir Position -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
@@ -281,7 +281,7 @@
 #X msg 35 149 set \$1;
 #X msg 38 212 set \$1;
 #X msg 37 181 set \$1;
-#X obj 108 117 cnv 10 10 10 empty \$0-name loop.play~\ \ foo 0 5 2 16 #fcfcfc #9c9c9c 0;
+#X obj 108 117 cnv 10 10 10 empty \$0-name loop.play~\ \ name 0 5 2 16 #fcfcfc #9c9c9c 0;
 #X obj 275 133 bng 14 250 50 0 \$0-reset \$0-resetr Reset -27 9 2 10 #fcfcfc #000000 #000000;
 #X connect 1 0 2 0;
 #X connect 2 0 7 0;
