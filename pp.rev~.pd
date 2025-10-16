@@ -1,6 +1,5 @@
 #N canvas 144 182 988 585 10;
-#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #X obj 417 433 outlet~;
 #X obj 482 435 outlet~;
 #N canvas 1 57 1363 710 doit 0;
@@ -1069,9 +1068,7 @@
 #X obj 112 201 t b a;
 #X obj 112 224 del 1;
 #X obj 386 204 s \$0-centerr;
-#X obj 112 102 route early tail dry/wet feedback lop-frequency hip-frequency
-hf-damping lf-damping center curve slope width transition-time, f
-76;
+#X obj 112 102 route early tail dry/wet feedback lop-frequency hip-frequency hf-damping lf-damping center curve slope width transition-time, f 76;
 #X obj 530 165 s \$0-transition;
 #X obj 530 142 max 0;
 #X obj 495 194 clip 0 200;
@@ -1105,17 +1102,12 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X restore 739 104 pd in;
 #N canvas 50 60 475 205 \$0-rev~ 0;
 #N canvas 423 168 866 485 mask 0;
-#X obj 100 100 cnv 15 459 189 empty empty empty 2 2 0 14 -262144 -66577
-0;
-#X obj 218 179 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr %
-41 7 2 10 -262144 -1 -1 50 256;
-#X obj 112 179 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping
--2 -6 2 10 -262144 -1 -1 4950 1;
+#X obj 100 100 cnv 15 459 189 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
+#X obj 218 179 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 179 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 46 175 set \$1;
-#X obj 218 154 nbx 5 12 0 20000 0 0 \$0-lop \$0-lopr hz. 50 7 2 10
--262144 -1 -1 3000 256;
-#X obj 112 154 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Lop-Frequency
--2 -6 2 10 -262144 -1 -1 4427 1;
+#X obj 218 154 nbx 5 12 0 20000 0 0 \$0-lop \$0-lopr hz. 50 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 154 hsl 100 12 0 1 0 0 \$0-lopgui \$0-lopguir Lop-Frequency -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
 #X msg 105 180 set \$1;
@@ -1134,39 +1126,28 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X connect 7 0 8 0;
 #X connect 8 0 3 0;
 #X restore 45 151 pd map;
-#X obj 218 128 nbx 4 12 0 100 0 0 \$0-feedback \$0-feedbackr % 41 7
-2 10 -262144 -1 -1 50 256;
-#X obj 112 128 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2
--6 2 10 -262144 -1 -1 4950 1;
+#X obj 218 128 nbx 4 12 0 100 0 0 \$0-feedback \$0-feedbackr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 112 128 hsl 100 12 0 100 0 0 \$0-fbgui \$0-fbuir Feedback -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 45 125 set \$1;
-#X obj 378 129 cnv 15 152 102 empty empty empty 20 12 0 14 -128992
--66577 0;
+#X obj 378 129 cnv 15 152 102 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 3 54 450 300 mask 0;
-#X obj 100 100 cnv 15 150 100 empty empty empty 20 12 0 14 -262144
--66577 0;
+#X obj 100 100 cnv 15 150 100 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-tail 16 float 3;
-#A 0 10 11.6356 13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838
-55.4567 65.1755 76.8243 88.5623 101.278 115.397 130.502;
+#A 0 10 11.6356 13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838 55.4567 65.1755 76.8243 88.5623 101.278 115.397 130.502;
 #X coords 0 200 16 0 150 100 1 0 0;
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 150 100 1 100 100;
 #X restore 379 130 pd mask;
-#X obj 532 126 cnv 10 10 10 empty empty 200 0 5 2 10 -262144 -1 0;
-#X obj 532 221 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
-#X obj 379 113 cnv 10 100 15 empty empty Tail 0 5 2 10 -262144 -1 0
-;
-#X obj 342 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-center \$0-centerr Center
-41 7 2 10 -262144 -1 -1 75 256;
-#X obj 487 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-slope \$0-sloper Slope
-41 7 2 10 -262144 -1 -1 130 256;
-#X obj 416 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-curve \$0-curver Curve
-41 7 2 10 -262144 -1 -1 10 256;
-#X obj 285 129 cnv 15 72 102 empty empty empty 20 12 0 14 -128992 -66577
-0;
+#X obj 532 126 cnv 10 10 10 empty empty 200 0 5 2 10 #fcfcfc #000000 0;
+#X obj 532 221 cnv 10 10 10 empty empty 0ms 0 5 2 10 #fcfcfc #000000 0;
+#X obj 379 113 cnv 10 100 15 empty empty Tail 0 5 2 10 #fcfcfc #000000 0;
+#X obj 342 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-center \$0-centerr Center 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 487 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-slope \$0-sloper Slope 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 416 238 nbx 4 12 -1e+24 1e+24 0 0 \$0-curve \$0-curver Curve 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 285 129 cnv 15 72 102 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
 #N canvas 3 52 450 300 mask 0;
-#X obj 100 100 cnv 15 70 100 empty empty empty 20 12 0 14 -262144 -66577
-0;
+#X obj 100 100 cnv 15 70 100 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-early 5 float 3;
 #A 0 0 1.42763 3.23873 5.2345 7.82312;
@@ -1174,31 +1155,20 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X restore 100 100 graph;
 #X coords 0 -1 1 1 70 100 1 100 100;
 #X restore 286 130 pd mask;
-#X obj 359 222 cnv 10 10 10 empty empty 0ms 0 5 2 10 -262144 -1 0;
-#X obj 286 113 cnv 10 60 15 empty empty Early 0 5 2 10 -262144 -1 0
-;
-#X obj 182 109 cnv 10 10 10 empty empty rev~ 0 5 2 17 -262144 -162280
-0;
-#X obj 359 124 cnv 10 10 10 empty empty 40 0 5 2 10 -262144 -1 0;
-#X obj 397 271 hradio 11 1 0 8 \$0-presetrd \$0-presetrdr Preset:Miller
-0 -8 2 10 -262144 -1 -1 0;
-#X obj 217 256 nbx 4 12 0 200 0 0 \$0-width \$0-widthr % 41 7 2 10
--262144 -1 -1 100 256;
-#X obj 111 256 hsl 100 12 0 100 0 0 \$0-wgui \$0-wguir Width -2 -6
-2 10 -262144 -1 -1 9900 1;
+#X obj 359 222 cnv 10 10 10 empty empty 0ms 0 5 2 10 #fcfcfc #000000 0;
+#X obj 286 113 cnv 10 60 15 empty empty Early 0 5 2 10 #fcfcfc #000000 0;
+#X obj 182 109 cnv 10 10 10 empty empty rev~ 0 5 2 17 #fcfcfc #9c9c9c 0;
+#X obj 359 124 cnv 10 10 10 empty empty 40 0 5 2 10 #fcfcfc #000000 0;
+#X obj 397 271 hradio 11 1 0 8 \$0-presetrd \$0-presetrdr Preset:Miller 0 -8 2 10 #fcfcfc #000000 #000000 0;
+#X obj 217 256 nbx 4 12 0 200 0 0 \$0-width \$0-widthr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 111 256 hsl 100 12 0 100 0 0 \$0-wgui \$0-wguir Width -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 53 253 set \$1;
-#X obj 499 270 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10
--262144 -1 -1 100 256;
-#X obj 499 258 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 -262144 -1
-0;
-#X obj 217 230 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr %
-41 7 2 10 -262144 -1 -1 0 256;
-#X obj 111 230 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping
--2 -6 2 10 -262144 -1 -1 0 1;
-#X obj 217 205 nbx 5 12 0 20000 0 0 \$0-hip \$0-hipr hz. 50 7 2 10
--262144 -1 -1 0 256;
-#X obj 111 205 hsl 100 12 0 1 0 0 \$0-hipgui \$0-hipguir Hip-Frequency
--2 -6 2 10 -262144 -1 -1 0 1;
+#X obj 499 270 nbx 4 12 0 100 0 0 \$0-drywet \$0-drywetr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 499 258 cnv 10 10 10 empty empty Dry/Wet 0 5 2 10 #fcfcfc #000000 0;
+#X obj 217 230 nbx 4 12 0 100 0 0 \$0-lf-damping \$0-lf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 111 230 hsl 100 12 0 100 0 0 \$0-lfdgui \$0-lfdguir LF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 217 205 nbx 5 12 0 20000 0 0 \$0-hip \$0-hipr hz. 50 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 111 205 hsl 100 12 0 1 0 0 \$0-hipgui \$0-hipguir Hip-Frequency -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 47 230 set \$1;
 #N canvas 439 215 450 300 map 0;
 #X obj 105 33 inlet;
@@ -1245,8 +1215,7 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X obj 739 37 inlet;
 #X obj 736 413 outlet;
 #N canvas 307 172 996 559 outlet-message 0;
-#N canvas 105 314 986 300 bang_once.......................................
-0;
+#N canvas 105 314 986 300 bang_once....................................... 0;
 #X obj 174 87 t b f;
 #X obj 132 87 t b f;
 #X obj 89 139 del 0;
@@ -1311,8 +1280,7 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X connect 25 0 2 0;
 #X connect 25 1 24 10;
 #X connect 26 0 25 0;
-#X restore 241 182 pd bang_once.......................................
-;
+#X restore 241 182 pd bang_once.......................................;
 #X obj 326 543 list trim;
 #X msg 246 541 addcomma;
 #X msg 148 480 set;
@@ -1374,11 +1342,7 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X obj 434 53 r \$0-center;
 #X obj 93 50 loadbang;
 #X obj 557 159 r \$0-transition;
-#X msg 278 387 dry/wet \$22 \, feedback \$23 \, lop-frequency \$24
-\, hf-damping \$25 \, hip-frequency \$26 \, lf-damping \$27 \, center
-\$28 \, curve \$29 \, slope \$30 \, width \$31 \, transition-time \$32
-\, early \$1 \$2 \$3 \$4 \$5 \, tail \$6 \$7 \$8 \$9 \$10 \$11 \$12
-\$13 \$14 \$15 \$16 \$17 \$18 \$19 \$20 \$21;
+#X msg 278 387 dry/wet \$22 \, feedback \$23 \, lop-frequency \$24 \, hf-damping \$25 \, hip-frequency \$26 \, lf-damping \$27 \, center \$28 \, curve \$29 \, slope \$30 \, width \$31 \, transition-time \$32 \, early \$1 \$2 \$3 \$4 \$5 \, tail \$6 \$7 \$8 \$9 \$10 \$11 \$12 \$13 \$14 \$15 \$16 \$17 \$18 \$19 \$20 \$21;
 #X connect 0 0 6 0;
 #X connect 1 0 5 0;
 #X connect 2 0 5 0;
@@ -1507,48 +1471,16 @@ hf-damping lf-damping center curve slope width transition-time, f
 #X text 162 206 miller's original rev3~;
 #X obj 161 4 r \$0-presetrd;
 #X text 470 265 reflections;
-#X msg 467 5 feedback 50 \, lop-frequency 300 \, hf-damping 98 \, hip-frequency
-0 \, lf-damping 0 \, center 35 \, curve 10 \, slope 60 \, width 100
-\, early 0 1.19999 1.6 1.2 1.6 \, tail 5 5.26667 6.06667 7.4 9.26667
-11.6667 14.6 18.0667 22.0667 26.6 31.6667 37.2667 43.4 50.0667 57.2667
-65 \,;
+#X msg 467 5 feedback 50 \, lop-frequency 300 \, hf-damping 98 \, hip-frequency 0 \, lf-damping 0 \, center 35 \, curve 10 \, slope 60 \, width 100 \, early 0 1.19999 1.6 1.2 1.6 \, tail 5 5.26667 6.06667 7.4 9.26667 11.6667 14.6 18.0667 22.0667 26.6 31.6667 37.2667 43.4 50.0667 57.2667 65 \,;
 #X text 471 175 vessel;
-#X msg 466 191 feedback 90 \, lop-frequency 500 \, hf-damping 98 \,
-hip-frequency 60 \, lf-damping 50 \, center 55 \, curve -10 \, slope
--65 \, width 100 \, early 10 7.59999 9.6 7.19999 5.19999 \, tail 85
-68.2171 61.2654 55.9311 51.4341 47.4722 43.8904 40.5965 37.5307 34.6512
-31.9277 29.3373 26.8622 24.4883 22.204 20 \,;
-#X msg 470 280 feedback 60 \, lop-frequency 600 \, hf-damping 98 \,
-hip-frequency 60 \, lf-damping 100 \, center 125 \, curve 0 \, slope
-0 \, width 100 \, early 30 0.399994 0.399994 0.399994 0.399994 \, tail
-0 7.57399 29.1429 61.423 99.5 137.577 169.857 191.426 199 191.426 169.857
-137.577 99.5 61.423 29.1429 0 \,;
-#X msg 469 368 feedback 45 \, lop-frequency 150 \, hf-damping 98 \,
-hip-frequency 60 \, lf-damping 0 \, center 100 \, curve 12 \, slope
--12 \, width 100 \, early 33 0.799999 1.2 0.400002 1.6 \, tail 99 98.969
-98.8574 98.6521 98.3449 97.9297 97.4015 96.7561 95.9899 95.0996 94.0821
-92.9348 91.6552 90.241 88.6899 87 \,;
-#X msg 470 453 feedback 50 \, lop-frequency 3000 \, hf-damping 98 \,
-hip-frequency 60 \, lf-damping 0 \, center 17 \, curve 11 \, slope
--13 \, width 100 \, early 0 2.8 4.4 4 2.4 \, tail 23 22.9559 22.8111
-22.5573 22.19 21.7058 21.1021 20.3766 19.5275 18.5531 17.4518 16.2224
-14.8636 13.3743 11.7534 10 \,;
-#X msg 469 539 feedback 86.8687 \, lop-frequency 1770 \, hf-damping
-100 \, hip-frequency 100 \, lf-damping 90 \, center 30 \, curve -22
-\, slope -37 \, width 100 \, early 4 -3.8147e-06 -7.62939e-06 0.400002
-0 \, tail 46 30.1265 26.2873 23.6245 21.5197 19.7517 18.2128 16.8414
-15.5989 14.4591 13.4033 12.4179 11.4922 10.6182 9.78919 20 \,;
-#X msg 33 226 feedback 50 \, lop-frequency 3000 \, hf-damping 50 \,
-hip-frequency 0 \, lf-damping 0 \, center 75 \, curve 10 \, slope 130
-\, width 100 \, early 0 1.42763 3.23873 5.2345 7.82312 \, tail 10 11.6356
-13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838 55.4567 65.1755
-76.8243 88.5623 101.278 115.397 130.502 \,;
+#X msg 466 191 feedback 90 \, lop-frequency 500 \, hf-damping 98 \, hip-frequency 60 \, lf-damping 50 \, center 55 \, curve -10 \, slope -65 \, width 100 \, early 10 7.59999 9.6 7.19999 5.19999 \, tail 85 68.2171 61.2654 55.9311 51.4341 47.4722 43.8904 40.5965 37.5307 34.6512 31.9277 29.3373 26.8622 24.4883 22.204 20 \,;
+#X msg 470 280 feedback 60 \, lop-frequency 600 \, hf-damping 98 \, hip-frequency 60 \, lf-damping 100 \, center 125 \, curve 0 \, slope 0 \, width 100 \, early 30 0.399994 0.399994 0.399994 0.399994 \, tail 0 7.57399 29.1429 61.423 99.5 137.577 169.857 191.426 199 191.426 169.857 137.577 99.5 61.423 29.1429 0 \,;
+#X msg 469 368 feedback 45 \, lop-frequency 150 \, hf-damping 98 \, hip-frequency 60 \, lf-damping 0 \, center 100 \, curve 12 \, slope -12 \, width 100 \, early 33 0.799999 1.2 0.400002 1.6 \, tail 99 98.969 98.8574 98.6521 98.3449 97.9297 97.4015 96.7561 95.9899 95.0996 94.0821 92.9348 91.6552 90.241 88.6899 87 \,;
+#X msg 470 453 feedback 50 \, lop-frequency 3000 \, hf-damping 98 \, hip-frequency 60 \, lf-damping 0 \, center 17 \, curve 11 \, slope -13 \, width 100 \, early 0 2.8 4.4 4 2.4 \, tail 23 22.9559 22.8111 22.5573 22.19 21.7058 21.1021 20.3766 19.5275 18.5531 17.4518 16.2224 14.8636 13.3743 11.7534 10 \,;
+#X msg 469 539 feedback 86.8687 \, lop-frequency 1770 \, hf-damping 100 \, hip-frequency 100 \, lf-damping 90 \, center 30 \, curve -22 \, slope -37 \, width 100 \, early 4 -3.8147e-06 -7.62939e-06 0.400002 0 \, tail 46 30.1265 26.2873 23.6245 21.5197 19.7517 18.2128 16.8414 15.5989 14.4591 13.4033 12.4179 11.4922 10.6182 9.78919 20 \,;
+#X msg 33 226 feedback 50 \, lop-frequency 3000 \, hf-damping 50 \, hip-frequency 0 \, lf-damping 0 \, center 75 \, curve 10 \, slope 130 \, width 100 \, early 0 1.42763 3.23873 5.2345 7.82312 \, tail 10 11.6356 13.4567 16.7345 20.1862 25.7417 31.4693 38.2944 46.6838 55.4567 65.1755 76.8243 88.5623 101.278 115.397 130.502 \,;
 #X msg 95 171 dry/wet 100 \, transition-time 50;
-#X msg 467 92 feedback 65 \, lop-frequency 2500 \, hf-damping 72.7273
-\, hip-frequency 200 \, lf-damping 50 \, center 100 \, curve 7 \, slope
-180 \, width 100 \, early 40 7.59999 17.2 25.2 32.3 \, tail 10 11.8027
-15.8569 21.6687 29.0292 37.8078 47.9118 59.2702 71.8259 85.5318 100.348
-116.239 133.176 151.131 170.079 190 \,;
+#X msg 467 92 feedback 65 \, lop-frequency 2500 \, hf-damping 72.7273 \, hip-frequency 200 \, lf-damping 50 \, center 100 \, curve 7 \, slope 180 \, width 100 \, early 40 7.59999 17.2 25.2 32.3 \, tail 10 11.8027 15.8569 21.6687 29.0292 37.8078 47.9118 59.2702 71.8259 85.5318 100.348 116.239 133.176 151.131 170.079 190 \,;
 #X connect 1 0 18 0;
 #X connect 1 0 19 0;
 #X connect 7 0 18 0;
@@ -1571,7 +1503,6 @@ hip-frequency 0 \, lf-damping 0 \, center 75 \, curve 10 \, slope 130
 #X connect 20 0 0 0;
 #X restore 739 270 pd init&presets;
 #X obj 443 58 r \$0-feed;
-#X text 739 462 philipp schmalfuß \, 2018/19;
 #X obj 287 431 outlet~;
 #X obj 353 432 outlet~;
 #N canvas 2 57 450 300 4ch-width 0;
@@ -1598,9 +1529,7 @@ hip-frequency 0 \, lf-damping 0 \, center 75 \, curve 10 \, slope 130
 #X obj 332 226 clip~ 0 1;
 #X obj 223 163 clip~ 0 1;
 #X obj 331 197 +~ 1;
-#X text 289 335 based on Robin Schmidt's stereo processing tutorial:
-http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
-63;
+#X text 289 335 based on Robin Schmidt's stereo processing tutorial: http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f 63;
 #X obj 74 362 *~ 0.353554;
 #X obj 182 365 *~ 0.353554;
 #X obj 74 385 outlet~;
@@ -1666,9 +1595,7 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X obj 332 226 clip~ 0 1;
 #X obj 223 163 clip~ 0 1;
 #X obj 331 197 +~ 1;
-#X text 289 335 based on Robin Schmidt's stereo processing tutorial:
-http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
-63;
+#X text 289 335 based on Robin Schmidt's stereo processing tutorial: http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f 63;
 #X obj 74 362 *~ 0.353554;
 #X obj 182 365 *~ 0.353554;
 #X obj 74 385 outlet~;
@@ -1734,9 +1661,7 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X obj 332 226 clip~ 0 1;
 #X obj 223 163 clip~ 0 1;
 #X obj 331 197 +~ 1;
-#X text 289 335 based on Robin Schmidt's stereo processing tutorial:
-http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
-63;
+#X text 289 335 based on Robin Schmidt's stereo processing tutorial: http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f 63;
 #X obj 74 362 *~ 0.353554;
 #X obj 182 365 *~ 0.353554;
 #X obj 74 385 outlet~;
@@ -1811,9 +1736,7 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X obj 332 226 clip~ 0 1;
 #X obj 223 163 clip~ 0 1;
 #X obj 331 197 +~ 1;
-#X text 289 335 based on Robin Schmidt's stereo processing tutorial:
-http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
-63;
+#X text 289 335 based on Robin Schmidt's stereo processing tutorial: http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f 63;
 #X obj 74 362 *~ 0.353554;
 #X obj 182 365 *~ 0.353554;
 #X obj 74 385 outlet~;
@@ -2004,14 +1927,15 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X obj 517 33 inlet~;
 #X text 516 13 feedback;
 #X obj 443 80 line~;
-#X connect 3 0 21 0;
-#X connect 3 1 21 1;
-#X connect 3 2 21 2;
-#X connect 3 3 21 3;
+#X text 54 505 licensed under BSD 3-Clause;
+#X connect 3 0 20 0;
+#X connect 3 1 20 1;
+#X connect 3 2 20 2;
+#X connect 3 3 20 3;
 #X connect 4 0 6 0;
-#X connect 4 0 22 0;
+#X connect 4 0 21 0;
 #X connect 5 0 6 1;
-#X connect 5 0 22 1;
+#X connect 5 0 21 1;
 #X connect 6 0 3 0;
 #X connect 6 1 3 1;
 #X connect 7 0 8 0;
@@ -2019,16 +1943,16 @@ http://www.rs-met.com/documents/tutorials/StereoProcessing.pdf, f
 #X connect 9 0 7 1;
 #X connect 12 0 10 0;
 #X connect 14 0 13 0;
-#X connect 17 0 28 0;
-#X connect 21 0 22 2;
-#X connect 21 1 22 3;
-#X connect 21 2 22 4;
-#X connect 21 3 22 5;
-#X connect 22 0 19 0;
-#X connect 22 1 20 0;
-#X connect 22 2 1 0;
-#X connect 22 3 2 0;
-#X connect 23 0 21 4;
-#X connect 26 0 9 0;
-#X connect 28 0 7 0;
+#X connect 17 0 27 0;
+#X connect 20 0 21 2;
+#X connect 20 1 21 3;
+#X connect 20 2 21 4;
+#X connect 20 3 21 5;
+#X connect 21 0 18 0;
+#X connect 21 1 19 0;
+#X connect 21 2 1 0;
+#X connect 21 3 2 0;
+#X connect 22 0 20 4;
+#X connect 25 0 9 0;
+#X connect 27 0 7 0;
 #X coords 0 -1 1 1 155 33 1 100 100;

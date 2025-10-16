@@ -148,17 +148,13 @@
 #X connect 7 2 6 0;
 #X restore 499 130 pd in;
 #X obj 398 127 r \$0-response;
-#X obj 103 115 hsl 105 15 0 100 0 0 \$0-gui \$0-guir Responsiveness
-3 8 2 10 -233017 -1 -1 2080 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 -233017
--228856 -1 0 1;
-#X obj 210 115 nbx 5 15 0 1000 0 0 \$0-response \$0-responser empty
-0 -8 2 10 -228856 -1 -1 20 256;
+#X obj 103 115 hsl 105 15 0 100 0 0 \$0-gui \$0-guir Responsiveness 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
+#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 210 115 nbx 5 15 0 1000 0 0 \$0-response \$0-responser empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 74 173 set \$1;
 #X obj 74 152 i;
 #X msg 210 152 set \$1;
 #X obj 52 194 s \$0-response;
-#X text 574 335 philipp schmalfuß \, 2018;
 #X obj 497 257 outlet;
 #N canvas 165 118 567 486 outlet-message 0;
 #X obj 205 328 list trim;
@@ -279,18 +275,19 @@
 #X connect 7 0 8 0;
 #X connect 8 0 6 0;
 #X restore 365 182 pd abs;
+#X text 25 285 licensed under BSD 3-Clause;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 1 0 17 0;
+#X connect 1 0 16 0;
 #X connect 3 0 4 0;
 #X connect 5 0 0 1;
-#X connect 5 0 17 1;
+#X connect 5 0 16 1;
 #X connect 6 0 10 0;
 #X connect 8 0 11 0;
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
 #X connect 10 0 12 0;
 #X connect 11 0 6 0;
-#X connect 15 0 14 0;
-#X connect 17 0 2 0;
+#X connect 14 0 13 0;
+#X connect 16 0 2 0;
 #X coords 0 -1 1 1 155 33 1 100 100;

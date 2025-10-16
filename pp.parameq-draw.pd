@@ -1,4 +1,4 @@
-#N canvas 295 2 850 699 10;
+#N canvas 295 2 917 761 10;
 #X obj 469 141 change;
 #X obj 309 144 change;
 #X obj 56 89 pointer;
@@ -18,26 +18,19 @@
 #N canvas 379 63 1076 432 filtercoef 0;
 #X obj 66 42 r \$0-do;
 #X text 251 370 a1 a2 b0 b1 b2 a0;
-#X obj 66 85 expr -2*cos(w\$0) \; 1-alpha\$0 \; (1-cos(w\$0))/2 \;
-1-cos(w\$0) \; (1-cos(w\$0))/2 \; 1+alpha\$0;
-#X obj 201 81 expr -2*cos(w\$0) \; 1-alpha\$0 \; (1+cos(w\$0))/2 \;
--(1+cos(w\$0)) \; (1+cos(w\$0))/2 \; 1+alpha\$0;
+#X obj 66 85 expr -2*cos(w\$0) \; 1-alpha\$0 \; (1-cos(w\$0))/2 \; 1-cos(w\$0) \; (1-cos(w\$0))/2 \; 1+alpha\$0;
+#X obj 201 81 expr -2*cos(w\$0) \; 1-alpha\$0 \; (1+cos(w\$0))/2 \; -(1+cos(w\$0)) \; (1+cos(w\$0))/2 \; 1+alpha\$0;
 #X text 130 67 lop;
 #X text 274 61 hip;
-#X obj 336 82 expr -2*cos(w\$0) \; 1-alpha\$0 \; sin(w\$0)/2 \; 0 \;
--1*sin(w\$0)/2 \; 1+alpha\$0;
+#X obj 336 82 expr -2*cos(w\$0) \; 1-alpha\$0 \; sin(w\$0)/2 \; 0 \; -1*sin(w\$0)/2 \; 1+alpha\$0;
 #X text 393 60 reson;
 #X text 520 58 bp;
-#X obj 462 80 expr -2*cos(w\$0) \; 1-alpha\$0 \; alpha\$0 \; 0 \; -1*alpha\$0
-\; 1+alpha\$0;
-#X obj 591 77 expr -2*cos(w\$0) \; 1-alpha\$0 \; 1 \; -2*cos(w\$0)
-\; 1 \; 1+alpha\$0;
+#X obj 462 80 expr -2*cos(w\$0) \; 1-alpha\$0 \; alpha\$0 \; 0 \; -1*alpha\$0 \; 1+alpha\$0;
+#X obj 591 77 expr -2*cos(w\$0) \; 1-alpha\$0 \; 1 \; -2*cos(w\$0) \; 1 \; 1+alpha\$0;
 #X text 649 55 notch;
 #X text 779 58 peakEQ;
-#X obj 721 80 expr -2*cos(w\$0) \; 1-alpha\$0/A\$0 \; 1+alpha\$0*A\$0
-\; -2*cos(w\$0) \; 1-alpha\$0*A\$0 \; 1+alpha\$0/A\$0;
-#X obj 850 82 expr -2*cos(w\$0) \; 1-alpha\$0 \; 1-alpha\$0 \; -2*cos(w\$0)
-\; 1+alpha\$0 \; 1+alpha\$0;
+#X obj 721 80 expr -2*cos(w\$0) \; 1-alpha\$0/A\$0 \; 1+alpha\$0*A\$0 \; -2*cos(w\$0) \; 1-alpha\$0*A\$0 \; 1+alpha\$0/A\$0;
+#X obj 850 82 expr -2*cos(w\$0) \; 1-alpha\$0 \; 1-alpha\$0 \; -2*cos(w\$0) \; 1+alpha\$0 \; 1+alpha\$0;
 #X text 916 62 allpass;
 #X text 206 258 lowshelf;
 #X text 949 175 a1 a2 b0 b1 b2 a0;
@@ -384,14 +377,8 @@
 #X obj 590 55 sel 5;
 #X obj 336 60 sel 6;
 #X obj 463 58 sel 7;
-#X obj 68 276 expr -2*((A\$0-1)+(A\$0+1)*cos(w\$0)) \; (A\$0+1)+(A\$0-1)*cos(w\$0)-alpha\$0
-\; A\$0*((A\$0+1)-(A\$0-1)*cos(w\$0)+alpha\$0) \; 2*A\$0*((A\$0-1)-(A\$0+1)*cos(w\$0))
-\; A\$0*((A\$0+1)-(A\$0-1)*cos(w\$0)-alpha\$0) \; (A\$0+1)+(A\$0-1)*cos(w\$0)+alpha\$0
-\;;
-#X obj 400 272 expr 2*((A\$0-1)-(A\$0+1)*cos(w\$0)) \; (A\$0+1)-(A\$0-1)*cos(w\$0)-alpha\$0
-\; A\$0*((A\$0+1)+(A\$0-1)*cos(w\$0)+alpha\$0) \; -2*A\$0*((A\$0-1)+(A\$0+1)*cos(w\$0))
-\; A\$0*((A\$0+1)+(A\$0-1)*cos(w\$0)-alpha\$0) \; (A\$0+1)-(A\$0-1)*cos(w\$0)+alpha\$0
-\;;
+#X obj 68 276 expr -2*((A\$0-1)+(A\$0+1)*cos(w\$0)) \; (A\$0+1)+(A\$0-1)*cos(w\$0)-alpha\$0 \; A\$0*((A\$0+1)-(A\$0-1)*cos(w\$0)+alpha\$0) \; 2*A\$0*((A\$0-1)-(A\$0+1)*cos(w\$0)) \; A\$0*((A\$0+1)-(A\$0-1)*cos(w\$0)-alpha\$0) \; (A\$0+1)+(A\$0-1)*cos(w\$0)+alpha\$0 \;;
+#X obj 400 272 expr 2*((A\$0-1)-(A\$0+1)*cos(w\$0)) \; (A\$0+1)-(A\$0-1)*cos(w\$0)-alpha\$0 \; A\$0*((A\$0+1)+(A\$0-1)*cos(w\$0)+alpha\$0) \; -2*A\$0*((A\$0-1)+(A\$0+1)*cos(w\$0)) \; A\$0*((A\$0+1)+(A\$0-1)*cos(w\$0)-alpha\$0) \; (A\$0+1)-(A\$0-1)*cos(w\$0)+alpha\$0 \;;
 #X connect 0 0 49 0;
 #X connect 2 0 38 0;
 #X connect 2 1 38 1;
@@ -562,9 +549,9 @@
 #X obj 227 388 s \$0-list;
 #X obj 239 360 r \$0-filtertype-init;
 #X obj 173 299 pack 1e-24 1e-24 1e-24;
-#X floatatom 333 253 5 0 0 0 - - -;
-#X floatatom 250 227 5 0 0 0 - - -;
-#X floatatom 222 151 5 0 0 0 - - -;
+#X floatatom 333 253 5 0 0 0 - - - 0;
+#X floatatom 250 227 5 0 0 0 - - - 0;
+#X floatatom 222 151 5 0 0 0 - - - 0;
 #X connect 1 0 2 0;
 #X connect 2 0 13 0;
 #X connect 2 1 12 1;
@@ -603,8 +590,7 @@
 #X msg 266 113 7;
 #X msg 314 114 8;
 #X obj 32 29 symbol \$3;
-#X obj 32 67 sel peaking highpass lowpass lowshelf highshelf notch
-reson bandpass allpass;
+#X obj 32 67 sel peaking highpass lowpass lowshelf highshelf notch reson bandpass allpass;
 #X obj 32 169 s \$0-filtertype-init;
 #X connect 0 0 10 0;
 #X connect 1 0 12 0;
@@ -661,16 +647,13 @@ reson bandpass allpass;
 #X obj 737 217 s \$0-table.size;
 #X obj 50 148 table \$0-mag.temp 10;
 #X obj 838 335 s \$0-mag.temp;
-#X text 34 257 This makes tables of complex frequencies from 0 to pi.
-It should only have to do this once \, unless the size of the table
-has been changed.;
+#X text 34 257 This makes tables of complex frequencies from 0 to pi. It should only have to do this once \, unless the size of the table has been changed.;
 #X obj 401 199 t f f;
 #X obj 401 574 tabwrite \$0-real.freqs1;
 #X obj 434 595 tabwrite \$0-real.freqs2;
 #X obj 467 617 tabwrite \$0-imag.freqs1;
 #X obj 500 637 tabwrite \$0-imag.freqs2;
-#X obj 401 512 expr cos(-1*$f1) \; cos(-2*$f1) \; sin(-1*$f1) \; sin(-2*$f1)
-;
+#X obj 401 512 expr cos(-1*$f1) \; cos(-2*$f1) \; sin(-1*$f1) \; sin(-2*$f1);
 #X obj 635 535 r \$0-freq.index;
 #X obj 401 47 inlet;
 #X obj 401 123 f 700;
@@ -754,8 +737,7 @@ has been changed.;
 #X obj 472 326 tabread \$0-imag.freqs2;
 #X obj 618 328 unpack f f f f f;
 #X obj 415 508 /;
-#X obj 415 402 expr $f7 + $f8*$f1 + $f9*$f3 \; $f8*$f2 + $f9*$f4 \;
-1 - $f5*$f1 - $f6*$f3 \; 0 - $f5*$f2 - $f6*$f4 \;;
+#X obj 415 402 expr $f7 + $f8*$f1 + $f9*$f3 \; $f8*$f2 + $f9*$f4 \; 1 - $f5*$f1 - $f6*$f3 \; 0 - $f5*$f2 - $f6*$f4 \;;
 #X obj 415 544 tabwrite \$0-mag.temp;
 #X obj 391 211 s \$0-temp.index;
 #X obj 532 523 r \$0-temp.index;
@@ -1187,6 +1169,7 @@ has been changed.;
 #X obj 309 20 r \$2-updatebng;
 #X obj 469 276 change;
 #X obj 309 479 change;
+#X text 661 701 licensed under BSD 3-Clause;
 #X connect 0 0 47 0;
 #X connect 0 0 5 0;
 #X connect 1 0 48 0;

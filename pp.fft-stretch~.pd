@@ -1,7 +1,7 @@
-#N struct 1292-template float x float y float c float s float th float stretch array 1292-plus 1292-template-y array 1292-minus 1292-template-y;
-#N struct 1292-template-y float y;
-#N struct 1293-template float x float y float c float s float th float stretch array 1293-plus 1293-template-y array 1293-minus 1293-template-y;
-#N struct 1293-template-y float y;
+#N struct 1005-template float x float y float c float s float th float stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y;
+#N struct 1005-template-y float y;
+#N struct 1006-template float x float y float c float s float th float stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y;
+#N struct 1006-template-y float y;
 #N canvas 682 254 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
@@ -2097,7 +2097,6 @@
 #X connect 30 0 5 0;
 #X connect 31 0 15 0;
 #X restore 497 94 pd in;
-#X text 580 467 philipp schmalfuß \, 2018/19;
 #X obj 103 118 cnv 10 10 10 empty \$0-namecnv empty.. 0 5 2 10 #e0e0e0 #000000 0;
 #X obj 367 122 inlet~;
 #X obj 400 143 inlet~;
@@ -2108,12 +2107,13 @@
 #X obj 338 98 inlet~;
 #X text 383 98 rec.r;
 #X obj 498 74 inlet;
+#X text 22 419 licensed under BSD 3-Clause;
 #X connect 2 0 9 0;
 #X connect 2 1 10 0;
 #X connect 6 0 5 0;
-#X connect 14 0 2 0;
-#X connect 15 0 2 1;
-#X connect 18 0 7 0;
-#X connect 20 0 7 1;
-#X connect 22 0 11 0;
+#X connect 13 0 2 0;
+#X connect 14 0 2 1;
+#X connect 17 0 7 0;
+#X connect 19 0 7 1;
+#X connect 21 0 11 0;
 #X coords 0 -1 1 1 180 33 1 100 100;

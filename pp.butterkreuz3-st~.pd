@@ -16,7 +16,7 @@
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -38,17 +38,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -88,7 +84,7 @@
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -110,17 +106,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -215,7 +207,7 @@
 #X obj 225 535 outlet~;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -237,17 +229,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -340,7 +328,7 @@
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -362,17 +350,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -412,7 +396,7 @@
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -434,17 +418,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -542,7 +522,7 @@
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -564,17 +544,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -614,7 +590,7 @@
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -636,17 +612,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -742,7 +714,7 @@
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -764,17 +736,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -814,7 +782,7 @@
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -836,17 +804,13 @@
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -932,8 +896,7 @@
 #X obj 366 350 outlet~;
 #X obj 415 350 outlet~;
 #X obj 313 47 inlet~;
-#X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 -233017 -233017 -1 0 1;
+#X obj 103 115 hsl 175 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 682 163 655 455 stuff 0;
 #X obj 164 147 s \$0-visbngr;
 #X obj 146 42 r \$0-visbng;
@@ -952,8 +915,7 @@
 #X obj 450 112 s \$0-freq1r;
 #X msg 450 90 range 0 \$1;
 #X obj 44 242 s pd-\$0-butterkreuz3;
-#X msg 44 214 vis 0 \, relocate 190x80+1+1 1x1+128+128 \, vis 1 \,
-editmode 0;
+#X msg 44 214 vis 0 \, relocate 190x80+1+1 1x1+128+128 \, vis 1 \, editmode 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
@@ -1176,18 +1138,12 @@ editmode 0;
 #X restore 985 327 pd outlet-message;
 #N canvas 128 158 190 80 \$0-butterkreuz3 0;
 #N canvas 124 220 714 345 mask 0;
-#X obj 100 100 cnv 15 179 69 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X obj 115 139 nbx 5 12 0 1500 0 0 \$0-freq1 \$0-freq1r hz 47 7 2 10
--262144 -1 -1 1000 256;
-#X obj 109 109 cnv 10 10 10 empty empty butterkreuz3~ 0 5 2 14 -262144
--162280 0;
-#X obj 204 139 nbx 5 12 1000 22050 0 0 \$0-freq2 \$0-freq2r hz 47 7
-2 10 -262144 -1 -1 1500 256;
-#X obj 113 127 cnv 4 2 2 empty empty Frequency-1 2 6 2 10 -262144 -1
-0;
-#X obj 202 127 cnv 4 2 2 empty empty Frequency-2 2 6 2 10 -262144 -1
-0;
+#X obj 100 100 cnv 15 179 69 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 115 139 nbx 5 12 0 2000 0 0 \$0-freq1 \$0-freq1r hz 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 109 109 cnv 10 10 10 empty empty butterkreuz3~ 0 5 2 14 #fcfcfc #9c9c9c 0;
+#X obj 204 139 nbx 5 12 500 24000 0 0 \$0-freq2 \$0-freq2r hz 47 7 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 113 127 cnv 4 2 2 empty empty Frequency-1 2 6 2 10 #fcfcfc #000000 0;
+#X obj 202 127 cnv 4 2 2 empty empty Frequency-2 2 6 2 10 #fcfcfc #000000 0;
 #X coords 0 -1 1 1 180 70 2 100 100;
 #X restore 5 2 pd mask;
 #X restore 981 177 pd \$0-butterkreuz3;
@@ -1233,7 +1189,7 @@ editmode 0;
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1255,17 +1211,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1305,7 +1257,7 @@ editmode 0;
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1327,17 +1279,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1432,7 +1380,7 @@ editmode 0;
 #X obj 225 535 outlet~;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1454,17 +1402,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1557,7 +1501,7 @@ editmode 0;
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1579,17 +1523,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1629,7 +1569,7 @@ editmode 0;
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1651,17 +1591,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1759,7 +1695,7 @@ editmode 0;
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1781,17 +1717,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1831,7 +1763,7 @@ editmode 0;
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1853,17 +1785,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -1959,7 +1887,7 @@ editmode 0;
 #X text 75 17 audio;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -1981,17 +1909,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -2031,7 +1955,7 @@ editmode 0;
 #X restore 143 183 pd buttercoef3;
 #N canvas 444 100 833 623 buttercoef3 0;
 #X obj 119 96 inlet;
-#X floatatom 582 159 5 0 0 0 - - -;
+#X floatatom 582 159 5 0 0 0 - - - 0;
 #X obj 159 199 t f f, f 7;
 #X msg 159 151 0.667;
 #X msg 139 329 0;
@@ -2053,17 +1977,13 @@ editmode 0;
 #X text 228 557 normalizer2;
 #X obj 231 482 expr (($f2-$f1)*($f2-$f1)+$f3*$f3);
 #X obj 119 458 t f f;
-#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
-#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1))
-;
+#X obj 159 222 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 221 250 expr 2*$f2*sin($f1) / (1 + $f2*$f2 + 2*$f2*cos($f1));
+#X obj 139 353 expr (1 - $f2*$f2) / (1 + $f2*$f2 + 2*$f2*cos($f1));
 #X obj 582 114 clip 0 1;
 #X obj 582 136 expr tan($f1*1.57);
 #X obj 159 176 expr $f1*1.5708;
-#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator
-;
+#X text 175 23 3-pole (or zero) Butterworth filter coefficient calculator;
 #X text 203 152 "theta" in units of pi/2;
 #X text 269 183 conjugate pair of pole/zero locations:;
 #X text 255 200 real part: (1-r*r)/(1+r*r-2rcos(th));
@@ -2151,6 +2071,7 @@ editmode 0;
 #X obj 607 45 inlet~;
 #X obj 711 104 r \$0-freq1;
 #X obj 815 180 r \$0-freq2;
+#X text 22 406 licensed under BSD 3-Clause;
 #X connect 0 0 1 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
