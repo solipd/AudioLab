@@ -1,10 +1,10 @@
-#N struct 1836-template float x float y float c float s float th float stretch array 1836-plus 1836-template-y array 1836-minus 1836-template-y;
-#N struct 1836-template-y float y;
-#N struct 1837-template float x float y float c float s float th float stretch array 1837-plus 1837-template-y array 1837-minus 1837-template-y;
-#N struct 1837-template-y float y;
 #N canvas 262 91 811 729 10;
 #X declare -path ./audio;
 #X declare -path ..;
+#N struct \$0-template float x float y float c float s float th float stretch array \$0-plus \$0-template-y array \$0-minus \$0-template-y;
+#N struct \$0-template-y float y;
+#N struct \$0-template float x float y float c float s float th float stretch array \$0-plus \$0-template-y array \$0-minus \$0-template-y;
+#N struct \$0-template-y float y;
 #X obj 399 291 pp.sfplayer~;
 #A saved;
 #X obj 402 668 pp.out~;
@@ -123,8 +123,8 @@
 #X obj 278 5 declare -path ..;
 #X text 10 39 Emulation of an old cassette deck.;
 #X text 24 342 load tape saturation IR;
-#X text 9 53 For this example I recorded dirac impulses with two old tapedecks. "Dual CC3600" and "Panasonic Tape Deck 269". Both of them were severely broken \, but I managed to retrieve some nice impulse responses that are used with [pp.fft-partconv~] to get tape-saturation.;
 #X floatatom 565 679 5 0 0 0 - - - 0;
+#X text 9 53 For this example I recorded dirac impulses with two old tapedecks. "Dual CC3600" and "Panasonic Tape Deck 269". Both of them were severely broken \, but I managed to retrieve some nice impulse responses that are used with [pp.fft-partconv~] to filter the sound.;
 #X connect 0 0 20 0;
 #X connect 0 1 19 0;
 #X connect 2 0 52 0;
@@ -165,7 +165,7 @@
 #X connect 32 0 25 0;
 #X connect 33 0 23 1;
 #X connect 34 0 22 1;
-#X connect 35 0 80 0;
+#X connect 35 0 79 0;
 #X connect 36 0 1 2;
 #X connect 37 0 38 0;
 #X connect 38 0 39 0;
@@ -195,4 +195,4 @@
 #X connect 72 0 21 0;
 #X connect 73 0 69 0;
 #X connect 74 0 69 1;
-#X connect 80 0 36 0;
+#X connect 79 0 36 0;
