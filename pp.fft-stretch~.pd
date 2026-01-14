@@ -1,8 +1,4 @@
-#N canvas 160 253 750 521 10;
-#N struct \$0-template float x float y float c float s float th float stretch array \$0-plus \$0-template-y array \$0-minus \$0-template-y;
-#N struct \$0-template-y float y;
-#N struct \$0-template float x float y float c float s float th float stretch array \$0-plus \$0-template-y array \$0-minus \$0-template-y;
-#N struct \$0-template-y float y;
+#N canvas 613 281 750 521 10;
 #N canvas 450 50 369 400 hanning 0;
 #X obj 36 24 r \$0-window-size;
 #N canvas 0 50 450 300 (subpatch) 0;
@@ -1605,7 +1601,7 @@
 #X connect 28 0 5 8;
 #X connect 29 0 26 0;
 #X restore 499 257 pd outlet-message;
-#N canvas 50 60 530 215 \$0-fft-stretch 0;
+#N canvas 50 60 530 215 \$0-fft-stretch 1;
 #N canvas 477 110 715 391 maske 0;
 #X obj 0 0 cnv 15 519 204 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 11 17 bng 16 250 50 0 \$0-op \$0-opr Open 0 -7 2 10 #fcfcfc #00fc04 #000000;
@@ -1619,11 +1615,11 @@
 #X obj 234 21 nbx 4 12 -1e+37 1e+37 0 0 \$0-speed \$0-speedr Speed(%) 0 -8 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 182 23 tgl 10 0 \$0-looptgl \$0-looptglr loop 14 6 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 9 49 cnv 15 502 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
-#N canvas 641 183 532 272 waveform 0;
+#N canvas 1093 162 532 272 waveform 0;
 #X obj 0 1 cnv 15 500 119 empty empty empty 3 6 2 10 #dcdcdc #000000 0;
 #X obj 1 0 cnv 1 1 120 empty \$0-zeiger empty 20 12 0 14 #fc0400 #404040 0;
-#X obj 0 0 pp.waveform \$0-links 500 60 1 -1 999 1 1 100;
-#X obj 0 60 pp.waveform \$0-rechts 500 60 1 -1 999 1 1 100;
+#X obj 0 0 pp.wfdisplay \$0-links;
+#X obj 0 60 pp.wfdisplay \$0-rechts;
 #X coords 0 -1 1 1 500 120 1 0 0;
 #X restore 10 50 pd waveform;
 #X obj 482 153 cnv 3 3 3 empty \$0-minutes 00:00 1 10 2 10 #dcdcdc #000000 0;
