@@ -1,98 +1,79 @@
-#N struct 1699-template float x float y float c float s float th float
-stretch array 1699-plus 1699-template-y array 1699-minus 1699-template-y
-;
-#N struct 1699-template-y float y;
 #N canvas 148 230 807 360 10;
 #X obj 397 293 pp.out~;
 #A saved;
-#X obj 2 2 cnv 15 380 350 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 12 15 cnv 15 10 10 empty empty pp.grainer~ 0 0 2 16 -233017
--262144 0;
-#X obj 570 107 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 2 2 cnv 15 380 350 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.grainer~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 570 107 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 394 33 696 708 control-messages 0;
 #X obj 71 684 outlet;
 #X msg 130 235 play \$1;
-#X obj 130 215 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 130 215 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 135 274 playback-speed \$1;
-#X floatatom 135 255 5 0 0 0 - - -;
-#X obj 69 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X floatatom 135 255 5 0 0 0 - - - 0;
+#X obj 69 13 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 69 33 openpanel;
 #X msg 69 53 open \$1;
 #X msg 121 194 record \$1;
-#X obj 121 175 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 121 175 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X text 122 55 load a soundfile into the buffer;
 #X text 189 195 record into the buffer;
 #X text 183 235 play / pause;
 #X text 250 274 playback-speed in %;
-#X obj 96 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 96 78 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 96 99 metro 100;
-#X obj 96 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 96 120 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 118 118 bang to trigger the next grain;
-#X obj 149 617 cnv 15 45 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 149 617 cnv 15 45 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 517 70 580 657 more 0;
 #X obj 69 636 outlet;
 #X msg 69 38 position \$1;
-#X floatatom 75 20 5 0 1e+21 0 - - -;
-#X floatatom 76 94 5 0 100 0 - - -;
+#X floatatom 75 20 5 0 1e+21 0 - - - 0;
+#X floatatom 76 94 5 0 100 0 - - - 0;
 #X msg 69 112 position% \$1;
 #X text 149 38 position in ms;
 #X text 153 113 position in %;
-#X floatatom 75 131 5 0 100 0 - - -;
+#X floatatom 75 131 5 0 100 0 - - - 0;
 #X msg 69 148 random-position% \$1;
-#X floatatom 77 57 5 0 1e+36 0 - - -;
+#X floatatom 77 57 5 0 1e+36 0 - - - 0;
 #X msg 69 75 random-position \$1;
-#X floatatom 76 170 5 0 1e+37 0 - - -;
-#X floatatom 75 207 5 0 1e+33 0 - - -;
+#X floatatom 76 170 5 0 1e+37 0 - - - 0;
+#X floatatom 75 207 5 0 1e+33 0 - - - 0;
 #X msg 69 188 grainsize \$1;
 #X text 153 189 grainsize in msec.;
 #X msg 69 224 random-grainsize \$1;
-#X floatatom 76 244 5 -1e+07 1e+10 0 - - -;
-#X floatatom 75 281 5 0 1e+20 0 - - -;
+#X floatatom 76 244 5 -1e+07 1e+10 0 - - - 0;
+#X floatatom 75 281 5 0 1e+20 0 - - - 0;
 #X msg 69 298 random-pitch \$1;
 #X msg 69 262 pitch \$1;
-#X floatatom 76 320 5 -100 100 0 - - -;
-#X floatatom 75 357 5 0 100 0 - - -;
+#X floatatom 76 320 5 -100 100 0 - - - 0;
+#X floatatom 75 357 5 0 100 0 - - - 0;
 #X msg 69 338 panorama \$1;
 #X msg 69 374 random-panorama \$1;
 #X text 130 261 grain-pitch in cents;
-#X floatatom 75 394 5 -100 0 0 - - -;
+#X floatatom 75 394 5 -100 0 0 - - - 0;
 #X msg 69 413 amplitude \$1;
-#X floatatom 75 434 5 0 100 0 - - -;
+#X floatatom 75 434 5 0 100 0 - - - 0;
 #X msg 69 452 random-amplitude \$1;
-#X obj 340 441 cnv 15 200 200 empty empty empty 20 12 0 14 -233017
--66577 0;
-#X floatatom 352 487 5 0 20000 0 - - -;
-#X obj 344 448 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 340 441 cnv 15 200 200 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X floatatom 352 487 5 0 20000 0 - - - 0;
+#X obj 344 448 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 344 467 filter-bypass \$1;
 #X msg 352 506 frequency \$1;
-#X floatatom 354 564 5 0 100000 0 - - -;
+#X floatatom 354 564 5 0 100000 0 - - - 0;
 #X msg 354 582 q \$1;
-#X floatatom 353 525 5 0 100 0 - - -;
+#X floatatom 353 525 5 0 100 0 - - - 0;
 #X msg 353 544 random-frequency \$1;
-#X floatatom 355 602 5 0 100000 0 - - -;
+#X floatatom 355 602 5 0 100000 0 - - - 0;
 #X msg 355 620 random-q \$1;
-#X obj 341 216 cnv 15 200 200 empty empty empty 20 12 0 14 -233017
--66577 0;
-#X obj 348 224 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
-#X floatatom 348 245 5 0 4 0 - - -;
+#X obj 341 216 cnv 15 200 200 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 348 224 hradio 15 1 0 5 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0;
+#X floatatom 348 245 5 0 4 0 - - - 0;
 #X msg 348 265 env-type \$1;
-#X floatatom 347 307 5 0 1 0 - - -;
+#X floatatom 347 307 5 0 1 0 - - - 0;
 #X msg 347 325 env-bias \$1;
-#X obj 350 288 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
-#X floatatom 346 366 5 0 1 0 - - -;
-#X obj 349 347 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 350 288 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 346 366 5 0 1 0 - - - 0;
+#X obj 349 347 hsl 100 15 0 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 346 384 env-shape \$1;
 #X text 445 222 grain-envelope;
 #X text 456 447 grain-filter;
@@ -140,50 +121,38 @@ stretch array 1699-plus 1699-template-y array 1699-minus 1699-template-y
 #X connect 48 0 47 0;
 #X connect 49 0 0 0;
 #X restore 149 617 pd more;
-#X obj 157 298 cnv 15 250 150 empty empty empty 20 12 0 14 -233017
--66577 0;
-#X obj 165 306 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 157 298 cnv 15 250 150 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 165 306 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 165 327 int.grain-trigger \$1;
-#X floatatom 166 349 5 0 1e+13 0 - - -;
+#X floatatom 166 349 5 0 1e+13 0 - - - 0;
 #X msg 166 369 grain-distance \$1;
-#X floatatom 166 393 5 0 1e+16 0 - - -;
+#X floatatom 166 393 5 0 1e+16 0 - - - 0;
 #X msg 166 412 random-grain-distance \$1;
 #X text 193 309 internal trigger metro on/off;
 #X text 204 350 internal trigger speed;
 #N canvas 3 52 450 250 (subpatch) 0;
-#X array mysoundfile 998865 float 2;
-#X coords 0 1 998865 -1 200 140 1 0 0;
+#X array mysoundfile 908174 float 2;
+#A color 0;
+#A width 2;
+#X coords 0 1 908174 -1 200 140 1 0 0;
 #X restore 385 471 graph;
 #N canvas 3 52 450 300 source 0;
 #X obj 71 113 soundfiler;
 #X obj 71 53 loadbang;
-#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav mysoundfile
-;
+#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav mysoundfile;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 385 616 pd source;
 #X msg 183 507 set-env myenv;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array myenv 100 float 5;
-#A 0 -2.08616e-06 -2.08616e-06 0.0299986 0.0399988 0.0599993 0.0899826
-0.109983 0.159984 0.179985 0.219986 0.239986 0.439991 0.529993 0.549993
-0.599994 0.629995 0.649995 0.689996 0.709997 0.739998 0.759998 0.769998
-0.819999 0.83 0.85 0.85 0.85 0.85 0.840017 0.830016 0.810016 0.780015
-0.760015 0.740014 0.730014 0.720014 0.710014 0.690013 0.690013 0.650012
-0.630012 0.580011 0.55001 0.520009 0.440008 0.410007 0.380006 0.370006
-0.360006 0.330005 0.320005 0.320005 0.310005 0.310005 0.310005 0.300004
-0.300004 0.300004 0.300004 0.330005 0.340005 0.360006 0.380006 0.390006
-0.430007 0.450008 0.500009 0.510009 0.520009 0.55001 0.56001 0.580011
-0.590011 0.610011 0.610011 0.620012 0.630012 0.630012 0.630012 0.630012
-0.630012 0.630012 0.610011 0.610011 0.600011 0.56001 0.55001 0.490009
-0.470008 0.460008 0.41 0.389999 0.369999 0.349998 0.299997 0.249996
-0.0599975 0.00999635 0.00999635 -0.0100041;
+#A 0 -2.08616e-06 -2.08616e-06 0.0299986 0.0399988 0.0599993 0.0899826 0.109983 0.159984 0.179985 0.219986 0.239986 0.439991 0.529993 0.549993 0.599994 0.629995 0.649995 0.689996 0.709997 0.739998 0.759998 0.769998 0.819999 0.83 0.85 0.85 0.85 0.85 0.840017 0.830016 0.810016 0.780015 0.760015 0.740014 0.730014 0.720014 0.710014 0.690013 0.690013 0.650012 0.630012 0.580011 0.55001 0.520009 0.440008 0.410007 0.380006 0.370006 0.360006 0.330005 0.320005 0.320005 0.310005 0.310005 0.310005 0.300004 0.300004 0.300004 0.300004 0.330005 0.340005 0.360006 0.380006 0.390006 0.430007 0.450008 0.500009 0.510009 0.520009 0.55001 0.56001 0.580011 0.590011 0.610011 0.610011 0.620012 0.630012 0.630012 0.630012 0.630012 0.630012 0.630012 0.610011 0.610011 0.600011 0.56001 0.55001 0.490009 0.470008 0.460008 0.41 0.389999 0.369999 0.349998 0.299997 0.249996 0.0599975 0.00999635 0.00999635 -0.0100041;
+#A color 0;
+#A width 1;
 #X coords 0 1 99 0 140 100 1 0 0;
 #X restore 224 545 graph;
 #X msg 185 468 set mysoundfile;
-#X obj 148 661 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 148 661 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -198,8 +167,7 @@ stretch array 1699-plus 1699-template-y array 1699-minus 1699-template-y
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -211,7 +179,7 @@ with the parrent patch;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
 #X restore 148 660 pd save&recall;
-#X floatatom 110 146 5 0 127 0 - - -;
+#X floatatom 110 146 5 0 127 0 - - - 0;
 #X text 147 145 float to trigger grain instance n;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
@@ -239,33 +207,23 @@ with the parrent patch;
 #X restore 570 107 pd control-messages;
 #X obj 397 24 adc~;
 #X text 579 153 <-- click to open GUI;
-#X text 10 97 Inlets:;
-#X text 11 137 Outlets:;
-#X text 67 137 1:(~)left out;
-#X text 67 150 2:(~)right out;
-#X text 67 162 3:message;
-#X text 11 61 Creation arguments: none;
+#X text 10 134 Inlets:;
+#X text 11 174 Outlets:;
+#X text 67 174 1:(~)left out;
+#X text 67 187 2:(~)right out;
+#X text 67 199 3:message;
 #X obj 397 137 pp.grainer~;
 #A saved;
-#X text 67 96 1:(~)record-in;
+#X text 67 133 1:(~)record-in;
 #X text 10 29 granular sampler for mono soundfiles;
-#X text 67 109 2:control-messages;
+#X text 67 146 2:control-messages;
 #N canvas 639 454 447 220 message-out 0;
 #X obj 30 25 inlet;
-#X msg 30 60 open /home/philipp/Documents/Pd/AudioLab/Examples/audio/Trumpet.wav
-\, grain-distance 50 \, position 43015 \, grainsize 100 \, pitch 0
-\, panorama 0 \, amplitude 0 \, filter-bypass 1 \, frequency 100 \,
-q 1 \, playback-speed 100 \, play 0 \, env-type 0 \, env-bias 0.5 \,
-env-shape 0.5 \, random-grain-distance 0 \, random-position 0 \, random-grainsize
-0 \, random-pitch 0 \, random-panorama 0 \, random-amplitude 0 \, random-frequency
-5000 \, random-q 0 \, position% 25.155 \, random-position% 0 \, int.grain-trigger
-0 \,;
+#X msg 30 60 open symbol \, grain-distance 50 \, position 0 \, grainsize 100 \, pitch 0 \, panorama 0 \, amplitude 0 \, filter-bypass 1 \, frequency 100 \, q 1 \, playback-speed 100 \, play 0 \, env-type 0 \, env-bias 0.5 \, env-shape 0.5 \, random-grain-distance 0 \, random-position 0 \, random-grainsize 0 \, random-pitch 0 \, random-panorama 0 \, random-amplitude 0 \, random-frequency 5000 \, random-q 0 \, position% 0 \, random-position% 0 \, int.grain-trigger 0 \,;
 #X connect 0 0 1 0;
 #X restore 570 189 pd message-out;
-#X obj 676 3 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 682 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
+#X obj 676 3 cnv 15 120 30 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 682 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 701 9 open example-1;
 #N canvas 102 154 450 300 examples 0;
 #X obj 94 103 s pd;
@@ -278,8 +236,10 @@ env-shape 0.5 \, random-grain-distance 0 \, random-position 0 \, random-grainsiz
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
 #X restore 308 331 pd examples;
-#X connect 4 0 13 1;
-#X connect 5 0 13 0;
-#X connect 13 0 0 0;
-#X connect 13 1 0 1;
-#X connect 13 2 17 0;
+#X text 12 67 Creation arguments:;
+#X text 67 84 \$1: max. number of grains (default 128);
+#X connect 4 0 12 1;
+#X connect 5 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 1 0 1;
+#X connect 12 2 16 0;
