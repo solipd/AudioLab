@@ -25,7 +25,6 @@ Some components are published under BSD-3, namely
 - pp.env~.pd
 - pp.env-st~.pd
 - pp.rev~.pd
-- pp.parameq-draw.pd
 - pp.fft-pitchshift~.pd
 - pp.fft-pitshift-st~.pd 
 - pp.fft-freeze~.pd 
