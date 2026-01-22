@@ -1,6 +1,6 @@
-#N struct 1336-xt float x float y;
-#N struct 1336-yt float x float y;
 #N canvas 247 184 876 355 10;
+#N struct \$0-xt float x float y;
+#N struct \$0-yt float x float y;
 #X obj 408 292 pp.out~;
 #A saved;
 #X obj 1 2 cnv 15 380 350 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -100,7 +100,7 @@
 #X obj 95 7 r \$0-example1;
 #X msg 95 30 dir;
 #X obj 95 53 pdcontrol;
-#X msg 95 75 open 13-multiband_dynamics.pd \$1/Examples;
+#X msg 95 75 open 14-multiband_dynamics.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

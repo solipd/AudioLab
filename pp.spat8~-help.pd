@@ -1,22 +1,18 @@
-#N struct 1006-control-array float x float y float x1 float y1 float
-x2 float y2 array c-array 1006-control-template;
-#N struct 1006-control-template float x float y float c float n;
 #N canvas 187 186 897 337 10;
-#X obj 3 3 cnv 15 380 320 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#N struct \$0-control-array float x float y float x1 float y1 float x2 float y2 array c-array \$0-control-template;
+#N struct \$0-control-template float x float y float c float n;
+#X obj 3 3 cnv 15 380 320 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 74 120 1:(~)signal;
 #X text 16 121 Inlets:;
 #X text 16 192 Outlets:;
-#X obj 14 33 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 -233017 -262144
-0;
-#X obj 539 161 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 14 33 cnv 15 10 10 empty empty pp.spat8~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 539 161 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 561 87 423 472 control-messages 0;
 #X obj 70 439 outlet;
-#X floatatom 70 12 5 -1 1 0 - - -;
+#X floatatom 70 12 5 -1 1 0 - - - 0;
 #X msg 70 56 speaker-1 \$1 \$2;
 #X obj 70 35 pack 0 0;
-#X floatatom 115 12 5 -1 1 0 - - -;
+#X floatatom 115 12 5 -1 1 0 - - - 0;
 #X text 140 33 speaker position x \, y (-1 \, 1);
 #X msg 93 90 speaker-2 \$1 \$2;
 #X msg 94 110 speaker-3 \$1 \$2;
@@ -34,8 +30,7 @@ x2 float y2 array c-array 1006-control-template;
 #X msg 144 373 preset 1;
 #X text 207 349 8-ch. circle stereo pairs;
 #X text 207 372 8-ch. circle center speaker;
-#X obj 144 414 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 144 414 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -50,8 +45,7 @@ x2 float y2 array c-array 1006-control-template;
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -74,17 +68,15 @@ with the parrent patch;
 #X connect 23 0 0 0;
 #X restore 539 161 pd control-messages;
 #X obj 392 19 noise~;
-#X obj 421 59 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4900 1;
-#X floatatom 418 123 5 0 0 0 - - -;
+#X obj 421 59 hsl 100 12 -1 1 0 0 empty empty empty -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 418 123 5 0 0 0 - - - 0;
 #X obj 418 143 sig~;
-#X obj 465 15 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 9400 1;
-#X floatatom 464 123 5 0 0 0 - - -;
+#X obj 465 15 vsl 12 100 -1 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 464 123 5 0 0 0 - - - 0;
 #X obj 464 143 sig~;
 #X text 425 105 x;
 #X text 483 106 y;
-#X floatatom 506 124 5 -1 1 0 - - -;
+#X floatatom 506 124 5 -1 1 0 - - - 0;
 #X obj 506 144 sig~;
 #X text 542 123 spatial spread (-1 \, 1);
 #X text 74 132 2:(~)x-position;
@@ -105,27 +97,22 @@ with the parrent patch;
 #X text 135 90 default: cos;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 speaker-1 -0.394445 0.845887 \, speaker-2 0.394443 0.845888
-\, speaker-3 -0.845888 0.394442 \, speaker-4 0.845887 0.394444 \, speaker-5
--0.845886 -0.394446 \, speaker-6 0.845889 -0.39444 \, speaker-7 -0.394441
--0.845889 \, speaker-8 0.394446 -0.845886 \, cos \,;
+#X msg 30 60 speaker-1 -0.386667 0.846667 \, speaker-2 0.393333 0.846667 \, speaker-3 -0.84 0.393333 \, speaker-4 0.846667 0.393333 \, speaker-5 -0.84 -0.386667 \, speaker-6 0.846667 -0.386667 \, speaker-7 -0.386667 -0.84 \, speaker-8 0.393333 -0.84 \, cos \,;
 #X connect 0 0 1 0;
 #X restore 539 225 pd message-out;
 #X obj 391 184 pp.spat8~;
 #A saved;
 #X obj 390 266 pp.out-8~;
 #A saved;
-#X obj 771 4 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 777 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
+#X obj 771 4 cnv 15 120 30 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 777 12 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 796 11 open example-1;
 #N canvas 102 154 450 300 examples 0;
 #X obj 95 102 s pd;
 #X obj 95 7 r \$0-example1;
 #X msg 95 30 dir;
 #X obj 95 53 pdcontrol;
-#X msg 95 79 open 07-8-channel_circular_movement.pd \$1/Examples;
+#X msg 95 79 open 08-8-channel_circular_movement.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

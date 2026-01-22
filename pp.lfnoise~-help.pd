@@ -1,11 +1,9 @@
 #N canvas 238 240 832 310 10;
-#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
-0;
+#X obj 1 2 cnv 15 380 300 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X text 10 125 Inlets:;
 #X text 10 165 Outlets:;
 #X text 68 177 2:message;
-#X obj 12 20 cnv 15 10 10 empty empty pp.lfnoise~ 0 0 2 16 -233017
--262144 0;
+#X obj 12 20 cnv 15 10 10 empty empty pp.lfnoise~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
 #X text 68 138 2:control-message;
 #X obj 436 239 pp.out~;
 #A saved;
@@ -15,22 +13,20 @@
 #X obj 436 183 osc~;
 #X obj 436 163 +~ 700;
 #X text 68 165 1:(~)randoom signal(-1 \, 1);
-#X floatatom 437 17 5 0 0 0 - - -;
+#X floatatom 437 17 5 0 0 0 - - - 0;
 #X obj 437 37 sig~;
 #X text 470 18 frequency;
 #X text 541 119 <-- click to open GUI;
-#X obj 529 80 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 529 80 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 578 211 285 341 control-messages 0;
 #X obj 80 266 outlet;
-#X floatatom 80 55 5 0 0 0 - - -;
+#X floatatom 80 55 5 0 0 0 - - - 0;
 #X msg 80 75 frequency \$1;
-#X floatatom 120 96 5 0 0 0 - - -;
-#X floatatom 131 140 5 0 100000 0 - - -;
+#X floatatom 120 96 5 0 0 0 - - - 0;
+#X floatatom 131 140 5 0 100000 0 - - - 0;
 #X msg 120 116 steps \$1;
 #X msg 131 160 smooth \$1;
-#X obj 133 237 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 133 237 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -45,8 +41,7 @@
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -59,8 +54,7 @@ with the parrent patch;
 #X connect 12 0 0 0;
 #X restore 133 236 pd save&recall;
 #X msg 141 201 unitpol \$1;
-#X obj 141 184 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 141 184 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 5 0;
@@ -78,38 +72,31 @@ with the parrent patch;
 #X restore 529 144 pd message-out;
 #X text 95 81 \$1: frequency;
 #X text 9 60 Creation arguments:;
-#X obj 705 5 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 711 16 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
-#X obj 711 37 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
-0 10 -262144 -1 -1;
+#X obj 705 5 cnv 15 120 60 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 711 16 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 711 37 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 730 14 open example-1;
 #X text 730 36 open example-2;
 #X obj 436 103 pp.lfnoise~ 1 0;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot
-\; empty_slot \;;
+#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
 #N canvas 102 154 450 300 examples 0;
 #X obj 94 104 s pd;
 #X obj 92 226 s pd;
 #X obj 94 9 r \$0-example1;
 #X msg 94 32 dir;
 #X obj 94 55 pdcontrol;
-#X msg 94 81 open 08-chaotic_movement.pd \$1/Examples;
 #X msg 92 161 dir;
 #X obj 92 184 pdcontrol;
 #X obj 92 138 r \$0-example2;
-#X msg 93 204 open 09-old_tapedeck.pd \$1/Examples;
+#X msg 94 81 open 09-chaotic_movement.pd \$1/Examples;
+#X msg 93 204 open 10-old_tapedeck.pd \$1/Examples;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 7 0;
-#X connect 7 0 9 0;
-#X connect 8 0 6 0;
+#X connect 4 0 8 0;
+#X connect 5 0 6 0;
+#X connect 6 0 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 0 0;
 #X connect 9 0 1 0;
 #X restore 308 274 pd examples;
 #X text 95 96 \$2: bipolar (0) \, unipolar (1) \, default: 0;

@@ -1,39 +1,24 @@
-#N struct 1232-template float x float y float c float s float th float
-stretch array 1232-plus 1232-template-y array 1232-minus 1232-template-y
-;
-#N struct 1232-template-y float y;
-#N struct 1233-template float x float y float c float s float th float
-stretch array 1233-plus 1233-template-y array 1233-minus 1233-template-y
-;
-#N struct 1233-template-y float y;
 #N canvas 154 122 860 311 10;
 #X obj 397 248 pp.out~;
 #A saved;
-#X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 12 15 cnv 15 10 10 empty empty pp.fft-stretch~ 0 0 2 16 -233017
--262144 0;
-#X obj 570 117 cnv 15 118 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.fft-stretch~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 570 117 cnv 15 118 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 311 54 872 703 control-messages 0;
 #X obj 67 694 outlet;
 #X msg 126 123 play \$1;
 #X msg 158 188 stop;
-#X obj 126 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 126 103 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 194 443 position \$1;
-#X floatatom 194 425 5 0 1e+21 0 - - -;
+#X floatatom 194 425 5 0 1e+21 0 - - - 0;
 #X msg 168 227 loop \$1;
-#X obj 168 209 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 70 2 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 168 209 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 70 2 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 70 22 openpanel;
 #X msg 70 42 open \$1;
 #X msg 99 83 record \$1;
-#X obj 99 64 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
-#X floatatom 194 468 5 0 100 0 - - -;
+#X obj 99 64 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 194 468 5 0 100 0 - - - 0;
 #X msg 193 486 position% \$1;
 #X text 121 44 load a soundfile into the buffer;
 #X text 167 84 record into the buffer;
@@ -42,16 +27,13 @@ stretch array 1233-plus 1233-template-y array 1233-minus 1233-template-y
 #X text 248 353 playback-speed in %;
 #X text 275 442 position in ms;
 #X text 277 487 position in %;
-#X text 361 487 (this is helpful if you don't know the exact lenght
-of your soundfile);
+#X text 361 487 (this is helpful if you don't know the exact lenght of your soundfile);
 #X msg 188 353 speed \$1;
-#X floatatom 188 334 5 0 0 0 - - -;
-#X obj 144 143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X floatatom 188 334 5 0 0 0 - - - 0;
+#X obj 144 143 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 144 163 freeze \$1;
 #X text 209 164 freeze at current position;
-#X obj 174 249 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 174 249 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 174 267 phaselock \$1;
 #X msg 183 552 blocksize \$1;
 #X msg 184 602 overlap \$1;
@@ -59,24 +41,24 @@ of your soundfile);
 #X msg 213 578 4;
 #X msg 244 578 8;
 #X text 269 552 fft-blocksize;
-#X floatatom 194 379 5 0 0 0 - - -;
+#X floatatom 194 379 5 0 0 0 - - - 0;
 #X msg 194 399 transposition \$1;
 #X text 302 400 transposition in cents;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array source-stretch 998865 float 2;
-#X coords 0 1 998865 -1 200 140 1 0 0;
+#X array source-stretch 908174 float 2;
+#A color 0;
+#A width 2;
+#X coords 0 1 908174 -1 200 140 1 0 0;
 #X restore 433 548 graph;
 #N canvas 3 52 450 300 source 0;
 #X obj 71 99 soundfiler;
 #X obj 71 53 loadbang;
-#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav source-stretch
-;
+#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav source-stretch;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 433 693 pd source;
 #X msg 181 638 set source-stretch;
-#X obj 178 678 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 178 678 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -91,8 +73,7 @@ of your soundfile);
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -104,8 +85,7 @@ with the parrent patch;
 #X connect 11 0 12 0;
 #X connect 12 0 0 0;
 #X restore 178 677 pd save&recall;
-#X obj 181 290 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 181 290 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 181 308 random-phase \$1;
 #X text 282 306 randomize phases \, like paulstretch;
 #X msg 183 526 1024;
@@ -150,7 +130,7 @@ with the parrent patch;
 #X restore 570 117 pd control-messages;
 #X obj 397 24 adc~;
 #X obj 482 58 sig~;
-#X floatatom 482 39 5 0 0 0 - - -;
+#X floatatom 482 39 5 0 0 0 - - - 0;
 #X text 518 40 playback-speed in %;
 #X text 579 153 <-- click to open GUI;
 #X text 10 97 Inlets:;
@@ -162,46 +142,36 @@ with the parrent patch;
 #X text 67 171 1:(~)left out;
 #X text 67 184 2:(~)right out;
 #X text 67 196 3:message;
-#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 596 106 504 105 references 0;
-#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 21 41 help -> browser -> PureData/audio-examples/I07.phase.vocoder.pd
-;
-#X text 21 12 this abstraction uses the pd-implementation of the phase
-vocoder;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 21 41 help -> browser -> PureData/audio-examples/I07.phase.vocoder.pd;
+#X text 21 12 this abstraction uses the pd-implementation of the phase vocoder;
 #X restore 7 279 pd references;
 #X obj 525 87 sig~;
-#X floatatom 525 68 5 0 0 0 - - -;
+#X floatatom 525 68 5 0 0 0 - - - 0;
 #X text 561 69 transposition(cents);
 #X text 67 133 3:(~)transposition;
 #X text 10 29 pvoc time stretching;
-#X text 11 61 Creation arguments: \$1: fft-blocksize \, default: 1024
-;
+#X text 11 61 Creation arguments: \$1: fft-blocksize \, default: 1024;
 #X text 131 73 \$2: overlap \, default: 4;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 open symbol \, play 0 \, freeze 0 \, speed 100 \, transposition
-0 \, position 0 \, position% 0 \, loop 0 \, phaselock 0 \, random-phase
-0 \, blocksize 1024 \, overlap 4 \,;
+#X msg 30 60 open symbol \, play 0 \, freeze 0 \, speed 100 \, transposition 0 \, position 0 \, position% 0 \, loop 0 \, phaselock 0 \, random-phase 0 \, blocksize 1024 \, overlap 4 \,;
 #X connect 0 0 1 0;
 #X restore 570 178 pd message-out;
 #X obj 397 139 pp.fft-stretch~ 1024 4;
 #A saved;
-#X obj 737 3 cnv 15 120 30 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 743 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
+#X obj 737 3 cnv 15 120 30 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 743 11 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 762 9 open example-1;
 #N canvas 102 154 450 300 examples 0;
 #X obj 94 107 s pd;
 #X obj 94 11 r \$0-example1;
 #X msg 94 34 dir;
 #X obj 94 57 pdcontrol;
-#X msg 94 84 open 06-time-stretching.pd \$1/Examples;
+#X msg 94 84 open 07-time-stretching.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

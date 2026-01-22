@@ -164,7 +164,7 @@
 #X obj 95 7 r \$0-example1;
 #X msg 95 30 dir;
 #X obj 95 53 pdcontrol;
-#X msg 95 75 open 11-miller_lecture_denoise_challenge.pd \$1/Examples;
+#X msg 95 75 open 12-miller_lecture_denoise_challenge.pd \$1/Examples;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

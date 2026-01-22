@@ -1,7 +1,3 @@
-#N struct 1007-template float x float y float c float s float th float stretch array 1007-plus 1007-template-y array 1007-minus 1007-template-y;
-#N struct 1007-template-y float y;
-#N struct 1008-template float x float y float c float s float th float stretch array 1008-plus 1008-template-y array 1008-minus 1008-template-y;
-#N struct 1008-template-y float y;
 #N canvas 154 70 836 555 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -65,7 +61,7 @@
 #X floatatom 565 423 5 0 0 0 - - - 0;
 #X obj 18 367 hsl 200 15 0 3 0 0 \$0-stwidth \$0-stwidthr Stereo\ Width -2 -8 2 12 #fcfcfc #000000 #000000 0 1;
 #X obj 565 402 r \$0-stwidth;
-#X text 12 286 Set the max. time difference (delay )between the two outputs of pp.pantd~ . Depending on your speaker setup this will give a wider stereo image. If the distance is to large \, this will result in perceivable phasing.;
+#X text 12 286 Set the max. time difference (delay )between the two outputs of pp.pantd~ . Depending on your speaker setup this will give a wider stereo image. If the distance is to large \, it will result in perceivable phasing.;
 #X connect 7 0 35 0;
 #X connect 7 1 35 1;
 #X connect 8 0 9 0;

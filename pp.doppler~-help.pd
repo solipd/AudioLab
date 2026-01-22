@@ -82,7 +82,7 @@
 #X obj 94 105 s pd;
 #X msg 94 34 dir;
 #X obj 94 57 pdcontrol;
-#X msg 94 82 open 05-circular_doppler.pd \$1/Examples;
+#X msg 94 82 open 06-circular_doppler.pd \$1/Examples;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

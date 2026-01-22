@@ -1,5 +1,3 @@
-#N struct 1005-template float x float y float c float s float th float stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y;
-#N struct 1005-template-y float y;
 #N canvas 138 178 807 360 10;
 #X obj 2 2 cnv 15 380 350 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
 #X obj 12 15 cnv 15 10 10 empty empty pp.grainer-mc~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
@@ -123,8 +121,10 @@
 #X text 193 309 internal trigger metro on/off;
 #X text 204 350 internal trigger speed;
 #N canvas 3 52 450 250 (subpatch) 0;
-#X array mysoundfile 998865 float 2;
-#X coords 0 1 998865 -1 200 140 1 0 0;
+#X array mysoundfile 908174 float 2;
+#A color 0;
+#A width 2;
+#X coords 0 1 908174 -1 200 140 1 0 0;
 #X restore 385 471 graph;
 #N canvas 3 52 450 300 source 0;
 #X obj 71 113 soundfiler;
@@ -137,6 +137,8 @@
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array myenv 100 float 5;
 #A 0 -2.08616e-06 -2.08616e-06 0.0299986 0.0399988 0.0599993 0.0899826 0.109983 0.159984 0.179985 0.219986 0.239986 0.439991 0.529993 0.549993 0.599994 0.629995 0.649995 0.689996 0.709997 0.739998 0.759998 0.769998 0.819999 0.83 0.85 0.85 0.85 0.85 0.840017 0.830016 0.810016 0.780015 0.760015 0.740014 0.730014 0.720014 0.710014 0.690013 0.690013 0.650012 0.630012 0.580011 0.55001 0.520009 0.440008 0.410007 0.380006 0.370006 0.360006 0.330005 0.320005 0.320005 0.310005 0.310005 0.310005 0.300004 0.300004 0.300004 0.300004 0.330005 0.340005 0.360006 0.380006 0.390006 0.430007 0.450008 0.500009 0.510009 0.520009 0.55001 0.56001 0.580011 0.590011 0.610011 0.610011 0.620012 0.630012 0.630012 0.630012 0.630012 0.630012 0.630012 0.610011 0.610011 0.600011 0.56001 0.55001 0.490009 0.470008 0.460008 0.41 0.389999 0.369999 0.349998 0.299997 0.249996 0.0599975 0.00999635 0.00999635 -0.0100041;
+#A color 0;
+#A width 1;
 #X coords 0 1 99 0 140 100 1 0 0;
 #X restore 224 545 graph;
 #X msg 185 468 set mysoundfile;
@@ -222,7 +224,7 @@
 #X obj 94 105 s pd;
 #X msg 94 34 dir;
 #X obj 94 57 pdcontrol;
-#X msg 94 82 open 15-train_of_sounds.pd \$1/Examples;
+#X msg 94 82 open 16-train_of_sounds.pd \$1/Examples;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;

@@ -1,41 +1,26 @@
-#N struct 1372-template float x float y float c float s float th float
-stretch array 1372-plus 1372-template-y array 1372-minus 1372-template-y
-;
-#N struct 1372-template-y float y;
-#N struct 1373-template float x float y float c float s float th float
-stretch array 1373-plus 1373-template-y array 1373-minus 1373-template-y
-;
-#N struct 1373-template-y float y;
 #N canvas 267 326 841 315 10;
 #X obj 397 246 pp.out~;
 #A saved;
-#X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X obj 12 15 cnv 15 10 10 empty empty pp.sfplayer~ 0 0 2 16 -233017
--262144 0;
-#X obj 570 118 cnv 16 118 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 2 2 cnv 15 380 300 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X obj 12 15 cnv 15 10 10 empty empty pp.sfplayer~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 570 118 cnv 16 118 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 598 77 646 654 control-messages 0;
 #X obj 69 607 outlet;
 #X msg 139 167 play \$1;
 #X msg 156 198 stop;
-#X obj 139 147 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
+#X obj 139 147 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X msg 161 293 playback-speed \$1;
-#X floatatom 161 274 5 0 0 0 - - -;
+#X floatatom 161 274 5 0 0 0 - - - 0;
 #X msg 162 339 position \$1;
-#X floatatom 162 318 5 0 1e+21 0 - - -;
+#X floatatom 162 318 5 0 1e+21 0 - - - 0;
 #X msg 159 250 loop \$1;
-#X obj 159 232 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 69 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 159 232 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 69 27 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 69 47 openpanel;
 #X msg 69 67 open \$1;
 #X msg 98 120 record \$1;
-#X obj 98 101 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X floatatom 163 370 5 0 100 0 - - -;
+#X obj 98 101 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 163 370 5 0 100 0 - - - 0;
 #X msg 163 391 position% \$1;
 #X text 120 69 load a soundfile into the buffer;
 #X text 166 121 record into the buffer;
@@ -44,23 +29,22 @@ stretch array 1373-plus 1373-template-y array 1373-minus 1373-template-y
 #X text 276 293 playback-speed in %;
 #X text 243 338 position in ms;
 #X text 247 392 position in %;
-#X text 244 407 (this is helpful if you don't know the exact lenght
-of your soundfile);
+#X text 244 407 (this is helpful if you don't know the exact lenght of your soundfile);
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array source-array 998865 float 2;
-#X coords 0 1 998865 -1 200 140 1;
+#X array source-array 908174 float 2;
+#A color 0;
+#A width 2;
+#X coords 0 1 908174 -1 200 140 1;
 #X restore 392 468 graph;
 #X msg 153 466 set source-array;
 #N canvas 3 52 450 300 source 0;
 #X obj 71 99 soundfiler;
 #X obj 71 53 loadbang;
-#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav source-array
-;
+#X msg 71 76 read -resize ./Examples/audio/MusicBox.wav source-array;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X restore 392 613 pd source;
-#X obj 147 573 cnv 16 87 16 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 147 573 cnv 16 87 16 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 864 246 634 307 save&recall 0;
 #X obj 93 233 outlet;
 #X msg 93 60 0;
@@ -75,8 +59,7 @@ of your soundfile);
 #X text 241 157 ...;
 #X msg 263 154 20;
 #X msg 149 193 recall \$1;
-#X text 249 93 save & recall up to 20 presets \, presets will be saved
-with the parrent patch;
+#X text 249 93 save & recall up to 20 presets \, presets will be saved with the parrent patch;
 #X connect 1 0 4 0;
 #X connect 2 0 4 0;
 #X connect 3 0 4 0;
@@ -111,7 +94,7 @@ with the parrent patch;
 #A saved;
 #X obj 397 9 adc~;
 #X obj 511 69 sig~;
-#X floatatom 511 50 5 0 0 0 - - -;
+#X floatatom 511 50 5 0 0 0 - - - 0;
 #X text 547 51 playback-speed in %;
 #X text 579 153 <-- click to open GUI;
 #X text 10 85 Inlets:;
@@ -124,32 +107,22 @@ with the parrent patch;
 #X text 67 150 2:(~)right out;
 #X text 67 162 3:message;
 #X text 11 61 Creation arguments: none;
-#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 -260097 -66577
-0;
+#X obj 7 280 cnv 15 81 17 empty empty empty 20 12 0 14 #fc8000 #404040 0;
 #N canvas 596 106 504 105 references 0;
-#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 -1 -66577 0
-;
-#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 -233017 -66577
-0;
-#X text 21 41 help -> browser -> PureData/audio-examples/B16.long-varispeed.pd
-;
-#X text 21 12 the technique of playing back a long table via onset
-is exposed in pd-examples B16.long-varispeed.pd;
+#X obj 2 1 cnv 15 500 100 empty empty empty 20 12 0 14 #000000 #404040 0;
+#X obj 3 2 cnv 15 498 98 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
+#X text 21 41 help -> browser -> PureData/audio-examples/B16.long-varispeed.pd;
+#X text 21 12 the technique of playing back a long table via onset is exposed in pd-examples B16.long-varispeed.pd;
 #X restore 7 279 pd references;
 #N canvas 740 417 503 292 message-out 0;
 #X obj 30 33 inlet;
-#X msg 30 60 open symbol \, play 0 \, playback-speed 100 \, position
-0 \, position% 0 \, loop 0 \, normalize 0 \,;
+#X msg 30 60 open symbol \, play 0 \, playback-speed 100 \, position 0 \, position% 0 \, loop 0 \, normalize 0 \,;
 #X connect 0 0 1 0;
 #X restore 570 178 pd message-out;
-#X text 10 29 sfplayer~ allows clean variable-speed playback of extra
-long soundfiles;
-#X obj 715 4 cnv 15 120 60 empty empty empty 20 12 0 14 -260097 -66577
-0;
-#X obj 721 15 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7
-0 10 -262144 -1 -1;
-#X obj 721 36 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7
-0 10 -262144 -1 -1;
+#X text 10 29 sfplayer~ allows clean variable-speed playback of extra long soundfiles;
+#X obj 715 4 cnv 15 120 60 empty empty empty 20 12 0 14 #fc8000 #404040 0;
+#X obj 721 15 bng 15 250 50 0 \$0-example1 \$0-example1r empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 721 36 bng 15 250 50 0 \$0-example2 \$0-example2r empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X text 740 13 open example-1;
 #X text 740 35 open example-2;
 #N canvas 102 154 450 300 examples 0;
@@ -162,7 +135,7 @@ long soundfiles;
 #X obj 97 186 pdcontrol;
 #X obj 97 141 r \$0-example2;
 #X msg 95 75 open 03-looping_with_sfplayer~.pd \$1/Examples;
-#X msg 97 210 open 09-old_tapedeck.pd \$1/Examples;
+#X msg 97 210 open 10-old_tapedeck.pd \$1/Examples;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
 #X connect 4 0 8 0;
