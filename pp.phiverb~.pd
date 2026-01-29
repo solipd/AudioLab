@@ -1,4 +1,4 @@
-#N canvas 145 98 1387 771 10;
+#N canvas 145 98 1387 858 10;
 #X obj 103 115 hsl 170 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 394 90 1157 685 stuff 0;
 #X obj 379 179 s \$0-visbngr;
@@ -323,8 +323,8 @@
 #X restore 806 65 pd in;
 #X obj 824 709 outlet;
 #X obj 331 50 inlet~;
-#X obj 332 715 outlet~;
-#X obj 484 711 outlet~;
+#X obj 329 740 outlet~;
+#X obj 484 739 outlet~;
 #N canvas 873 0 1084 561 outlet-message 0;
 #X obj 530 157 r \$0-transition;
 #X obj 493 119 r \$0-times-curve;
@@ -2518,7 +2518,7 @@
 #X text 677 41 mc;
 #X obj 726 41 inlet~;
 #X text 770 41 mc;
-#N canvas 726 54 753 210 \$0-phiverb 1;
+#N canvas 50 60 753 210 \$0-phiverb 1;
 #N canvas 111 191 1262 453 mask 0;
 #X obj 100 100 cnv 15 739 198 empty empty empty 2 2 0 14 #fcfcfc #404040 0;
 #X obj 639 136 cnv 15 152 122 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
@@ -2526,7 +2526,7 @@
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-timesgui 16 float 3;
-#A 0 189 188.009 185.303 181.013 175.203 167.918 159.19 149.046 137.507 124.593 110.318 94.6978 77.7449 59.4707 39.8859 19;
+#A 0 159 158.704 157.543 155.298 151.825 147.013 140.768 133.01 123.666 112.672 99.9688 85.5005 69.2161 51.0678 31.0101 9;
 #A color 0;
 #A width 2;
 #X coords 0 200 16 0 150 120 1 0 0;
@@ -2545,7 +2545,7 @@
 #X obj 100 100 cnv 15 150 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array \$0-early 8 float 3;
-#A 0 35 30 43.3333 38.2757 31.6667 39.7182 46.6667 33.3333;
+#A 0 9 86.6667 126.667 145.588 157.289 167.051 175.503 183;
 #A color 0;
 #A width 2;
 #X coords 0 200 8 0 150 120 1 0 0;
@@ -2611,7 +2611,7 @@
 #X obj 100 100 cnv 15 75 120 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #N canvas 0 0 450 250 (subpatch) 0;
 #X array \$0-difffilter 8 float 3;
-#A 0 110.8 106.6 103.6 113.8 104.2 118.6 107.2 115;
+#A 0 123.4 105.4 100 97 124 104.2 100 97;
 #A color 0;
 #A width 2;
 #X coords 0 127 8 55 75 120 1 0 0;
@@ -2625,7 +2625,7 @@
 #X obj 170 123 cnv 10 80 10 empty empty Input-Filter 0 5 2 11 #fcfcfc #000000 0;
 #X obj 798 186 bng 14 250 50 0 \$0-testimp \$0-testimpr Test 18 9 2 10 #ff8300 #000000 #000000;
 #X obj 109 230 cnv 10 10 10 empty empty Predelay 0 5 2 10 #fcfcfc #000000 0;
-#X obj 134 281 hradio 11 1 0 9 \$0-presetrd \$0-presetrdr Preset:\ Slapback 0 -8 2 10 #fcfcfc #000000 #000000 0;
+#X obj 134 281 hradio 11 1 0 9 \$0-presetrd \$0-presetrdr Preset:\ Long\ Mod 0 -8 2 10 #fcfcfc #000000 #000000 0;
 #X obj 374 120 nbx 4 12 0 1e+11 0 0 \$0-modulate \$0-modulater Modulate 0 -6 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 566 280 cnv 10 10 10 empty empty phiverb~ 0 5 2 17 #fcfcfc #9c9c9c 0;
 #X obj 753 120 nbx 4 12 0 1e+11 0 0 \$0-modulate-late \$0-modulate-later Modulate 0 -6 2 10 #fcfcfc #000000 #000000 0 256;
@@ -4054,8 +4054,12 @@
 #X obj 526 206 *~ 0.0005;
 #X obj 523 479 clip~ -0.25 0.25;
 #X text 959 720 p.s. 2024-25;
-#X connect 2 0 7 0;
-#X connect 2 1 8 0;
+#X obj 331 691 hip~ 10;
+#X obj 330 714 hip~ 10;
+#X obj 485 692 hip~ 10;
+#X obj 484 715 hip~ 10;
+#X connect 2 0 42 0;
+#X connect 2 1 44 0;
 #X connect 3 0 4 0;
 #X connect 6 0 2 0;
 #X connect 6 0 10 0;
@@ -4088,4 +4092,8 @@
 #X connect 38 0 17 0;
 #X connect 39 0 18 0;
 #X connect 40 0 15 1;
+#X connect 42 0 43 0;
+#X connect 43 0 7 0;
+#X connect 44 0 45 0;
+#X connect 45 0 8 0;
 #X coords 0 -1 1 1 175 33 1 100 100;
