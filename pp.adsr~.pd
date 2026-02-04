@@ -143,16 +143,16 @@
 #X msg 210 156 color 10 10;
 #X obj 128 101 t b;
 #X obj 208 131 del 250;
-#X msg 92 211 relocate 230x149+1+1 1x1+50+60 \, vis 1;
 #X obj 92 233 s pd-\$0-adsr;
+#X msg 92 211 relocate 230x149+1+1 1x1+50+60 \, vis 1 \, editmode 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 2 0;
 #X connect 4 0 5 0;
-#X connect 4 0 6 0;
+#X connect 4 0 7 0;
 #X connect 5 0 3 0;
-#X connect 6 0 7 0;
+#X connect 7 0 6 0;
 #X restore 826 222 pd stuff;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 118 64 893 431 outlet-message 0;
@@ -274,7 +274,7 @@
 #X obj 407 257 > 0;
 #X obj 407 676 *~;
 #X obj 407 114 inlet;
-#N canvas 50 60 230 149 \$0-adsr 1;
+#N canvas 50 60 230 149 \$0-adsr 0;
 #N canvas 77 173 714 345 mask 0;
 #X obj 100 100 cnv 15 219 143 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 114 131 hsl 128 12 2 500 0 0 \$0-agui \$0-aguir Attack -2 -6 2 10 #ffe3c6 #000000 #000000 0 1;

@@ -1,7 +1,6 @@
-#N struct 1007-control-array float x float y float x1 float y1 float
-x2 float y2 array c-array 1007-control-template;
-#N struct 1007-control-template float x float y float c float n;
 #N canvas 54 142 1144 504 10;
+#N struct \$0-control-array float x float y float x1 float y1 float x2 float y2 array c-array \$0-control-template;
+#N struct \$0-control-template float x float y float c float n;
 #X obj 433 416 outlet~;
 #X obj 603 65 inlet~;
 #X obj 690 64 inlet~;
@@ -63,8 +62,7 @@ x2 float y2 array c-array 1007-control-template;
 #X obj 970 60 inlet;
 #N canvas 3 54 574 409 in 0;
 #X obj 68 41 inlet;
-#X obj 68 146 route speaker-1 speaker-2 speaker-3 speaker-4 speaker-5
-speaker-6 speaker-7 speaker-8;
+#X obj 68 146 route speaker-1 speaker-2 speaker-3 speaker-4 speaker-5 speaker-6 speaker-7 speaker-8;
 #X obj 447 77 loadbang;
 #X obj 412 176 list trim;
 #X obj 412 153 list;
@@ -634,11 +632,9 @@ speaker-6 speaker-7 speaker-8;
 #X msg 203 111 color 10 10;
 #X obj 121 56 t b;
 #X obj 201 86 del 250;
-#X msg 99 163 relocate 320x320+1+1 1x1+50+50 \, vis 1;
 #N canvas 1 50 845 386 isvisible 0;
 #X obj 48 43 loadbang;
-#X obj 48 65 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
-0 1;
+#X obj 48 65 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 48 108 s \$0-isvisible-check;
 #X obj 48 85 metro 1000;
 #X connect 0 0 1 0;
@@ -646,19 +642,19 @@ speaker-6 speaker-7 speaker-8;
 #X connect 3 0 2 0;
 #X restore 121 11 pd isvisible;
 #X obj 99 185 s pd-\$0-spat4;
+#X msg 99 163 relocate 320x320+1+1 1x1+50+50 \, vis 1 \, editmode 0;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 3 0 0 0;
 #X connect 4 0 2 0;
 #X connect 4 0 5 0;
-#X connect 4 0 6 0;
+#X connect 4 0 8 0;
 #X connect 5 0 3 0;
-#X connect 6 0 8 0;
+#X connect 8 0 7 0;
 #X restore 970 103 pd stuff;
 #X obj 972 434 outlet;
 #N canvas 129 81 781 614 outlet-message 0;
-#N canvas 225 426 999 300 bang_once.......................................
-0;
+#N canvas 225 426 999 300 bang_once....................................... 0;
 #X obj 174 34 t b f;
 #X obj 132 34 t b f;
 #X obj 89 173 del 0;
@@ -711,8 +707,7 @@ speaker-6 speaker-7 speaker-8;
 #X connect 20 0 2 0;
 #X connect 20 1 21 8;
 #X connect 21 0 10 0;
-#X restore 249 282 pd bang_once.......................................
-;
+#X restore 249 282 pd bang_once.......................................;
 #X obj 317 509 list trim;
 #X msg 236 465 addcomma;
 #X msg 172 438 set;
@@ -769,8 +764,7 @@ speaker-6 speaker-7 speaker-8;
 #X connect 5 1 3 1;
 #X connect 6 0 5 0;
 #X restore 309 445 pd save;
-#X msg 270 359 speaker-1 \$1 \$2 \, speaker-2 \$3 \$4 \, speaker-3
-\$5 \$6 \, speaker-4 \$7 \$8 \, \$9;
+#X msg 270 359 speaker-1 \$1 \$2 \, speaker-2 \$3 \$4 \, speaker-3 \$5 \$6 \, speaker-4 \$7 \$8 \, \$9;
 #X connect 0 0 19 0;
 #X connect 1 0 5 0;
 #X connect 2 0 5 0;
@@ -802,17 +796,14 @@ speaker-6 speaker-7 speaker-8;
 #X connect 20 2 21 0;
 #X connect 22 0 20 0;
 #X restore 972 403 pd outlet-message;
-#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50
-8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
+#X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #N canvas 847 190 455 147 \$0-control-template 0;
-#X obj 24 15 struct \$0-control-template float x float y float c float
-n;
+#X obj 24 15 struct \$0-control-template float x float y float c float n;
 #X obj 24 50 filledpolygon c 0 0 -7 7 7 7 7 -7 -7 -7;
 #X obj 24 80 drawnumber n -2.5 6 999;
 #X restore 971 290 pd \$0-control-template;
 #N canvas 718 437 567 184 \$0-control-array 0;
-#X obj 17 20 struct \$0-control-array float x float y float x1 float
-y1 float x2 float y2 array c-array \$0-control-template;
+#X obj 17 20 struct \$0-control-array float x float y float x1 float y1 float x2 float y2 array c-array \$0-control-template;
 #X obj 15 67 plot c-array 0 0 0 0 1;
 #X restore 971 268 pd \$0-control-array;
 #X obj 433 60 inlet~;
@@ -820,8 +811,7 @@ y1 float x2 float y2 array c-array \$0-control-template;
 #X text 734 63 y;
 #X text 825 70 spread;
 #N canvas 316 91 1115 556 struct 0;
-#X obj 34 54 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 34 54 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 58 77 symbol pd-\$0-graph;
 #X obj 85 124 f \$0;
 #X obj 58 100 t s b;
@@ -854,8 +844,7 @@ y1 float x2 float y2 array c-array \$0-control-template;
 #X obj 851 253 get \$0-control-template x y;
 #X obj 887 209 r \$0-control-array-pointer;
 #X obj 851 231 element \$0-control-array c-array;
-#X obj 802 81 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000 0 1;
+#X obj 802 81 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 802 60 loadbang;
 #X obj 802 100 metro 500;
 #X obj 802 145 until;
@@ -1090,27 +1079,19 @@ y1 float x2 float y2 array c-array \$0-control-template;
 #X connect 4 0 3 0;
 #X connect 6 0 1 0;
 #X restore 609 260 pd amp;
-#N canvas 50 50 320 320 \$0-spat4 1;
+#N canvas 50 50 320 320 \$0-spat4 0;
 #N canvas 29 87 595 467 mask 0;
-#X obj 100 100 cnv 15 309 309 empty empty empty 20 12 0 14 #fcfcfc
-#404040 0;
-#X obj 104 104 cnv 10 302 302 empty empty empty 20 12 0 14 #7c7c7c
-#404040 0;
-#X obj 106 106 cnv 10 298 298 empty empty empty 20 12 0 14 #dcdcdc
-#404040 0;
-#X obj 107 253 cnv 1 298 1 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
-#X obj 254 107 cnv 1 1 298 empty empty empty 20 12 0 14 #fcfcfc #404040
-0;
+#X obj 100 100 cnv 15 309 309 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 104 104 cnv 10 302 302 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
+#X obj 106 106 cnv 10 298 298 empty empty empty 20 12 0 14 #dcdcdc #404040 0;
+#X obj 107 253 cnv 1 298 1 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
+#X obj 254 107 cnv 1 1 298 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 398 249 cnv 1 1 1 empty empty 1 0 0 2 11 #e0e0e0 #fcfcfc 0;
 #X obj 263 114 cnv 1 1 1 empty empty 1 0 0 2 11 #e0e0e0 #fcfcfc 0;
-#X obj 260 400 cnv 1 1 1 empty empty -1 0 0 2 11 #e0e0e0 #fcfcfc 0
-;
-#X obj 110 248 cnv 1 1 1 empty empty -1 0 0 2 11 #e0e0e0 #fcfcfc 0
-;
+#X obj 260 400 cnv 1 1 1 empty empty -1 0 0 2 11 #e0e0e0 #fcfcfc 0;
+#X obj 110 248 cnv 1 1 1 empty empty -1 0 0 2 11 #e0e0e0 #fcfcfc 0;
 #N canvas 1 50 878 553 \$0-graph 0;
-#X scalar 1007-control-array 0 0 0 0 0 0 \; -98 99 0 1 \; 99 99 0 2
-\; 99 -98 0 3 \; -98 -98 0 4 \; \;;
+#X scalar \$0-control-array 0 0 0 0 0 0 \; -98 99 0 1 \; 99 99 0 2 \; 99 -98 0 3 \; -98 -98 0 4 \; \;;
 #X coords -150 150 150 -150 300 300 2 100 100;
 #X restore 105 105 pd \$0-graph;
 #X msg 428 151 isvisible;
@@ -1145,8 +1126,7 @@ y1 float x2 float y2 array c-array \$0-control-template;
 #X obj 145 280 + 0.5;
 #X msg 106 145 135 \, 45 \, 315 \, 225;
 #X obj 106 51 r \$0-reset;
-#X obj 63 54 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 63 54 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X connect 0 0 4 0;
 #X connect 1 0 0 0;
 #X connect 2 0 13 0;
