@@ -354,6 +354,8 @@
 #X obj 273 468 sel 1;
 #X msg 374 506 dbrange \$1;
 #X obj 374 486 r \$0-dbrange-gui;
+#X obj 109 490 r \$0-draw-sum;
+#X obj 109 513 sel 0;
 #X connect 0 0 26 0;
 #X connect 0 0 29 1;
 #X connect 1 0 0 0;
@@ -399,6 +401,8 @@
 #X connect 30 0 29 0;
 #X connect 31 0 25 1;
 #X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 16 0;
 #X restore 84 187 pd cascade;
 #X obj 84 48 pp.parameq-draw 1 \$0 peaking;
 #X obj 84 72 pp.parameq-draw 2 \$0 peaking;

@@ -1,7 +1,7 @@
-#N canvas 116 100 915 519 10;
+#N canvas 549 255 915 519 10;
 #X obj 347 185 biquad~;
 #N canvas 70 251 374 268 read&draw 0;
-#N canvas 155 52 940 599 cascade 0;
+#N canvas 167 13 940 636 cascade 0;
 #X obj 209 431 list append;
 #X obj 209 403 list;
 #X obj 245 379 t b l;
@@ -354,6 +354,8 @@
 #X obj 273 468 sel 1;
 #X msg 374 506 dbrange \$1;
 #X obj 374 486 r \$0-dbrange-gui;
+#X obj 115 514 r \$0-draw-sum;
+#X obj 115 537 sel 0;
 #X connect 0 0 26 0;
 #X connect 0 0 29 1;
 #X connect 1 0 0 0;
@@ -399,6 +401,8 @@
 #X connect 30 0 29 0;
 #X connect 31 0 25 1;
 #X connect 32 0 31 0;
+#X connect 33 0 34 0;
+#X connect 34 0 16 0;
 #X restore 84 187 pd cascade;
 #X obj 84 48 pp.parameq-draw 1 \$0 peaking;
 #X obj 84 72 pp.parameq-draw 2 \$0 peaking;
@@ -845,7 +849,7 @@
 #X obj 135 432 hradio 12 1 0 6 \$0-filtertype-gui \$0-filtertype-guir Peaking 0 -8 2 10 #fcfcfc #000000 #000000 0;
 #X obj 523 416 tgl 12 0 \$0-draw-colfilter-gui \$0-draw-colfilter-guir draw_Filter 17 7 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 596 416 tgl 12 0 \$0-draw-sum-gui \$0-draw-sum-guir draw_Sum 17 7 2 10 #fcfcfc #000000 #000000 0 1;
-#X obj 112 432 nbx 1 12 0 5 0 0 \$0-touch-gui \$0-touch-guir empty 2 -9 2 10 #fc2828 #000000 #000000 0 256;
+#X obj 112 432 nbx 1 12 0 5 0 0 \$0-touch-gui \$0-touch-guir empty 2 -9 2 10 #14e814 #000000 #000000 0 256;
 #N canvas 537 267 450 300 \$0-grid 0;
 #X coords 0 -150 700 150 700 300 2 100 100;
 #X restore 110 109 pd \$0-grid;
@@ -1446,7 +1450,7 @@
 #X obj 658 215 r \$0-resetbng;
 #X obj 103 115 hsl 150 15 0 127 0 0 \$0-visbng \$0-visbngr empty 50 8 2 10 #e0e0e0 #e0e0e0 #000000 0 1;
 #X obj 347 374 outlet~;
-#N canvas 105 196 1653 693 init 0;
+#N canvas 146 451 1653 693 init 0;
 #X msg 901 188 traverse \$1 \, bang;
 #X obj 901 208 pointer;
 #X obj 702 449 s \$0-control-array-pointer;
