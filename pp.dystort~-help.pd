@@ -72,7 +72,7 @@
 #X connect 20 0 0 0;
 #X connect 21 0 20 0;
 #X restore 552 265 pd control-messages;
-#X obj 28 26 cnv 15 10 10 empty empty pp.distort~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
+#X obj 28 26 cnv 15 10 10 empty empty pp.dystort~ 0 0 2 16 #e0e0e0 #fcfcfc 0;
 #X text 563 308 <-- click to open GUI;
 #N canvas 768 300 450 300 stuff 0;
 #X obj 82 14 loadbang;
