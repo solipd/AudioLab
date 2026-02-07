@@ -202,7 +202,7 @@
 #X connect 55 0 18 1;
 #X connect 55 0 51 0;
 #X restore 532 275 pd struct_pad;
-#N canvas 50 50 320 320 \$0-xypad 1;
+#N canvas 50 50 320 320 \$0-xypad 0;
 #N canvas 250 104 719 510 mask 0;
 #X msg 503 123 isvisible;
 #X obj 503 146 pdcontrol;
@@ -213,7 +213,7 @@
 #X coords -150 150 150 -150 300 300 2 100 100;
 #X restore 105 105 pd \$0-jumpgrid;
 #N canvas 1 50 878 553 \$0-pad 0;
-#X scalar \$0-pad-template 110 115 60 \;;
+#X scalar \$0-pad-template 0 0 60 \;;
 #X coords -150 150 150 -150 300 300 2 100 100;
 #X restore 105 105 pd \$0-pad;
 #X connect 0 0 1 0;
@@ -303,6 +303,7 @@
 #X text 206 149 safety stop after 10 min;
 #X obj 792 285 t b b;
 #X obj 792 336 s \$0-done-out;
+#X msg 199 222 stop;
 #X connect 0 0 6 0;
 #X connect 1 0 6 0;
 #X connect 2 0 5 1;
@@ -352,6 +353,7 @@
 #X connect 50 0 54 0;
 #X connect 50 0 72 0;
 #X connect 50 1 51 0;
+#X connect 50 1 80 0;
 #X connect 51 0 59 0;
 #X connect 52 0 5 0;
 #X connect 53 0 52 0;
@@ -379,6 +381,7 @@
 #X connect 76 0 73 0;
 #X connect 78 0 79 0;
 #X connect 78 1 15 0;
+#X connect 80 0 76 0;
 #X restore 532 202 pd record&play;
 #X obj 235 222 r \$0-x;
 #X obj 423 228 r \$0-y;
