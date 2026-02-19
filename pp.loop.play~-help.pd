@@ -185,7 +185,7 @@
 #X text 137 124 \$1(obligatory): buffer name. All instances of [pp.loop.play~] with the same name will read from this buffer.;
 #X text 797 204 <-- click to open GUI;
 #X text 772 446 <-- click to open GUI;
-#X text 828 55 record and loop length;
+#X text 828 55 record and set loop length;
 #X connect 5 0 26 0;
 #X connect 5 1 27 0;
 #X connect 13 0 5 2;
