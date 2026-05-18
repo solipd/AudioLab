@@ -1,7 +1,3 @@
-#N struct 1057-template float x float y float c float s float th float stretch array 1057-plus 1057-template-y array 1057-minus 1057-template-y;
-#N struct 1057-template-y float y;
-#N struct 1058-template float x float y float c float s float th float stretch array 1058-plus 1058-template-y array 1058-minus 1058-template-y;
-#N struct 1058-template-y float y;
 #N canvas 274 97 824 409 10;
 #X declare -path ./audio;
 #X declare -path ..;
@@ -49,6 +45,7 @@
 #X msg 908 127 max-grains 16 \, int.grain-trigger 1 \, grain-distance 12 \, random-grain-distance 0 \, delay 0 \, random-delay 400 \, grainsize 192 \, random-grainsize 0 \, pitch 1200 \, random-pitch 30 \, panorama -90 \, random-panorama 10 \, amplitude 0 \, random-amplitude 100 \, feedback 94 \, lop 6000 \, hip 114 \, pan-feedback 15 \, random-pan-feedback 10 \, pitch-feedback 0 \, random-pitch-feedback 5 \, env-type 3 \, env-bias 0.593407 \, env-shape 0.153846 \, x-pan 0 \, gain 3 \,;
 #X msg 105 281 max-grains 16 \, int.grain-trigger 1 \, grain-distance 50 \, random-grain-distance 10 \, delay 0 \, random-delay 100 \, grainsize 247 \, random-grainsize 0 \, pitch -1200 \, random-pitch 20 \, panorama -100 \, random-panorama 0 \, amplitude 0 \, random-amplitude 0 \, feedback 100 \, lop 5000 \, hip 70 \, pan-feedback 0 \, random-pan-feedback 10 \, pitch-feedback -3 \, random-pitch-feedback 10 \, env-type 3 \, env-bias 0.659341 \, env-shape 0 \, x-pan 1 \, gain 3 \,;
 #X msg 515 126 max-grains 16 \, int.grain-trigger 1 \, grain-distance 8 \, random-grain-distance 0 \, delay 100 \, random-delay 50 \, grainsize 127 \, random-grainsize 0 \, pitch -1200 \, random-pitch 30 \, panorama 0 \, random-panorama 200 \, amplitude 0 \, random-amplitude 0 \, feedback 80 \, lop 5000 \, hip 120 \, pan-feedback 0 \, random-pan-feedback 0 \, pitch-feedback 0 \, random-pitch-feedback 5 \, env-type 0 \, env-bias 0.164835 \, env-shape 0.461538 \, x-pan 0 \, gain 3 \,;
+#X msg 489 439 max-grains 3 \, int.grain-trigger 1 \, grain-distance 115 \, random-grain-distance 20 \, delay 0 \, random-delay 154 \, grainsize 85 \, random-grainsize 27 \, pitch 0 \, random-pitch 3200 \, panorama 0 \, random-panorama 150 \, amplitude 0 \, random-amplitude 4 \, feedback 99 \, lop 6000 \, hip 114 \, pan-feedback 0 \, random-pan-feedback 0 \, pitch-feedback 0 \, random-pitch-feedback 0 \, env-type 0 \, env-bias 0.043956 \, env-shape 0.538462 \, x-pan 0 \, gain 3 \,;
 #X connect 1 0 2 0;
 #X connect 2 0 6 0;
 #X connect 2 1 9 0;
@@ -57,6 +54,7 @@
 #X connect 2 4 3 0;
 #X connect 2 5 5 0;
 #X connect 2 6 4 0;
+#X connect 2 7 10 0;
 #X connect 3 0 0 0;
 #X connect 4 0 0 0;
 #X connect 5 0 0 0;
@@ -64,12 +62,13 @@
 #X connect 7 0 0 0;
 #X connect 8 0 0 0;
 #X connect 9 0 0 0;
+#X connect 10 0 0 0;
 #X restore 553 224 pd messages;
 #X obj 20 272 tgl 17 0 \$0-play \$0-playr empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 20 192 bng 17 250 50 0 \$0-burst \$0-burstr empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 618 39 r \$0-play;
 #X obj 618 83 sel 1 0;
-#X obj 20 164 hradio 17 1 0 7 \$0-presets \$0-presetsr Presets 0 -8 2 12 #fcfcfc #000000 #000000 0;
+#X obj 20 164 hradio 17 1 0 8 \$0-presets \$0-presetsr Presets 0 -8 2 12 #fcfcfc #000000 #000000 0;
 #X text 42 192 <-- burst;
 #X text 41 272 <-- play/stop soundfile;
 #X obj 568 252 r \$0-dry/wet;
