@@ -1541,7 +1541,7 @@
 #X connect 36 9 38 0;
 #X connect 36 10 37 0;
 #X restore 688 82 pd in;
-#N canvas 302 283 311 313 \$0-echo 1;
+#N canvas 50 60 311 313 \$0-echo 1;
 #N canvas 568 238 850 512 mask 0;
 #X obj 100 100 cnv 15 299 299 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 227 165 cnv 10 10 10 empty empty echo~ 0 5 2 17 #fcfcfc #9c9c9c 0;
@@ -1553,7 +1553,7 @@
 #X msg 58 366 set \$1;
 #X obj 315 133 nbx 7 14 1 2000 0 0 \$0-deltime-r-gui \$0-deltime-r-guir Time-Right 0 -7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 116 133 nbx 7 14 1 2000 0 0 \$0-deltime-l-gui \$0-deltime-l-guir Time-Left 0 -7 2 10 #ffffff #000000 #000000 0 256;
-#X obj 226 135 tgl 12 0 \$0-link-deltime \$0-link-deltimer Link -4 -7 2 10 #fcfcfc #000000 #000000 0 1;
+#X obj 239 135 tgl 12 0 \$0-link-deltime \$0-link-deltimer Link -4 -7 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 614 161 nbx 4 12 0 100 0 0 \$0-hf-damping \$0-hf-dampingr % 41 7 2 10 #fcfcfc #000000 #000000 0 256;
 #X obj 508 161 hsl 100 12 0 100 0 0 \$0-hfdgui \$0-hfdguir HF-Damping -2 -6 2 10 #fcfcfc #000000 #000000 0 1;
 #X msg 454 158 set \$1;
@@ -1582,6 +1582,8 @@
 #X obj 315 200 tgl 12 0 \$0-tap3-play \$0-tap3-playr Play 17 8 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 315 230 tgl 12 0 \$0-tap3-feedback \$0-tap3-feedbackr Feedback 17 8 2 10 #fcfcfc #000000 #000000 0 1;
 #X obj 315 215 nbx 3 12 1 100 0 0 \$0-tap3-mult \$0-tap3-multr Position 33 8 2 10 #fcfcfc #000000 #000000 0 256;
+#X obj 180 133 cnv 10 10 10 empty empty ________ 0 5 2 12 #ffffff #000000 0;
+#X obj 261 133 cnv 10 10 10 empty empty ________ 0 5 2 12 #ffffff #000000 0;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
 #X connect 4 0 5 0;
