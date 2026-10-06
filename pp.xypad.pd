@@ -1,4 +1,4 @@
-#N canvas 270 232 741 433 10;
+#N canvas 568 234 741 433 10;
 #N struct \$0-jump-template float x float y;
 #N struct \$0-pad-template float x float y float c;
 #X obj 532 51 inlet;
@@ -73,7 +73,7 @@
 #X obj 69 98 s \$0-jump-x;
 #X obj 104 144 s \$0-jump-y;
 #X obj 30 196 filledpolygon 777 0 1 -150 150 150 150 150 -150 -150 -150;
-#X obj 104 123 * -1;
+#X obj 545 11 loadbang;
 #X connect 0 0 1 0;
 #X connect 1 0 8 2;
 #X connect 2 0 8 0;
@@ -88,8 +88,8 @@
 #X connect 10 0 5 0;
 #X connect 11 0 12 0;
 #X connect 12 1 13 0;
-#X connect 12 2 16 0;
-#X connect 16 0 14 0;
+#X connect 12 2 14 0;
+#X connect 16 0 10 0;
 #X restore 532 249 pd struct_jumpgrid;
 #N canvas 309 124 895 738 struct_pad 0;
 #X msg 571 190 traverse \$1 \, bang;
@@ -202,18 +202,16 @@
 #X connect 55 0 18 1;
 #X connect 55 0 51 0;
 #X restore 532 275 pd struct_pad;
-#N canvas 50 50 320 320 \$0-xypad 0;
+#N canvas 50 50 320 320 \$0-xypad 1;
 #N canvas 250 104 719 510 mask 0;
 #X msg 503 123 isvisible;
 #X obj 503 146 pdcontrol;
 #X obj 503 169 s \$0-isvisible;
 #X obj 503 101 r \$0-isvisible-check;
 #N canvas 845 542 450 300 \$0-jumpgrid 0;
-#X scalar \$0-jump-template 0 0 \;;
 #X coords -150 150 150 -150 300 300 2 100 100;
 #X restore 105 105 pd \$0-jumpgrid;
 #N canvas 1 50 878 553 \$0-pad 0;
-#X scalar \$0-pad-template 0 0 60 \;;
 #X coords -150 150 150 -150 300 300 2 100 100;
 #X restore 105 105 pd \$0-pad;
 #X connect 0 0 1 0;
