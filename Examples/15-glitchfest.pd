@@ -1,8 +1,4 @@
-#N struct 1005-template float x float y float c float s float th float stretch array 1005-plus 1005-template-y array 1005-minus 1005-template-y;
-#N struct 1005-template-y float y;
-#N struct 1006-template float x float y float c float s float th float stretch array 1006-plus 1006-template-y array 1006-minus 1006-template-y;
-#N struct 1006-template-y float y;
-#N canvas 61 42 1514 718 10;
+#N canvas 83 99 1514 716 10;
 #X declare -path ..;
 #X declare -path ./audio;
 #X obj 4 1 cnv 15 380 700 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -26,7 +22,9 @@
 #X obj 864 95 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-glitchtimes 18 float 3;
-#A 0 0 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140 140;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 54.5488 133 133 133 133 133;
+#A color 0;
+#A width 2;
 #X coords 0 200 18 0 200 140 1 0 0;
 #X restore 1158 510 graph;
 #X obj 1000 338 list prepend times;
@@ -130,7 +128,7 @@
 #N canvas 982 340 450 300 init 0;
 #X obj 39 49 loadbang;
 #X obj 39 197 outlet;
-#X msg 39 69 dry/wet 50 \, feedback 102 \, crossover-frequency 7000 \, damping 50 \, modulation 0.1 \, modulation-frequency 0.1 \, predelay 0 \, times-center 66 \, times-slope -900 \, times-curve -3 \, angles-center 115 \, angles-slope 10 \, angles-curve -3 \, gain 0 \, transition-time 5 \, setblock 8 \, early 0 0 0 0 \, times 0 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 \, angles 26 27.1311 27.9278 28.6334 29.2857 29.9009 30.4883 31.0533 31.6 32.131 32.6486 33.1544 33.6496 34.1354 34.6127 35.0821 35.5444 36 \,;
+#X msg 39 69 dry/wet 50 \, feedback 102 \, crossover-frequency 7000 \, damping 50 \, modulation 0.1 \, modulation-frequency 0.1 \, predelay 0 \, times-center 66 \, times-slope -900 \, times-curve -3 \, angles-center 115 \, angles-slope 10 \, angles-curve -3 \, gain 0 \, transition-time 5 \, setblock 8 \, early 5 13.3335 26.6667 38.3333 \, times 0 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 129 \, angles 26 27.1311 27.9278 28.6334 29.2857 29.9009 30.4883 31.0533 31.6 32.131 32.6486 33.1544 33.6496 34.1354 34.6127 35.0821 35.5444 36 \,;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X restore 646 487 pd init;
