@@ -149,7 +149,7 @@
 #X restore 499 130 pd in;
 #X obj 398 127 r \$0-response;
 #X obj 103 115 hsl 105 15 0 100 0 0 \$0-gui \$0-guir Responsiveness 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 251 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
 #X obj 210 115 nbx 5 15 0 1000 0 0 \$0-response \$0-responser empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 74 173 set \$1;
 #X obj 74 152 i;

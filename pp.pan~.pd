@@ -2,12 +2,9 @@
 #X obj 341 444 outlet~;
 #X obj 410 444 outlet~;
 #X obj 341 392 *~;
-#X obj 103 115 hsl 105 15 -1 1 0 0 \$0-gui \$0-guir Panorama 3 8 2
-10 -233017 -1 -1 5200 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 -233017
--228856 -1 0 1;
-#X obj 210 115 nbx 5 15 -1 1 0 0 \$0-pan \$0-panr empty 0 -8 2 10 -228856
--1 -1 0 256;
+#X obj 103 115 hsl 105 15 -1 1 0 0 \$0-gui \$0-guir Panorama 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
+#X obj 251 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 210 115 nbx 5 15 -1 1 0 0 \$0-pan \$0-panr empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 164 157 set \$1;
 #X obj 467 145 +~;
 #X obj 557 39 r \$0-pan;

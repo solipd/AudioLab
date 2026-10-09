@@ -228,7 +228,7 @@
 #X connect 4 0 2 0;
 #X restore 296 381 pd delay clean;
 #X obj 103 130 hsl 130 15 0 100 0 0 \$0-gui \$0-guir Dry/Wet(%) 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
-#X obj 276 130 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 276 130 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
 #X obj 235 130 nbx 5 15 0 100 0 0 \$0-drywet \$0-drywetr empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 158 186 set \$1;
 #X obj 75 167 i;

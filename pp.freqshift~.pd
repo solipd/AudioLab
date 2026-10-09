@@ -42,12 +42,9 @@
 #X restore 275 184 pd olli;
 #X obj 338 122 +~;
 #X obj 390 60 r \$0-shift;
-#X obj 103 115 hsl 105 15 -1000 1000 0 0 \$0-gui \$0-guir Frequency-shift(hz)
-3 8 2 10 -233017 -1 -1 5200 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 -233017
--228856 -1 0 1;
-#X obj 210 115 nbx 5 15 -1e+14 1e+16 0 0 \$0-shift \$0-shiftr empty
-0 -8 2 10 -228856 -1 -1 0 256;
+#X obj 103 115 hsl 105 15 -1000 1000 0 0 \$0-gui \$0-guir Frequency-shift(hz) 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
+#X obj 251 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #dfdfdf #dfdfdf #000000 0 1;
+#X obj 210 115 nbx 5 15 -1e+14 1e+16 0 0 \$0-shift \$0-shiftr empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 210 138 set \$1;
 #X obj 41 78 loadbang;
 #X msg 41 99 0;

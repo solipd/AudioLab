@@ -1,6 +1,5 @@
 #N canvas 85 202 1051 382 10;
-#X text 285 256 simple rotating-head pitchshifter based on G09-pitchshift
-\$1 = windowsize (ms);
+#X text 285 256 simple rotating-head pitchshifter based on G09-pitchshift \$1 = windowsize (ms);
 #N canvas 377 145 450 300 delwrite 0;
 #X obj 59 60 inlet~;
 #X obj 61 125 outlet~;
@@ -74,12 +73,9 @@
 #X obj 335 215 outlet~;
 #X obj 610 87 inlet~;
 #X obj 610 123 +~;
-#X obj 103 115 hsl 105 15 -1200 1200 0 0 \$0-gui \$0-guir Transposition(cents)
-3 8 2 10 -233017 -1 -1 5200 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 -233017
--228856 -1 0 1;
-#X obj 210 115 nbx 5 15 -1e+09 1e+12 0 0 \$0-transpo \$0-transpor empty
-0 -8 2 10 -228856 -1 -1 0 256;
+#X obj 103 115 hsl 105 15 -1200 1200 0 0 \$0-gui \$0-guir Transposition(cents) 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
+#X obj 251 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 210 115 nbx 5 15 -1e+09 1e+12 0 0 \$0-transpo \$0-transpor empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 128 179 set \$1;
 #X msg 64 71 0;
 #X obj 128 158 i;
@@ -90,7 +86,7 @@
 #N canvas 0 50 305 260 init 0;
 #X obj 108 54 f \$1;
 #X obj 108 31 loadbang;
-#X floatatom 109 129 0 0 0 0 - - -;
+#X floatatom 109 129 0 0 0 0 - - - 0;
 #X obj 109 82 sel 0;
 #X msg 109 102 100;
 #X text 148 129 window (msec);

@@ -1,4 +1,4 @@
-#N canvas 848 301 1006 643 10;
+#N canvas 145 113 1006 643 10;
 #N canvas 3 50 728 534 fft 0;
 #N canvas 0 50 511 389 normalize 0;
 #X obj 173 313 outlet;
@@ -185,7 +185,7 @@
 #X connect 6 0 2 0;
 #X connect 7 0 4 0;
 #X restore 100 159 pd map;
-#X obj 276 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 276 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
 #X obj 235 115 nbx 5 15 0 2e+09 0 0 \$0-frequency \$0-frequencyr empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X text 760 565 philipp schmalfuß \, 2018;
 #N canvas 275 52 823 699 hanning 0;

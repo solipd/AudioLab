@@ -1,6 +1,6 @@
 #N canvas 240 176 993 538 10;
 #X obj 103 115 hsl 105 15 0 1 0 0 \$0-gui \$0-guir Amp 3 8 2 10 #e0e0e0 #000000 #000000 0 1;
-#X obj 251 115 hsl 2 8 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
+#X obj 251 115 hsl 2 15 0 1 0 0 \$0-gui \$0-guir empty 3 8 2 10 #e0e0e0 #dcdcdc #000000 0 1;
 #X obj 210 115 nbx 5 15 -1e+13 1e+19 0 0 \$0-amp \$0-ampr empty 0 -8 2 10 #dcdcdc #000000 #000000 0 256;
 #X msg 165 222 set \$1;
 #X obj 673 417 outlet;
