@@ -11,7 +11,7 @@
 #X obj 164 53 f \$0;
 #X obj 233 31 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
 #X msg 70 61 \; pd dsp 1;
-#X msg 164 74 \; \$1-angler 90 \; \$1-spreadr -1;
+#X msg 164 74 \; \$1-angler 90 \; \$1-spreadr 0;
 #X connect 0 0 1 0;
 #X connect 0 0 3 0;
 #X connect 1 0 4 0;

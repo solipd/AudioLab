@@ -1,6 +1,4 @@
-#N canvas 257 150 897 337 10;
-#N struct \$0-control-array float x float y array c-array \$0-control-template;
-#N struct \$0-control-template float x float y float c float n float sx1 float sy1 float sx2 float sy2 float sx3 float sy3 float sx4 float sy4 float sx5 float sy5 float sx6 float sy6 float sx7 float sy7 float sx8 float sy8 float sx9 float sy9 float sx10 float sy10 float sx11 float sy11 float sx12 float sy12 float sx13 float sy13 float sx14 float sy14 float sx15 float sy15 float sx16 float sy16 float sx17 float sy17;
+#N canvas 276 146 897 337 10;
 #N struct \$0-control-array float x float y array c-array \$0-control-template;
 #N struct \$0-control-template float x float y float c float n float sx1 float sy1 float sx2 float sy2 float sx3 float sy3 float sx4 float sy4 float sx5 float sy5 float sx6 float sy6 float sx7 float sy7 float sx8 float sy8 float sx9 float sy9 float sx10 float sy10 float sx11 float sy11 float sx12 float sy12 float sx13 float sy13 float sx14 float sy14 float sx15 float sy15 float sx16 float sy16 float sx17 float sy17;
 #X obj 3 3 cnv 15 380 320 empty empty empty 20 12 0 14 #e0e0e0 #404040 0;
@@ -145,8 +143,6 @@
 #X text 544 122 spatial spread (-1 \, 1);
 #X obj 391 184 pp.spat8~;
 #A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
-#X obj 703 245 pp.spat4~;
-#A saved empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \; empty_slot \;;
 #X connect 6 0 42 4;
 #X connect 7 0 42 0;
 #X connect 8 0 9 0;
@@ -161,4 +157,8 @@
 #X connect 42 1 34 1;
 #X connect 42 2 34 2;
 #X connect 42 3 34 3;
-#X connect 42 4 33 0;
+#X connect 42 4 34 4;
+#X connect 42 5 34 5;
+#X connect 42 6 34 6;
+#X connect 42 7 34 7;
+#X connect 42 8 33 0;

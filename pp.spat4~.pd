@@ -1003,8 +1003,6 @@
 #X obj 135 107 bng 18 250 50 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000;
 #X obj 764 416 spigot;
 #X obj 810 416 r \$0-show-spread;
-#X obj 148 27 r \$0-show-spread;
-#X obj 148 50 t b;
 #X msg 77 326 4;
 #X msg 44 495 4;
 #X obj 758 95 f 4;
@@ -1024,7 +1022,7 @@
 #X connect 7 1 6 1;
 #X connect 9 0 7 0;
 #X connect 12 0 11 0;
-#X connect 12 1 93 0;
+#X connect 12 1 91 0;
 #X connect 12 2 10 1;
 #X connect 13 0 46 0;
 #X connect 14 0 15 1;
@@ -1039,7 +1037,7 @@
 #X connect 21 1 4 0;
 #X connect 22 0 24 0;
 #X connect 23 0 1 0;
-#X connect 24 0 99 0;
+#X connect 24 0 97 0;
 #X connect 26 0 25 2;
 #X connect 27 0 26 1;
 #X connect 28 0 25 0;
@@ -1052,9 +1050,9 @@
 #X connect 32 0 30 0;
 #X connect 33 0 35 0;
 #X connect 34 0 33 0;
-#X connect 35 0 95 0;
+#X connect 35 0 93 0;
 #X connect 36 0 44 0;
-#X connect 37 0 97 0;
+#X connect 37 0 95 0;
 #X connect 38 0 42 0;
 #X connect 38 1 32 0;
 #X connect 39 0 41 2;
@@ -1064,7 +1062,7 @@
 #X connect 44 0 37 0;
 #X connect 44 0 38 0;
 #X connect 45 0 17 1;
-#X connect 46 0 94 0;
+#X connect 46 0 92 0;
 #X connect 46 1 45 0;
 #X connect 46 2 14 1;
 #X connect 47 0 81 0;
@@ -1092,7 +1090,7 @@
 #X connect 64 1 52 0;
 #X connect 64 2 50 1;
 #X connect 65 0 67 0;
-#X connect 66 0 98 0;
+#X connect 66 0 96 0;
 #X connect 67 0 66 0;
 #X connect 67 0 83 0;
 #X connect 68 0 71 2;
@@ -1113,7 +1111,7 @@
 #X connect 80 1 62 0;
 #X connect 81 0 74 0;
 #X connect 81 1 49 34;
-#X connect 82 0 96 0;
+#X connect 82 0 94 0;
 #X connect 83 0 47 0;
 #X connect 83 1 84 0;
 #X connect 83 2 86 0;
@@ -1123,14 +1121,12 @@
 #X connect 88 0 2 0;
 #X connect 89 0 57 0;
 #X connect 90 0 89 1;
-#X connect 91 0 92 0;
-#X connect 92 0 1 0;
-#X connect 93 0 10 0;
-#X connect 94 0 16 0;
-#X connect 95 0 36 0;
-#X connect 96 0 65 0;
-#X connect 97 0 44 1;
-#X connect 98 0 67 1;
+#X connect 91 0 10 0;
+#X connect 92 0 16 0;
+#X connect 93 0 36 0;
+#X connect 94 0 65 0;
+#X connect 95 0 44 1;
+#X connect 96 0 67 1;
 #X restore 971 313 pd struct;
 #X text 926 467 philipp schmalfuß \, 2018/21;
 #N canvas 3 52 376 342 amp 0;
@@ -1298,7 +1294,7 @@
 #X obj 22 200 r \$0-show-spread;
 #X connect 4 0 3 0;
 #X restore 971 290 pd control-template;
-#N canvas 50 50 320 320 \$0-spat4 1;
+#N canvas 50 50 320 320 \$0-spat4 0;
 #N canvas 29 87 595 467 mask 0;
 #X obj 100 100 cnv 15 309 309 empty empty empty 20 12 0 14 #fcfcfc #404040 0;
 #X obj 104 104 cnv 10 302 302 empty empty empty 20 12 0 14 #7c7c7c #404040 0;
